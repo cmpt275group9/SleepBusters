@@ -1,0 +1,657 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF0AA5161BBFB23000C97C87 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0AA5151BBFB23000C97C87 /* DataAccess.swift */; settings = {ASSET_TAGS = (); }; };
+		AF0AA5181BBFB25E00C97C87 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0AA5171BBFB25E00C97C87 /* UserProfile.swift */; settings = {ASSET_TAGS = (); }; };
+		AF18349D1BBFA9E100EBDFCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18349C1BBFA9E100EBDFCD /* AppDelegate.swift */; };
+		AF1834A41BBFA9E100EBDFCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1834A21BBFA9E100EBDFCD /* Main.storyboard */; };
+		AF1834A61BBFA9E100EBDFCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF1834A51BBFA9E100EBDFCD /* Assets.xcassets */; };
+		AF1834A91BBFA9E100EBDFCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1834A71BBFA9E100EBDFCD /* LaunchScreen.storyboard */; };
+		AF1834B41BBFA9E100EBDFCD /* SleepBustersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1834B31BBFA9E100EBDFCD /* SleepBustersTests.swift */; };
+		AF1834BF1BBFA9E100EBDFCD /* SleepBustersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1834BE1BBFA9E100EBDFCD /* SleepBustersUITests.swift */; };
+		AF29EBEE1BC3AA4A00F32D07 /* UserSleepSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29EBED1BC3AA4A00F32D07 /* UserSleepSession.swift */; settings = {ASSET_TAGS = (); }; };
+		AF30B0831BC6FF250094B4A8 /* StatusResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30B0821BC6FF250094B4A8 /* StatusResult.swift */; settings = {ASSET_TAGS = (); }; };
+		AF325F641BC1C6EA00FA4523 /* HttpAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F631BC1C6EA00FA4523 /* HttpAction.swift */; settings = {ASSET_TAGS = (); }; };
+		AF325F661BC1C99300FA4523 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F651BC1C99300FA4523 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
+		AF325F681BC1CDC200FA4523 /* RespiratorySensorStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F671BC1CDC200FA4523 /* RespiratorySensorStat.swift */; settings = {ASSET_TAGS = (); }; };
+		AF325F6A1BC1D10500FA4523 /* EEGSensorStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F691BC1D10500FA4523 /* EEGSensorStat.swift */; settings = {ASSET_TAGS = (); }; };
+		AF325F711BC1E79000FA4523 /* EEGConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F701BC1E79000FA4523 /* EEGConnector.swift */; settings = {ASSET_TAGS = (); }; };
+		AF325F731BC1E7A200FA4523 /* RespiratoryConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F721BC1E7A200FA4523 /* RespiratoryConnector.swift */; settings = {ASSET_TAGS = (); }; };
+		AF325F791BC206E200FA4523 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F781BC206E200FA4523 /* Serializable.swift */; settings = {ASSET_TAGS = (); }; };
+		AF8157691BC06C4900F5476A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157681BC06C4900F5476A /* StatsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AF81576B1BC06CA500F5476A /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81576A1BC06CA500F5476A /* TrackingViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AF81576D1BC06CAF00F5476A /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81576C1BC06CAF00F5476A /* MyProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AF81576F1BC0D35200F5476A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81576E1BC0D35200F5476A /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AF8157711BC1364600F5476A /* HardwareConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157701BC1364600F5476A /* HardwareConnector.swift */; settings = {ASSET_TAGS = (); }; };
+		AF8157751BC136BA00F5476A /* WebApiConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157741BC136BA00F5476A /* WebApiConnector.swift */; settings = {ASSET_TAGS = (); }; };
+		AF8157771BC13C7500F5476A /* UserSensorStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157761BC13C7500F5476A /* UserSensorStat.swift */; settings = {ASSET_TAGS = (); }; };
+		AF81577A1BC13ECB00F5476A /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157791BC13ECB00F5476A /* Business.swift */; settings = {ASSET_TAGS = (); }; };
+		AF89BB441BC4B3D4005E1619 /* AppStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89BB431BC4B3D4005E1619 /* AppStartViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		AF89BB461BC4D9FD005E1619 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89BB451BC4D9FD005E1619 /* TabBarController.swift */; settings = {ASSET_TAGS = (); }; };
+		AF89BB481BC5D346005E1619 /* SensorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89BB471BC5D346005E1619 /* SensorType.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF1834B01BBFA9E100EBDFCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF1834911BBFA9E100EBDFCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF1834981BBFA9E100EBDFCD;
+			remoteInfo = SleepBusters;
+		};
+		AF1834BB1BBFA9E100EBDFCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF1834911BBFA9E100EBDFCD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF1834981BBFA9E100EBDFCD;
+			remoteInfo = SleepBusters;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AF0AA5151BBFB23000C97C87 /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataAccess.swift; path = Data/DataAccess.swift; sourceTree = "<group>"; };
+		AF0AA5171BBFB25E00C97C87 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserProfile.swift; path = Model/UserProfile.swift; sourceTree = "<group>"; };
+		AF1834991BBFA9E100EBDFCD /* SleepBusters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepBusters.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF18349C1BBFA9E100EBDFCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF1834A31BBFA9E100EBDFCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF1834A51BBFA9E100EBDFCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF1834A81BBFA9E100EBDFCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF1834AA1BBFA9E100EBDFCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF1834AF1BBFA9E100EBDFCD /* SleepBustersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepBustersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1834B31BBFA9E100EBDFCD /* SleepBustersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBustersTests.swift; sourceTree = "<group>"; };
+		AF1834B51BBFA9E100EBDFCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF1834BA1BBFA9E100EBDFCD /* SleepBustersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepBustersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF1834BE1BBFA9E100EBDFCD /* SleepBustersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBustersUITests.swift; sourceTree = "<group>"; };
+		AF1834C01BBFA9E100EBDFCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF29EBED1BC3AA4A00F32D07 /* UserSleepSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSleepSession.swift; path = Model/UserSleepSession.swift; sourceTree = "<group>"; };
+		AF30B0821BC6FF250094B4A8 /* StatusResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusResult.swift; path = Model/StatusResult.swift; sourceTree = "<group>"; };
+		AF325F631BC1C6EA00FA4523 /* HttpAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpAction.swift; path = Utility/HttpAction.swift; sourceTree = "<group>"; };
+		AF325F651BC1C99300FA4523 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AF325F671BC1CDC200FA4523 /* RespiratorySensorStat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RespiratorySensorStat.swift; path = Model/RespiratorySensorStat.swift; sourceTree = "<group>"; };
+		AF325F691BC1D10500FA4523 /* EEGSensorStat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EEGSensorStat.swift; path = Model/EEGSensorStat.swift; sourceTree = "<group>"; };
+		AF325F701BC1E79000FA4523 /* EEGConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EEGConnector.swift; path = Data/EEGConnector.swift; sourceTree = "<group>"; };
+		AF325F721BC1E7A200FA4523 /* RespiratoryConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RespiratoryConnector.swift; path = Data/RespiratoryConnector.swift; sourceTree = "<group>"; };
+		AF325F781BC206E200FA4523 /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Serializable.swift; path = Utility/Serializable.swift; sourceTree = "<group>"; };
+		AF8157681BC06C4900F5476A /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsViewController.swift; path = ViewControllers/StatsViewController.swift; sourceTree = "<group>"; };
+		AF81576A1BC06CA500F5476A /* TrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingViewController.swift; path = ViewControllers/TrackingViewController.swift; sourceTree = "<group>"; };
+		AF81576C1BC06CAF00F5476A /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyProfileViewController.swift; path = ViewControllers/MyProfileViewController.swift; sourceTree = "<group>"; };
+		AF81576E1BC0D35200F5476A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewControllers/LoginViewController.swift; sourceTree = "<group>"; };
+		AF8157701BC1364600F5476A /* HardwareConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HardwareConnector.swift; path = Data/HardwareConnector.swift; sourceTree = "<group>"; };
+		AF8157741BC136BA00F5476A /* WebApiConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebApiConnector.swift; path = Data/WebApiConnector.swift; sourceTree = "<group>"; };
+		AF8157761BC13C7500F5476A /* UserSensorStat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSensorStat.swift; path = Model/UserSensorStat.swift; sourceTree = "<group>"; };
+		AF8157791BC13ECB00F5476A /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Business.swift; path = Business/Business.swift; sourceTree = "<group>"; };
+		AF89BB431BC4B3D4005E1619 /* AppStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStartViewController.swift; path = ViewControllers/AppStartViewController.swift; sourceTree = "<group>"; };
+		AF89BB451BC4D9FD005E1619 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ViewControllers/TabBarController.swift; sourceTree = "<group>"; };
+		AF89BB471BC5D346005E1619 /* SensorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensorType.swift; path = Model/SensorType.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF1834961BBFA9E100EBDFCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1834AC1BBFA9E100EBDFCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1834B71BBFA9E100EBDFCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF0AA50E1BBFB12800C97C87 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AF0AA5151BBFB23000C97C87 /* DataAccess.swift */,
+				AF8157701BC1364600F5476A /* HardwareConnector.swift */,
+				AF8157741BC136BA00F5476A /* WebApiConnector.swift */,
+				AF325F701BC1E79000FA4523 /* EEGConnector.swift */,
+				AF325F721BC1E7A200FA4523 /* RespiratoryConnector.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		AF0AA50F1BBFB13100C97C87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF0AA5171BBFB25E00C97C87 /* UserProfile.swift */,
+				AF8157761BC13C7500F5476A /* UserSensorStat.swift */,
+				AF325F671BC1CDC200FA4523 /* RespiratorySensorStat.swift */,
+				AF325F691BC1D10500FA4523 /* EEGSensorStat.swift */,
+				AF29EBED1BC3AA4A00F32D07 /* UserSleepSession.swift */,
+				AF89BB471BC5D346005E1619 /* SensorType.swift */,
+				AF30B0821BC6FF250094B4A8 /* StatusResult.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		AF0AA5101BBFB13F00C97C87 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		AF0AA5111BBFB14800C97C87 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		AF0AA5121BBFB15E00C97C87 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF81576C1BC06CAF00F5476A /* MyProfileViewController.swift */,
+				AF81576A1BC06CA500F5476A /* TrackingViewController.swift */,
+				AF8157681BC06C4900F5476A /* StatsViewController.swift */,
+				AF81576E1BC0D35200F5476A /* LoginViewController.swift */,
+				AF89BB431BC4B3D4005E1619 /* AppStartViewController.swift */,
+				AF89BB451BC4D9FD005E1619 /* TabBarController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AF0AA5131BBFB16800C97C87 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				AF325F631BC1C6EA00FA4523 /* HttpAction.swift */,
+				AF325F651BC1C99300FA4523 /* Extensions.swift */,
+				AF325F781BC206E200FA4523 /* Serializable.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		AF0AA5141BBFB17C00C97C87 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		AF1834901BBFA9E100EBDFCD = {
+			isa = PBXGroup;
+			children = (
+				AF18349B1BBFA9E100EBDFCD /* SleepBusters */,
+				AF1834B21BBFA9E100EBDFCD /* SleepBustersTests */,
+				AF1834BD1BBFA9E100EBDFCD /* SleepBustersUITests */,
+				AF18349A1BBFA9E100EBDFCD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF18349A1BBFA9E100EBDFCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF1834991BBFA9E100EBDFCD /* SleepBusters.app */,
+				AF1834AF1BBFA9E100EBDFCD /* SleepBustersTests.xctest */,
+				AF1834BA1BBFA9E100EBDFCD /* SleepBustersUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF18349B1BBFA9E100EBDFCD /* SleepBusters */ = {
+			isa = PBXGroup;
+			children = (
+				AF8157781BC13EB200F5476A /* Business */,
+				AF0AA5141BBFB17C00C97C87 /* UI */,
+				AF0AA5131BBFB16800C97C87 /* Utility */,
+				AF0AA5121BBFB15E00C97C87 /* ViewControllers */,
+				AF0AA5111BBFB14800C97C87 /* Images */,
+				AF0AA5101BBFB13F00C97C87 /* Icons */,
+				AF0AA50F1BBFB13100C97C87 /* Model */,
+				AF0AA50E1BBFB12800C97C87 /* Data */,
+				AF1834A21BBFA9E100EBDFCD /* Main.storyboard */,
+				AF18349C1BBFA9E100EBDFCD /* AppDelegate.swift */,
+				AF1834A51BBFA9E100EBDFCD /* Assets.xcassets */,
+				AF1834A71BBFA9E100EBDFCD /* LaunchScreen.storyboard */,
+				AF1834AA1BBFA9E100EBDFCD /* Info.plist */,
+			);
+			path = SleepBusters;
+			sourceTree = "<group>";
+		};
+		AF1834B21BBFA9E100EBDFCD /* SleepBustersTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF1834B31BBFA9E100EBDFCD /* SleepBustersTests.swift */,
+				AF1834B51BBFA9E100EBDFCD /* Info.plist */,
+			);
+			path = SleepBustersTests;
+			sourceTree = "<group>";
+		};
+		AF1834BD1BBFA9E100EBDFCD /* SleepBustersUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF1834BE1BBFA9E100EBDFCD /* SleepBustersUITests.swift */,
+				AF1834C01BBFA9E100EBDFCD /* Info.plist */,
+			);
+			path = SleepBustersUITests;
+			sourceTree = "<group>";
+		};
+		AF8157781BC13EB200F5476A /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				AF8157791BC13ECB00F5476A /* Business.swift */,
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF1834981BBFA9E100EBDFCD /* SleepBusters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF1834C31BBFA9E100EBDFCD /* Build configuration list for PBXNativeTarget "SleepBusters" */;
+			buildPhases = (
+				AF1834951BBFA9E100EBDFCD /* Sources */,
+				AF1834961BBFA9E100EBDFCD /* Frameworks */,
+				AF1834971BBFA9E100EBDFCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SleepBusters;
+			productName = SleepBusters;
+			productReference = AF1834991BBFA9E100EBDFCD /* SleepBusters.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF1834AE1BBFA9E100EBDFCD /* SleepBustersTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF1834C61BBFA9E100EBDFCD /* Build configuration list for PBXNativeTarget "SleepBustersTests" */;
+			buildPhases = (
+				AF1834AB1BBFA9E100EBDFCD /* Sources */,
+				AF1834AC1BBFA9E100EBDFCD /* Frameworks */,
+				AF1834AD1BBFA9E100EBDFCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF1834B11BBFA9E100EBDFCD /* PBXTargetDependency */,
+			);
+			name = SleepBustersTests;
+			productName = SleepBustersTests;
+			productReference = AF1834AF1BBFA9E100EBDFCD /* SleepBustersTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF1834B91BBFA9E100EBDFCD /* SleepBustersUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF1834C91BBFA9E100EBDFCD /* Build configuration list for PBXNativeTarget "SleepBustersUITests" */;
+			buildPhases = (
+				AF1834B61BBFA9E100EBDFCD /* Sources */,
+				AF1834B71BBFA9E100EBDFCD /* Frameworks */,
+				AF1834B81BBFA9E100EBDFCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF1834BC1BBFA9E100EBDFCD /* PBXTargetDependency */,
+			);
+			name = SleepBustersUITests;
+			productName = SleepBustersUITests;
+			productReference = AF1834BA1BBFA9E100EBDFCD /* SleepBustersUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF1834911BBFA9E100EBDFCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = PillowSoft;
+				TargetAttributes = {
+					AF1834981BBFA9E100EBDFCD = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					AF1834AE1BBFA9E100EBDFCD = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = AF1834981BBFA9E100EBDFCD;
+					};
+					AF1834B91BBFA9E100EBDFCD = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = AF1834981BBFA9E100EBDFCD;
+					};
+				};
+			};
+			buildConfigurationList = AF1834941BBFA9E100EBDFCD /* Build configuration list for PBXProject "SleepBusters" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF1834901BBFA9E100EBDFCD;
+			productRefGroup = AF18349A1BBFA9E100EBDFCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF1834981BBFA9E100EBDFCD /* SleepBusters */,
+				AF1834AE1BBFA9E100EBDFCD /* SleepBustersTests */,
+				AF1834B91BBFA9E100EBDFCD /* SleepBustersUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF1834971BBFA9E100EBDFCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1834A91BBFA9E100EBDFCD /* LaunchScreen.storyboard in Resources */,
+				AF1834A61BBFA9E100EBDFCD /* Assets.xcassets in Resources */,
+				AF1834A41BBFA9E100EBDFCD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1834AD1BBFA9E100EBDFCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1834B81BBFA9E100EBDFCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF1834951BBFA9E100EBDFCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF81576F1BC0D35200F5476A /* LoginViewController.swift in Sources */,
+				AF8157751BC136BA00F5476A /* WebApiConnector.swift in Sources */,
+				AF81576D1BC06CAF00F5476A /* MyProfileViewController.swift in Sources */,
+				AF325F681BC1CDC200FA4523 /* RespiratorySensorStat.swift in Sources */,
+				AF325F6A1BC1D10500FA4523 /* EEGSensorStat.swift in Sources */,
+				AF89BB481BC5D346005E1619 /* SensorType.swift in Sources */,
+				AF89BB441BC4B3D4005E1619 /* AppStartViewController.swift in Sources */,
+				AF81576B1BC06CA500F5476A /* TrackingViewController.swift in Sources */,
+				AF18349D1BBFA9E100EBDFCD /* AppDelegate.swift in Sources */,
+				AF8157771BC13C7500F5476A /* UserSensorStat.swift in Sources */,
+				AF325F641BC1C6EA00FA4523 /* HttpAction.swift in Sources */,
+				AF325F711BC1E79000FA4523 /* EEGConnector.swift in Sources */,
+				AF0AA5181BBFB25E00C97C87 /* UserProfile.swift in Sources */,
+				AF30B0831BC6FF250094B4A8 /* StatusResult.swift in Sources */,
+				AF8157691BC06C4900F5476A /* StatsViewController.swift in Sources */,
+				AF325F791BC206E200FA4523 /* Serializable.swift in Sources */,
+				AF81577A1BC13ECB00F5476A /* Business.swift in Sources */,
+				AF8157711BC1364600F5476A /* HardwareConnector.swift in Sources */,
+				AF29EBEE1BC3AA4A00F32D07 /* UserSleepSession.swift in Sources */,
+				AF0AA5161BBFB23000C97C87 /* DataAccess.swift in Sources */,
+				AF89BB461BC4D9FD005E1619 /* TabBarController.swift in Sources */,
+				AF325F661BC1C99300FA4523 /* Extensions.swift in Sources */,
+				AF325F731BC1E7A200FA4523 /* RespiratoryConnector.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1834AB1BBFA9E100EBDFCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1834B41BBFA9E100EBDFCD /* SleepBustersTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF1834B61BBFA9E100EBDFCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1834BF1BBFA9E100EBDFCD /* SleepBustersUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF1834B11BBFA9E100EBDFCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF1834981BBFA9E100EBDFCD /* SleepBusters */;
+			targetProxy = AF1834B01BBFA9E100EBDFCD /* PBXContainerItemProxy */;
+		};
+		AF1834BC1BBFA9E100EBDFCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF1834981BBFA9E100EBDFCD /* SleepBusters */;
+			targetProxy = AF1834BB1BBFA9E100EBDFCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF1834A21BBFA9E100EBDFCD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF1834A31BBFA9E100EBDFCD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF1834A71BBFA9E100EBDFCD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF1834A81BBFA9E100EBDFCD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF1834C11BBFA9E100EBDFCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF1834C21BBFA9E100EBDFCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF1834C41BBFA9E100EBDFCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SleepBusters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PillowSoft.SleepBusters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AF1834C51BBFA9E100EBDFCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SleepBusters/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PillowSoft.SleepBusters;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AF1834C71BBFA9E100EBDFCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SleepBustersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PillowSoft.SleepBustersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SleepBusters.app/SleepBusters";
+			};
+			name = Debug;
+		};
+		AF1834C81BBFA9E100EBDFCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SleepBustersTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PillowSoft.SleepBustersTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SleepBusters.app/SleepBusters";
+			};
+			name = Release;
+		};
+		AF1834CA1BBFA9E100EBDFCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SleepBustersUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PillowSoft.SleepBustersUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SleepBusters;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		AF1834CB1BBFA9E100EBDFCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SleepBustersUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = PillowSoft.SleepBustersUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SleepBusters;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF1834941BBFA9E100EBDFCD /* Build configuration list for PBXProject "SleepBusters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF1834C11BBFA9E100EBDFCD /* Debug */,
+				AF1834C21BBFA9E100EBDFCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF1834C31BBFA9E100EBDFCD /* Build configuration list for PBXNativeTarget "SleepBusters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF1834C41BBFA9E100EBDFCD /* Debug */,
+				AF1834C51BBFA9E100EBDFCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF1834C61BBFA9E100EBDFCD /* Build configuration list for PBXNativeTarget "SleepBustersTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF1834C71BBFA9E100EBDFCD /* Debug */,
+				AF1834C81BBFA9E100EBDFCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF1834C91BBFA9E100EBDFCD /* Build configuration list for PBXNativeTarget "SleepBustersUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF1834CA1BBFA9E100EBDFCD /* Debug */,
+				AF1834CB1BBFA9E100EBDFCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF1834911BBFA9E100EBDFCD /* Project object */;
+}
