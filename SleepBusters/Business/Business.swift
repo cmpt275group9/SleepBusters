@@ -8,15 +8,17 @@
 
 import Foundation
 class Business {
-    var data = DataAccess()
     
+    var data = DataAccess()
+    var sensorStatArray = [UserSensorStat]()
+    var userSleepSession = UserSleepSession()
     init(){
        
     }
     
     
     // MARK: User Profile CRUD
-    func validateLogin(userName: String,password: String) -> Bool {
+    func validateLogin(userName: String,password: String) -> UserProfile {
         return data.validateLogin(userName,password: password)
     }
     
@@ -32,49 +34,68 @@ class Business {
         return data.saveUserProfile(userProfile)
     }
 
-    
-    // MARK: Repiratory  (Bluetooth)
-    func getLiveRespiratorySensorData() -> RespiratorySensorStat{
-        return data.getLiveRespiratorySensorData()
+    // MARK: Hardware Sensors
+    func getHistoricalSensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSensorStat]{
+        return data.getHistoricalSensorData(userId, startDate: startDate, endDate: endDate)
     }
     
-    func getHistoricalRespiratorySensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [RespiratorySensorStat]{
-        return data.getHistoricalRespiratorySensorData(userId, startDate: startDate, endDate: endDate)
+    func saveUserSensorStats(stats: [UserSensorStat]) -> StatusResult {
+        return data.saveUserSensorStats(stats)
     }
     
-    func getUserRespiratoryStats(startDate: NSDate, endDate: NSDate) -> [RespiratorySensorStat] {
-        return data.getUserRespiratoryStats(startDate,endDate: endDate)
+    func getLiveSensorData() -> UserSensorStat{
+        return data.getLiveSensorData()
     }
     
-    func saveUserRespiratoryStats(stats: [RespiratorySensorStat]) -> StatusResult {
-        return data.saveUserRespiratoryStats(stats)
+    
+
+    // MARK: Tracking
+    func startTracking(){
+        //1. Confirm Bluetooh Connection & open data streams
+        // Open BT Conn
+        
+        
+        //2. Clear Arrays to store data streams
+        sensorStatArray.removeAll()
+        
+        //3. Save data stream to array
+        // Test: Fake Data
+        for (var i = 0; i < 30000; i++)
+        {
+            let singleEEGStat = getFakeSensorData(Double(i))
+            sensorStatArray.append(singleEEGStat)
+        }
+
+        
+    }
+    
+    func endTracking(){
+        //1. Ask user if they would like to save session.
+        
+        //2a. If save then run Algorithm to process and save data to cloud
+        // Algo:
+        // Save:
+        //      business.saveEEGStats(eegStreamArray)
+        //      business.saveUserRespiratoryStats(respiratoryStreamArray)
+        
+        //2b. If not save then delete all session data
+        
+    }
+    
+    
+    
+    // MARK: FAKE Data
+    func getFakeSensorData(i: Double)-> UserSensorStat{
+        let t = NSTimeInterval(i)
+        let eeg = UserSensorStat();
+        eeg.RespiratoryValue = Double(arc4random_uniform(256))
+        eeg.TimeStamp = NSDate().dateByAddingTimeInterval(t)
+        var user = UserProfile()
+        user.Id=3
+        eeg.User = user
+        return eeg
     }
     
 
-    
-    // MARK: EEG  (Bluetooth)
-    func getLiveEEGSensorData() -> EEGSensorStat{
-        return data.getLiveEEGSensorData()
-    }
-    
-    func getHistoricalEEGSensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [EEGSensorStat]{
-        return data.getHistoricalEEGSensorData(userId, startDate: startDate, endDate: endDate)
-    }
-    
-    func getEEGStats(startDate: NSDate, endDate: NSDate) -> [EEGSensorStat] {
-        return data.getEEGStats(startDate,endDate: endDate)
-    }
-    
-    func saveEEGStats(stats: [EEGSensorStat]) -> StatusResult {
-        return data.saveEEGStats(stats)
-    }
-    
-    // MARK: Tracking
-    func startTracking(){
-        
-    }
-    
-    func stopTracking(){
-        
-    }
+
 }

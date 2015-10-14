@@ -7,13 +7,10 @@
 //
 
 import Foundation
-class UserSleepSession {
+class UserSleepSession : Serializable {
     var Id: Int = 0
-    var StartSessionDate: NSDate = NSDate(dateString:"2000-01-01")
-    var EndSessionDate:NSDate = NSDate(dateString:"2000-01-01")
+    var User: UserProfile = UserProfile()
+    var StartSessionDate: NSDate? = nil
+    var EndSessionDate:NSDate? = nil
     var TotalHoursAsleep: Double? = nil
-    
-    init(){
-        
-    }
 }

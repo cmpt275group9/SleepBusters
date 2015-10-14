@@ -11,13 +11,13 @@ class RespiratoryConnector : HardwareConnector{
     override init() {
         
     }
-    override func getSensorData() {
+    func getSensorData() {
         
     }
     
-    func getLiveRespiratorySensorData() -> RespiratorySensorStat{
+    func getLiveRespiratorySensorData() -> UserSensorStat{
                 // Bluetooth code goes here
-        return RespiratorySensorStat()
+        return UserSensorStat()
     }
     
 }

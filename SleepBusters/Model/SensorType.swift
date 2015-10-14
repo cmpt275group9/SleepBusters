@@ -9,8 +9,9 @@
 import Foundation
 enum SensorType {
     case Respiratory
-    case EEG
-    case Position
+    case GenericEEG
+    case MindwaveEEG
     case HeartRate
     case Generic
+    case Multiple
 }

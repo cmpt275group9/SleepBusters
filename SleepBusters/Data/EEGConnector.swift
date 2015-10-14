@@ -13,13 +13,13 @@ class EEGConnector : HardwareConnector{
         
     }
     
-    override func getSensorData() {
+    func getSensorData() {
         
     }
     
-    func getLiveEEGSensorData() -> EEGSensorStat{
+    func getLiveEEGSensorData() -> UserSensorStat{
         // Bluetooth code goes here
-        return EEGSensorStat()
+        return UserSensorStat()
     }
 
 }

@@ -25,15 +25,16 @@ class AppStartViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         
         let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController")
-        let tabViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabViewController")
+        let tabViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController")
         let appDelegate = UIApplication.sharedApplication().delegate!
         
-        if (!defaults.boolForKey("userIsLoggedIn"))
+        if (defaults.boolForKey("userIsLoggedIn"))
+        {
+            appDelegate.window!!.rootViewController = tabViewController;
+        }
+        else
         {
             appDelegate.window!!.rootViewController = loginViewController;
-        }
-        else{
-            appDelegate.window!!.rootViewController = tabViewController;
         }
     }
 }

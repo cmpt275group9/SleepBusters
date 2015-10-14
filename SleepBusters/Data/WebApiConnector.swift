@@ -14,22 +14,22 @@ class WebApiConnector {
     private let userprofileController = "UserProfile"
     private let statsController = "Stats"
     private var rootUrl = "https://sleepbustersapi.azurewebsites.net/"
-    
     private let httpAction = HttpAction()
     
-    func validateLogin(userName: String,password: String) -> Bool {
-        var isValidated = false;
+    // MARK: Profile
+    func validateLogin(userName: String,password: String) -> UserProfile {
+        
         let queryString = rootUrl + userprofileController+"/Login?userName="+userName+"&password="+password;
         httpAction.HTTPGet(queryString) {
             (data: String, error: String?) -> Void in
             if error != nil {
                 print(error)
-                isValidated = false;
+                //isValidated = UserProfile();
             } else {
-                isValidated = data.toBool()!;
+                //isValidated = data.toBool()!;
             }
         }
-        return isValidated;
+        return UserProfile();
     }
     
     func registerUserProfile(userParam: NSDictionary) -> UserProfile {
@@ -57,34 +57,16 @@ class WebApiConnector {
         return UserProfile();
     }
     
-    func getUserRespiratoryStats(startDate: NSDate, endDate: NSDate) -> [RespiratorySensorStat] {
-        // TODO
-        return [RespiratorySensorStat]();
-    }
+    // MARK: Sensor Stats
     
-    func saveUserRespiratoryStats(userSleepStats: [RespiratorySensorStat]) -> StatusResult {
+    func saveUserSensorStats(userSleepStats: [UserSensorStat]) -> StatusResult {
         // TODO
         return StatusResult();
     }
     
-    func getEEGStats(startDate: NSDate, endDate: NSDate) -> [EEGSensorStat] {
+    func getHistoricalSensorStats(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSensorStat]{
         // TODO
-        return [EEGSensorStat]();
-    }
-    
-    func saveEEGStats(stats: [EEGSensorStat]) -> StatusResult {
-        // TODO
-        return StatusResult();
-    }
-    
-    func getHistoricalRespiratorySensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [RespiratorySensorStat]{
-        // TODO
-        return [RespiratorySensorStat]();
-    }
-    
-    func getHistoricalEEGSensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [EEGSensorStat]{
-        // TODO
-        return [EEGSensorStat]();
+        return [UserSensorStat]();
     }
     
 }

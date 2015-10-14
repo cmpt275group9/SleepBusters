@@ -19,7 +19,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Set Global App Colours
+     //   UINavigationBar.appearance().backgroundColor = UIColor.blackColor()
+     //   UINavigationBar.appearance().barTintColor = UIColor.blackColor()
+        UINavigationBar.appearance().tintColor = UIColor.blackColor()
+        UIBarButtonItem.appearance().tintColor = UIColor.blackColor()
+        UINavigationBar.appearance().translucent = false
+        UITabBarItem.appearance().setTitleTextAttributes(
+            [NSFontAttributeName: UIFont(name:"Open Sans", size:10)!,
+                NSForegroundColorAttributeName: UIColor.blackColor()],
+            forState: .Normal)
+     //   UINavigationBar.appearance().titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Open Sans", size: 34)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
+        //UITabBar.appearance().backgroundColor = UIColor.blackColor();
 
+        
         return true
     }
 

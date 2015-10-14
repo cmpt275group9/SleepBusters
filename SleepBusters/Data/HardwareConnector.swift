@@ -12,7 +12,22 @@ class HardwareConnector {
     {
         
     }
-    func getSensorData(){}
-    func getHardwareInfo(){}
+    
+    func getLiveSensorData() -> UserSensorStat{
+        var userSensorStream = UserSensorStat()
+        userSensorStream = getEegSensorData(userSensorStream)
+        userSensorStream = getRespiratorySensorData(userSensorStream)
+        return userSensorStream
+    }
+    
+    func getEegSensorData(userSensorStat: UserSensorStat)-> UserSensorStat{
+        // Bluetooth code goes here
+        return UserSensorStat()
+    }
+    
+    func getRespiratorySensorData(userSensorStat:UserSensorStat)-> UserSensorStat{
+        // Bluetooth code goes here
+        return UserSensorStat()
+    }
     
 }

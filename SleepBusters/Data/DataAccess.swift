@@ -11,12 +11,14 @@ import Foundation
 
 class DataAccess {
     
+    var webApi = WebApiConnector()
+    
     init(){
         
     }
     
     // MARK: Web API Connector (TCP/IP)
-    func validateLogin(userName: String,password: String) -> Bool {
+    func validateLogin(userName: String,password: String) -> UserProfile {
         return WebApiConnector().validateLogin(userName, password: password)
     }
     
@@ -32,40 +34,18 @@ class DataAccess {
         return WebApiConnector().saveUserProfile(userProfile)
     }
     
-    func getUserRespiratoryStats(startDate: NSDate, endDate: NSDate) -> [RespiratorySensorStat] {
-        return WebApiConnector().getUserRespiratoryStats(startDate,endDate: endDate)
+    // MARK: Hardware Sensors (Bluetooth)
+    func getHistoricalSensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSensorStat]{
+        return WebApiConnector().getHistoricalSensorStats(userId, startDate: startDate, endDate: endDate)
     }
     
-    func saveUserRespiratoryStats(stats: [RespiratorySensorStat]) -> StatusResult {
-        return WebApiConnector().saveUserRespiratoryStats(stats)
+    func saveUserSensorStats(stats: [UserSensorStat]) -> StatusResult {
+        return WebApiConnector().saveUserSensorStats(stats)
+    }
+
+    func getLiveSensorData() -> UserSensorStat{
+        return HardwareConnector().getLiveSensorData()
     }
     
-    func getEEGStats(startDate: NSDate, endDate: NSDate) -> [EEGSensorStat] {
-        return WebApiConnector().getEEGStats(startDate,endDate: endDate)
-    }
-    
-    func saveEEGStats(stats: [EEGSensorStat]) -> StatusResult {
-        return WebApiConnector().saveEEGStats(stats)
-    }
-    
-    // MARK: Repiratory  (Bluetooth)
-    func getLiveRespiratorySensorData() -> RespiratorySensorStat{
-        var respiratorySensor = RespiratoryConnector()
-        return respiratorySensor.getLiveRespiratorySensorData()
-    }
-    
-    func getHistoricalRespiratorySensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [RespiratorySensorStat]{
-        return WebApiConnector().getHistoricalRespiratorySensorData(userId,startDate:startDate,endDate: endDate)
-    }
-    
-    // MARK: EEG  (Bluetooth)
-    func getLiveEEGSensorData() -> EEGSensorStat{
-        var eegConnector = EEGConnector()
-        return eegConnector.getLiveEEGSensorData()
-    }
-    
-    func getHistoricalEEGSensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [EEGSensorStat]{
-        return WebApiConnector().getHistoricalEEGSensorData(userId,startDate:startDate,endDate: endDate)
-    }
     
 }

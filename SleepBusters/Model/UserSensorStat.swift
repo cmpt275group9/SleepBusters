@@ -7,11 +7,26 @@
 //
 
 import Foundation
-class UserSensorStat {
-    var Id: Int = 0
+class UserSensorStat : Serializable {
+    var Id: Int? = nil
+    var User: UserProfile = UserProfile()
+    var RespiratoryValue: Double? = nil
+    var AmbientTemp: Double? = nil
+    var SleepPositionX: Double? = nil
+    var SleepPositionY: Double? = nil
+    var SleepPositionZ: Double? = nil
+    var EegDelta: Int? = nil
+    var EegTheta: Int? = nil
+    var EegLowAlpha: Int? = nil
+    var EegHighAlpha: Int? = nil
+    var EegLowBeta: Int? = nil
+    var EegHighBeta: Int? = nil
+    var EegLowGamma: Int? = nil
+    var EegHighGamma: Int? = nil
+    var BlinkStrength: Int? = nil
+    var DataQuality: Int? = nil;
     var Type: SensorType = SensorType.Generic
-    var Value: Double? = nil;
-    var TimeStamp:  NSDate = NSDate(dateString:"2000-01-01")
-    var CreatedDate:  NSDate = NSDate(dateString:"2000-01-01")
+    var TimeStamp:  NSDate? = nil
+    var CreatedDate:  NSDate? = nil
 }
 

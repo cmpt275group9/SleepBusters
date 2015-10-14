@@ -17,32 +17,34 @@ class LoginViewController:UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let isValidated = business.validateLogin("klein", password: "test")
-        
-        if (isValidated && rememberMe)
-        {
-            // Save user login state and show MyProfileViewController
-            defaults.setBool(true,forKey: "userIsLoggedIn")
-            showTabViewController()
-        }
-        else if (isValidated && rememberMe == false)
-        {
-            // Save user login state and show MyProfileViewController
-            defaults.setBool(false,forKey: "userIsLoggedIn")
-            showTabViewController()
-        }
-        else
-        {
-            // Login Failed: Show message for incorrect username/password
-            let alert = UIAlertView()
-            alert.title = "Error"
-            alert.message = "The username or password is incorrect!"
-            alert.addButtonWithTitle("Okay")
-            alert.show()
-        }
-        
-        let secondViewController:TabBarController = TabBarController()
-        self.presentViewController(secondViewController, animated: true, completion: nil)
+        // Code for Login Button OnClick Event
+        ////////////////////////////////////
+//        let user = business.validateLogin("klein", password: "test")
+//        let userId = user.Id
+//       let isValidated = user.IsValidated
+//        if (isValidated && rememberMe)
+//        {
+//            // Save user login state and show MyProfileViewController
+//            defaults.setBool(true,forKey: "userIsLoggedIn")
+//            showTabViewController()
+//        }
+//        else if (isValidated && !rememberMe)
+//        {
+//            // Save user login state and show MyProfileViewController
+//            defaults.setBool(false,forKey: "userIsLoggedIn")
+//            showTabViewController()
+//        }
+//        else
+//        {
+//            // Login Failed: Show message for incorrect username/password
+//            let alert = UIAlertView()
+//            alert.title = "Error"
+//            alert.message = "The username or password is incorrect!"
+//            alert.addButtonWithTitle("Okay")
+//            alert.show()
+//        }
+        ////////////////////////////////////
+        // END CODE FOR OnClick Login
         
     }
     
