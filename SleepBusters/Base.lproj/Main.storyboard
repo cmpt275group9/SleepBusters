@@ -49,7 +49,7 @@
         <scene sceneID="dJF-c7-Qgv">
             <objects>
                 <tableViewController id="hq1-h3-MLW" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="201" sectionHeaderHeight="28" sectionFooterHeight="28" id="gHy-Ya-mVp">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="201" sectionHeaderHeight="28" sectionFooterHeight="28" id="gHy-Ya-mVp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -59,11 +59,11 @@
                         <sections>
                             <tableViewSection id="RNw-aO-mfW">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="602" id="CrG-f7-ipY">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="602"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="644" id="CrG-f7-ipY">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="644"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrG-f7-ipY" id="WNu-v9-jMi">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="601.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="643.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WaK-g2-BhI">
@@ -167,102 +167,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NEd-Pm-wlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="724" y="381"/>
-        </scene>
-        <!--My Sleep Stats-->
-        <scene sceneID="0lQ-yB-6y4">
-            <objects>
-                <tableViewController id="oes-eS-HFo" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cph-4a-NJr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="iv9-Td-GA9">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="154" id="u5y-g7-dsA">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="154"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u5y-g7-dsA" id="2yt-5w-P03">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="153.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgX-0J-9OW">
-                                                    <rect key="frame" x="248" y="62" width="104" height="30"/>
-                                                    <animations/>
-                                                    <state key="normal" title="Sleep Sessions"/>
-                                                </button>
-                                            </subviews>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <segue destination="nek-nd-2zR" kind="show" id="xOb-Zl-A3s"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="148" id="4BR-Pr-UJr">
-                                        <rect key="frame" x="0.0" y="218" width="600" height="148"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4BR-Pr-UJr" id="U5u-Rs-Xxu">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="147.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tz1-tq-MBO">
-                                                    <rect key="frame" x="269" y="53" width="62" height="30"/>
-                                                    <animations/>
-                                                    <state key="normal" title="Calendar"/>
-                                                </button>
-                                            </subviews>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <segue destination="tyD-tW-SuA" kind="show" id="n7x-OX-XaL"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="228" id="76V-NL-WLh">
-                                        <rect key="frame" x="0.0" y="366" width="600" height="228"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="76V-NL-WLh" id="n6A-xz-Kkj">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="227.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="oes-eS-HFo" id="81n-ff-tRd"/>
-                            <outlet property="delegate" destination="oes-eS-HFo" id="ZFm-vU-hmJ"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="My Sleep Stats" id="KFi-ww-yg9">
-                        <barButtonItem key="backBarButtonItem" title="My Sleep Stats" id="mFB-7N-PIh"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="L4H-Gn-REg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="724" y="1127"/>
-        </scene>
-        <!--Stats-->
-        <scene sceneID="3E2-11-bAk">
-            <objects>
-                <navigationController id="NEr-YT-nTP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Stats" image="second" id="i9g-Ab-vyO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rL5-2y-dMC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="oes-eS-HFo" kind="relationship" relationship="rootViewController" id="I44-41-f7X"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9dd-FT-wFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-122" y="1127"/>
         </scene>
         <!--Tracking-->
         <scene sceneID="wg7-f3-ORb">
@@ -382,12 +286,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TB0-30-rTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544" y="1127"/>
+            <point key="canvasLocation" x="724" y="1175"/>
         </scene>
-        <!--View Controller-->
+        <!--Calendar-->
         <scene sceneID="Ddx-RI-klH">
             <objects>
-                <viewController id="tyD-tW-SuA" sceneMemberID="viewController">
+                <viewController id="tyD-tW-SuA" customClass="CalendarViewController" customModule="SleepBusters" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="J2H-f5-Rpp"/>
                         <viewControllerLayoutGuide type="bottom" id="iRr-6h-54V"/>
@@ -397,20 +301,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ui-TY-KdG">
-                                <rect key="frame" x="283" y="200" width="69" height="21"/>
+                                <rect key="frame" x="101" y="200" width="69" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1514343585" green="0.0" blue="0.14050529740000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="first" id="Sj0-vD-3rv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vhp-k6-DZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544" y="1870"/>
+            <point key="canvasLocation" x="-122" y="1170"/>
         </scene>
         <!--App Start View Controller-->
         <scene sceneID="VBd-dY-8Sw">
@@ -496,7 +401,7 @@
             <objects>
                 <tabBarController storyboardIdentifier="TabBarController" id="49e-Tb-3d3" customClass="TabBarController" customModule="SleepBusters" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -506,7 +411,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="B0r-3l-WZl" kind="relationship" relationship="viewControllers" id="qLp-Gv-INT"/>
-                        <segue destination="NEr-YT-nTP" kind="relationship" relationship="viewControllers" id="ImG-Gg-cfb"/>
+                        <segue destination="tyD-tW-SuA" kind="relationship" relationship="viewControllers" id="HqS-GA-rYS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

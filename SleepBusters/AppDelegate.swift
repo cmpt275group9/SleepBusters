@@ -28,12 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().translucent = false
         UITabBarItem.appearance().setTitleTextAttributes(
             [NSFontAttributeName: UIFont(name:"Open Sans", size:10)!,
-                NSForegroundColorAttributeName: UIColor.blackColor()],
+                NSForegroundColorAttributeName: UIColor.whiteColor()],
             forState: .Normal)
      //   UINavigationBar.appearance().titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Open Sans", size: 34)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
         //UITabBar.appearance().backgroundColor = UIColor.blackColor();
              
-      //  UINavigationBar.appearance().barStyle = .Black
+        //  UINavigationBar.appearance().barStyle = .BlackUITabBar.appearance().translucent = false
+        UITabBar.appearance().barTintColor = UIColor(red: 110.0/255, green: 29.0/255, blue: 110.0/255, alpha: 1.0)
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
+
+        
         return true
     }
 
