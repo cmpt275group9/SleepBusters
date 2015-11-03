@@ -19,7 +19,7 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
     @IBAction func btnStopTracking(sender: UIButton) {
         navigationController?.popViewControllerAnimated(true)
     }
-    
+    var counterPie = 0.00
     var counter = 5;
     var chartLegend = [""]
     var chartData = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 ]
@@ -96,14 +96,15 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
     
     func showChart() {
         chartData.removeFirst()
-        chartData.append(counter)
+        var temp = 25+abs(70*sin(counterPie))
+      
+        chartData.append(Int(temp))
         respLineChart.reloadData()
         respLineChart.setState(.Expanded, animated: false)
-        if(counter == 50)
-        {
-            counter = 5;
-        }
-        counter++;
+
+
+        counterPie = counterPie + 0.02;
+
     }
     
     // MARK: JBlineChartView
