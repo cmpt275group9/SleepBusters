@@ -24,6 +24,9 @@ class LoginViewController:UIViewController {
         super.viewDidLoad()
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
     
     func login(){
         let loginName = userNameField.text!

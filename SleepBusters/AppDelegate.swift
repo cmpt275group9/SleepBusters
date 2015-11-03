@@ -32,8 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             forState: .Normal)
      //   UINavigationBar.appearance().titleTextAttributes =  [ NSFontAttributeName: UIFont(name: "Open Sans", size: 34)!,  NSForegroundColorAttributeName: UIColor.whiteColor()]
         //UITabBar.appearance().backgroundColor = UIColor.blackColor();
-
-        
+             
+      //  UINavigationBar.appearance().barStyle = .Black
         return true
     }
 

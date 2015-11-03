@@ -20,16 +20,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SleepBusters.StatsViewController.init (SleepBusters.StatsViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; SleepBusters.StatsViewController"
+                  symbolName = "SleepBusters.StatsViewController.__deallocating_deinit"
                   moduleName = "SleepBusters"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/SD%20STORAGE/Dropbox/Simon%20Fraser%20University/Fall%202015/CMPT275/Repo/iOS%20App/SleepBusters/SleepBusters/ViewControllers/StatsViewController.swift"
-                  timestampString = "468257614.296179"
+                  timestampString = "468260714.977071"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "57">
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SleepBusters.StatsViewController.init (SleepBusters.StatsViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; SleepBusters.StatsViewController"
+                  moduleName = "SleepBusters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/SD%20STORAGE/Dropbox/Simon%20Fraser%20University/Fall%202015/CMPT275/Repo/iOS%20App/SleepBusters/SleepBusters/ViewControllers/StatsViewController.swift"
+                  timestampString = "468260714.977457"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "64">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -39,12 +54,12 @@
                   moduleName = "SleepBusters"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/SD%20STORAGE/Dropbox/Simon%20Fraser%20University/Fall%202015/CMPT275/Repo/iOS%20App/SleepBusters/SleepBusters/ViewControllers/StatsViewController.swift"
-                  timestampString = "468257614.296489"
+                  timestampString = "468260714.977785"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -88,11 +103,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/ViewControllers/LoginViewController.swift"
-            timestampString = "468254754.82321"
+            timestampString = "468260713.962122"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "didReceiveMemoryWarning()"
             landmarkType = "5">
          </BreakpointContent>
@@ -248,7 +263,7 @@
                   moduleName = "SleepBusters"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/SD%20STORAGE/Dropbox/Simon%20Fraser%20University/Fall%202015/CMPT275/Repo/iOS%20App/SleepBusters/SleepBusters/Hardware/MindwaveEEGSensor.swift"
-                  timestampString = "468257614.29849"
+                  timestampString = "468260714.980148"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -259,11 +274,26 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
+                  symbolName = "SleepBusters.MindwaveEEGSensor.raw.setter : Swift.Optional&lt;Swift.Int&gt;"
+                  moduleName = "SleepBusters"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/SD%20STORAGE/Dropbox/Simon%20Fraser%20University/Fall%202015/CMPT275/Repo/iOS%20App/SleepBusters/SleepBusters/Hardware/MindwaveEEGSensor.swift"
+                  timestampString = "468260714.980554"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
                   symbolName = "SleepBusters.MindwaveEEGSensor.raw.materializeForSet : Swift.Optional&lt;Swift.Int&gt;"
                   moduleName = "SleepBusters"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/SD%20STORAGE/Dropbox/Simon%20Fraser%20University/Fall%202015/CMPT275/Repo/iOS%20App/SleepBusters/SleepBusters/Hardware/MindwaveEEGSensor.swift"
-                  timestampString = "468257614.29922"
+                  timestampString = "468260714.980877"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -278,7 +308,7 @@
                   moduleName = "SleepBusters"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/SD%20STORAGE/Dropbox/Simon%20Fraser%20University/Fall%202015/CMPT275/Repo/iOS%20App/SleepBusters/SleepBusters/Hardware/MindwaveEEGSensor.swift"
-                  timestampString = "468257614.299687"
+                  timestampString = "468260714.981191"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "12"

@@ -49,7 +49,7 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.navigationController?.navigationBarHidden = true
         let footerView = UIView(frame: CGRectMake(0, 0, respLineChart.frame.width, 16))
         
         print("viewDidLoad: \(respLineChart.frame.width)")
@@ -181,6 +181,9 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         //  informationLabel.text = ""
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
     
 
     
