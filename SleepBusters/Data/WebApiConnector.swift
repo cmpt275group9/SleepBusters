@@ -17,20 +17,22 @@ class WebApiConnector {
     private let httpAction = HttpAction()
     
     // MARK: Profile
-    func validateLogin(userName: String,password: String) -> UserProfile {
-        
-        let queryString = rootUrl + userprofileController+"/Login?userName="+userName+"&password="+password;
-        httpAction.HTTPGet(queryString) {
-            (data: String, error: String?) -> Void in
-            if error != nil {
-                print(error)
-                //isValidated = UserProfile();
-            } else {
-                //isValidated = data.toBool()!;
-            }
-        }
-        return UserProfile();
-    }
+//    func validateLogin(userName: String,password: String  callback: (String) -> Void) {
+//        
+//        let queryString = rootUrl + userprofileController+"/Login?userName="+userName+"&password="+password;
+//        httpAction.HTTPGet(queryString) {
+//            (data: String, error: String?) -> Void in
+//            if error != nil {
+//                print(error)
+//                callback("Test")
+//                //isValidated = UserProfile();
+//            } else {
+//                callback("Test")
+//                //isValidated = data.toBool()!;
+//            }
+//        }
+//      //  return UserProfile();
+//    }
     
     func registerUserProfile(userParam: NSDictionary) -> UserProfile {
         let queryString = rootUrl + userprofileController+"/Register"

@@ -9,30 +9,37 @@
 import UIKit
 import JBChart
 
-class JBChartTestViewController: UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
-    @IBOutlet weak var respLineChart: JBLineChartView!
 
- 
-    var counter = 0;
-    var chartLegend = ["11-14", "11-15", "11-16", "11-17", "11-18", "11-19", "11-20"]
+
+class TrackingLiveViewController:
+
+
+UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
+    @IBOutlet weak var respLineChart: JBLineChartView!
+    @IBAction func btnStopTracking(sender: UIButton) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    var counter = 5;
+    var chartLegend = [""]
     var chartData = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 ]
     var lastYearChartData = [75, 88, 79, 95, 72, 55, 90]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBarHidden == true
         
-        view.backgroundColor = UIColor.darkGrayColor()
-        print("hee")
-        // line chart setup
-        respLineChart.backgroundColor = UIColor.darkGrayColor()
+        view.backgroundColor = UIColor(red: 48.0/255, green: 23.0/255, blue: 48.0/255, alpha: 1.0)
+        
+        
+        // Make the chart background colour the same as the view
+        respLineChart.backgroundColor = UIColor(red: 48.0/255, green: 23.0/255, blue: 48.0/255, alpha: 1.0)
         
         respLineChart.delegate = self
         respLineChart.dataSource = self
-         print("hee3")
         respLineChart.minimumValue = 0
         respLineChart.maximumValue = 100
-         print("hee2")
         respLineChart.reloadData()
        
         respLineChart.setState(.Collapsed, animated: false)
@@ -61,8 +68,8 @@ class JBChartTestViewController: UIViewController,JBLineChartViewDelegate, JBLin
         
         let header = UILabel(frame: CGRectMake(0, 0, respLineChart.frame.width, 50))
         header.textColor = UIColor.whiteColor()
-        header.font = UIFont.systemFontOfSize(18)
-        header.text = "Breathing"
+        header.font = UIFont.systemFontOfSize(14)
+        header.text = "Respiratory Signal"
         header.textAlignment = NSTextAlignment.Center
         
         respLineChart.footerView = footerView
@@ -71,10 +78,10 @@ class JBChartTestViewController: UIViewController,JBLineChartViewDelegate, JBLin
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationController?.navigationBarHidden = true
         
         // our code
         respLineChart.reloadData()
-        print("hee3")
         let timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("showChart"), userInfo: nil, repeats: true)
     }
     
@@ -94,7 +101,7 @@ class JBChartTestViewController: UIViewController,JBLineChartViewDelegate, JBLin
         respLineChart.setState(.Expanded, animated: false)
         if(counter == 50)
         {
-            counter = 0;
+            counter = 5;
         }
         counter++;
     }
@@ -126,20 +133,24 @@ class JBChartTestViewController: UIViewController,JBLineChartViewDelegate, JBLin
         return 0
     }
     
+    
+    // This is the line colour of the char (the outline)
     func lineChartView(lineChartView: JBLineChartView!, colorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
-        if (lineIndex == 0) {
-            return UIColor.lightGrayColor()
-        } else if (lineIndex == 1) {
-            return UIColor.whiteColor()
-        }
+//        if (lineIndex == 0) {
+//            return UIColor.lightGrayColor()
+//        } else if (lineIndex == 1) {
+//            return UIColor.whiteColor()
+//        }
         
-        return UIColor.lightGrayColor()
+        return UIColor(red: 65.0/255, green: 131.0/255, blue: 132.0/255, alpha: 0)
+    }
+    
+    // This is the fill colour of the chart
+    func lineChartView(lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
+        return UIColor(red: 65.0/255, green: 131.0/255, blue: 132.0/255, alpha: 1.0)
     }
     
     func lineChartView(lineChartView: JBLineChartView!, showsDotsForLineAtLineIndex lineIndex: UInt) -> Bool {
-        if (lineIndex == 0) { return false }
-        else if (lineIndex == 1) { return false }
-        
         return false
     }
     
@@ -170,13 +181,8 @@ class JBChartTestViewController: UIViewController,JBLineChartViewDelegate, JBLin
         //  informationLabel.text = ""
     }
     
-    func lineChartView(lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
-        if (lineIndex == 0) {
-            return UIColor.clearColor()
-        }
-        
-        return UIColor.clearColor()
-    }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

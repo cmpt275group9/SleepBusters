@@ -7,7 +7,12 @@
 //
 
 import Foundation
-
+private let authUserName = "sleep"
+private let authPassword = "GC979XOBc7PK#m@It3"
+private let userprofileController = "UserProfile"
+private let statsController = "Stats"
+private var rootUrl = "https://sleepbustersapi.azurewebsites.net/"
+private let httpAction = HttpAction()
 
 class DataAccess {
     
@@ -18,8 +23,24 @@ class DataAccess {
     }
     
     // MARK: Web API Connector (TCP/IP)
-    func validateLogin(userName: String,password: String) -> UserProfile {
-        return WebApiConnector().validateLogin(userName, password: password)
+    
+    func validateLogin(userName: String,password: String) ->UserProfile {
+        let queryString = rootUrl + userprofileController+"/Login?userName="+userName+"&password="+password;
+        let jsonData = httpAction.HTTPGet(queryString);
+        print(jsonData.data)
+        print("here");
+        return UserProfile()
+//        httpAction.HTTPGet(queryString) {
+//            (data: String, error: String?) -> Void in
+//            let userProfile = UserProfile()
+//            userProfile.IsValidated = true
+//            if error != nil {
+//                print(error)
+//                callback(userProfile)
+//            } else {
+//                callback(userProfile)
+//            }
+//        }
     }
     
     func registerUserProfile(user: UserProfile) -> UserProfile {

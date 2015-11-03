@@ -25,9 +25,28 @@ class HttpAction {
         
     }
     
-    func HTTPGet(url: String, callback: (String, String?) -> Void) {
+    func HTTPGetAsync(url: String, callback: (String, String?) -> Void) {
         let request = NSMutableURLRequest(URL: NSURL(string: url)!) //To get the URL of the receiver , var URL: NSURL? is used
         HTTPsendRequest(request, callback: callback)
+    }
+    
+    func HTTPGet(url: String) -> (data: String,error: String?) {
+        var dataString = ""
+        var errorString = ""
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!) //To get the URL of the receiver , var URL: NSURL? is used
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request,completionHandler :
+            {
+                (data, response, error) in
+                if error != nil {
+                    dataString = "";
+                    errorString = (error!.localizedDescription) as String;
+                } else {
+                    dataString = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String;
+                    errorString = "";
+                }
+        })
+        task.resume() //Tasks are called with .resume()
+        return (dataString,errorString)
     }
     
     func HTTPPost(params : NSDictionary, url : String, callback: (NSDictionary, NSError?) -> Void) {

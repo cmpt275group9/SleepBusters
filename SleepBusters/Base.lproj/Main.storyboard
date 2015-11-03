@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
         </mutableArray>
@@ -57,45 +58,35 @@
                         <sections>
                             <tableViewSection id="RNw-aO-mfW">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="201" id="BBB-AV-ekX">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="201"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BBB-AV-ekX" id="O6A-Za-KmP">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="200.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ab1-q0-uYX">
-                                                    <rect key="frame" x="246" y="86" width="97" height="30"/>
-                                                    <animations/>
-                                                    <state key="normal" title="Start Tracking"/>
-                                                </button>
-                                            </subviews>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <segue destination="8rJ-Kc-sve" kind="show" id="ipi-uv-ntS"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="201" id="CrG-f7-ipY">
-                                        <rect key="frame" x="0.0" y="265" width="600" height="201"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="486" id="CrG-f7-ipY">
+                                        <rect key="frame" x="0.0" y="64" width="600" height="486"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrG-f7-ipY" id="WNu-v9-jMi">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="200.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="485.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwm-Zn-1rS">
-                                                    <rect key="frame" x="247" y="86" width="97" height="30"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WaK-g2-BhI">
+                                                    <rect key="frame" x="252" y="228" width="97" height="30"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwm-Zn-1rS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
+                                                            <animations/>
+                                                            <state key="normal" title="Start Tracking"/>
+                                                            <connections>
+                                                                <segue destination="jjp-LH-6Mg" kind="show" id="9WB-YF-2UP"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
                                                     <animations/>
-                                                    <state key="normal" title="Start Tracking"/>
-                                                </button>
+                                                </stackView>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="WaK-g2-BhI" firstAttribute="centerX" secondItem="WNu-v9-jMi" secondAttribute="centerX" id="Taf-sf-dCX"/>
+                                                <constraint firstItem="WaK-g2-BhI" firstAttribute="centerY" secondItem="WNu-v9-jMi" secondAttribute="centerY" id="udh-8Y-vm9"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <connections>
-                                            <segue destination="jjp-LH-6Mg" kind="show" id="nAd-Hr-sXS"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -239,7 +230,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3UE-HT-Pf9" customClass="LineChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3UE-HT-Pf9" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="64" width="600" height="168"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -269,10 +260,10 @@
             </objects>
             <point key="canvasLocation" x="2406" y="64"/>
         </scene>
-        <!--Chart Test View Controller-->
+        <!--Tracking Live View Controller-->
         <scene sceneID="PdM-7m-7dD">
             <objects>
-                <viewController id="jjp-LH-6Mg" customClass="JBChartTestViewController" customModule="SleepBusters" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jjp-LH-6Mg" customClass="TrackingLiveViewController" customModule="SleepBusters" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SiF-nV-WRZ"/>
                         <viewControllerLayoutGuide type="bottom" id="yec-09-9R0"/>
@@ -281,12 +272,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-Eb-nPG" customClass="JBLineChartView">
-                                <rect key="frame" x="0.0" y="301" width="600" height="250"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLX-LQ-pgq">
+                                <rect key="frame" x="229" y="500" width="142" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                                <state key="normal" title="STOP">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.91000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnStopTracking:" destination="jjp-LH-6Mg" eventType="touchUpInside" id="NVl-Mb-pPS"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-Eb-nPG" customClass="JBLineChartView">
+                                <rect key="frame" x="0.0" y="230" width="600" height="250"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="9js-Ml-WuH"/>
+                                    <constraint firstAttribute="width" constant="376" id="9js-Ml-WuH"/>
                                     <constraint firstAttribute="height" constant="250" id="X07-0M-YHX"/>
                                 </constraints>
                             </view>
@@ -294,10 +296,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pgf-Eb-nPG" secondAttribute="trailing" constant="-20" id="Ltz-vn-oUb"/>
-                            <constraint firstItem="Pgf-Eb-nPG" firstAttribute="leading" secondItem="Iws-JD-Nnt" secondAttribute="leadingMargin" constant="-20" id="V4N-3C-1nY"/>
-                            <constraint firstItem="Pgf-Eb-nPG" firstAttribute="top" secondItem="SiF-nV-WRZ" secondAttribute="bottom" constant="237" id="ZcD-ij-1JH"/>
-                            <constraint firstItem="yec-09-9R0" firstAttribute="top" secondItem="Pgf-Eb-nPG" secondAttribute="bottom" id="fYr-Wu-nAa"/>
+                            <constraint firstItem="yec-09-9R0" firstAttribute="top" secondItem="GLX-LQ-pgq" secondAttribute="bottom" constant="21" id="Bgd-hq-F7q"/>
+                            <constraint firstItem="Pgf-Eb-nPG" firstAttribute="centerX" secondItem="Iws-JD-Nnt" secondAttribute="centerX" id="J2V-U8-Vwf"/>
+                            <constraint firstItem="GLX-LQ-pgq" firstAttribute="centerX" secondItem="Iws-JD-Nnt" secondAttribute="centerX" id="OLE-m3-q0E"/>
+                            <constraint firstItem="GLX-LQ-pgq" firstAttribute="top" secondItem="Pgf-Eb-nPG" secondAttribute="bottom" constant="20" id="WMf-Hu-Vr2"/>
                         </constraints>
                     </view>
                     <connections>
@@ -395,18 +397,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pOI-Yr-kL2">
-                                <rect key="frame" x="230" y="205" width="209.5" height="42"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pOI-Yr-kL2">
+                                <rect key="frame" x="196" y="82" width="209.5" height="42"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqv-9U-f3r">
+                                <rect key="frame" x="281" y="331" width="38" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="QKm-sR-bUW" eventType="touchUpInside" id="PgG-U7-m6L"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tdk-00-yox">
+                                <rect key="frame" x="230" y="202" width="140" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z9h-nS-Mtm">
+                                <rect key="frame" x="230" y="252" width="140" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tdk-00-yox" firstAttribute="centerX" secondItem="Q2M-5r-jOR" secondAttribute="centerX" id="FI7-MX-FE5"/>
+                            <constraint firstItem="pOI-Yr-kL2" firstAttribute="centerX" secondItem="Q2M-5r-jOR" secondAttribute="centerX" id="hRf-xe-ey5"/>
+                            <constraint firstItem="zqv-9U-f3r" firstAttribute="centerX" secondItem="Q2M-5r-jOR" secondAttribute="centerX" id="mju-bz-oFw"/>
+                            <constraint firstItem="Z9h-nS-Mtm" firstAttribute="centerX" secondItem="Q2M-5r-jOR" secondAttribute="centerX" id="tKR-ci-dTW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="Z9h-nS-Mtm" id="uEU-kQ-mAf"/>
+                        <outlet property="userNameField" destination="Tdk-00-yox" id="rOZ-D0-owT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqj-7S-jBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

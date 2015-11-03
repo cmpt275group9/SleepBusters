@@ -18,7 +18,7 @@ class Business {
     
     
     // MARK: User Profile CRUD
-    func validateLogin(userName: String,password: String) -> UserProfile {
+    func validateLogin(userName: String,password: String) -> UserProfile{
         return data.validateLogin(userName,password: password)
     }
     

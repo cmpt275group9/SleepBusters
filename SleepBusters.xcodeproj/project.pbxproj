@@ -7,58 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF03F9901BC8DE27002ADF4D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9861BC8DE27002ADF4D /* OpenSans-Bold.ttf */; settings = {ASSET_TAGS = (); }; };
-		AF03F9911BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9871BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf */; settings = {ASSET_TAGS = (); }; };
-		AF03F9921BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9881BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf */; settings = {ASSET_TAGS = (); }; };
-		AF03F9931BC8DE27002ADF4D /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9891BC8DE27002ADF4D /* OpenSans-ExtraBoldItalic.ttf */; settings = {ASSET_TAGS = (); }; };
-		AF03F9941BC8DE27002ADF4D /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F98A1BC8DE27002ADF4D /* OpenSans-Italic.ttf */; settings = {ASSET_TAGS = (); }; };
-		AF03F9951BC8DE27002ADF4D /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F98B1BC8DE27002ADF4D /* OpenSans-Light.ttf */; settings = {ASSET_TAGS = (); }; };
-		AF03F9961BC8DE27002ADF4D /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F98C1BC8DE27002ADF4D /* OpenSans-LightItalic.ttf */; settings = {ASSET_TAGS = (); }; };
-		AF03F9971BC8DE27002ADF4D /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F98D1BC8DE27002ADF4D /* OpenSans-Regular.ttf */; settings = {ASSET_TAGS = (); }; };
-		AF03F9981BC8DE27002ADF4D /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F98E1BC8DE27002ADF4D /* OpenSans-Semibold.ttf */; settings = {ASSET_TAGS = (); }; };
-		AF03F9991BC8DE27002ADF4D /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F98F1BC8DE27002ADF4D /* OpenSans-SemiboldItalic.ttf */; settings = {ASSET_TAGS = (); }; };
-		AF03F99B1BC8FD94002ADF4D /* EEGBandWaveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF03F99A1BC8FD94002ADF4D /* EEGBandWaveType.swift */; settings = {ASSET_TAGS = (); }; };
+		AF03F9901BC8DE27002ADF4D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9861BC8DE27002ADF4D /* OpenSans-Bold.ttf */; };
+		AF03F9911BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9871BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf */; };
+		AF03F9921BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9881BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf */; };
+		AF03F9931BC8DE27002ADF4D /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9891BC8DE27002ADF4D /* OpenSans-ExtraBoldItalic.ttf */; };
+		AF03F9941BC8DE27002ADF4D /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F98A1BC8DE27002ADF4D /* OpenSans-Italic.ttf */; };
+		AF03F9951BC8DE27002ADF4D /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F98B1BC8DE27002ADF4D /* OpenSans-Light.ttf */; };
+		AF03F9961BC8DE27002ADF4D /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F98C1BC8DE27002ADF4D /* OpenSans-LightItalic.ttf */; };
+		AF03F9971BC8DE27002ADF4D /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F98D1BC8DE27002ADF4D /* OpenSans-Regular.ttf */; };
+		AF03F9981BC8DE27002ADF4D /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F98E1BC8DE27002ADF4D /* OpenSans-Semibold.ttf */; };
+		AF03F9991BC8DE27002ADF4D /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F98F1BC8DE27002ADF4D /* OpenSans-SemiboldItalic.ttf */; };
+		AF03F99B1BC8FD94002ADF4D /* EEGBandWaveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF03F99A1BC8FD94002ADF4D /* EEGBandWaveType.swift */; };
 		AF03F9A41BC9215C002ADF4D /* JBChart.h in Headers */ = {isa = PBXBuildFile; fileRef = AF03F9A31BC9215C002ADF4D /* JBChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF03F9A81BC9215C002ADF4D /* JBChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF03F9A11BC9215C002ADF4D /* JBChart.framework */; };
 		AF03F9AA1BC9215C002ADF4D /* JBChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AF03F9A11BC9215C002ADF4D /* JBChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AF03F9B51BC9217D002ADF4D /* JBBarChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = AF03F9AF1BC9217D002ADF4D /* JBBarChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AF03F9B61BC9217D002ADF4D /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF03F9B01BC9217D002ADF4D /* JBBarChartView.m */; settings = {ASSET_TAGS = (); }; };
+		AF03F9B61BC9217D002ADF4D /* JBBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF03F9B01BC9217D002ADF4D /* JBBarChartView.m */; };
 		AF03F9B71BC9217D002ADF4D /* JBChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = AF03F9B11BC9217D002ADF4D /* JBChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AF03F9B81BC9217D002ADF4D /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF03F9B21BC9217D002ADF4D /* JBChartView.m */; settings = {ASSET_TAGS = (); }; };
+		AF03F9B81BC9217D002ADF4D /* JBChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF03F9B21BC9217D002ADF4D /* JBChartView.m */; };
 		AF03F9B91BC9217D002ADF4D /* JBLineChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = AF03F9B31BC9217D002ADF4D /* JBLineChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AF03F9BA1BC9217D002ADF4D /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF03F9B41BC9217D002ADF4D /* JBLineChartView.m */; settings = {ASSET_TAGS = (); }; };
+		AF03F9BA1BC9217D002ADF4D /* JBLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF03F9B41BC9217D002ADF4D /* JBLineChartView.m */; };
 		AF03F9CD1BC9EAEF002ADF4D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF03F9CA1BC9EA04002ADF4D /* Charts.framework */; };
 		AF03F9CE1BC9EAEF002ADF4D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AF03F9CA1BC9EA04002ADF4D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AF0AA5161BBFB23000C97C87 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0AA5151BBFB23000C97C87 /* DataAccess.swift */; settings = {ASSET_TAGS = (); }; };
-		AF0AA5181BBFB25E00C97C87 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0AA5171BBFB25E00C97C87 /* UserProfile.swift */; settings = {ASSET_TAGS = (); }; };
+		AF0AA5161BBFB23000C97C87 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0AA5151BBFB23000C97C87 /* DataAccess.swift */; };
+		AF0AA5181BBFB25E00C97C87 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0AA5171BBFB25E00C97C87 /* UserProfile.swift */; };
 		AF18349D1BBFA9E100EBDFCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF18349C1BBFA9E100EBDFCD /* AppDelegate.swift */; };
 		AF1834A41BBFA9E100EBDFCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1834A21BBFA9E100EBDFCD /* Main.storyboard */; };
 		AF1834A61BBFA9E100EBDFCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF1834A51BBFA9E100EBDFCD /* Assets.xcassets */; };
 		AF1834A91BBFA9E100EBDFCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1834A71BBFA9E100EBDFCD /* LaunchScreen.storyboard */; };
 		AF1834B41BBFA9E100EBDFCD /* SleepBustersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1834B31BBFA9E100EBDFCD /* SleepBustersTests.swift */; };
 		AF1834BF1BBFA9E100EBDFCD /* SleepBustersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1834BE1BBFA9E100EBDFCD /* SleepBustersUITests.swift */; };
-		AF29EBEE1BC3AA4A00F32D07 /* UserSleepSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29EBED1BC3AA4A00F32D07 /* UserSleepSession.swift */; settings = {ASSET_TAGS = (); }; };
-		AF2F9DDD1BCB69AF0075DBCC /* MindwaveEEGSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F9DDC1BCB69AF0075DBCC /* MindwaveEEGSensor.swift */; settings = {ASSET_TAGS = (); }; };
-		AF2F9DE01BCB6D390075DBCC /* SleepBustersRespiratorySensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F9DDF1BCB6D390075DBCC /* SleepBustersRespiratorySensor.swift */; settings = {ASSET_TAGS = (); }; };
-		AF2F9DE21BCE29F70075DBCC /* JBChartTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F9DE11BCE29F70075DBCC /* JBChartTestViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		AF30B0831BC6FF250094B4A8 /* StatusResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30B0821BC6FF250094B4A8 /* StatusResult.swift */; settings = {ASSET_TAGS = (); }; };
-		AF325F641BC1C6EA00FA4523 /* HttpAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F631BC1C6EA00FA4523 /* HttpAction.swift */; settings = {ASSET_TAGS = (); }; };
-		AF325F661BC1C99300FA4523 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F651BC1C99300FA4523 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
-		AF325F711BC1E79000FA4523 /* EEGConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F701BC1E79000FA4523 /* EEGConnector.swift */; settings = {ASSET_TAGS = (); }; };
-		AF325F731BC1E7A200FA4523 /* RespiratoryConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F721BC1E7A200FA4523 /* RespiratoryConnector.swift */; settings = {ASSET_TAGS = (); }; };
-		AF325F791BC206E200FA4523 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F781BC206E200FA4523 /* Serializable.swift */; settings = {ASSET_TAGS = (); }; };
-		AF8157691BC06C4900F5476A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157681BC06C4900F5476A /* StatsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		AF81576B1BC06CA500F5476A /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81576A1BC06CA500F5476A /* TrackingViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		AF81576D1BC06CAF00F5476A /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81576C1BC06CAF00F5476A /* MyProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		AF81576F1BC0D35200F5476A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81576E1BC0D35200F5476A /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		AF8157711BC1364600F5476A /* HardwareConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157701BC1364600F5476A /* HardwareConnector.swift */; settings = {ASSET_TAGS = (); }; };
-		AF8157751BC136BA00F5476A /* WebApiConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157741BC136BA00F5476A /* WebApiConnector.swift */; settings = {ASSET_TAGS = (); }; };
-		AF8157771BC13C7500F5476A /* UserSensorStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157761BC13C7500F5476A /* UserSensorStat.swift */; settings = {ASSET_TAGS = (); }; };
-		AF81577A1BC13ECB00F5476A /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157791BC13ECB00F5476A /* Business.swift */; settings = {ASSET_TAGS = (); }; };
-		AF89BB441BC4B3D4005E1619 /* AppStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89BB431BC4B3D4005E1619 /* AppStartViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		AF89BB461BC4D9FD005E1619 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89BB451BC4D9FD005E1619 /* TabBarController.swift */; settings = {ASSET_TAGS = (); }; };
-		AF89BB481BC5D346005E1619 /* SensorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89BB471BC5D346005E1619 /* SensorType.swift */; settings = {ASSET_TAGS = (); }; };
-		AF95FADA1BC7B41200FACD52 /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95FAD91BC7B41200FACD52 /* ModelMapper.swift */; settings = {ASSET_TAGS = (); }; };
+		AF29EBEE1BC3AA4A00F32D07 /* UserSleepSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29EBED1BC3AA4A00F32D07 /* UserSleepSession.swift */; };
+		AF2F9DDD1BCB69AF0075DBCC /* MindwaveEEGSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F9DDC1BCB69AF0075DBCC /* MindwaveEEGSensor.swift */; };
+		AF2F9DE01BCB6D390075DBCC /* SleepBustersRespiratorySensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F9DDF1BCB6D390075DBCC /* SleepBustersRespiratorySensor.swift */; };
+		AF2F9DE21BCE29F70075DBCC /* TrackingLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F9DE11BCE29F70075DBCC /* TrackingLiveViewController.swift */; };
+		AF30B0831BC6FF250094B4A8 /* StatusResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30B0821BC6FF250094B4A8 /* StatusResult.swift */; };
+		AF325F641BC1C6EA00FA4523 /* HttpAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F631BC1C6EA00FA4523 /* HttpAction.swift */; };
+		AF325F661BC1C99300FA4523 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F651BC1C99300FA4523 /* Extensions.swift */; };
+		AF325F711BC1E79000FA4523 /* EEGConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F701BC1E79000FA4523 /* EEGConnector.swift */; };
+		AF325F731BC1E7A200FA4523 /* RespiratoryConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F721BC1E7A200FA4523 /* RespiratoryConnector.swift */; };
+		AF325F791BC206E200FA4523 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F781BC206E200FA4523 /* Serializable.swift */; };
+		AF63106D1BE9042E008A54BF /* UserInterfaceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63106C1BE9042E008A54BF /* UserInterfaceHelpers.swift */; };
+		AF8157691BC06C4900F5476A /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157681BC06C4900F5476A /* StatsViewController.swift */; };
+		AF81576B1BC06CA500F5476A /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81576A1BC06CA500F5476A /* TrackingViewController.swift */; };
+		AF81576D1BC06CAF00F5476A /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81576C1BC06CAF00F5476A /* MyProfileViewController.swift */; };
+		AF81576F1BC0D35200F5476A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81576E1BC0D35200F5476A /* LoginViewController.swift */; };
+		AF8157711BC1364600F5476A /* HardwareConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157701BC1364600F5476A /* HardwareConnector.swift */; };
+		AF8157751BC136BA00F5476A /* WebApiConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157741BC136BA00F5476A /* WebApiConnector.swift */; };
+		AF8157771BC13C7500F5476A /* UserSensorStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157761BC13C7500F5476A /* UserSensorStat.swift */; };
+		AF81577A1BC13ECB00F5476A /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157791BC13ECB00F5476A /* Business.swift */; };
+		AF89BB441BC4B3D4005E1619 /* AppStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89BB431BC4B3D4005E1619 /* AppStartViewController.swift */; };
+		AF89BB461BC4D9FD005E1619 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89BB451BC4D9FD005E1619 /* TabBarController.swift */; };
+		AF89BB481BC5D346005E1619 /* SensorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF89BB471BC5D346005E1619 /* SensorType.swift */; };
+		AF95FADA1BC7B41200FACD52 /* ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95FAD91BC7B41200FACD52 /* ModelMapper.swift */; };
+		AFCDE2C01BDFDB7D00394415 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDE2BE1BDFDB7D00394415 /* JSONHelper.swift */; };
+		AFCDE2C11BDFDB7D00394415 /* Supporting Files in Resources */ = {isa = PBXBuildFile; fileRef = AFCDE2BF1BDFDB7D00394415 /* Supporting Files */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,13 +163,14 @@
 		AF29EBED1BC3AA4A00F32D07 /* UserSleepSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSleepSession.swift; path = Model/UserSleepSession.swift; sourceTree = "<group>"; };
 		AF2F9DDC1BCB69AF0075DBCC /* MindwaveEEGSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MindwaveEEGSensor.swift; path = Hardware/MindwaveEEGSensor.swift; sourceTree = "<group>"; };
 		AF2F9DDF1BCB6D390075DBCC /* SleepBustersRespiratorySensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SleepBustersRespiratorySensor.swift; path = Hardware/SleepBustersRespiratorySensor.swift; sourceTree = "<group>"; };
-		AF2F9DE11BCE29F70075DBCC /* JBChartTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JBChartTestViewController.swift; path = ViewControllers/JBChartTestViewController.swift; sourceTree = "<group>"; };
+		AF2F9DE11BCE29F70075DBCC /* TrackingLiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingLiveViewController.swift; path = ViewControllers/TrackingLiveViewController.swift; sourceTree = "<group>"; };
 		AF30B0821BC6FF250094B4A8 /* StatusResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusResult.swift; path = Model/StatusResult.swift; sourceTree = "<group>"; };
 		AF325F631BC1C6EA00FA4523 /* HttpAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpAction.swift; path = Utility/HttpAction.swift; sourceTree = "<group>"; };
 		AF325F651BC1C99300FA4523 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AF325F701BC1E79000FA4523 /* EEGConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EEGConnector.swift; path = Data/EEGConnector.swift; sourceTree = "<group>"; };
 		AF325F721BC1E7A200FA4523 /* RespiratoryConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RespiratoryConnector.swift; path = Data/RespiratoryConnector.swift; sourceTree = "<group>"; };
 		AF325F781BC206E200FA4523 /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Serializable.swift; path = Utility/Serializable.swift; sourceTree = "<group>"; };
+		AF63106C1BE9042E008A54BF /* UserInterfaceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInterfaceHelpers.swift; path = Utility/UserInterfaceHelpers.swift; sourceTree = "<group>"; };
 		AF8157681BC06C4900F5476A /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsViewController.swift; path = ViewControllers/StatsViewController.swift; sourceTree = "<group>"; };
 		AF81576A1BC06CA500F5476A /* TrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingViewController.swift; path = ViewControllers/TrackingViewController.swift; sourceTree = "<group>"; };
 		AF81576C1BC06CAF00F5476A /* MyProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyProfileViewController.swift; path = ViewControllers/MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +183,9 @@
 		AF89BB451BC4D9FD005E1619 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ViewControllers/TabBarController.swift; sourceTree = "<group>"; };
 		AF89BB471BC5D346005E1619 /* SensorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensorType.swift; path = Model/SensorType.swift; sourceTree = "<group>"; };
 		AF95FAD91BC7B41200FACD52 /* ModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelMapper.swift; path = Data/ModelMapper.swift; sourceTree = "<group>"; };
+		AFCDE2BD1BDFDB7D00394415 /* JSONHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONHelper.h; path = "../../../../../../../../../../Users/Klein/Downloads/JSONHelper-master/JSONHelper/JSONHelper.h"; sourceTree = "<group>"; };
+		AFCDE2BE1BDFDB7D00394415 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONHelper.swift; path = "../../../../../../../../../../Users/Klein/Downloads/JSONHelper-master/JSONHelper/JSONHelper.swift"; sourceTree = "<group>"; };
+		AFCDE2BF1BDFDB7D00394415 /* Supporting Files */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Supporting Files"; path = "../../../../../../../../../../Users/Klein/Downloads/JSONHelper-master/JSONHelper/Supporting Files"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,7 +321,7 @@
 				AF81576E1BC0D35200F5476A /* LoginViewController.swift */,
 				AF89BB431BC4B3D4005E1619 /* AppStartViewController.swift */,
 				AF89BB451BC4D9FD005E1619 /* TabBarController.swift */,
-				AF2F9DE11BCE29F70075DBCC /* JBChartTestViewController.swift */,
+				AF2F9DE11BCE29F70075DBCC /* TrackingLiveViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -325,6 +332,7 @@
 				AF325F631BC1C6EA00FA4523 /* HttpAction.swift */,
 				AF325F651BC1C99300FA4523 /* Extensions.swift */,
 				AF325F781BC206E200FA4523 /* Serializable.swift */,
+				AF63106C1BE9042E008A54BF /* UserInterfaceHelpers.swift */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -362,6 +370,7 @@
 		AF18349B1BBFA9E100EBDFCD /* SleepBusters */ = {
 			isa = PBXGroup;
 			children = (
+				AFCDE2BB1BDFDB7300394415 /* JSONHelper */,
 				AF03F9851BC8DDBA002ADF4D /* Fonts */,
 				AF8157781BC13EB200F5476A /* Business */,
 				AF0AA5141BBFB17C00C97C87 /* UI */,
@@ -421,6 +430,16 @@
 				AF8157791BC13ECB00F5476A /* Business.swift */,
 			);
 			name = Business;
+			sourceTree = "<group>";
+		};
+		AFCDE2BB1BDFDB7300394415 /* JSONHelper */ = {
+			isa = PBXGroup;
+			children = (
+				AFCDE2BD1BDFDB7D00394415 /* JSONHelper.h */,
+				AFCDE2BE1BDFDB7D00394415 /* JSONHelper.swift */,
+				AFCDE2BF1BDFDB7D00394415 /* Supporting Files */,
+			);
+			name = JSONHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -595,6 +614,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCDE2C11BDFDB7D00394415 /* Supporting Files in Resources */,
 				AF03F9981BC8DE27002ADF4D /* OpenSans-Semibold.ttf in Resources */,
 				AF03F9991BC8DE27002ADF4D /* OpenSans-SemiboldItalic.ttf in Resources */,
 				AF1834A91BBFA9E100EBDFCD /* LaunchScreen.storyboard in Resources */,
@@ -642,10 +662,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF63106D1BE9042E008A54BF /* UserInterfaceHelpers.swift in Sources */,
 				AF81576F1BC0D35200F5476A /* LoginViewController.swift in Sources */,
 				AF8157751BC136BA00F5476A /* WebApiConnector.swift in Sources */,
 				AF81576D1BC06CAF00F5476A /* MyProfileViewController.swift in Sources */,
-				AF2F9DE21BCE29F70075DBCC /* JBChartTestViewController.swift in Sources */,
+				AF2F9DE21BCE29F70075DBCC /* TrackingLiveViewController.swift in Sources */,
 				AF2F9DDD1BCB69AF0075DBCC /* MindwaveEEGSensor.swift in Sources */,
 				AF2F9DE01BCB6D390075DBCC /* SleepBustersRespiratorySensor.swift in Sources */,
 				AF89BB481BC5D346005E1619 /* SensorType.swift in Sources */,
@@ -663,6 +684,7 @@
 				AF81577A1BC13ECB00F5476A /* Business.swift in Sources */,
 				AF8157711BC1364600F5476A /* HardwareConnector.swift in Sources */,
 				AF29EBEE1BC3AA4A00F32D07 /* UserSleepSession.swift in Sources */,
+				AFCDE2C01BDFDB7D00394415 /* JSONHelper.swift in Sources */,
 				AF0AA5161BBFB23000C97C87 /* DataAccess.swift in Sources */,
 				AF89BB461BC4D9FD005E1619 /* TabBarController.swift in Sources */,
 				AF03F99B1BC8FD94002ADF4D /* EEGBandWaveType.swift in Sources */,
