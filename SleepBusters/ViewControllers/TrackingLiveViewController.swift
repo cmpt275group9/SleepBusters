@@ -24,17 +24,16 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
     var chartLegend = [""]
     var chartData = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 ]
     var lastYearChartData = [75, 88, 79, 95, 72, 55, 90]
-
+    var ui = UserInterfaceHelpers()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBarHidden == true
         
-        view.backgroundColor = UIColor(red: 48.0/255, green: 23.0/255, blue: 48.0/255, alpha: 1.0)
-        
+        view.backgroundColor = ui.getGlobalBGColor()
         
         // Make the chart background colour the same as the view
-        respLineChart.backgroundColor = UIColor(red: 48.0/255, green: 23.0/255, blue: 48.0/255, alpha: 1.0)
+        respLineChart.backgroundColor = ui.getGlobalBGColor()
         
         respLineChart.delegate = self
         respLineChart.dataSource = self
@@ -143,12 +142,12 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
 //            return UIColor.whiteColor()
 //        }
         
-        return UIColor(red: 65.0/255, green: 131.0/255, blue: 132.0/255, alpha: 0)
+        return UIColor(red: 68.0/255, green: 131.0/255, blue: 132.0/255, alpha: 0)
     }
     
     // This is the fill colour of the chart
     func lineChartView(lineChartView: JBLineChartView!, fillColorForLineAtLineIndex lineIndex: UInt) -> UIColor! {
-        return UIColor(red: 65.0/255, green: 131.0/255, blue: 132.0/255, alpha: 1.0)
+        return UIColor(red: 68.0/255, green: 131.0/255, blue: 132.0/255, alpha: 1.0)
     }
     
     func lineChartView(lineChartView: JBLineChartView!, showsDotsForLineAtLineIndex lineIndex: UInt) -> Bool {

@@ -18,4 +18,20 @@ class UserInterfaceHelpers {
             alpha: CGFloat(1.0)
         )
     }
+    
+    // Dark Purple
+    func getGlobalBGColor() -> UIColor{
+        return UIColor(red: 33.0/255, green: 20.0/255, blue: 58.0/255, alpha: 1.0)
+    }
+    
+    // Purple
+    func getPrimaryColor() -> UIColor{
+        return UIColor(red: 50.0/255, green: 34.0/255, blue: 72.0/255, alpha: 1.0)
+    }
+    
+    // Light Purple
+    func getSecondaryColor() -> UIColor{
+        return UIColor(red: 101.0/255, green: 99.0/255, blue: 164.0/255, alpha: 1.0)
+    }
+    
 }
