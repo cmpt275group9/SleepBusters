@@ -213,6 +213,7 @@
         <!--Tracking Live View Controller-->
         <scene sceneID="PdM-7m-7dD">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LgQ-Db-tBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jjp-LH-6Mg" customClass="TrackingLiveViewController" customModule="SleepBusters" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SiF-nV-WRZ"/>
@@ -237,6 +238,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLX-LQ-pgq">
                                         <rect key="frame" x="229" y="17" width="142" height="30"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="RpJ-8Y-rbO"/>
+                                            <constraint firstAttribute="width" constant="600" id="SCZ-bw-3tP"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                         <state key="normal" title="STOP">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.91000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
@@ -249,9 +254,9 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="GLX-LQ-pgq" firstAttribute="centerX" secondItem="IGO-SG-qJT" secondAttribute="centerX" id="DXu-R8-x91"/>
+                                    <constraint firstItem="GLX-LQ-pgq" firstAttribute="centerX" secondItem="IGO-SG-qJT" secondAttribute="centerX" id="2WQ-QH-JJI"/>
+                                    <constraint firstItem="GLX-LQ-pgq" firstAttribute="centerY" secondItem="IGO-SG-qJT" secondAttribute="centerY" id="aIR-u0-GPU"/>
                                     <constraint firstAttribute="width" constant="600" id="fvW-Z1-3k4"/>
-                                    <constraint firstItem="GLX-LQ-pgq" firstAttribute="centerY" secondItem="IGO-SG-qJT" secondAttribute="centerY" id="g2c-A3-iBv"/>
                                     <constraint firstAttribute="height" constant="60" id="r38-Zm-OFZ"/>
                                 </constraints>
                             </view>
@@ -269,7 +274,6 @@
                         <outlet property="respLineChart" destination="Pgf-Eb-nPG" id="zXo-Ym-vAZ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LgQ-Db-tBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2406" y="755"/>
         </scene>
