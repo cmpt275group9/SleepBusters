@@ -187,9 +187,9 @@
 		AF89BB451BC4D9FD005E1619 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = ViewControllers/TabBarController.swift; sourceTree = "<group>"; };
 		AF89BB471BC5D346005E1619 /* SensorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensorType.swift; path = Model/SensorType.swift; sourceTree = "<group>"; };
 		AF95FAD91BC7B41200FACD52 /* ModelMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelMapper.swift; path = Data/ModelMapper.swift; sourceTree = "<group>"; };
-		AFCDE2BD1BDFDB7D00394415 /* JSONHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONHelper.h; path = "../../../../../../../../../../Users/Klein/Downloads/JSONHelper-master/JSONHelper/JSONHelper.h"; sourceTree = "<group>"; };
-		AFCDE2BE1BDFDB7D00394415 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONHelper.swift; path = "../../../../../../../../../../Users/Klein/Downloads/JSONHelper-master/JSONHelper/JSONHelper.swift"; sourceTree = "<group>"; };
-		AFCDE2BF1BDFDB7D00394415 /* Supporting Files */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Supporting Files"; path = "../../../../../../../../../../Users/Klein/Downloads/JSONHelper-master/JSONHelper/Supporting Files"; sourceTree = "<group>"; };
+		AFCDE2BD1BDFDB7D00394415 /* JSONHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONHelper.h; path = JSONHelper/JSONHelper.h; sourceTree = "<group>"; };
+		AFCDE2BE1BDFDB7D00394415 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONHelper.swift; path = JSONHelper/JSONHelper.swift; sourceTree = "<group>"; };
+		AFCDE2BF1BDFDB7D00394415 /* Supporting Files */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Supporting Files"; path = "JSONHelper/Supporting Files"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

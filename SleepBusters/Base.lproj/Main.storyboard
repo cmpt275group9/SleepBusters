@@ -213,7 +213,6 @@
         <!--Tracking Live View Controller-->
         <scene sceneID="PdM-7m-7dD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LgQ-Db-tBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jjp-LH-6Mg" customClass="TrackingLiveViewController" customModule="SleepBusters" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SiF-nV-WRZ"/>
@@ -274,6 +273,7 @@
                         <outlet property="respLineChart" destination="Pgf-Eb-nPG" id="zXo-Ym-vAZ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LgQ-Db-tBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2406" y="755"/>
         </scene>
