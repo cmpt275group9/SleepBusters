@@ -13,9 +13,16 @@ import UIKit
 class CalendarViewController: UIViewController {
     
     @IBOutlet weak var barChartView: BarChartView!
-    
+    var business = Business()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var testSleepData = business.getUserSleepSession(1, startDate: NSDate(), endDate: NSDate())
+
+        
+        print(testSleepData[0].TotalHoursAsleep)
+        
+        
         days = ["1", "2", "3", "4", "5", "6", "7"]
         let lightSleepHours = [5.0, 4.0, 6.0, 3.0, 7.0, 9.0, 4.0]
         let deepSleepHours = [4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0]

@@ -48,15 +48,19 @@ class DataAccess {
         var userSleepSessions = [UserSleepSession()]
         var userPro = UserProfile()
         userPro.Id = 1
-        for var index = 0; index < 3; ++index
+        for var index = 0; index < 7; index++
         {
             var userSleep = UserSleepSession()
             
             userSleep.User = userPro;
-            userSleepSessions.append(userSleep)
-            userSleep.TotalHoursAsleep = Double(Int(arc4random_uniform(11)));
+            
+            
             userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(4)));
             userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(4)));
+            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)));
+            var totalHours = userSleep.TotalLightSleepHours! + userSleep.TotalAwakeHours! + userSleep.TotalDeepSleepHours!
+            userSleep.TotalHoursAsleep = Double(totalHours)
+            userSleepSessions.append(userSleep)
         }
         
         return userSleepSessions
