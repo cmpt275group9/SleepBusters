@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -63,11 +63,12 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="644"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrG-f7-ipY" id="WNu-v9-jMi">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="643"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="643.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newnewnew.png" translatesAutoresizingMaskIntoConstraints="NO" id="wH5-OV-5Mx">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="561"/>
+                                                    <animations/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ix-Wm-jMA">
                                                     <rect key="frame" x="127" y="285" width="347" height="192"/>
@@ -77,6 +78,7 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l28-rb-q1f">
                                                                     <rect key="frame" x="27" y="21" width="21" height="33"/>
+                                                                    <animations/>
                                                                     <state key="normal" image="drink--icon.png"/>
                                                                 </button>
                                                             </subviews>
@@ -89,6 +91,7 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lD5-KC-xdf">
                                                                     <rect key="frame" x="21" y="15" width="33" height="45"/>
+                                                                    <animations/>
                                                                     <state key="normal" image="gym--icon.png"/>
                                                                 </button>
                                                             </subviews>
@@ -101,6 +104,7 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VM-Nq-Yhn">
                                                                     <rect key="frame" x="17" y="15" width="41" height="45"/>
+                                                                    <animations/>
                                                                     <state key="normal" image="home--icon.png"/>
                                                                 </button>
                                                             </subviews>
@@ -113,6 +117,7 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99h-qP-vjn">
                                                                     <rect key="frame" x="22" y="23" width="30" height="30"/>
+                                                                    <animations/>
                                                                     <state key="normal" image="coffee---icon.png"/>
                                                                 </button>
                                                             </subviews>
@@ -125,6 +130,7 @@
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tad-e8-0DM">
                                                                     <rect key="frame" x="22" y="17" width="30" height="42"/>
+                                                                    <animations/>
                                                                     <state key="normal" image="happy---icon.png"/>
                                                                 </button>
                                                             </subviews>
@@ -137,6 +143,7 @@
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo--image.png" translatesAutoresizingMaskIntoConstraints="NO" id="DKq-X9-rvc">
                                                     <rect key="frame" x="225" y="106" width="150" height="150"/>
+                                                    <animations/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwm-Zn-1rS">
                                                     <rect key="frame" x="225" y="155" width="150" height="52"/>
@@ -261,6 +268,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundNew.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Hh-Tg-Nt7">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-Eb-nPG" customClass="JBLineChartView">
                                 <rect key="frame" x="0.0" y="250" width="600" height="230"/>
@@ -389,6 +397,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="_Calendar---icon-.png" id="Sj0-vD-3rv"/>
+                    <connections>
+                        <outlet property="barChartView" destination="4Kt-0b-Rts" id="Dva-CB-sRY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vhp-k6-DZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
