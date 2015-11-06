@@ -323,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgQ-Db-tBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2406" y="755"/>
+            <point key="canvasLocation" x="3218" y="755"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nWJ-RG-pyI">
@@ -351,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TB0-30-rTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="724" y="1175"/>
+            <point key="canvasLocation" x="1536" y="1175"/>
         </scene>
         <!--Calendar Appearance Delegate-->
         <scene sceneID="Ddx-RI-klH">
@@ -405,7 +405,7 @@
                             <constraint firstItem="4Kt-0b-Rts" firstAttribute="bottom" secondItem="iRr-6h-54V" secondAttribute="top" id="q2u-nK-WfR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="_Calendar---icon-.png" id="Sj0-vD-3rv"/>
+                    <navigationItem key="navigationItem" id="TsZ-FI-0FB"/>
                     <connections>
                         <outlet property="barChartView" destination="4Kt-0b-Rts" id="ijQ-4E-g1m"/>
                         <outlet property="calendarView" destination="n6V-X5-mti" id="wp4-Td-VSi"/>
@@ -414,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vhp-k6-DZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122" y="1170"/>
+            <point key="canvasLocation" x="690" y="1198"/>
         </scene>
         <!--App Start View Controller-->
         <scene sceneID="VBd-dY-8Sw">
@@ -510,12 +510,32 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="B0r-3l-WZl" kind="relationship" relationship="viewControllers" id="qLp-Gv-INT"/>
-                        <segue destination="tyD-tW-SuA" kind="relationship" relationship="viewControllers" id="HqS-GA-rYS"/>
+                        <segue destination="67U-cC-5B2" kind="relationship" relationship="viewControllers" id="HqS-GA-rYS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-122" y="360"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="juu-Ne-UKY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="67U-cC-5B2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendar" image="_Calendar---icon-.png" id="Sj0-vD-3rv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FP4-Lg-I8d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tyD-tW-SuA" kind="relationship" relationship="rootViewController" id="bEy-KC-jGp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WYo-T5-Rqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-122" y="1198"/>
         </scene>
     </scenes>
     <resources>
