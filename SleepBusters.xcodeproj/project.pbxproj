@@ -88,13 +88,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2C3301C91BECD36300D08393 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2C3301C41BECD36300D08393 /* DSLCalendarViewExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B5A24DBB15D81F3D00F07396;
-			remoteInfo = DSLCalendarViewExample;
-		};
 		AF03F9A61BC9215C002ADF4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF1834911BBFA9E100EBDFCD /* Project object */;
@@ -155,7 +148,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2C3301C41BECD36300D08393 /* DSLCalendarViewExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DSLCalendarViewExample.xcodeproj; path = ../DSLCalendarView/Example/DSLCalendarViewExample.xcodeproj; sourceTree = "<group>"; };
 		AF03F9861BC8DE27002ADF4D /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		AF03F9871BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AF03F9881BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -276,14 +268,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2C3301C51BECD36300D08393 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2C3301CA1BECD36300D08393 /* DSLCalendarViewExample.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		AF03F9851BC8DDBA002ADF4D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,7 +422,6 @@
 				AF03F9A21BC9215C002ADF4D /* JBChart */,
 				AF18349A1BBFA9E100EBDFCD /* Products */,
 				AF03F9C41BC9EA04002ADF4D /* Charts.xcodeproj */,
-				2C3301C41BECD36300D08393 /* DSLCalendarViewExample.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -660,10 +643,6 @@
 					ProductGroup = AF03F9C51BC9EA04002ADF4D /* Products */;
 					ProjectRef = AF03F9C41BC9EA04002ADF4D /* Charts.xcodeproj */;
 				},
-				{
-					ProductGroup = 2C3301C51BECD36300D08393 /* Products */;
-					ProjectRef = 2C3301C41BECD36300D08393 /* DSLCalendarViewExample.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -676,13 +655,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		2C3301CA1BECD36300D08393 /* DSLCalendarViewExample.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = DSLCalendarViewExample.app;
-			remoteRef = 2C3301C91BECD36300D08393 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		AF03F9CA1BC9EA04002ADF4D /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
