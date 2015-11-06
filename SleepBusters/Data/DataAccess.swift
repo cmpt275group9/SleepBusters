@@ -55,8 +55,8 @@ class DataAccess {
             userSleep.User = userPro;
             userSleepSessions.append(userSleep)
             userSleep.TotalHoursAsleep = Int(arc4random_uniform(11));
-            
-            
+            userSleep.TotalLightSleepHours = Int(arc4random_uniform(4));
+            userSleep.TotalAwakeHours = Int(arc4random_uniform(4));
         }
         
         return [UserSleepSession]
