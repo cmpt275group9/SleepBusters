@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -63,7 +63,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="644"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrG-f7-ipY" id="WNu-v9-jMi">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="643.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="643"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newnewnew.png" translatesAutoresizingMaskIntoConstraints="NO" id="wH5-OV-5Mx">
@@ -266,12 +266,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundNew.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Hh-Tg-Nt7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundNew.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Hh-Tg-Nt7">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-Eb-nPG" customClass="JBLineChartView">
-                                <rect key="frame" x="0.0" y="230" width="600" height="250"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-Eb-nPG" customClass="JBLineChartView">
+                                <rect key="frame" x="0.0" y="250" width="600" height="230"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -307,17 +307,32 @@
                                     <constraint firstAttribute="height" constant="60" id="r38-Zm-OFZ"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6iH-Iu-Vgo" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Pgf-Eb-nPG" firstAttribute="top" secondItem="6iH-Iu-Vgo" secondAttribute="bottom" constant="-1" id="8dR-67-ep4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IGO-SG-qJT" secondAttribute="trailing" constant="-20" id="Am1-u3-Xgb"/>
+                            <constraint firstItem="3Hh-Tg-Nt7" firstAttribute="leading" secondItem="IGO-SG-qJT" secondAttribute="leading" id="C1i-uq-Sub"/>
+                            <constraint firstAttribute="trailing" secondItem="6iH-Iu-Vgo" secondAttribute="trailing" id="DRP-gk-g6a"/>
+                            <constraint firstItem="6iH-Iu-Vgo" firstAttribute="leading" secondItem="Iws-JD-Nnt" secondAttribute="leading" id="E1c-pM-8UO"/>
+                            <constraint firstAttribute="bottom" secondItem="3Hh-Tg-Nt7" secondAttribute="bottom" id="PU1-j6-dTc"/>
                             <constraint firstItem="yec-09-9R0" firstAttribute="top" secondItem="IGO-SG-qJT" secondAttribute="bottom" constant="15" id="Qoj-Fw-0RU"/>
+                            <constraint firstItem="3Hh-Tg-Nt7" firstAttribute="trailing" secondItem="IGO-SG-qJT" secondAttribute="trailing" id="f2W-Vp-yyc"/>
+                            <constraint firstItem="3Hh-Tg-Nt7" firstAttribute="top" secondItem="6iH-Iu-Vgo" secondAttribute="top" id="fJ6-ty-zYQ"/>
+                            <constraint firstItem="Pgf-Eb-nPG" firstAttribute="leading" secondItem="IGO-SG-qJT" secondAttribute="leading" id="hMb-yk-fCm"/>
+                            <constraint firstItem="6iH-Iu-Vgo" firstAttribute="top" secondItem="SiF-nV-WRZ" secondAttribute="bottom" id="is8-px-9sq"/>
                             <constraint firstItem="IGO-SG-qJT" firstAttribute="leading" secondItem="Iws-JD-Nnt" secondAttribute="leadingMargin" constant="-20" id="pOZ-H0-BaK"/>
                             <constraint firstItem="IGO-SG-qJT" firstAttribute="top" secondItem="Pgf-Eb-nPG" secondAttribute="bottom" id="rkQ-aw-C4P"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
+                        <outlet property="pieChartView" destination="6iH-Iu-Vgo" id="vIt-7g-hJs"/>
                         <outlet property="respLineChart" destination="Pgf-Eb-nPG" id="zXo-Ym-vAZ"/>
                     </connections>
                 </viewController>
