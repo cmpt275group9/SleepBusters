@@ -15,6 +15,8 @@ class TrackingLiveViewController:
 
 
 UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
+    //@IBOutlet weak var pieChartView: PieChartView!
+    
     @IBOutlet weak var respLineChart: JBLineChartView!
     @IBAction func btnStopTracking(sender: UIButton) {
         navigationController?.popViewControllerAnimated(true)

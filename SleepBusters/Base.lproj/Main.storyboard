@@ -263,7 +263,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-Eb-nPG" customClass="JBLineChartView">
-                                <rect key="frame" x="0.0" y="230" width="600" height="250"/>
+                                <rect key="frame" x="0.0" y="250" width="600" height="230"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -299,17 +299,26 @@
                                     <constraint firstAttribute="height" constant="60" id="r38-Zm-OFZ"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6iH-Iu-Vgo" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="140" y="53" width="247" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Pgf-Eb-nPG" firstAttribute="top" secondItem="6iH-Iu-Vgo" secondAttribute="bottom" constant="69" id="8dR-67-ep4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IGO-SG-qJT" secondAttribute="trailing" constant="-20" id="Am1-u3-Xgb"/>
+                            <constraint firstAttribute="trailing" secondItem="6iH-Iu-Vgo" secondAttribute="trailing" constant="213" id="DRP-gk-g6a"/>
+                            <constraint firstItem="6iH-Iu-Vgo" firstAttribute="leading" secondItem="Iws-JD-Nnt" secondAttribute="leading" constant="140" id="E1c-pM-8UO"/>
                             <constraint firstItem="yec-09-9R0" firstAttribute="top" secondItem="IGO-SG-qJT" secondAttribute="bottom" constant="15" id="Qoj-Fw-0RU"/>
+                            <constraint firstItem="6iH-Iu-Vgo" firstAttribute="top" secondItem="SiF-nV-WRZ" secondAttribute="bottom" constant="53" id="is8-px-9sq"/>
                             <constraint firstItem="IGO-SG-qJT" firstAttribute="leading" secondItem="Iws-JD-Nnt" secondAttribute="leadingMargin" constant="-20" id="pOZ-H0-BaK"/>
                             <constraint firstItem="IGO-SG-qJT" firstAttribute="top" secondItem="Pgf-Eb-nPG" secondAttribute="bottom" id="rkQ-aw-C4P"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pieChartView" destination="6iH-Iu-Vgo" id="vIt-7g-hJs"/>
                         <outlet property="respLineChart" destination="Pgf-Eb-nPG" id="zXo-Ym-vAZ"/>
                     </connections>
                 </viewController>
