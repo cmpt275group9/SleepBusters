@@ -13,4 +13,7 @@ class UserSleepSession : Serializable {
     var StartSessionDate: NSDate? = nil
     var EndSessionDate:NSDate? = nil
     var TotalHoursAsleep: Double? = nil
+    var TotalDeepSleepHours: Double? = nil
+    var TotalAwakeHours: Double? = nil
+    var TotalLightSleepHours: Double? = nil
 }

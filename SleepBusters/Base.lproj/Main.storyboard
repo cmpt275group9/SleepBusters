@@ -364,9 +364,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Kt-0b-Rts" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="345" width="600" height="206"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.078431372550000003" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="top" secondItem="ZQB-ox-SbG" secondAttribute="top" constant="345" id="KuH-jL-CSP"/>
+                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="leading" secondItem="ZQB-ox-SbG" secondAttribute="leading" id="O73-2K-sEA"/>
+                            <constraint firstAttribute="trailing" secondItem="4Kt-0b-Rts" secondAttribute="trailing" id="cvM-FY-MQO"/>
+                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="bottom" secondItem="iRr-6h-54V" secondAttribute="top" id="q2u-nK-WfR"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="_Calendar---icon-.png" id="Sj0-vD-3rv"/>
                 </viewController>

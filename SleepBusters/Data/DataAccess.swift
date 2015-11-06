@@ -43,6 +43,26 @@ class DataAccess {
 //        }
     }
     
+    func getUserSleepSession(userId: Int, NSDate startDate, NsDate endDate) -> UserSleepSession {
+        
+        var userSleepSessions = [UserSleepSession]
+        var userPro = UserProfile()
+        userPro.Id = 1
+        for(i=0;i<10;i++)
+        {
+            var userSleep = UserSleepSession()
+            
+            userSleep.User = userPro;
+            userSleepSessions.append(userSleep)
+            userSleep.TotalHoursAsleep = Int(arc4random_uniform(11));
+            userSleep.TotalLightSleepHours = Int(arc4random_uniform(4));
+            userSleep.TotalAwakeHours = Int(arc4random_uniform(4));
+        }
+        
+        return userSleepSessions
+        //return WebApiConnector().getUserProfile(userId)
+    }
+
     func registerUserProfile(user: UserProfile) -> UserProfile {
         return WebApiConnector().registerUserProfile(user.toDictionary())
     }

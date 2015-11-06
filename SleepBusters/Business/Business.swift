@@ -34,6 +34,11 @@ class Business {
         return data.saveUserProfile(userProfile)
     }
 
+    
+    func getUserSleepSession(userId: Int, NSDate startDate, NsDate endDate) -> UserSleepSession {
+        return data.getUserSleepSession(userId, startDate: startDate, endDate: endDate)
+    }
+    
     // MARK: Hardware Sensors
     func getHistoricalSensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSensorStat]{
         return data.getHistoricalSensorData(userId, startDate: startDate, endDate: endDate)
