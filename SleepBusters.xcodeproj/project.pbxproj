@@ -10,6 +10,9 @@
 		6EB8554D1BED240B007E83C3 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB8554C1BED240B007E83C3 /* Accelerate.framework */; };
 		6EB8554F1BED2416007E83C3 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB8554E1BED2416007E83C3 /* ExternalAccessory.framework */; };
 		6EB855511BED241D007E83C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB855501BED241D007E83C3 /* QuartzCore.framework */; };
+		6EB855691BED357F007E83C3 /* libTGAccessory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB855661BED357F007E83C3 /* libTGAccessory.a */; settings = {ASSET_TAGS = (); }; };
+		6EB855701BED3843007E83C3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB8556D1BED3843007E83C3 /* RootViewController.m */; settings = {ASSET_TAGS = (); }; };
+		6EB855711BED3843007E83C3 /* ThinkGearTouchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB8556F1BED3843007E83C3 /* ThinkGearTouchAppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		AF03F9901BC8DE27002ADF4D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9861BC8DE27002ADF4D /* OpenSans-Bold.ttf */; };
 		AF03F9911BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9871BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf */; };
 		AF03F9921BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9881BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf */; };
@@ -91,13 +94,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6EB8554A1BED23AE007E83C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6EB855461BED23AE007E83C3 /* ThinkGearTouch.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
-			remoteInfo = ThinkGearTouch;
-		};
 		AF03F9A61BC9215C002ADF4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF1834911BBFA9E100EBDFCD /* Project object */;
@@ -158,10 +154,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6EB855461BED23AE007E83C3 /* ThinkGearTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ThinkGearTouch.xcodeproj; path = "../../../Downloads/ThinkGear-SDK-for-iOS-2015-10-13/Sample Project/ThinkGearTouch/ThinkGearTouch.xcodeproj"; sourceTree = "<group>"; };
 		6EB8554C1BED240B007E83C3 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		6EB8554E1BED2416007E83C3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		6EB855501BED241D007E83C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6EB855661BED357F007E83C3 /* libTGAccessory.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTGAccessory.a; path = ThinkGearTouch/libTGAccessory.a; sourceTree = "<group>"; };
+		6EB855671BED357F007E83C3 /* TGAccessoryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGAccessoryDelegate.h; path = ThinkGearTouch/TGAccessoryDelegate.h; sourceTree = "<group>"; };
+		6EB855681BED357F007E83C3 /* TGAccessoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGAccessoryManager.h; path = ThinkGearTouch/TGAccessoryManager.h; sourceTree = "<group>"; };
+		6EB8556A1BED35E3007E83C3 /* ThinkGearTouch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThinkGearTouch-Bridging-Header.h"; sourceTree = "<group>"; };
+		6EB8556C1BED3843007E83C3 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ThinkGearTouch/Classes/RootViewController.h; sourceTree = "<group>"; };
+		6EB8556D1BED3843007E83C3 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ThinkGearTouch/Classes/RootViewController.m; sourceTree = "<group>"; };
+		6EB8556E1BED3843007E83C3 /* ThinkGearTouchAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThinkGearTouchAppDelegate.h; path = ThinkGearTouch/Classes/ThinkGearTouchAppDelegate.h; sourceTree = "<group>"; };
+		6EB8556F1BED3843007E83C3 /* ThinkGearTouchAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThinkGearTouchAppDelegate.m; path = ThinkGearTouch/Classes/ThinkGearTouchAppDelegate.m; sourceTree = "<group>"; };
 		AF03F9861BC8DE27002ADF4D /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		AF03F9871BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AF03F9881BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 				6EB855511BED241D007E83C3 /* QuartzCore.framework in Frameworks */,
 				6EB8554F1BED2416007E83C3 /* ExternalAccessory.framework in Frameworks */,
 				6EB8554D1BED240B007E83C3 /* Accelerate.framework in Frameworks */,
+				6EB855691BED357F007E83C3 /* libTGAccessory.a in Frameworks */,
 				AF03F9A81BC9215C002ADF4D /* JBChart.framework in Frameworks */,
 				AF03F9CD1BC9EAEF002ADF4D /* Charts.framework in Frameworks */,
 			);
@@ -288,20 +292,35 @@
 		6EB855441BED2387007E83C3 /* ThinkGear */ = {
 			isa = PBXGroup;
 			children = (
+				6EB8556A1BED35E3007E83C3 /* ThinkGearTouch-Bridging-Header.h */,
+				6EB8556B1BED380D007E83C3 /* Classes */,
+				6EB855581BED29A5007E83C3 /* Libraries */,
 				6EB855501BED241D007E83C3 /* QuartzCore.framework */,
 				6EB8554E1BED2416007E83C3 /* ExternalAccessory.framework */,
 				6EB8554C1BED240B007E83C3 /* Accelerate.framework */,
-				6EB855461BED23AE007E83C3 /* ThinkGearTouch.xcodeproj */,
 			);
 			name = ThinkGear;
 			sourceTree = "<group>";
 		};
-		6EB855471BED23AE007E83C3 /* Products */ = {
+		6EB855581BED29A5007E83C3 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				6EB8554B1BED23AE007E83C3 /* ThinkGearTouch.app */,
+				6EB855661BED357F007E83C3 /* libTGAccessory.a */,
+				6EB855671BED357F007E83C3 /* TGAccessoryDelegate.h */,
+				6EB855681BED357F007E83C3 /* TGAccessoryManager.h */,
 			);
-			name = Products;
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		6EB8556B1BED380D007E83C3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6EB8556C1BED3843007E83C3 /* RootViewController.h */,
+				6EB8556D1BED3843007E83C3 /* RootViewController.m */,
+				6EB8556E1BED3843007E83C3 /* ThinkGearTouchAppDelegate.h */,
+				6EB8556F1BED3843007E83C3 /* ThinkGearTouchAppDelegate.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		AF03F9851BC8DDBA002ADF4D /* Fonts */ = {
@@ -680,10 +699,6 @@
 					ProductGroup = AF03F9C51BC9EA04002ADF4D /* Products */;
 					ProjectRef = AF03F9C41BC9EA04002ADF4D /* Charts.xcodeproj */;
 				},
-				{
-					ProductGroup = 6EB855471BED23AE007E83C3 /* Products */;
-					ProjectRef = 6EB855461BED23AE007E83C3 /* ThinkGearTouch.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -696,13 +711,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6EB8554B1BED23AE007E83C3 /* ThinkGearTouch.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ThinkGearTouch.app;
-			remoteRef = 6EB8554A1BED23AE007E83C3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		AF03F9CA1BC9EA04002ADF4D /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -808,6 +816,7 @@
 				AF2F9DE21BCE29F70075DBCC /* TrackingLiveViewController.swift in Sources */,
 				AF2F9DDD1BCB69AF0075DBCC /* MindwaveEEGSensor.swift in Sources */,
 				AF2F9DE01BCB6D390075DBCC /* SleepBustersRespiratorySensor.swift in Sources */,
+				6EB855701BED3843007E83C3 /* RootViewController.m in Sources */,
 				AF89BB481BC5D346005E1619 /* SensorType.swift in Sources */,
 				AF89BB441BC4B3D4005E1619 /* AppStartViewController.swift in Sources */,
 				AF81576B1BC06CA500F5476A /* TrackingViewController.swift in Sources */,
@@ -817,6 +826,7 @@
 				AF325F641BC1C6EA00FA4523 /* HttpAction.swift in Sources */,
 				AF325F711BC1E79000FA4523 /* EEGConnector.swift in Sources */,
 				AF0AA5181BBFB25E00C97C87 /* UserProfile.swift in Sources */,
+				6EB855711BED3843007E83C3 /* ThinkGearTouchAppDelegate.m in Sources */,
 				AF30B0831BC6FF250094B4A8 /* StatusResult.swift in Sources */,
 				AF8157691BC06C4900F5476A /* StatsViewController.swift in Sources */,
 				AF325F791BC206E200FA4523 /* Serializable.swift in Sources */,
@@ -1019,11 +1029,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SleepBusters/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThinkGearTouch",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PillowSoft.SleepBusters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ThinkGearTouch-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -1031,11 +1047,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = SleepBusters/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThinkGearTouch",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PillowSoft.SleepBusters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ThinkGearTouch-Bridging-Header.h";
 			};
 			name = Release;
 		};
