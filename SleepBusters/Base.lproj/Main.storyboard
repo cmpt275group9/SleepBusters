@@ -370,21 +370,24 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFp-XD-knd" customClass="CVCalendarMenuView" customModule="SleepBusters" customModuleProvider="target">
-                                <rect key="frame" x="15" y="185" width="542" height="128"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFp-XD-knd" customClass="CVCalendarMenuView" customModule="SleepBusters" customModuleProvider="target">
+                                <rect key="frame" x="10" y="64" width="542" height="90"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="menuViewDelegate" destination="tyD-tW-SuA" id="NfY-99-fe9"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6V-X5-mti" customClass="CVCalendarView" customModule="SleepBusters" customModuleProvider="target">
-                                <rect key="frame" x="15" y="20" width="542" height="167"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6V-X5-mti" customClass="CVCalendarView" customModule="SleepBusters" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="170" width="542" height="167"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="F14-fk-TVh"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="F14-fk-TVh"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="calendarAppearanceDelegate" destination="tyD-tW-SuA" id="hib-Vq-AML"/>
                                     <outlet property="calendarDelegate" destination="tyD-tW-SuA" id="he8-tW-714"/>
@@ -394,14 +397,17 @@
                         <animations/>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.078431372550000003" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="n6V-X5-mti" firstAttribute="top" secondItem="J2H-f5-Rpp" secondAttribute="bottom" id="337-EW-nei"/>
-                            <constraint firstItem="n6V-X5-mti" firstAttribute="leading" secondItem="ZQB-ox-SbG" secondAttribute="leadingMargin" constant="-5" id="9Qz-qr-3hc"/>
-                            <constraint firstItem="n6V-X5-mti" firstAttribute="trailing" secondItem="rFp-XD-knd" secondAttribute="trailing" id="A6R-9f-hxT"/>
+                            <constraint firstItem="rFp-XD-knd" firstAttribute="top" secondItem="J2H-f5-Rpp" secondAttribute="bottom" id="14d-2M-Zeu"/>
+                            <constraint firstItem="n6V-X5-mti" firstAttribute="leading" secondItem="4Kt-0b-Rts" secondAttribute="leading" id="Ajm-Q0-kur"/>
+                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="top" secondItem="n6V-X5-mti" secondAttribute="bottom" constant="8" symbolic="YES" id="Gab-Xb-X19"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n6V-X5-mti" secondAttribute="trailing" constant="38" id="JeK-jN-QiF"/>
                             <constraint firstItem="4Kt-0b-Rts" firstAttribute="top" secondItem="ZQB-ox-SbG" secondAttribute="top" constant="345" id="KuH-jL-CSP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="n6V-X5-mti" secondAttribute="trailing" constant="23" id="NTM-Dt-Msa"/>
+                            <constraint firstItem="rFp-XD-knd" firstAttribute="leading" secondItem="ZQB-ox-SbG" secondAttribute="leadingMargin" constant="-10" id="NKy-DW-BTq"/>
                             <constraint firstItem="4Kt-0b-Rts" firstAttribute="leading" secondItem="ZQB-ox-SbG" secondAttribute="leading" id="O73-2K-sEA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rFp-XD-knd" secondAttribute="trailing" constant="28" id="bMW-ZX-Rda"/>
                             <constraint firstAttribute="trailing" secondItem="4Kt-0b-Rts" secondAttribute="trailing" id="cvM-FY-MQO"/>
-                            <constraint firstItem="n6V-X5-mti" firstAttribute="leading" secondItem="rFp-XD-knd" secondAttribute="leading" id="n70-PK-wYj"/>
+                            <constraint firstItem="n6V-X5-mti" firstAttribute="top" secondItem="ZQB-ox-SbG" secondAttribute="top" constant="170" id="fcY-hA-v4N"/>
+                            <constraint firstItem="n6V-X5-mti" firstAttribute="top" secondItem="rFp-XD-knd" secondAttribute="bottom" constant="16" id="lVV-79-rjF"/>
                             <constraint firstItem="4Kt-0b-Rts" firstAttribute="bottom" secondItem="iRr-6h-54V" secondAttribute="top" id="q2u-nK-WfR"/>
                         </constraints>
                     </view>
