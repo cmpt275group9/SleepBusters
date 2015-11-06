@@ -12,23 +12,25 @@ import UIKit
 
 class CalendarViewController: UIViewController {
     
+
     @IBOutlet weak var barChartView: BarChartView!
+
     var business = Business()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         var testSleepData = business.getUserSleepSession(1, startDate: NSDate(), endDate: NSDate())
-
-        
-        print(testSleepData[0].TotalHoursAsleep)
-        
         
         days = ["1", "2", "3", "4", "5", "6", "7"]
-        let lightSleepHours = [5.0, 4.0, 6.0, 3.0, 7.0, 9.0, 4.0]
-        let deepSleepHours = [4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0]
-        let awakeHours = [3.0, 2.0, 2.0, 3.0, 1.0, 2.0, 2.0]
-        
-        
+        var lightSleepHours: [Double] = []
+        var deepSleepHours: [Double] = []
+        var awakeHours: [Double] = []
+    
+        for var i = 1; i < 8; i++ {
+            lightSleepHours.append(testSleepData[i].TotalLightSleepHours!)
+            deepSleepHours.append(testSleepData[i].TotalDeepSleepHours!)
+            awakeHours.append(testSleepData[i].TotalAwakeHours!)
+        }
         setChart(days, values: awakeHours, values2: lightSleepHours, values3: deepSleepHours)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -63,24 +65,37 @@ class CalendarViewController: UIViewController {
 
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Awake Hours")
-        chartDataSet.colors = [UIColor(red: 50/255, green: 75/255, blue: 50/255, alpha: 1)]
+        chartDataSet.colors = [UIColor(red: 255/255, green: 165/255, blue: 0, alpha: 1)]
         
         let chartDataSet2 = BarChartDataSet(yVals: dataEntries2, label: "Light Sleep Hours")
-        chartDataSet2.colors = [UIColor(red: 50/255, green: 50/255, blue: 75/255, alpha: 1)]
+        chartDataSet2.colors = [UIColor(red: 151/255, green: 252/255, blue: 151/255, alpha: 1)]
         
-        let chartDataSet3 = BarChartDataSet(yVals: dataEntries2, label: "Deep Sleep Hours")
-        chartDataSet2.colors = [UIColor(red: 75/255, green: 50/255, blue: 50/255, alpha: 1)]
+        let chartDataSet3 = BarChartDataSet(yVals: dataEntries3, label: "Deep Sleep Hours")
+        chartDataSet3.colors = [UIColor(red: 0, green: 191/255, blue: 255/255, alpha: 1)]
         
         let dataSets: [BarChartDataSet] = [ chartDataSet, chartDataSet2, chartDataSet3]
         let chartData = BarChartData(xVals: days, dataSets: dataSets)
+        chartData.setValueTextColor(UIColor.clearColor())
         barChartView.data = chartData
         
-        barChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
-        barChartView.gridBackgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 1)
+        // color settings for chart
+        barChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
+        barChartView.gridBackgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
         barChartView.xAxis.labelPosition = .Bottom
-
+        barChartView.legend.textColor = UIColor.whiteColor()
+        barChartView.xAxis.labelTextColor = UIColor.whiteColor()
+        barChartView.descriptionText = ""
+        barChartView.leftAxis.labelTextColor = UIColor.whiteColor()
+        barChartView.rightAxis.labelTextColor = UIColor.whiteColor()
+        //clear grid
+        barChartView.leftAxis.gridColor = UIColor.clearColor()
+        barChartView.rightAxis.gridColor = UIColor.clearColor()
+        barChartView.xAxis.gridColor = UIColor.clearColor()
+    
         barChartView.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .EaseInBounce)
-        let ll = ChartLimitLine(limit: 8.0, label: "Recommended Sleep")
+        let ll = ChartLimitLine(limit: 4.0, label: "Recommended Deep Sleep")
+        ll.valueTextColor = UIColor.whiteColor()
+        ll.lineColor = UIColor(red:255/255, green: 20/255, blue: 60/255, alpha: 0.6)
         barChartView.rightAxis.addLimitLine(ll)
         
     }

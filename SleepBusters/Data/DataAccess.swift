@@ -55,8 +55,8 @@ class DataAccess {
             userSleep.User = userPro;
             
             
-            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(4)));
-            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(4)));
+            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)));
+            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)));
             userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)));
             var totalHours = userSleep.TotalLightSleepHours! + userSleep.TotalAwakeHours! + userSleep.TotalDeepSleepHours!
             userSleep.TotalHoursAsleep = Double(totalHours)
