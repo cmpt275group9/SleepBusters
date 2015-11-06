@@ -59,7 +59,7 @@ class DataAccess {
             userSleep.TotalAwakeHours = Int(arc4random_uniform(4));
         }
         
-        return [UserSleepSession]
+        return userSleepSessions
         //return WebApiConnector().getUserProfile(userId)
     }
 
