@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6EB8554D1BED240B007E83C3 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB8554C1BED240B007E83C3 /* Accelerate.framework */; };
+		6EB8554F1BED2416007E83C3 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB8554E1BED2416007E83C3 /* ExternalAccessory.framework */; };
+		6EB855511BED241D007E83C3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB855501BED241D007E83C3 /* QuartzCore.framework */; };
 		AF03F9901BC8DE27002ADF4D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9861BC8DE27002ADF4D /* OpenSans-Bold.ttf */; };
 		AF03F9911BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9871BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf */; };
 		AF03F9921BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9881BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf */; };
@@ -88,6 +91,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6EB8554A1BED23AE007E83C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EB855461BED23AE007E83C3 /* ThinkGearTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D6058910D05DD3D006BFB54;
+			remoteInfo = ThinkGearTouch;
+		};
 		AF03F9A61BC9215C002ADF4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF1834911BBFA9E100EBDFCD /* Project object */;
@@ -148,6 +158,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6EB855461BED23AE007E83C3 /* ThinkGearTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ThinkGearTouch.xcodeproj; path = "../../../Downloads/ThinkGear-SDK-for-iOS-2015-10-13/Sample Project/ThinkGearTouch/ThinkGearTouch.xcodeproj"; sourceTree = "<group>"; };
+		6EB8554C1BED240B007E83C3 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		6EB8554E1BED2416007E83C3 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		6EB855501BED241D007E83C3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AF03F9861BC8DE27002ADF4D /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		AF03F9871BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AF03F9881BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -246,6 +260,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EB855511BED241D007E83C3 /* QuartzCore.framework in Frameworks */,
+				6EB8554F1BED2416007E83C3 /* ExternalAccessory.framework in Frameworks */,
+				6EB8554D1BED240B007E83C3 /* Accelerate.framework in Frameworks */,
 				AF03F9A81BC9215C002ADF4D /* JBChart.framework in Frameworks */,
 				AF03F9CD1BC9EAEF002ADF4D /* Charts.framework in Frameworks */,
 			);
@@ -268,6 +285,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EB855441BED2387007E83C3 /* ThinkGear */ = {
+			isa = PBXGroup;
+			children = (
+				6EB855501BED241D007E83C3 /* QuartzCore.framework */,
+				6EB8554E1BED2416007E83C3 /* ExternalAccessory.framework */,
+				6EB8554C1BED240B007E83C3 /* Accelerate.framework */,
+				6EB855461BED23AE007E83C3 /* ThinkGearTouch.xcodeproj */,
+			);
+			name = ThinkGear;
+			sourceTree = "<group>";
+		};
+		6EB855471BED23AE007E83C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6EB8554B1BED23AE007E83C3 /* ThinkGearTouch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		AF03F9851BC8DDBA002ADF4D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +452,7 @@
 		AF1834901BBFA9E100EBDFCD = {
 			isa = PBXGroup;
 			children = (
+				6EB855441BED2387007E83C3 /* ThinkGear */,
 				AF18349B1BBFA9E100EBDFCD /* SleepBusters */,
 				AF1834B21BBFA9E100EBDFCD /* SleepBustersTests */,
 				AF1834BD1BBFA9E100EBDFCD /* SleepBustersUITests */,
@@ -643,6 +680,10 @@
 					ProductGroup = AF03F9C51BC9EA04002ADF4D /* Products */;
 					ProjectRef = AF03F9C41BC9EA04002ADF4D /* Charts.xcodeproj */;
 				},
+				{
+					ProductGroup = 6EB855471BED23AE007E83C3 /* Products */;
+					ProjectRef = 6EB855461BED23AE007E83C3 /* ThinkGearTouch.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -655,6 +696,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		6EB8554B1BED23AE007E83C3 /* ThinkGearTouch.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ThinkGearTouch.app;
+			remoteRef = 6EB8554A1BED23AE007E83C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AF03F9CA1BC9EA04002ADF4D /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
