@@ -43,20 +43,20 @@ class DataAccess {
 //        }
     }
     
-    func getUserSleepSession(userId: Int, NSDate startDate, NsDate endDate) -> UserSleepSession {
+    func getUserSleepSession(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSleepSession]{
         
-        var userSleepSessions = [UserSleepSession]
+        var userSleepSessions = [UserSleepSession()]
         var userPro = UserProfile()
         userPro.Id = 1
-        for(i=0;i<10;i++)
+        for var index = 0; index < 3; ++index
         {
             var userSleep = UserSleepSession()
             
             userSleep.User = userPro;
             userSleepSessions.append(userSleep)
-            userSleep.TotalHoursAsleep = Int(arc4random_uniform(11));
-            userSleep.TotalLightSleepHours = Int(arc4random_uniform(4));
-            userSleep.TotalAwakeHours = Int(arc4random_uniform(4));
+            userSleep.TotalHoursAsleep = Double(Int(arc4random_uniform(11)));
+            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(4)));
+            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(4)));
         }
         
         return userSleepSessions

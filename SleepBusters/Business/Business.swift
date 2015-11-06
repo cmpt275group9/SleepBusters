@@ -35,7 +35,7 @@ class Business {
     }
 
     
-    func getUserSleepSession(userId: Int, NSDate startDate, NsDate endDate) -> UserSleepSession {
+    func getUserSleepSession(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSleepSession]{
         return data.getUserSleepSession(userId, startDate: startDate, endDate: endDate)
     }
     
