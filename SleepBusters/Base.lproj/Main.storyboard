@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="My Profile" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="220.5" y="279.5" width="160.5" height="41.5"/>
+                                <rect key="frame" x="221" y="280" width="161" height="42"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -39,7 +39,7 @@
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Profile" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="My Profile" image="profile---icon.png" id="acW-dT-cKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,71 +63,108 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="644"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrG-f7-ipY" id="WNu-v9-jMi">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="643.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="643"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WaK-g2-BhI">
-                                                    <rect key="frame" x="252" y="228" width="97" height="30"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwm-Zn-1rS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
-                                                            <animations/>
-                                                            <state key="normal" title="Start Tracking">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </state>
-                                                            <connections>
-                                                                <segue destination="jjp-LH-6Mg" kind="show" id="9WB-YF-2UP"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                    <animations/>
-                                                </stackView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newnewnew.png" translatesAutoresizingMaskIntoConstraints="NO" id="wH5-OV-5Mx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="561"/>
+                                                </imageView>
                                                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ix-Wm-jMA">
                                                     <rect key="frame" x="127" y="285" width="347" height="192"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qk8-L9-pQ5">
                                                             <rect key="frame" x="41" y="34" width="75" height="75"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l28-rb-q1f">
+                                                                    <rect key="frame" x="27" y="21" width="21" height="33"/>
+                                                                    <state key="normal" image="drink--icon.png"/>
+                                                                </button>
+                                                            </subviews>
                                                             <animations/>
                                                             <color key="backgroundColor" red="0.19607843137254902" green="0.13333333333333333" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUe-NC-H1S">
                                                             <rect key="frame" x="41" y="117" width="75" height="75"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lD5-KC-xdf">
+                                                                    <rect key="frame" x="21" y="15" width="33" height="45"/>
+                                                                    <state key="normal" image="gym--icon.png"/>
+                                                                </button>
+                                                            </subviews>
                                                             <animations/>
                                                             <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wsf-cj-Olb">
                                                             <rect key="frame" x="134" y="117" width="75" height="75"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VM-Nq-Yhn">
+                                                                    <rect key="frame" x="17" y="15" width="41" height="45"/>
+                                                                    <state key="normal" image="home--icon.png"/>
+                                                                </button>
+                                                            </subviews>
                                                             <animations/>
                                                             <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hl7-o8-sxt">
                                                             <rect key="frame" x="230" y="117" width="75" height="75"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99h-qP-vjn">
+                                                                    <rect key="frame" x="22" y="23" width="30" height="30"/>
+                                                                    <state key="normal" image="coffee---icon.png"/>
+                                                                </button>
+                                                            </subviews>
                                                             <animations/>
                                                             <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zaU-Bn-E6A">
                                                             <rect key="frame" x="230" y="34" width="75" height="75"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tad-e8-0DM">
+                                                                    <rect key="frame" x="22" y="17" width="30" height="42"/>
+                                                                    <state key="normal" image="happy---icon.png"/>
+                                                                </button>
+                                                            </subviews>
                                                             <animations/>
                                                             <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
                                                     </subviews>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="0.12941176470588234" green="0.078431372549019607" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo--image.png" translatesAutoresizingMaskIntoConstraints="NO" id="DKq-X9-rvc">
+                                                    <rect key="frame" x="225" y="106" width="150" height="150"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwm-Zn-1rS">
+                                                    <rect key="frame" x="225" y="155" width="150" height="52"/>
+                                                    <animations/>
+                                                    <state key="normal" image="play--icon.png">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="jjp-LH-6Mg" kind="show" id="9WB-YF-2UP"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" red="0.12941176469999999" green="0.078431372550000003" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstItem="wH5-OV-5Mx" firstAttribute="top" secondItem="WNu-v9-jMi" secondAttribute="top" id="3N1-r4-Nbk"/>
+                                                <constraint firstItem="wH5-OV-5Mx" firstAttribute="leading" secondItem="WNu-v9-jMi" secondAttribute="leading" id="67b-AJ-d1w"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="6Ix-Wm-jMA" secondAttribute="bottom" constant="0.5" id="6rS-qp-o1S"/>
-                                                <constraint firstItem="6Ix-Wm-jMA" firstAttribute="top" secondItem="WaK-g2-BhI" secondAttribute="bottom" constant="27" id="A6n-cf-FQy"/>
-                                                <constraint firstItem="WaK-g2-BhI" firstAttribute="centerX" secondItem="WNu-v9-jMi" secondAttribute="centerX" id="Taf-sf-dCX"/>
+                                                <constraint firstItem="wwm-Zn-1rS" firstAttribute="leading" secondItem="DKq-X9-rvc" secondAttribute="leading" id="8qS-6P-Qzv"/>
+                                                <constraint firstItem="DKq-X9-rvc" firstAttribute="top" secondItem="WNu-v9-jMi" secondAttribute="topMargin" constant="98" id="I5q-UU-hpR"/>
+                                                <constraint firstItem="DKq-X9-rvc" firstAttribute="centerX" secondItem="WNu-v9-jMi" secondAttribute="centerX" id="Izh-Zd-odg"/>
+                                                <constraint firstItem="wH5-OV-5Mx" firstAttribute="centerX" secondItem="6Ix-Wm-jMA" secondAttribute="centerX" id="NFw-Zm-OeN"/>
+                                                <constraint firstItem="wwm-Zn-1rS" firstAttribute="centerX" secondItem="6Ix-Wm-jMA" secondAttribute="centerX" id="Pjh-Vt-weB"/>
+                                                <constraint firstItem="wwm-Zn-1rS" firstAttribute="centerX" secondItem="wH5-OV-5Mx" secondAttribute="centerX" id="crU-xI-eef"/>
                                                 <constraint firstItem="6Ix-Wm-jMA" firstAttribute="centerX" secondItem="WNu-v9-jMi" secondAttribute="centerX" id="ifL-Fu-QhP"/>
-                                                <constraint firstItem="WaK-g2-BhI" firstAttribute="centerY" secondItem="WNu-v9-jMi" secondAttribute="centerY" id="udh-8Y-vm9"/>
+                                                <constraint firstItem="6Ix-Wm-jMA" firstAttribute="top" secondItem="DKq-X9-rvc" secondAttribute="bottom" constant="29" id="mUc-sl-YYs"/>
+                                                <constraint firstItem="wwm-Zn-1rS" firstAttribute="centerY" secondItem="DKq-X9-rvc" secondAttribute="centerY" id="yl5-zt-Na4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wH5-OV-5Mx" secondAttribute="bottom" constant="74" id="zTe-Hy-Pes"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -149,11 +186,11 @@
             </objects>
             <point key="canvasLocation" x="1544" y="381"/>
         </scene>
-        <!--Tracking-->
+        <!--Main-->
         <scene sceneID="uEY-B2-iUi">
             <objects>
                 <navigationController navigationBarHidden="YES" id="B0r-3l-WZl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tracking" image="second" id="xBH-mG-e0u"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="cloud--icon.png" id="xBH-mG-e0u"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xod-gC-WyJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -222,6 +259,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgroundNew.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Hh-Tg-Nt7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-Eb-nPG" customClass="JBLineChartView">
                                 <rect key="frame" x="0.0" y="230" width="600" height="250"/>
                                 <animations/>
@@ -328,7 +368,7 @@
                         <animations/>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.078431372550000003" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="first" id="Sj0-vD-3rv"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="_Calendar---icon-.png" id="Sj0-vD-3rv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vhp-k6-DZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,7 +406,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pOI-Yr-kL2">
-                                <rect key="frame" x="196" y="82" width="209.5" height="42"/>
+                                <rect key="frame" x="196" y="82" width="210" height="42"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -437,7 +477,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="Logo--image.png" width="150" height="150"/>
+        <image name="_Calendar---icon-.png" width="22" height="22"/>
+        <image name="backgroundNew.png" width="640" height="1319"/>
+        <image name="cloud--icon.png" width="33" height="16"/>
+        <image name="coffee---icon.png" width="30" height="30"/>
+        <image name="drink--icon.png" width="21" height="33"/>
+        <image name="gym--icon.png" width="33" height="45"/>
+        <image name="happy---icon.png" width="30" height="42"/>
+        <image name="home--icon.png" width="41" height="45"/>
+        <image name="newnewnew.png" width="640" height="1136"/>
+        <image name="play--icon.png" width="39" height="52"/>
+        <image name="profile---icon.png" width="18" height="19"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
