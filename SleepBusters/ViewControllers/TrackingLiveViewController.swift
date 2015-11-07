@@ -17,7 +17,7 @@ class TrackingLiveViewController:
 
 
 UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
-    @IBOutlet weak var pieChartView: PieChartView!
+    @IBOutlet weak var radarChartView: RadarChartView!
    // var business = Business()
     @IBOutlet weak var respLineChart: JBLineChartView!
     @IBAction func btnStopTracking(sender: UIButton) {
@@ -26,6 +26,7 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
     var counterPie = 0.00
     var counter = 5;
     var chartLegend = [""]
+    var eegValues = [5.0, 4.0, 1.0, 2.0, 3.0]
     var chartData = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 ]
     var lastYearChartData = [75, 88, 79, 95, 72, 55, 90]
     var ui = UserInterfaceHelpers()
@@ -53,14 +54,21 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         
         //var testSleepData = business.getUserSleepSession(1, startDate: NSDate(), endDate: NSDate())
         
+        var EegDelta: Int? = nil
+        var EegTheta: Int? = nil
+        var EegLowAlpha: Int? = nil
+        var EegHighAlpha: Int? = nil
+        var EegLowBeta: Int? = nil
+        var EegHighBeta: Int? = nil
+        var EegLowGamma: Int? = nil
+        var EegHighGamma: Int? = nil
         
+        eegType = ["Delta" , "Theta", "Alpha", "Beta", "Gamma" ]
         
-        sleepType = ["light\n sleep" , "deep\n sleep", "awake"]
-        let sleepHours = [5.0, 4.0, 1.0]
 
         
         
-        setChart(sleepType, values: sleepHours)
+        setChart(eegType, values: eegValues)
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewWillAppear(animated: Bool) {
@@ -85,8 +93,8 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         let header = UILabel(frame: CGRectMake(0, 0, respLineChart.frame.width, 50))
         header.textColor = UIColor.whiteColor()
         header.font = UIFont.systemFontOfSize(14)
-        header.text = "Respiratory Signal"
-        header.textAlignment = NSTextAlignment.Center
+        header.text = "         Respiratory Signal"
+        header.textAlignment = NSTextAlignment.Left
         
         respLineChart.footerView = footerView
         respLineChart.headerView = header
@@ -99,6 +107,7 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         // our code
         respLineChart.reloadData()
         let timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("showChart"), userInfo: nil, repeats: true)
+        let eegTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateEEGChart"), userInfo: nil, repeats: true)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -113,14 +122,29 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
     func showChart() {
         chartData.removeFirst()
         var temp = 25+abs(70*sin(counterPie))
-      
         chartData.append(Int(temp))
         respLineChart.reloadData()
         respLineChart.setState(.Expanded, animated: false)
-
-
         counterPie = counterPie + 0.02;
-
+    }
+    func updateEEGChart(){
+        
+        
+        for var index = 0; index < 4; index++
+        {
+            eegValues[index] = Double(Int(arc4random_uniform(11)));
+            
+        }
+        
+        setChart(eegType, values: eegValues)
+//        radarChartView.legend.textColor = UIColor.whiteColor()
+//        radarChartView.xAxis.labelTextColor = UIColor.whiteColor()
+//        radarChartView.yAxis.labelTextColor = UIColor.clearColor()
+//
+//        radarChartView.notifyDataSetChanged() // let the chart know it's data changed
+//        radarChartView.setNeedsDisplay()
+//        radarChartView..invalidate();
+        
     }
     
     // MARK: JBlineChartView
@@ -213,9 +237,9 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
     
     ///PieChart function
     /// Edited Conrad's BarChart funtion to make it PieChart
-    var sleepType: [String]!
+    var eegType: [String]!
     func setChart(dataPoints: [String], values: [Double]) {
-        pieChartView.noDataText = "No Sleep Data Available."
+        radarChartView.noDataText = "No Sleep Data Available."
         
         
         var dataEntries: [ChartDataEntry] = []
@@ -228,42 +252,34 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
             sum += values[i]
-            
-            
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+
+            let color = UIColor.redColor()
             colors.append(color)
             
         }
         
     
         
-        let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "sleep hours")
-        chartDataSet.colors = ChartColorTemplates.colorful()
+        let chartDataSet = RadarChartDataSet(yVals: dataEntries, label: "EEG Live Sensor")
+        chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
+        let dataSets: [RadarChartDataSet] = [ chartDataSet]
+        let chartData = RadarChartData(xVals: eegType, dataSets: dataSets)
+        radarChartView.data = chartData
+        chartData.setValueTextColor(UIColor.clearColor())
         
         
-        let dataSets: [PieChartDataSet] = [ chartDataSet]
-        let chartData = PieChartData(xVals: sleepType, dataSets: dataSets)
-        pieChartView.data = chartData
-        
-        
-        
-        
-        pieChartView.descriptionText = ""
-        pieChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
-        
-        pieChartView.legend.textColor = UIColor.whiteColor()
-        pieChartView.centerText = "\( sum ) \n Hours \n completed"
+        radarChartView.descriptionText = ""
+        radarChartView.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 0)
+        radarChartView.legend.textColor = UIColor.whiteColor()
+        radarChartView.xAxis.labelTextColor = UIColor.whiteColor()
+        radarChartView.yAxis.labelTextColor = UIColor.clearColor()
+        //radarChartView.centerText = "\( sum ) \n Hours \n completed"
      
      
-        pieChartView.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .EaseInBounce)
+        radarChartView.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .EaseInBounce)
         
-        //chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
         
-        chartDataSet.colors = ChartColorTemplates.colorful()
+        
 
         
     }

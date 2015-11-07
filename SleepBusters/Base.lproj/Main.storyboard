@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="B0r-3l-WZl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -328,16 +328,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-Eb-nPG" customClass="JBLineChartView">
-                                <rect key="frame" x="0.0" y="250" width="600" height="230"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="376" id="9js-Ml-WuH"/>
-                                    <constraint firstAttribute="height" constant="250" id="X07-0M-YHX"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6iH-Iu-Vgo" customClass="PieChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6iH-Iu-Vgo" customClass="RadarChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -370,6 +361,15 @@
                                     <constraint firstAttribute="height" constant="60" id="r38-Zm-OFZ"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-Eb-nPG" customClass="JBLineChartView">
+                                <rect key="frame" x="0.0" y="250" width="600" height="230"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="376" id="9js-Ml-WuH"/>
+                                    <constraint firstAttribute="height" constant="250" id="X07-0M-YHX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -391,7 +391,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
-                        <outlet property="pieChartView" destination="6iH-Iu-Vgo" id="vIt-7g-hJs"/>
+                        <outlet property="radarChartView" destination="6iH-Iu-Vgo" id="Gmg-pm-Mge"/>
                         <outlet property="respLineChart" destination="Pgf-Eb-nPG" id="zXo-Ym-vAZ"/>
                     </connections>
                 </viewController>
@@ -399,33 +399,87 @@
             </objects>
             <point key="canvasLocation" x="3218" y="755"/>
         </scene>
-        <!--View Controller-->
+        <!--StatsViewController-->
         <scene sceneID="nWJ-RG-pyI">
             <objects>
-                <viewController id="nek-nd-2zR" sceneMemberID="viewController">
+                <viewController title="StatsViewController" id="nek-nd-2zR" customClass="StatsViewController" customModule="SleepBusters" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bJb-He-Tp2"/>
-                        <viewControllerLayoutGuide type="bottom" id="CNa-Oq-Gv7"/>
+                        <viewControllerLayoutGuide type="top" id="fNg-tf-D4b"/>
+                        <viewControllerLayoutGuide type="bottom" id="19P-bd-zNt"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hxu-iY-M2E">
+                    <view key="view" contentMode="scaleToFill" id="nOe-ME-gHy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sleep Session Stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="css-r9-3WK">
-                                <rect key="frame" x="158" y="73" width="151" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundNew.png" translatesAutoresizingMaskIntoConstraints="NO" id="uXe-uT-aEZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8NN-uA-WOc" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="49" width="600" height="306"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11:30 pm - 10:30 am " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOo-82-Te5">
+                                <rect key="frame" x="50" y="413" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bed.png" translatesAutoresizingMaskIntoConstraints="NO" id="FtF-xJ-Kzr">
+                                <rect key="frame" x="20" y="408" width="17" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lung.png" translatesAutoresizingMaskIntoConstraints="NO" id="8hg-AQ-gcO">
+                                <rect key="frame" x="20" y="451" width="17" height="22"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20 breaths/min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8l-4L-NE8">
+                                <rect key="frame" x="50" y="452" width="140" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="369-p3-7wo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8NN-uA-WOc" firstAttribute="trailing" secondItem="uXe-uT-aEZ" secondAttribute="trailing" id="0fF-2h-aKe"/>
+                            <constraint firstItem="gOo-82-Te5" firstAttribute="top" secondItem="8NN-uA-WOc" secondAttribute="bottom" constant="58" id="2lO-Yo-kdk"/>
+                            <constraint firstItem="uXe-uT-aEZ" firstAttribute="leading" secondItem="8NN-uA-WOc" secondAttribute="leading" id="7l8-2A-b6x"/>
+                            <constraint firstItem="n8l-4L-NE8" firstAttribute="leading" secondItem="gOo-82-Te5" secondAttribute="leading" id="8ik-8T-kwO"/>
+                            <constraint firstItem="8hg-AQ-gcO" firstAttribute="top" secondItem="FtF-xJ-Kzr" secondAttribute="bottom" constant="22" id="A5K-nv-wsi"/>
+                            <constraint firstItem="uXe-uT-aEZ" firstAttribute="bottom" secondItem="19P-bd-zNt" secondAttribute="top" id="AR7-CL-zif"/>
+                            <constraint firstAttribute="trailing" secondItem="8NN-uA-WOc" secondAttribute="trailing" id="IJq-Lf-oXm"/>
+                            <constraint firstItem="19P-bd-zNt" firstAttribute="top" secondItem="8NN-uA-WOc" secondAttribute="bottom" constant="245" id="MeN-qb-wA9"/>
+                            <constraint firstItem="8NN-uA-WOc" firstAttribute="top" secondItem="nOe-ME-gHy" secondAttribute="top" constant="49" id="QRY-3X-sx0"/>
+                            <constraint firstItem="FtF-xJ-Kzr" firstAttribute="top" secondItem="8NN-uA-WOc" secondAttribute="bottom" constant="53" id="UrX-bX-WYX"/>
+                            <constraint firstItem="n8l-4L-NE8" firstAttribute="bottom" secondItem="8hg-AQ-gcO" secondAttribute="bottom" id="Yyc-i5-IXl"/>
+                            <constraint firstItem="8hg-AQ-gcO" firstAttribute="trailing" secondItem="FtF-xJ-Kzr" secondAttribute="trailing" id="co5-Xu-kcC"/>
+                            <constraint firstItem="gOo-82-Te5" firstAttribute="leading" secondItem="FtF-xJ-Kzr" secondAttribute="trailing" constant="13" id="h3I-4D-B4d"/>
+                            <constraint firstItem="uXe-uT-aEZ" firstAttribute="top" secondItem="8NN-uA-WOc" secondAttribute="top" constant="-49" id="hNj-HC-0YI"/>
+                            <constraint firstItem="19P-bd-zNt" firstAttribute="top" secondItem="8hg-AQ-gcO" secondAttribute="bottom" constant="127" id="lwo-A3-rJz"/>
+                            <constraint firstItem="FtF-xJ-Kzr" firstAttribute="leading" secondItem="nOe-ME-gHy" secondAttribute="leadingMargin" id="mBh-U2-6pR"/>
+                            <constraint firstItem="8NN-uA-WOc" firstAttribute="leading" secondItem="nOe-ME-gHy" secondAttribute="leading" id="rwS-bh-2oX"/>
+                            <constraint firstItem="gOo-82-Te5" firstAttribute="leading" secondItem="nOe-ME-gHy" secondAttribute="leadingMargin" constant="30" id="tGx-bq-HGq"/>
+                            <constraint firstItem="19P-bd-zNt" firstAttribute="top" secondItem="FtF-xJ-Kzr" secondAttribute="bottom" constant="171" id="vnH-UG-Ii3"/>
+                            <constraint firstItem="8hg-AQ-gcO" firstAttribute="leading" secondItem="FtF-xJ-Kzr" secondAttribute="leading" id="xhu-WD-lb2"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="pieChartView" destination="8NN-uA-WOc" id="enf-Ll-B9i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TB0-30-rTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1536" y="1175"/>
+            <point key="canvasLocation" x="1479" y="1164"/>
         </scene>
         <!--Calendar Appearance Delegate-->
         <scene sceneID="Ddx-RI-klH">
@@ -493,6 +547,7 @@
                     <navigationItem key="navigationItem" id="TsZ-FI-0FB">
                         <nil key="title"/>
                     </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="barChartView" destination="4Kt-0b-Rts" id="ijQ-4E-g1m"/>
                         <outlet property="calendarView" destination="n6V-X5-mti" id="wp4-Td-VSi"/>
@@ -629,11 +684,14 @@
         <image name="Logo--image.png" width="150" height="150"/>
         <image name="_Calendar---icon-.png" width="22" height="22"/>
         <image name="backgroundNew.png" width="640" height="1319"/>
-        <image name="beer-off.png" width="64" height="64"/>
+        <image name="bed.png" width="64" height="64"/>
         <image name="cloud--icon.png" width="33" height="16"/>
-        <image name="coffee-off.png" width="64" height="64"/>
-        <image name="gym-off.png" width="64" height="64"/>
-        <image name="happy.png" width="64" height="64"/>
+        <image name="coffee---icon.png" width="30" height="30"/>
+        <image name="drink--icon.png" width="21" height="33"/>
+        <image name="gym--icon.png" width="33" height="45"/>
+        <image name="happy---icon.png" width="30" height="42"/>
+        <image name="home--icon.png" width="41" height="45"/>
+        <image name="lung.png" width="64" height="64"/>
         <image name="newnewnew.png" width="640" height="1136"/>
         <image name="nothome.png" width="64" height="64"/>
         <image name="play--icon.png" width="39" height="52"/>

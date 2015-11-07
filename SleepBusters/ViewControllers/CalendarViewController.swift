@@ -19,6 +19,7 @@ class CalendarViewController: UIViewController {
     var business = Business()
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBarHidden == true
         //calendar
         //barchart
         var testSleepData = business.getUserSleepSession(1, startDate: NSDate(), endDate: NSDate())
@@ -46,6 +47,11 @@ class CalendarViewController: UIViewController {
         return UIStatusBarStyle.LightContent;
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBarHidden = true
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -88,6 +94,8 @@ class CalendarViewController: UIViewController {
         chartData.setValueTextColor(UIColor.clearColor())
         barChartView.data = chartData
         
+        barChartView.reloadInputViews()
+        barChartView.resetViewPortOffsets()
         // color settings for chart
         barChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
         barChartView.gridBackgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
@@ -102,11 +110,11 @@ class CalendarViewController: UIViewController {
         barChartView.rightAxis.gridColor = UIColor.clearColor()
         barChartView.xAxis.gridColor = UIColor.clearColor()
     
-        barChartView.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .EaseInBounce)
-        let ll = ChartLimitLine(limit: 4.0, label: "Recommended Deep Sleep")
-        ll.valueTextColor = UIColor.whiteColor()
-        ll.lineColor = UIColor(red:255/255, green: 20/255, blue: 60/255, alpha: 0.6)
-        barChartView.rightAxis.addLimitLine(ll)
+        barChartView.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .EaseInOutExpo)
+        //let ll = ChartLimitLine(limit: 4.0, label: "Recommended Deep Sleep")
+        //ll.valueTextColor = UIColor.whiteColor()
+        //ll.lineColor = UIColor(red:255/255, green: 20/255, blue: 60/255, alpha: 0.6)
+        //barChartView.rightAxis.addLimitLine(ll)
         
     }
 }
