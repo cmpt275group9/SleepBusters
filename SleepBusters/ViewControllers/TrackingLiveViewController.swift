@@ -261,7 +261,7 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
     
         
         let chartDataSet = RadarChartDataSet(yVals: dataEntries, label: "EEG Live Sensor")
-        
+        chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
         let dataSets: [RadarChartDataSet] = [ chartDataSet]
         let chartData = RadarChartData(xVals: eegType, dataSets: dataSets)
         radarChartView.data = chartData
@@ -270,7 +270,6 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         
         radarChartView.descriptionText = ""
         radarChartView.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 0)
-        
         radarChartView.legend.textColor = UIColor.whiteColor()
         radarChartView.xAxis.labelTextColor = UIColor.whiteColor()
         radarChartView.yAxis.labelTextColor = UIColor.clearColor()
@@ -279,7 +278,7 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
      
         radarChartView.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .EaseInBounce)
         
-        chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
+        
         
 
         
