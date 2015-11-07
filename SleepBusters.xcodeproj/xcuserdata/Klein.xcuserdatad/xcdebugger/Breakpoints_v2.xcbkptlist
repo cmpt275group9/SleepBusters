@@ -285,9 +285,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "TrackingLiveViewController"
-            landmarkType = "3">
+            endingLineNumber = "29">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -378,9 +376,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "5">
+            endingLineNumber = "110">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -394,9 +390,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
+            endingLineNumber = "115">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -410,9 +404,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "5">
+            endingLineNumber = "88">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -427,8 +419,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
+            landmarkName = "CalendarViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -522,9 +514,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "lineChartView(_:numberOfVerticalValuesAtLineIndex:)"
-            landmarkType = "5">
+            endingLineNumber = "170">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -538,9 +528,21 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "273"
-            endingLineNumber = "273"
-            landmarkName = "setChart(_:values:)"
-            landmarkType = "5">
+            endingLineNumber = "273">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepBusters/ViewControllers/MyProfileViewController.swift"
+            timestampString = "468631464.16703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
