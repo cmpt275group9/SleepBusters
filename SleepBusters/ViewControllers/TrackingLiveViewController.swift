@@ -26,6 +26,7 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
     var counterPie = 0.00
     var counter = 5;
     var chartLegend = [""]
+    var eegValues = [5.0, 4.0, 1.0, 2.0, 3.0]
     var chartData = [50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50 ]
     var lastYearChartData = [75, 88, 79, 95, 72, 55, 90]
     var ui = UserInterfaceHelpers()
@@ -62,8 +63,8 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         var EegLowGamma: Int? = nil
         var EegHighGamma: Int? = nil
         
-        eegType = ["Delta" , "Theta", "LowAlpha", "HighAlpha", "LowBeta", "HighBeta", "LowGamma", "HighGamma"]
-        let eegValues = [5.0, 4.0, 1.0, 2.0, 3.0, 6.0, 2.0, 9.0]
+        eegType = ["Delta" , "Theta", "Alpha", "Beta", "Gamma" ]
+        
 
         
         
@@ -92,8 +93,8 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         let header = UILabel(frame: CGRectMake(0, 0, respLineChart.frame.width, 50))
         header.textColor = UIColor.whiteColor()
         header.font = UIFont.systemFontOfSize(14)
-        header.text = "Respiratory Signal"
-        header.textAlignment = NSTextAlignment.Center
+        header.text = "         Respiratory Signal"
+        header.textAlignment = NSTextAlignment.Left
         
         respLineChart.footerView = footerView
         respLineChart.headerView = header
@@ -106,6 +107,7 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         // our code
         respLineChart.reloadData()
         let timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("showChart"), userInfo: nil, repeats: true)
+        let eegTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateEEGChart"), userInfo: nil, repeats: true)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -120,14 +122,29 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
     func showChart() {
         chartData.removeFirst()
         var temp = 25+abs(70*sin(counterPie))
-      
         chartData.append(Int(temp))
         respLineChart.reloadData()
         respLineChart.setState(.Expanded, animated: false)
-
-
         counterPie = counterPie + 0.02;
-
+    }
+    func updateEEGChart(){
+        
+        
+        for var index = 0; index < 4; index++
+        {
+            eegValues[index] = Double(Int(arc4random_uniform(11)));
+            
+        }
+        
+        setChart(eegType, values: eegValues)
+//        radarChartView.legend.textColor = UIColor.whiteColor()
+//        radarChartView.xAxis.labelTextColor = UIColor.whiteColor()
+//        radarChartView.yAxis.labelTextColor = UIColor.clearColor()
+//
+//        radarChartView.notifyDataSetChanged() // let the chart know it's data changed
+//        radarChartView.setNeedsDisplay()
+//        radarChartView..invalidate();
+        
     }
     
     // MARK: JBlineChartView
@@ -236,14 +253,14 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
             dataEntries.append(dataEntry)
             sum += values[i]
 
-            let color = UIColor(red: 0, green: 50/255, blue: 255, alpha: 1)
+            let color = UIColor.redColor()
             colors.append(color)
             
         }
         
     
         
-        let chartDataSet = RadarChartDataSet(yVals: dataEntries, label: "eeg sensor values")
+        let chartDataSet = RadarChartDataSet(yVals: dataEntries, label: "EEG Live Sensor")
         
         let dataSets: [RadarChartDataSet] = [ chartDataSet]
         let chartData = RadarChartData(xVals: eegType, dataSets: dataSets)
@@ -252,7 +269,7 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         
         
         radarChartView.descriptionText = ""
-        radarChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
+        radarChartView.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 0)
         
         radarChartView.legend.textColor = UIColor.whiteColor()
         radarChartView.xAxis.labelTextColor = UIColor.whiteColor()
@@ -262,7 +279,7 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
      
         radarChartView.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .EaseInBounce)
         
-        //chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
+        chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
         
 
         
