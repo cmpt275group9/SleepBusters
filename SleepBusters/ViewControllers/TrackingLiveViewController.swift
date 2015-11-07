@@ -21,7 +21,7 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
    // var business = Business()
     @IBOutlet weak var respLineChart: JBLineChartView!
     @IBAction func btnStopTracking(sender: UIButton) {
-        navigationController?.popViewControllerAnimated(true)
+        performSegueWithIdentifier("trackingSegue", sender: nil)
     }
     var counterPie = 0.00
     var counter = 5;

@@ -16,7 +16,7 @@ class StatsViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
     @IBAction func backButtonPressed(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popToRootViewControllerAnimated(true)
     }
     
     override func viewDidLoad() {

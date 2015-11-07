@@ -393,6 +393,7 @@
                     <connections>
                         <outlet property="radarChartView" destination="6iH-Iu-Vgo" id="Gmg-pm-Mge"/>
                         <outlet property="respLineChart" destination="Pgf-Eb-nPG" id="zXo-Ym-vAZ"/>
+                        <segue destination="nek-nd-2zR" kind="show" identifier="trackingSegue" id="I2r-o7-qyW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LgQ-Db-tBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -450,9 +451,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFf-e3-CzI">
-                                <rect key="frame" x="18" y="11" width="117" height="30"/>
+                                <rect key="frame" x="26" y="11" width="34" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Back to Calendar"/>
+                                <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="nek-nd-2zR" eventType="touchUpInside" id="lEb-OU-fUy"/>
                                 </connections>
@@ -710,4 +711,7 @@
         <image name="profile---icon.png" width="18" height="19"/>
         <image name="second" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="I2r-o7-qyW"/>
+    </inferredMetricsTieBreakers>
 </document>
