@@ -1,10 +1,18 @@
-//
-//  FirstViewController.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-02.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-// test
+/********************************************************
+ ***** NOT IMPLEMENTED ****
+ MyProfileViewController.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): TODO: No one yet...
+ 
+ Purpose:  The ViewController for the MyProfile View
+ 
+ Known Bugs: None
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import UIKit
 

@@ -5,6 +5,7 @@ Supported objects:
 - Arrays of Serializable
 - NSData
 - String, Numeric, and all other NSJSONSerialization supported objects
+    THIS CODE IS TAKEN FROM STACK OVERFLOW: AUTHOR IS UNKNOWN 
 */
 
 import Foundation

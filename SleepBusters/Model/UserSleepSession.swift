@@ -1,10 +1,18 @@
-//
-//  UserSleepSession.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-06.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ 
+ UserSleepSession.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes, Conrad Yeung
+ 
+ Purpose:  This model class represents the UserSleepSession
+ table in the database. It will be used to save and display
+ user sleep session slee data.
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
 class UserSleepSession : Serializable {

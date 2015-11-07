@@ -1,10 +1,18 @@
-//
-//  SleepBustersRespiratorySensor.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-11.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ 
+ SleepBustersRespiratorySensor.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes, Conrad Yeung
+ 
+ Purpose:  This class represents the SleepBusters Repiratory
+ Sensor. It will create an instance for each set of data
+ that is received from the repiratory sensor.
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
 class SleepBustersRespiratorySensor

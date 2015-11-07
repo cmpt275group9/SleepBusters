@@ -1,10 +1,16 @@
-//
-//  Extensions.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-04.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ 
+ Extensions.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes
+ 
+ Purpose:  Helper methods for datatypes.
+ 
+ Copyright © 2015 PillowSoft. All rights reserved. 
+ 
+ ********************************************************/
 
 import Foundation
 

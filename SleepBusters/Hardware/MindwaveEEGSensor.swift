@@ -1,10 +1,18 @@
-//
-//  MindwaveEEGSensor.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-11.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ 
+ MindwaveEEGSensor.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes, Conrad Yeung
+ 
+ Purpose:  This class represents the default Mindwave Mobile 
+ properties. Each instance of this class will contain a
+ received set of the from the Mindwave EEG Sensor.
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
 class MindwaveEEGSensor

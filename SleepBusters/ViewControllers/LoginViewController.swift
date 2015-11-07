@@ -1,10 +1,18 @@
-//
-//  LoginViewController.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-03.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ ***** NOT IMPLEMENTED ****
+ LoginViewController.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): TODO: No one yet...
+ 
+ Purpose:  The ViewController for the User Login View
+ 
+ Known Bugs: None
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import UIKit
 class LoginViewController:UIViewController {

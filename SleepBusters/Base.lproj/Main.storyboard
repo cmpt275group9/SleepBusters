@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="B0r-3l-WZl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -67,7 +67,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newnewnew.png" translatesAutoresizingMaskIntoConstraints="NO" id="wH5-OV-5Mx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="561"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="635.5"/>
                                                     <animations/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo--image.png" translatesAutoresizingMaskIntoConstraints="NO" id="DKq-X9-rvc">
@@ -221,7 +221,7 @@
                                                 <constraint firstItem="6Ix-Wm-jMA" firstAttribute="centerX" secondItem="WNu-v9-jMi" secondAttribute="centerX" id="ifL-Fu-QhP"/>
                                                 <constraint firstItem="6Ix-Wm-jMA" firstAttribute="top" secondItem="DKq-X9-rvc" secondAttribute="bottom" constant="29" id="mUc-sl-YYs"/>
                                                 <constraint firstItem="wwm-Zn-1rS" firstAttribute="centerY" secondItem="DKq-X9-rvc" secondAttribute="centerY" id="yl5-zt-Na4"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="wH5-OV-5Mx" secondAttribute="bottom" constant="74" id="zTe-Hy-Pes"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wH5-OV-5Mx" secondAttribute="bottom" id="zTe-Hy-Pes"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -423,22 +423,26 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11:30 pm - 10:30 am " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOo-82-Te5">
                                 <rect key="frame" x="50" y="413" width="161" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bed.png" translatesAutoresizingMaskIntoConstraints="NO" id="FtF-xJ-Kzr">
                                 <rect key="frame" x="20" y="408" width="17" height="21"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lung.png" translatesAutoresizingMaskIntoConstraints="NO" id="8hg-AQ-gcO">
                                 <rect key="frame" x="20" y="451" width="17" height="22"/>
+                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="20 breaths/min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8l-4L-NE8">
                                 <rect key="frame" x="50" y="452" width="140" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="369-p3-7wo"/>
                                 </constraints>
@@ -685,12 +689,11 @@
         <image name="_Calendar---icon-.png" width="22" height="22"/>
         <image name="backgroundNew.png" width="640" height="1319"/>
         <image name="bed.png" width="64" height="64"/>
+        <image name="beer-off.png" width="64" height="64"/>
         <image name="cloud--icon.png" width="33" height="16"/>
-        <image name="coffee---icon.png" width="30" height="30"/>
-        <image name="drink--icon.png" width="21" height="33"/>
-        <image name="gym--icon.png" width="33" height="45"/>
-        <image name="happy---icon.png" width="30" height="42"/>
-        <image name="home--icon.png" width="41" height="45"/>
+        <image name="coffee-off.png" width="64" height="64"/>
+        <image name="gym-off.png" width="64" height="64"/>
+        <image name="happy.png" width="64" height="64"/>
         <image name="lung.png" width="64" height="64"/>
         <image name="newnewnew.png" width="640" height="1136"/>
         <image name="nothome.png" width="64" height="64"/>

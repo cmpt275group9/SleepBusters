@@ -1,9 +1,21 @@
-//
-//  AppStartViewController.swift
-//  
-//
-//
-//
+/********************************************************
+ ***** NOT IMPLEMENTED ****
+ AppStartViewController.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes
+ 
+ Purpose:  This View Controller will first identify
+ if the user is logged in already. It will then 
+ determine if the user should be sent to the login 
+ view or the my profile view.
+ 
+ Known Bugs: None
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import UIKit
 

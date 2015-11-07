@@ -1,12 +1,24 @@
-//
-//  Repository.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-02.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ 
+ DataAccess.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes
+ 
+ Purpose:  The DataAccess class serves as a repository and
+ I/O for SleepBusters. The Business layer will have to 
+ invoke the DataAccess class inorder to receive Live sensor
+ data or save/retreive data from the database.
+ 
+ Known Bugs: None
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
+
 private let authUserName = "sleep"
 private let authPassword = "GC979XOBc7PK#m@It3"
 private let userprofileController = "UserProfile"
@@ -16,41 +28,26 @@ private let httpAction = HttpAction()
 
 class DataAccess {
     
-    var webApi = WebApiConnector()
-    
     init(){
         
     }
     
-    // MARK: Web API Connector (TCP/IP)
+    // MARK: Web API (TCP/IP)
     
     func validateLogin(userName: String,password: String) ->UserProfile {
         let queryString = rootUrl + userprofileController+"/Login?userName="+userName+"&password="+password;
         let jsonData = httpAction.HTTPGet(queryString);
         print(jsonData.data)
-        print("here");
         return UserProfile()
-//        httpAction.HTTPGet(queryString) {
-//            (data: String, error: String?) -> Void in
-//            let userProfile = UserProfile()
-//            userProfile.IsValidated = true
-//            if error != nil {
-//                print(error)
-//                callback(userProfile)
-//            } else {
-//                callback(userProfile)
-//            }
-//        }
     }
     
-    func getUserSleepSession(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSleepSession]{
-        
+    func getUserSleepSessions(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSleepSession]{
         var userSleepSessions = [UserSleepSession()]
-        var userPro = UserProfile()
+        let userPro = UserProfile()
         userPro.Id = 1
         for var index = 0; index < 7; index++
         {
-            var userSleep = UserSleepSession()
+            let userSleep = UserSleepSession()
             
             userSleep.User = userPro;
             
@@ -58,39 +55,88 @@ class DataAccess {
             userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)));
             userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)));
             userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)));
-            var totalHours = userSleep.TotalLightSleepHours! + userSleep.TotalAwakeHours! + userSleep.TotalDeepSleepHours!
+            let totalHours = userSleep.TotalLightSleepHours! + userSleep.TotalAwakeHours! + userSleep.TotalDeepSleepHours!
             userSleep.TotalHoursAsleep = Double(totalHours)
             userSleepSessions.append(userSleep)
         }
-        
         return userSleepSessions
-        //return WebApiConnector().getUserProfile(userId)
+    }
+    
+    func getLastNSleepSessions(userId: Int, n: Int) -> [UserSleepSession]{
+        var userSleepSessions = [UserSleepSession()]
+        let userPro = UserProfile()
+        userPro.Id = userId;
+        for var index = 0; index < n; index++
+        {
+            let userSleep = UserSleepSession()
+            userSleep.User = userPro;
+            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)));
+            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)));
+            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)));
+            let totalHours = userSleep.TotalLightSleepHours! + userSleep.TotalAwakeHours! + userSleep.TotalDeepSleepHours!
+            userSleep.TotalHoursAsleep = Double(totalHours)
+            userSleepSessions.append(userSleep)
+        }
+        return userSleepSessions
+    }
+    
+    func saveUserSleepSession(userSleepSession: UserSleepSession) ->  Bool
+    {
+
+        let queryString = rootUrl + userprofileController+"/SaveUserSleepSession"
+        httpAction.HTTPPost(NSDictionary(), url: queryString){
+            (data: NSDictionary, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+              //  return false;
+            } else {
+              //  return true;
+            }
+            
+        }
+        return true;
     }
 
     func registerUserProfile(user: UserProfile) -> UserProfile {
-        return WebApiConnector().registerUserProfile(user.toDictionary())
+        let queryString = rootUrl + userprofileController+"/Register"
+        httpAction.HTTPPost(NSDictionary(), url: queryString){
+            (data: NSDictionary, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+                // error
+            } else {
+                // success
+            }
+            
+        }
+        return UserProfile();
     }
     
     func getUserProfile(userId: Int) -> UserProfile {
-        return WebApiConnector().getUserProfile(userId)
+        return UserProfile()
     }
     
     func saveUserProfile(userProfile: UserProfile) -> UserProfile {
-        return WebApiConnector().saveUserProfile(userProfile)
+        return UserProfile()
     }
     
     // MARK: Hardware Sensors (Bluetooth)
+    
+    // TODO
+    // Implement this
     func getHistoricalSensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSensorStat]{
-        return WebApiConnector().getHistoricalSensorStats(userId, startDate: startDate, endDate: endDate)
+        return [UserSensorStat]()
     }
     
+    // TODO
+    // Implement this
     func saveUserSensorStats(stats: [UserSensorStat]) -> StatusResult {
-        return WebApiConnector().saveUserSensorStats(stats)
+        return StatusResult()
     }
 
+    // TODO
+    // Implement this
     func getLiveSensorData() -> UserSensorStat{
-        return HardwareConnector().getLiveSensorData()
+        return UserSensorStat()
     }
-    
-    
 }

@@ -1,10 +1,17 @@
-//
-//  EEGBandWaveType.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-10.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ 
+ EEGBandWaveType.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes
+ 
+ Purpose:  Enum stores all fundamental frequency waves of
+ the EEG Hardware sensors.
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
 enum EEGBandWaveType{

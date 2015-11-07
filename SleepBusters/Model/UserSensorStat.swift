@@ -1,10 +1,18 @@
-//
-//  UserSleepStat.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-04.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ 
+ UserSensorStat.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes, Conrad Yeung
+ 
+ Purpose:  This model class represents the single user sensor
+ stata. It will be used to save and display raw user sensor 
+ data. 
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
 class UserSensorStat : Serializable {
@@ -25,7 +33,6 @@ class UserSensorStat : Serializable {
     var EegHighGamma: Int? = nil
     var BlinkStrength: Int? = nil
     var DataQuality: Int? = nil;
-    var Type: SensorType = SensorType.Generic
     var TimeStamp:  NSDate? = nil
     var CreatedDate:  NSDate? = nil
 }

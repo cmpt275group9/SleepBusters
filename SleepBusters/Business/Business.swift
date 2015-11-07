@@ -33,10 +33,17 @@ class Business {
     func saveUserProfile(userProfile: UserProfile) -> UserProfile {
         return data.saveUserProfile(userProfile)
     }
-
     
-    func getUserSleepSession(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSleepSession]{
-        return data.getUserSleepSession(userId, startDate: startDate, endDate: endDate)
+    func saveUserSleepSession(userSleepSession: UserSleepSession) ->  Bool{
+        return data.saveUserSleepSession(userSleepSession)
+    }
+
+    func getLastNSleepSessions(userId: Int, n: Int) -> [UserSleepSession]{
+        return data.getLastNSleepSessions(userId,  n: n)
+    }
+    
+    func getUserSleepSessions(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSleepSession]{
+        return data.getUserSleepSessions(userId, startDate: startDate, endDate: endDate)
     }
     
     // MARK: Hardware Sensors
