@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -48,7 +48,7 @@
         <!--Tracking-->
         <scene sceneID="dJF-c7-Qgv">
             <objects>
-                <tableViewController id="hq1-h3-MLW" sceneMemberID="viewController">
+                <tableViewController id="hq1-h3-MLW" customClass="StartTrackingViewController" customModule="SleepBusters" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="201" sectionHeaderHeight="28" sectionFooterHeight="28" id="gHy-Ya-mVp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,77 +70,6 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="561"/>
                                                     <animations/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ix-Wm-jMA">
-                                                    <rect key="frame" x="127" y="285" width="347" height="192"/>
-                                                    <subviews>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qk8-L9-pQ5">
-                                                            <rect key="frame" x="41" y="34" width="75" height="75"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l28-rb-q1f">
-                                                                    <rect key="frame" x="27" y="21" width="21" height="33"/>
-                                                                    <animations/>
-                                                                    <state key="normal" image="drink--icon.png"/>
-                                                                </button>
-                                                            </subviews>
-                                                            <animations/>
-                                                            <color key="backgroundColor" red="0.19607843137254902" green="0.13333333333333333" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUe-NC-H1S">
-                                                            <rect key="frame" x="41" y="117" width="75" height="75"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lD5-KC-xdf">
-                                                                    <rect key="frame" x="21" y="15" width="33" height="45"/>
-                                                                    <animations/>
-                                                                    <state key="normal" image="gym--icon.png"/>
-                                                                </button>
-                                                            </subviews>
-                                                            <animations/>
-                                                            <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wsf-cj-Olb">
-                                                            <rect key="frame" x="134" y="117" width="75" height="75"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VM-Nq-Yhn">
-                                                                    <rect key="frame" x="17" y="15" width="41" height="45"/>
-                                                                    <animations/>
-                                                                    <state key="normal" image="home--icon.png"/>
-                                                                </button>
-                                                            </subviews>
-                                                            <animations/>
-                                                            <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hl7-o8-sxt">
-                                                            <rect key="frame" x="230" y="117" width="75" height="75"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99h-qP-vjn">
-                                                                    <rect key="frame" x="22" y="23" width="30" height="30"/>
-                                                                    <animations/>
-                                                                    <state key="normal" image="coffee---icon.png"/>
-                                                                </button>
-                                                            </subviews>
-                                                            <animations/>
-                                                            <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </view>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zaU-Bn-E6A">
-                                                            <rect key="frame" x="230" y="34" width="75" height="75"/>
-                                                            <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tad-e8-0DM">
-                                                                    <rect key="frame" x="22" y="17" width="30" height="42"/>
-                                                                    <animations/>
-                                                                    <state key="normal" image="happy---icon.png"/>
-                                                                </button>
-                                                            </subviews>
-                                                            <animations/>
-                                                            <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </view>
-                                                    </subviews>
-                                                    <animations/>
-                                                </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo--image.png" translatesAutoresizingMaskIntoConstraints="NO" id="DKq-X9-rvc">
                                                     <rect key="frame" x="225" y="106" width="150" height="150"/>
                                                     <animations/>
@@ -155,6 +84,127 @@
                                                         <segue destination="jjp-LH-6Mg" kind="show" id="9WB-YF-2UP"/>
                                                     </connections>
                                                 </button>
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ix-Wm-jMA">
+                                                    <rect key="frame" x="127" y="285" width="347" height="192"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUe-NC-H1S">
+                                                            <rect key="frame" x="41" y="117" width="75" height="75"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lD5-KC-xdf">
+                                                                    <rect key="frame" x="20" y="15" width="35" height="35"/>
+                                                                    <animations/>
+                                                                    <state key="normal" image="gym-off.png"/>
+                                                                    <connections>
+                                                                        <action selector="exerciseBtnPressed:" destination="hq1-h3-MLW" eventType="touchUpInside" id="pxb-P5-2KZ"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWJ-d9-uH9">
+                                                                    <rect key="frame" x="16" y="54" width="42" height="21"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <animations/>
+                                                            <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wsf-cj-Olb">
+                                                            <rect key="frame" x="41" y="34" width="75" height="75"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VM-Nq-Yhn">
+                                                                    <rect key="frame" x="20" y="13" width="35" height="35"/>
+                                                                    <animations/>
+                                                                    <state key="normal" image="nothome.png"/>
+                                                                    <connections>
+                                                                        <action selector="homeBtnPressed:" destination="hq1-h3-MLW" eventType="touchUpInside" id="4MI-Ju-srJ"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lw-1g-gGa">
+                                                                    <rect key="frame" x="16" y="54" width="42" height="21"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <animations/>
+                                                            <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hl7-o8-sxt">
+                                                            <rect key="frame" x="230" y="117" width="75" height="75"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99h-qP-vjn">
+                                                                    <rect key="frame" x="20" y="14" width="35" height="35"/>
+                                                                    <animations/>
+                                                                    <state key="normal" image="coffee-off.png"/>
+                                                                    <connections>
+                                                                        <action selector="coffeeBtnPressed:" destination="hq1-h3-MLW" eventType="touchUpInside" id="Ech-FE-sJj"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coffee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdu-Zl-JuS">
+                                                                    <rect key="frame" x="16" y="54" width="42" height="21"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <animations/>
+                                                            <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zaU-Bn-E6A">
+                                                            <rect key="frame" x="230" y="34" width="75" height="75"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tad-e8-0DM">
+                                                                    <rect key="frame" x="20" y="11" width="35" height="35"/>
+                                                                    <animations/>
+                                                                    <state key="normal" image="happy.png"/>
+                                                                    <connections>
+                                                                        <action selector="faceBtnPressde:" destination="hq1-h3-MLW" eventType="touchUpInside" id="HGH-zk-LWH"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Happy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbd-OD-b0c">
+                                                                    <rect key="frame" x="22" y="54" width="33" height="21"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <animations/>
+                                                            <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qk8-L9-pQ5">
+                                                            <rect key="frame" x="136" y="117" width="75" height="75"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l28-rb-q1f">
+                                                                    <rect key="frame" x="20" y="15" width="35" height="35"/>
+                                                                    <animations/>
+                                                                    <state key="normal" image="beer-off.png"/>
+                                                                    <connections>
+                                                                        <action selector="beerBtnPressed:" destination="hq1-h3-MLW" eventType="touchUpInside" id="B6X-7c-1Z3"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alcohol" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcx-lH-1eo">
+                                                                    <rect key="frame" x="16" y="54" width="42" height="21"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <animations/>
+                                                            <color key="backgroundColor" red="0.19607843137254902" green="0.13333333333333333" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="tintColor" red="0.2912946428571429" green="0.0" blue="0.27027182499950969" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </view>
+                                                    </subviews>
+                                                    <animations/>
+                                                </view>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" red="0.12941176469999999" green="0.078431372550000003" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -188,6 +238,14 @@
                     <navigationItem key="navigationItem" title="Tracking" id="iRB-G2-r5a">
                         <barButtonItem key="backBarButtonItem" title="Stop Tracking" id="PP2-9D-FEL"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="beerBtn" destination="l28-rb-q1f" id="Wbw-fw-MRF"/>
+                        <outlet property="coffeeBtn" destination="99h-qP-vjn" id="KFE-4O-oQI"/>
+                        <outlet property="exerciseBtn" destination="lD5-KC-xdf" id="WZB-3V-LGI"/>
+                        <outlet property="faceBtn" destination="tad-e8-0DM" id="MQ9-O3-Xtn"/>
+                        <outlet property="faceLabel" destination="pbd-OD-b0c" id="uop-oM-gB6"/>
+                        <outlet property="homeBtn" destination="1VM-Nq-Yhn" id="Kvj-eE-8mq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3y2-zh-06j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -571,13 +629,13 @@
         <image name="Logo--image.png" width="150" height="150"/>
         <image name="_Calendar---icon-.png" width="22" height="22"/>
         <image name="backgroundNew.png" width="640" height="1319"/>
+        <image name="beer-off.png" width="64" height="64"/>
         <image name="cloud--icon.png" width="33" height="16"/>
-        <image name="coffee---icon.png" width="30" height="30"/>
-        <image name="drink--icon.png" width="21" height="33"/>
-        <image name="gym--icon.png" width="33" height="45"/>
-        <image name="happy---icon.png" width="30" height="42"/>
-        <image name="home--icon.png" width="41" height="45"/>
+        <image name="coffee-off.png" width="64" height="64"/>
+        <image name="gym-off.png" width="64" height="64"/>
+        <image name="happy.png" width="64" height="64"/>
         <image name="newnewnew.png" width="640" height="1136"/>
+        <image name="nothome.png" width="64" height="64"/>
         <image name="play--icon.png" width="39" height="52"/>
         <image name="profile---icon.png" width="18" height="19"/>
         <image name="second" width="30" height="30"/>
