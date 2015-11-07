@@ -28,8 +28,6 @@ class TrackingViewController: UIViewController {
         
         view.backgroundColor = UIColor.darkGrayColor()
         
-        
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
     
         respLineChartView.leftAxis.customAxisMin = 0
         respLineChartView.leftAxis.customAxisMax = 120
