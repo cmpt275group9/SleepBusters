@@ -31,6 +31,7 @@ extension CVCalendarTouchController {
 //        let weekViews = monthView.weekViews
         if let dayView = ownerTouchLocation(location, onMonthView: monthView) where dayView.userInteractionEnabled {
             receiveTouchOnDayView(dayView, withSelectionType: selectionType)
+            calendarView.selected = true
         }
     }
     

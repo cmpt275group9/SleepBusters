@@ -51,6 +51,10 @@ class TrackingViewController: UIViewController {
         let timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("showChart"), userInfo: nil, repeats: true)
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
+    
     func showChart() {
         chartData.removeFirst()
         chartData.append(counter)

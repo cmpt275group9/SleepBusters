@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nek-nd-2zR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -411,22 +411,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundNew.png" translatesAutoresizingMaskIntoConstraints="NO" id="uXe-uT-aEZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="backgroundNew.png" translatesAutoresizingMaskIntoConstraints="NO" id="uXe-uT-aEZ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8NN-uA-WOc" customClass="PieChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8NN-uA-WOc" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="49" width="600" height="306"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bed.png" translatesAutoresizingMaskIntoConstraints="NO" id="FtF-xJ-Kzr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11:30 pm - 10:30 am " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOo-82-Te5">
+                                <rect key="frame" x="50" y="413" width="161" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bed.png" translatesAutoresizingMaskIntoConstraints="NO" id="FtF-xJ-Kzr">
                                 <rect key="frame" x="20" y="408" width="17" height="21"/>
                                 <animations/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lung.png" translatesAutoresizingMaskIntoConstraints="NO" id="8hg-AQ-gcO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="lung.png" translatesAutoresizingMaskIntoConstraints="NO" id="8hg-AQ-gcO">
                                 <rect key="frame" x="20" y="451" width="17" height="22"/>
                                 <animations/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -441,19 +449,20 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="11:30 pm - 10:30 am " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOo-82-Te5">
-                                <rect key="frame" x="50" y="413" width="161" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFf-e3-CzI">
+                                <rect key="frame" x="18" y="11" width="117" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Back to Calendar"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="nek-nd-2zR" eventType="touchUpInside" id="lEb-OU-fUy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8NN-uA-WOc" firstAttribute="trailing" secondItem="uXe-uT-aEZ" secondAttribute="trailing" id="0fF-2h-aKe"/>
-                            <constraint firstItem="gOo-82-Te5" firstAttribute="top" secondItem="8NN-uA-WOc" secondAttribute="bottom" constant="55" id="2lO-Yo-kdk"/>
+                            <constraint firstItem="gOo-82-Te5" firstAttribute="top" secondItem="8NN-uA-WOc" secondAttribute="bottom" constant="58" id="2lO-Yo-kdk"/>
                             <constraint firstItem="uXe-uT-aEZ" firstAttribute="leading" secondItem="8NN-uA-WOc" secondAttribute="leading" id="7l8-2A-b6x"/>
                             <constraint firstItem="n8l-4L-NE8" firstAttribute="leading" secondItem="gOo-82-Te5" secondAttribute="leading" id="8ik-8T-kwO"/>
                             <constraint firstItem="8hg-AQ-gcO" firstAttribute="top" secondItem="FtF-xJ-Kzr" secondAttribute="bottom" constant="22" id="A5K-nv-wsi"/>
@@ -476,12 +485,13 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
+                        <outlet property="backButton" destination="KFf-e3-CzI" id="xVs-GH-9rx"/>
                         <outlet property="pieChartView" destination="8NN-uA-WOc" id="enf-Ll-B9i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TB0-30-rTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1479" y="1164"/>
+            <point key="canvasLocation" x="1491" y="1206"/>
         </scene>
         <!--Calendar Appearance Delegate-->
         <scene sceneID="Ddx-RI-klH">
@@ -508,7 +518,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6V-X5-mti" customClass="CVCalendarView" customModule="SleepBusters" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="140" width="600" height="300"/>
+                                <rect key="frame" x="0.0" y="182" width="600" height="220"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="7CJ-Ew-mSW"/>
@@ -530,15 +540,15 @@
                             <constraint firstItem="n6V-X5-mti" firstAttribute="top" secondItem="ZQB-ox-SbG" secondAttribute="top" constant="80" id="77C-xU-o5b"/>
                             <constraint firstItem="4Kt-0b-Rts" firstAttribute="leading" secondItem="n6V-X5-mti" secondAttribute="leading" id="Hr3-bw-dby"/>
                             <constraint firstItem="4Kt-0b-Rts" firstAttribute="bottom" secondItem="iRr-6h-54V" secondAttribute="top" id="Mkb-ZH-QxS"/>
-                            <constraint firstItem="n6V-X5-mti" firstAttribute="top" secondItem="rFp-XD-knd" secondAttribute="bottom" constant="5" id="P8L-Fv-1D2"/>
+                            <constraint firstItem="n6V-X5-mti" firstAttribute="top" secondItem="rFp-XD-knd" secondAttribute="bottom" id="P8L-Fv-1D2"/>
                             <constraint firstItem="4Kt-0b-Rts" firstAttribute="top" secondItem="ZQB-ox-SbG" secondAttribute="top" constant="345" id="SMh-jO-xNM"/>
                             <constraint firstItem="rFp-XD-knd" firstAttribute="leading" secondItem="ZQB-ox-SbG" secondAttribute="leadingMargin" id="Svx-xC-RVn"/>
                             <constraint firstAttribute="trailing" secondItem="n6V-X5-mti" secondAttribute="trailing" id="icN-3x-PLp"/>
                             <constraint firstItem="4Kt-0b-Rts" firstAttribute="trailing" secondItem="n6V-X5-mti" secondAttribute="trailing" id="mxL-Rh-est"/>
                             <constraint firstItem="n6V-X5-mti" firstAttribute="centerX" secondItem="rFp-XD-knd" secondAttribute="centerX" id="tR8-qi-ol7"/>
-                            <constraint firstItem="rFp-XD-knd" firstAttribute="top" secondItem="ZQB-ox-SbG" secondAttribute="topMargin" constant="5" id="vBB-HO-9QI"/>
+                            <constraint firstItem="rFp-XD-knd" firstAttribute="top" secondItem="ZQB-ox-SbG" secondAttribute="topMargin" constant="30" id="vBB-HO-9QI"/>
                             <constraint firstItem="n6V-X5-mti" firstAttribute="leading" secondItem="ZQB-ox-SbG" secondAttribute="leading" id="x2Q-OI-w3c"/>
-                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="top" secondItem="n6V-X5-mti" secondAttribute="bottom" constant="10" id="zfw-z9-doj"/>
+                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="top" secondItem="n6V-X5-mti" secondAttribute="bottom" id="zfw-z9-doj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -554,11 +564,12 @@
                         <outlet property="barChartView" destination="4Kt-0b-Rts" id="ijQ-4E-g1m"/>
                         <outlet property="calendarView" destination="n6V-X5-mti" id="wp4-Td-VSi"/>
                         <outlet property="menuView" destination="rFp-XD-knd" id="ojx-3N-E8H"/>
+                        <segue destination="nek-nd-2zR" kind="show" identifier="calendarSegue" id="sVe-by-WZZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vhp-k6-DZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="690" y="1198"/>
+            <point key="canvasLocation" x="678" y="1206"/>
         </scene>
         <!--App Start View Controller-->
         <scene sceneID="VBd-dY-8Sw">
