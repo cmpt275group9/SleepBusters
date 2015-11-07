@@ -19,7 +19,8 @@ class CalendarViewController: UIViewController {
     var business = Business()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //calendar
+        //barchart
         var testSleepData = business.getUserSleepSession(1, startDate: NSDate(), endDate: NSDate())
         
         days = ["1", "2", "3", "4", "5", "6", "7"]
@@ -50,6 +51,7 @@ class CalendarViewController: UIViewController {
         
         calendarView.commitCalendarViewUpdate()
         menuView.commitMenuViewUpdate()
+    
     }
     
     var days: [String]!

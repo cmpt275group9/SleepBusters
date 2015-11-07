@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QKm-sR-bUW">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -63,7 +63,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="644"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrG-f7-ipY" id="WNu-v9-jMi">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="643"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="643.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newnewnew.png" translatesAutoresizingMaskIntoConstraints="NO" id="wH5-OV-5Mx">
@@ -279,6 +279,11 @@
                                     <constraint firstAttribute="height" constant="250" id="X07-0M-YHX"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6iH-Iu-Vgo" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IGO-SG-qJT">
                                 <rect key="frame" x="0.0" y="488" width="600" height="63"/>
                                 <subviews>
@@ -306,10 +311,6 @@
                                     <constraint firstAttribute="width" constant="600" id="fvW-Z1-3k4"/>
                                     <constraint firstAttribute="height" constant="60" id="r38-Zm-OFZ"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6iH-Iu-Vgo" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <animations/>
@@ -380,27 +381,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Kt-0b-Rts" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="345" width="600" height="206"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Kt-0b-Rts" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="301" width="600" height="300"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFp-XD-knd" customClass="CVCalendarMenuView" customModule="SleepBusters" customModuleProvider="target">
-                                <rect key="frame" x="10" y="64" width="542" height="90"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFp-XD-knd" customClass="CVCalendarMenuView" customModule="SleepBusters" customModuleProvider="target">
+                                <rect key="frame" x="20" y="25" width="560" height="25"/>
                                 <animations/>
                                 <connections>
                                     <outlet property="menuViewDelegate" destination="tyD-tW-SuA" id="NfY-99-fe9"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6V-X5-mti" customClass="CVCalendarView" customModule="SleepBusters" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="170" width="542" height="167"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n6V-X5-mti" customClass="CVCalendarView" customModule="SleepBusters" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="140" width="600" height="300"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="F14-fk-TVh"/>
+                                    <constraint firstAttribute="height" constant="400" id="7CJ-Ew-mSW"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="F14-fk-TVh"/>
+                                        <exclude reference="7CJ-Ew-mSW"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -412,21 +413,28 @@
                         <animations/>
                         <color key="backgroundColor" red="0.12941176469999999" green="0.078431372550000003" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="rFp-XD-knd" firstAttribute="top" secondItem="J2H-f5-Rpp" secondAttribute="bottom" id="14d-2M-Zeu"/>
-                            <constraint firstItem="n6V-X5-mti" firstAttribute="leading" secondItem="4Kt-0b-Rts" secondAttribute="leading" id="Ajm-Q0-kur"/>
-                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="top" secondItem="n6V-X5-mti" secondAttribute="bottom" constant="8" symbolic="YES" id="Gab-Xb-X19"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="n6V-X5-mti" secondAttribute="trailing" constant="38" id="JeK-jN-QiF"/>
-                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="top" secondItem="ZQB-ox-SbG" secondAttribute="top" constant="345" id="KuH-jL-CSP"/>
-                            <constraint firstItem="rFp-XD-knd" firstAttribute="leading" secondItem="ZQB-ox-SbG" secondAttribute="leadingMargin" constant="-10" id="NKy-DW-BTq"/>
-                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="leading" secondItem="ZQB-ox-SbG" secondAttribute="leading" id="O73-2K-sEA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rFp-XD-knd" secondAttribute="trailing" constant="28" id="bMW-ZX-Rda"/>
-                            <constraint firstAttribute="trailing" secondItem="4Kt-0b-Rts" secondAttribute="trailing" id="cvM-FY-MQO"/>
-                            <constraint firstItem="n6V-X5-mti" firstAttribute="top" secondItem="ZQB-ox-SbG" secondAttribute="top" constant="170" id="fcY-hA-v4N"/>
-                            <constraint firstItem="n6V-X5-mti" firstAttribute="top" secondItem="rFp-XD-knd" secondAttribute="bottom" constant="16" id="lVV-79-rjF"/>
-                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="bottom" secondItem="iRr-6h-54V" secondAttribute="top" id="q2u-nK-WfR"/>
+                            <constraint firstItem="n6V-X5-mti" firstAttribute="top" secondItem="ZQB-ox-SbG" secondAttribute="top" constant="80" id="77C-xU-o5b"/>
+                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="leading" secondItem="n6V-X5-mti" secondAttribute="leading" id="Hr3-bw-dby"/>
+                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="bottom" secondItem="iRr-6h-54V" secondAttribute="top" id="Mkb-ZH-QxS"/>
+                            <constraint firstItem="n6V-X5-mti" firstAttribute="top" secondItem="rFp-XD-knd" secondAttribute="bottom" constant="5" id="P8L-Fv-1D2"/>
+                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="top" secondItem="ZQB-ox-SbG" secondAttribute="top" constant="345" id="SMh-jO-xNM"/>
+                            <constraint firstItem="rFp-XD-knd" firstAttribute="leading" secondItem="ZQB-ox-SbG" secondAttribute="leadingMargin" id="Svx-xC-RVn"/>
+                            <constraint firstAttribute="trailing" secondItem="n6V-X5-mti" secondAttribute="trailing" id="icN-3x-PLp"/>
+                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="trailing" secondItem="n6V-X5-mti" secondAttribute="trailing" id="mxL-Rh-est"/>
+                            <constraint firstItem="n6V-X5-mti" firstAttribute="centerX" secondItem="rFp-XD-knd" secondAttribute="centerX" id="tR8-qi-ol7"/>
+                            <constraint firstItem="rFp-XD-knd" firstAttribute="top" secondItem="ZQB-ox-SbG" secondAttribute="topMargin" constant="5" id="vBB-HO-9QI"/>
+                            <constraint firstItem="n6V-X5-mti" firstAttribute="leading" secondItem="ZQB-ox-SbG" secondAttribute="leading" id="x2Q-OI-w3c"/>
+                            <constraint firstItem="4Kt-0b-Rts" firstAttribute="top" secondItem="n6V-X5-mti" secondAttribute="bottom" constant="10" id="zfw-z9-doj"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="77C-xU-o5b"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="TsZ-FI-0FB"/>
+                    <navigationItem key="navigationItem" id="TsZ-FI-0FB">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="barChartView" destination="4Kt-0b-Rts" id="ijQ-4E-g1m"/>
                         <outlet property="calendarView" destination="n6V-X5-mti" id="wp4-Td-VSi"/>
