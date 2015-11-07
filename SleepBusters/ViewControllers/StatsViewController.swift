@@ -41,12 +41,13 @@ class StatsViewController: UIViewController {
         
         
         var sum = 0.0;
+        var DeepSleepPercentage = 0.0
+        var deepSleep = values[1]
         
         for i in 0..<dataPoints.count {
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
             sum += values[i]
-            
             
             let red = Double(arc4random_uniform(256))
             let green = Double(arc4random_uniform(256))
@@ -57,7 +58,7 @@ class StatsViewController: UIViewController {
             
         }
         
-        
+        DeepSleepPercentage = (deepSleep / sum ) * 100
         
         let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "sleep type")
         chartDataSet.colors = ChartColorTemplates.colorful()
@@ -72,7 +73,7 @@ class StatsViewController: UIViewController {
         pieChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
         
         pieChartView.legend.textColor = UIColor.whiteColor()
-        pieChartView.centerText = "\( sum ) \n Hours \n completed"
+        pieChartView.centerText = "\( DeepSleepPercentage) % \n Deep Sleep"
         
         
         pieChartView.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .EaseInBounce)
