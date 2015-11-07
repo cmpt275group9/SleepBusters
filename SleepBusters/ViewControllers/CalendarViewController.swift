@@ -19,6 +19,7 @@ class CalendarViewController: UIViewController {
     var business = Business()
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBarHidden == true
         //calendar
         //barchart
         var testSleepData = business.getUserSleepSession(1, startDate: NSDate(), endDate: NSDate())
@@ -46,6 +47,12 @@ class CalendarViewController: UIViewController {
         return UIStatusBarStyle.LightContent;
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBarHidden = true
+
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
