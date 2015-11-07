@@ -1,10 +1,18 @@
-//
-//  Business.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-04.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ StatsViewController.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Conrad Yeung, Klein Gomes
+ 
+ Purpose:  All Business Logic is located here.
+ All SleepBusters calculations will be done here.
+ 
+ Known Bugs: None
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
 class Business {
