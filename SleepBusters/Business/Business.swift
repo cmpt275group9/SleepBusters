@@ -58,6 +58,12 @@ class Business {
     func startTracking(){
         //1. Confirm Bluetooh Connection & open data streams
         // Open BT Conn
+        let ThinkGear = TGAccessoryManager();
+        if (ThinkGear.accessory != nil){
+            ThinkGear.startStream()
+        }
+        //uses TGAccessoryManager to bring data from MindWave Mobile
+        
         
         
         //2. Clear Arrays to store data streams

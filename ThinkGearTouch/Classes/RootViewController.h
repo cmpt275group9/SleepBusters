@@ -54,7 +54,7 @@ typedef struct {
 // TGAccessoryDelegate protocol methods
 - (void)accessoryDidConnect:(EAAccessory *)accessory;
 - (void)accessoryDidDisconnect;
-- (void)dataReceived:(NSDictionary *)data;
+- (int)dataReceived:(NSDictionary *)data;
 
 - (UIImage *)updateSignalStatus;
 

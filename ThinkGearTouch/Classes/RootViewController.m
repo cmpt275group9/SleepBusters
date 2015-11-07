@@ -252,7 +252,9 @@
     //[a release];
     
     // start the data stream to the accessory
-    [[TGAccessoryManager sharedTGAccessoryManager] startStream];
+    if([[TGAccessoryManager sharedTGAccessoryManager] accessory] != nil){
+        [[TGAccessoryManager sharedTGAccessoryManager] startStream];
+    }
     
     // set up the current view
     [self setLoadingScreenView];
@@ -277,19 +279,12 @@
 
 //  This method gets called by the TGAccessoryManager when data is received from the
 //  ThinkGear-enabled device.
-- (void)dataReceived:(NSDictionary *)data {
+- (int)dataReceived:(NSDictionary *)data {
     
     //[data retain];
-    
+    int eegPrint[6];
     NSString * temp = [[NSString alloc] init];
-    NSDate * date = [NSDate date];    
-    
-    if([data valueForKey:@"blinkStrength"]){
-        blinkStrength = [[data valueForKey:@"blinkStrength"] intValue];    }
-    
-    if([data valueForKey:@"raw"]) {
-        rawValue = [[data valueForKey:@"raw"] shortValue];
-    }
+    NSDate * date = [NSDate date];
     
     if([data valueForKey:@"poorSignal"]) {
         poorSignalValue = [[data valueForKey:@"poorSignal"] intValue];
@@ -322,6 +317,14 @@
         eegValues.lowGamma =    [[data valueForKey:@"eegLowGamma"] intValue];
         eegValues.highGamma =   [[data valueForKey:@"eegHighGamma"] intValue];
         
+        eegPrint[0] = [[data valueForKey:@"eegDelta"] intValue];
+        eegPrint[1] = [[data valueForKey:@"eegTheta"] intValue];
+        eegPrint[2] = [[data valueForKey:@"eegLowAlpha"] intValue];
+        eegPrint[3] = [[data valueForKey:@"eegHighAlpha"] intValue];
+        eegPrint[4] = [[data valueForKey:@"eegLowBeta"] intValue];
+        eegPrint[5] = [[data valueForKey:@"eegHighBeta"] intValue];
+        
+        
     }
 
     if(logEnabled) {
@@ -334,6 +337,7 @@
     
     // release the parameter
     //[data release];
+    return *eegPrint;
 }   
 
 #pragma mark -
