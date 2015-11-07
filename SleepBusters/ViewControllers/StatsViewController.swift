@@ -21,6 +21,11 @@ class StatsViewController: UIViewController {
     
     @IBOutlet weak var pieChartView: PieChartView!
     
+    @IBOutlet weak var backButton: UIButton!
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

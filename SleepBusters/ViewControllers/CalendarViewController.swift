@@ -151,6 +151,8 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
     
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
+        if calendarView.selected {performSegueWithIdentifier("calendarSegue", sender: nil)}
+        calendarView.selected = false
         print("\(dayView.date.commonDescription) is selected!")
     }
     
@@ -372,7 +374,7 @@ extension CalendarViewController {
         //        let calendar = NSCalendar.currentCalendar()
         //        let calendarManager = calendarView.manager
         let components = Manager.componentsForDate(date) // from today
-        
+        calendarView.selected = false
         print("Showing Month: \(components.month)")
     }
     
