@@ -1,10 +1,17 @@
-//
-//  StatsViewController.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-03.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ StatsViewController.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Conrad Yeung
+ 
+ Purpose:  The ViewController for the Stats View
+ 
+ Known Bugs: None
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import UIKit
 import Charts

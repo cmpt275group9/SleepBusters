@@ -1,15 +1,23 @@
-//
-//  StartTrackingViewController.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-11-03.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ StartTrackingViewController.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes
+ 
+ Purpose:  The ViewController for the Start Tracking View
+ 
+ Known Bugs: None
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
 import UIKit
 
 class StartTrackingViewController: UITableViewController {
+    
     var coffeeIsOn = false
     var homeIsOn = false
     var beerIsOn = false
@@ -28,6 +36,7 @@ class StartTrackingViewController: UITableViewController {
     @IBAction func homeBtnPressed(sender: UIButton) {
         toggleHome()
     }
+    
     @IBAction func coffeeBtnPressed(sender: UIButton) {
         toggleCoffee()
     }
@@ -39,6 +48,7 @@ class StartTrackingViewController: UITableViewController {
     @IBAction func beerBtnPressed(sender: UIButton) {
         toggleBeer()
     }
+    
     @IBAction func faceBtnPressde(sender: UIButton) {
         cycleFace()
     }
@@ -47,9 +57,11 @@ class StartTrackingViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setNeedsStatusBarAppearanceUpdate()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

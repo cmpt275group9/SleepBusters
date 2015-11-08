@@ -1,10 +1,17 @@
-//
-//  HttpBuilder.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-04.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//  TODO: add sources
+/********************************************************
+ 
+ HttpAction.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes
+ 
+ Purpose:  Generic HTTP class will create GET and POST
+ HTTP requests and return their HTTP Response.
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
 class HttpAction {

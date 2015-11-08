@@ -1,15 +1,24 @@
-//
-//  UserInterfaceHelpers.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-11-03.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ 
+ UserInterfaceHelpers.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes
+ 
+ Purpose:  Helper methods for the user interface. This class
+ also stores all colours and returns them to the user
+ interface.
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
 import UIKit
 
 class UserInterfaceHelpers {
+    
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,

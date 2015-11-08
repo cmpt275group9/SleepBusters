@@ -1,10 +1,17 @@
-//
-//  UserProfile.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-02.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ 
+ UserProfile.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes, Conrad Yeung
+ 
+ Purpose:  This model class represents a single user profile.
+ It will be used to save and delete user profile information.
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
 class UserProfile : Serializable {

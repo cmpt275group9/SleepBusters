@@ -1,17 +1,22 @@
-//
-//  EEGConnector.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-04.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ ***** NOT IMPLEMENTED ****
+ EEGConnector.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): TODO: No one yet...
+ 
+ Purpose:  This class will connect to the MindWave Mobile 
+ EEG Sensor and return live EEG Sensor data.
+
+ Known Bugs: (Class is not implemented yet)
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
-class EEGConnector : HardwareConnector{
-    
-    override init() {
-        
-    }
+class EEGConnector  {
     
     func getSensorData() {
         

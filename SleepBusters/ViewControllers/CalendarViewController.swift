@@ -1,10 +1,20 @@
-//
-//  CalendarViewController.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-11-03.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ 
+ TabBarController.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes, Conrad Yeung
+ 
+ Purpose:  This is the View Controller class for the 
+ calendar view. The Calendar used in this class is the
+ open source CVCalendar.
+ 
+ Known Bugs: None
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
 import Charts
@@ -22,7 +32,7 @@ class CalendarViewController: UIViewController {
         navigationController?.navigationBarHidden == true
         //calendar
         //barchart
-        var testSleepData = business.getUserSleepSession(1, startDate: NSDate(), endDate: NSDate())
+        var testSleepData = business.getUserSleepSessions(1, startDate: NSDate(), endDate: NSDate())
         
         days = ["1", "2", "3", "4", "5", "6", "7"]
         var lightSleepHours: [Double] = []

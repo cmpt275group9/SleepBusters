@@ -1,10 +1,18 @@
-//
-//  Business.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-04.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ StatsViewController.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Conrad Yeung, Klein Gomes
+ 
+ Purpose:  All Business Logic is located here.
+ All SleepBusters calculations will be done here.
+ 
+ Known Bugs: None
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import Foundation
 class Business {
@@ -33,10 +41,17 @@ class Business {
     func saveUserProfile(userProfile: UserProfile) -> UserProfile {
         return data.saveUserProfile(userProfile)
     }
-
     
-    func getUserSleepSession(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSleepSession]{
-        return data.getUserSleepSession(userId, startDate: startDate, endDate: endDate)
+    func saveUserSleepSession(userSleepSession: UserSleepSession) ->  Bool{
+        return data.saveUserSleepSession(userSleepSession)
+    }
+
+    func getLastNSleepSessions(userId: Int, n: Int) -> [UserSleepSession]{
+        return data.getLastNSleepSessions(userId,  n: n)
+    }
+    
+    func getUserSleepSessions(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSleepSession]{
+        return data.getUserSleepSessions(userId, startDate: startDate, endDate: endDate)
     }
     
     // MARK: Hardware Sensors

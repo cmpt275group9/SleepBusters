@@ -1,10 +1,20 @@
-//
-//  SecondViewController.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-02.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+ 
+ TabBarController.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes, Conrad Yeung
+ 
+ Purpose:  This is the View Controller for the main
+ live tracking view. All live tracking data should be 
+ invoked and displayed from this view controller.
+ 
+ Known Bugs: None
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import UIKit
 import JBChart

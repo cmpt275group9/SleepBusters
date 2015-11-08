@@ -1,10 +1,19 @@
-//
-//  TabBarController.swift
-//  SleepBusters
-//
-//  Created by Klein on 2015-10-06.
-//  Copyright © 2015 PillowSoft. All rights reserved.
-//
+/********************************************************
+
+ TabBarController.swift
+ 
+ Team Name: PillowSoft
+ 
+ Author(s): Klein Gomes
+ 
+ Purpose:  This is the Tab Bar view controller for the
+ main tab bar for SleepBusters.
+ 
+ Known Bugs: None
+ 
+ Copyright © 2015 PillowSoft. All rights reserved.
+ 
+ ********************************************************/
 
 import UIKit
 
