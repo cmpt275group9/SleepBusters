@@ -2,9 +2,9 @@
  
  DataAccess.swift
  
- @Team Name: PillowSoft
+ Team Name: PillowSoft
  
- @Author(s): Klein Gomes
+ Author(s): Klein Gomes
  
  Purpose:  The DataAccess class serves as a repository and
  I/O for SleepBusters. The Business layer will have to 
@@ -42,8 +42,8 @@ class DataAccess {
     :returns: a User Profile
     */
     func validateLogin(userName: String,password: String) ->UserProfile {
-        let queryString = rootUrl + userprofileController+"/Login?userName="+userName+"&password="+password;
-        let jsonData = httpAction.HTTPGet(queryString);
+        let queryString = rootUrl + userprofileController+"/Login?userName="+userName+"&password="+password
+        let jsonData = httpAction.HTTPGet(queryString)
         print(jsonData.data)
         return UserProfile()
     }
@@ -63,12 +63,10 @@ class DataAccess {
         {
             let userSleep = UserSleepSession()
             
-            userSleep.User = userPro;
-            
-            
-            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)));
-            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)));
-            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)));
+            userSleep.User = userPro
+            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)))
+            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)))
+            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)))
             let totalHours = userSleep.TotalLightSleepHours! + userSleep.TotalAwakeHours! + userSleep.TotalDeepSleepHours!
             userSleep.TotalHoursAsleep = Double(totalHours)
             userSleepSessions.append(userSleep)
@@ -89,10 +87,10 @@ class DataAccess {
         for var index = 0; index < n; index++
         {
             let userSleep = UserSleepSession()
-            userSleep.User = userPro;
-            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)));
-            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)));
-            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)));
+            userSleep.User = userPro
+            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)))
+            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)))
+            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)))
             let totalHours = userSleep.TotalLightSleepHours! + userSleep.TotalAwakeHours! + userSleep.TotalDeepSleepHours!
             userSleep.TotalHoursAsleep = Double(totalHours)
             userSleepSessions.append(userSleep)

@@ -53,15 +53,11 @@ class StartTrackingViewController: UITableViewController {
         cycleFace()
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNeedsStatusBarAppearanceUpdate()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,10 +68,12 @@ class StartTrackingViewController: UITableViewController {
         return UIStatusBarStyle.LightContent;
     }
     
+    // These toggle functions below will toggle the icons on the user interface.
     func toggleCoffee(){
+        
         if(coffeeIsOn)
         {
-coffeeBtn.setImage(UIImage(named: "coffee-off.png"), forState: UIControlState.Normal)
+            coffeeBtn.setImage(UIImage(named: "coffee-off.png"), forState: UIControlState.Normal)
             coffeeIsOn = false
             
         } else {
@@ -85,6 +83,7 @@ coffeeBtn.setImage(UIImage(named: "coffee-off.png"), forState: UIControlState.No
     }
     
     func toggleHome(){
+        
         if(homeIsOn)
         {
             homeBtn.setImage(UIImage(named: "nothome.png"), forState: UIControlState.Normal)
@@ -97,6 +96,7 @@ coffeeBtn.setImage(UIImage(named: "coffee-off.png"), forState: UIControlState.No
     }
     
     func toggleBeer(){
+        
         if(beerIsOn)
         {
             beerBtn.setImage(UIImage(named: "beer-off.png"), forState: UIControlState.Normal)
@@ -109,6 +109,7 @@ coffeeBtn.setImage(UIImage(named: "coffee-off.png"), forState: UIControlState.No
     }
     
     func toggleExercise(){
+        
         if(exerciseIsOn)
         {
             exerciseBtn.setImage(UIImage(named: "gym-off.png"), forState: UIControlState.Normal)
@@ -120,15 +121,13 @@ coffeeBtn.setImage(UIImage(named: "coffee-off.png"), forState: UIControlState.No
     }
     
     func cycleFace(){
+
         if(currentFaceImage == 5)
         {
             currentFaceImage = 0;
         }
-        
-        
         faceBtn.setImage(UIImage(named: faceImages[currentFaceImage]), forState: UIControlState.Normal)
         faceLabel.text = faceImagesDisplayText[currentFaceImage]
-        
         currentFaceImage++
         
     }

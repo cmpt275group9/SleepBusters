@@ -20,6 +20,7 @@ class Business {
     var data = DataAccess()
     var sensorStatArray = [UserSensorStat]()
     var userSleepSession = UserSleepSession()
+    
     init(){
        
     }
