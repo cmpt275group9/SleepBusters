@@ -75,7 +75,7 @@ class Business {
     }
 
     /**
-     Creates a request to the WebApi to save/update a User Sleep Session to the database.
+     Creates a request to the WebApi to get a collection of User Sleep Session from the database.
      - parameter UserId: The user's ID
      - parameter n: The user's last N user sessions from the database.
      :returns: Array of N Sleep Sessions
@@ -85,7 +85,7 @@ class Business {
     }
     
     /**
-     Creates a request to the WebApi to save/update a User Sleep Session to the database.
+     Creates a request to the WebApi to get a collection of User Sleep Session from the database.
      - parameter UserId: The user's ID
      - parameter startDate: The start date of the sleep session.
      - parameter endDate: The end date of the sleep session.
