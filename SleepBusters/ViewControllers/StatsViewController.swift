@@ -42,9 +42,8 @@ class StatsViewController: UIViewController {
         
         
         var dataEntries: [ChartDataEntry] = []
-        var colors: [UIColor] = []
-        
-        
+        var colors: [UIColor] = [ UIColor(red: 0.314, green: 0.824, blue: 0.761, alpha: 1),UIColor(red: 0.729, green: 0.467, blue: 1, alpha: 1),UIColor(red: 0.988, green: 0.671, blue: 0.325, alpha: 1) ]
+
         var sum = 0.0;
         var DeepSleepPercentage = 0.0
         var deepSleep = values[1]
@@ -54,19 +53,17 @@ class StatsViewController: UIViewController {
             dataEntries.append(dataEntry)
             sum += values[i]
             
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
+           // let red = Double(arc4random_uniform(256))
+           // let green = Double(arc4random_uniform(256))
+            //let blue = Double(arc4random_uniform(256))
+
             
         }
         
         DeepSleepPercentage = (deepSleep / sum ) * 100
         
         let chartDataSet = PieChartDataSet(yVals: dataEntries, label: "sleep type")
-        chartDataSet.colors = ChartColorTemplates.colorful()
+        chartDataSet.colors = colors
         
         
         let dataSets: [PieChartDataSet] = [ chartDataSet]
@@ -85,7 +82,6 @@ class StatsViewController: UIViewController {
         
         //chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
         
-        chartDataSet.colors = ChartColorTemplates.colorful()
         
         
     }
