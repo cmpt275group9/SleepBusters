@@ -91,13 +91,13 @@ class CalendarViewController: UIViewController {
 
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Awake Hours")
-        chartDataSet.colors = [UIColor(red: 255/255, green: 165/255, blue: 0, alpha: 1)]
+        chartDataSet.colors = [UIColor(red: 0.988, green: 0.671, blue: 0.325, alpha: 1)]
         
         let chartDataSet2 = BarChartDataSet(yVals: dataEntries2, label: "Light Sleep Hours")
-        chartDataSet2.colors = [UIColor(red: 151/255, green: 252/255, blue: 151/255, alpha: 1)]
+        chartDataSet2.colors = [UIColor(red: 0.314, green: 0.824, blue: 0.761, alpha: 1)]
         
         let chartDataSet3 = BarChartDataSet(yVals: dataEntries3, label: "Deep Sleep Hours")
-        chartDataSet3.colors = [UIColor(red: 0, green: 191/255, blue: 255/255, alpha: 1)]
+        chartDataSet3.colors = [UIColor(red: 0.729, green: 0.467, blue: 1, alpha: 1)]
         
         let dataSets: [BarChartDataSet] = [ chartDataSet, chartDataSet2, chartDataSet3]
         let chartData = BarChartData(xVals: days, dataSets: dataSets)
