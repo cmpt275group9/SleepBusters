@@ -235,6 +235,7 @@
                             <outlet property="delegate" destination="hq1-h3-MLW" id="Uyt-dR-p8L"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Tracking" id="iRB-G2-r5a">
                         <barButtonItem key="backBarButtonItem" title="Stop Tracking" id="PP2-9D-FEL"/>
                     </navigationItem>
@@ -324,7 +325,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundNew.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Hh-Tg-Nt7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="backgroundNew.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Hh-Tg-Nt7">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
@@ -385,11 +386,17 @@
                             <constraint firstItem="3Hh-Tg-Nt7" firstAttribute="top" secondItem="6iH-Iu-Vgo" secondAttribute="top" id="fJ6-ty-zYQ"/>
                             <constraint firstItem="Pgf-Eb-nPG" firstAttribute="leading" secondItem="IGO-SG-qJT" secondAttribute="leading" id="hMb-yk-fCm"/>
                             <constraint firstItem="6iH-Iu-Vgo" firstAttribute="top" secondItem="SiF-nV-WRZ" secondAttribute="bottom" id="is8-px-9sq"/>
+                            <constraint firstItem="3Hh-Tg-Nt7" firstAttribute="top" secondItem="SiF-nV-WRZ" secondAttribute="bottom" id="jpr-UL-A53"/>
                             <constraint firstItem="IGO-SG-qJT" firstAttribute="leading" secondItem="Iws-JD-Nnt" secondAttribute="leadingMargin" constant="-20" id="pOZ-H0-BaK"/>
                             <constraint firstItem="IGO-SG-qJT" firstAttribute="top" secondItem="Pgf-Eb-nPG" secondAttribute="bottom" id="rkQ-aw-C4P"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fJ6-ty-zYQ"/>
+                                <exclude reference="jpr-UL-A53"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="radarChartView" destination="6iH-Iu-Vgo" id="Gmg-pm-Mge"/>
                         <outlet property="respLineChart" destination="Pgf-Eb-nPG" id="zXo-Ym-vAZ"/>
@@ -413,7 +420,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="backgroundNew.png" translatesAutoresizingMaskIntoConstraints="NO" id="uXe-uT-aEZ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="-35" width="600" height="635"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -480,7 +487,7 @@
                             <constraint firstItem="uXe-uT-aEZ" firstAttribute="leading" secondItem="8NN-uA-WOc" secondAttribute="leading" id="7l8-2A-b6x"/>
                             <constraint firstItem="n8l-4L-NE8" firstAttribute="leading" secondItem="gOo-82-Te5" secondAttribute="leading" id="8ik-8T-kwO"/>
                             <constraint firstItem="8hg-AQ-gcO" firstAttribute="top" secondItem="FtF-xJ-Kzr" secondAttribute="bottom" constant="22" id="A5K-nv-wsi"/>
-                            <constraint firstItem="uXe-uT-aEZ" firstAttribute="bottom" secondItem="19P-bd-zNt" secondAttribute="top" id="AR7-CL-zif"/>
+                            <constraint firstItem="uXe-uT-aEZ" firstAttribute="bottom" secondItem="19P-bd-zNt" secondAttribute="top" constant="49" id="AR7-CL-zif"/>
                             <constraint firstItem="KFf-e3-CzI" firstAttribute="leading" secondItem="nOe-ME-gHy" secondAttribute="leadingMargin" constant="6" id="DA7-rq-Ovp"/>
                             <constraint firstAttribute="trailing" secondItem="8NN-uA-WOc" secondAttribute="trailing" id="IJq-Lf-oXm"/>
                             <constraint firstItem="FtF-xJ-Kzr" firstAttribute="top" secondItem="Ci1-LU-SyT" secondAttribute="bottom" constant="33" id="JVj-gx-gYx"/>
@@ -491,7 +498,7 @@
                             <constraint firstItem="8hg-AQ-gcO" firstAttribute="trailing" secondItem="FtF-xJ-Kzr" secondAttribute="trailing" id="co5-Xu-kcC"/>
                             <constraint firstItem="Ci1-LU-SyT" firstAttribute="top" secondItem="8NN-uA-WOc" secondAttribute="bottom" constant="8" id="dDf-mX-2nE"/>
                             <constraint firstItem="gOo-82-Te5" firstAttribute="leading" secondItem="FtF-xJ-Kzr" secondAttribute="trailing" constant="13" id="h3I-4D-B4d"/>
-                            <constraint firstItem="uXe-uT-aEZ" firstAttribute="top" secondItem="8NN-uA-WOc" secondAttribute="top" constant="-49" id="hNj-HC-0YI"/>
+                            <constraint firstItem="uXe-uT-aEZ" firstAttribute="top" secondItem="8NN-uA-WOc" secondAttribute="top" id="hNj-HC-0YI"/>
                             <constraint firstItem="n8l-4L-NE8" firstAttribute="centerY" secondItem="8hg-AQ-gcO" secondAttribute="centerY" id="iUw-2P-YE5"/>
                             <constraint firstItem="19P-bd-zNt" firstAttribute="top" secondItem="8hg-AQ-gcO" secondAttribute="bottom" constant="127" id="lwo-A3-rJz"/>
                             <constraint firstItem="FtF-xJ-Kzr" firstAttribute="leading" secondItem="nOe-ME-gHy" secondAttribute="leadingMargin" id="mBh-U2-6pR"/>
@@ -503,6 +510,11 @@
                             <constraint firstItem="n8l-4L-NE8" firstAttribute="top" secondItem="gOo-82-Te5" secondAttribute="bottom" constant="18" id="wKj-uE-ENk"/>
                             <constraint firstItem="8hg-AQ-gcO" firstAttribute="leading" secondItem="FtF-xJ-Kzr" secondAttribute="leading" id="xhu-WD-lb2"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hNj-HC-0YI"/>
+                            </mask>
+                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>

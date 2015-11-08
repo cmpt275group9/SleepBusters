@@ -1,17 +1,26 @@
 /********************************************************
- StatsViewController.swift
- 
- Team Name: PillowSoft
- 
- Author(s): Conrad Yeung
- 
- Purpose:  The ViewController for the Stats View
- 
- Known Bugs: None
- 
- Copyright © 2015 PillowSoft. All rights reserved.
- 
- ********************************************************/
+
+StatsViewController.swift
+
+Team Name: PillowSoft
+
+Author(s): Riyadh Almuaili, Klein Gomes, Conrad Yeung
+
+Purpose:  This is the View Controller class for the
+Statistics/Summary view. This view is reached from multiple views, and provides
+a summary statistic on tracked sleep sessions.
+
+Known Bugs: None
+
+Issues:
+*** View constraints on views not fully completed
+*** TODO: Implement data from database
+*** TODO: Fix/update constraints and overall appearance
+*** Currently this View is Simulated
+
+Copyright © 2015 PillowSoft. All rights reserved.
+
+********************************************************/
 
 import UIKit
 import Charts
@@ -41,6 +50,10 @@ class StatsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
     }
     
     //Piechart function graphs sleep hours and types of sleep
