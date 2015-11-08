@@ -78,13 +78,13 @@ class StatsViewController: UIViewController {
         pieChartView.data = chartData
         
         
+        pieChartView.holeRadiusPercent = 0.85
+        pieChartView.holeColor = UIColor(red:0.067, green:0.055, blue:0.137, alpha: 1)
         pieChartView.descriptionText = ""
         pieChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
-        
         pieChartView.legend.textColor = UIColor.whiteColor()
         pieChartView.centerText = "\( DeepSleepPercentage) % \n Deep Sleep"
-        
-        
+        pieChartView.centerTextColor = UIColor.whiteColor()
         pieChartView.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .EaseInBounce)
         
         //chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
