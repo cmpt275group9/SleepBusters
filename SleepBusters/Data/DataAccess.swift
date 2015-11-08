@@ -34,13 +34,27 @@ class DataAccess {
     
     // MARK: Web API (TCP/IP)
     
+    /**
+    Creates a request to the WebApi for authenticating a user name and password and returns
+    user profile with UserProfile.IsValidated set to true.
+    - parameter UserName: The user's login name.
+    - parameter Password: The user's password.
+    :returns: a User Profile
+    */
     func validateLogin(userName: String,password: String) ->UserProfile {
-        let queryString = rootUrl + userprofileController+"/Login?userName="+userName+"&password="+password;
-        let jsonData = httpAction.HTTPGet(queryString);
+        let queryString = rootUrl + userprofileController+"/Login?userName="+userName+"&password="+password
+        let jsonData = httpAction.HTTPGet(queryString)
         print(jsonData.data)
         return UserProfile()
     }
     
+    /**
+     Creates a request to the WebApi to get a collection of User Sleep Session from the database
+     - parameter UserId: The user's ID
+     - parameter startDate: The start date of the sleep session.
+     - parameter endDate: The end date of the sleep session.
+     :returns: Array of Sleep Sessions
+     */
     func getUserSleepSessions(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSleepSession]{
         var userSleepSessions = [UserSleepSession()]
         let userPro = UserProfile()
@@ -49,12 +63,10 @@ class DataAccess {
         {
             let userSleep = UserSleepSession()
             
-            userSleep.User = userPro;
-            
-            
-            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)));
-            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)));
-            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)));
+            userSleep.User = userPro
+            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)))
+            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)))
+            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)))
             let totalHours = userSleep.TotalLightSleepHours! + userSleep.TotalAwakeHours! + userSleep.TotalDeepSleepHours!
             userSleep.TotalHoursAsleep = Double(totalHours)
             userSleepSessions.append(userSleep)
@@ -62,6 +74,12 @@ class DataAccess {
         return userSleepSessions
     }
     
+    /**
+     Creates a request to the WebApi to get a collection of User Sleep Session from the database.
+     - parameter UserId: The user's ID
+     - parameter n: The user's last N user sessions from the database.
+     :returns: Array of N Sleep Sessions
+     */
     func getLastNSleepSessions(userId: Int, n: Int) -> [UserSleepSession]{
         var userSleepSessions = [UserSleepSession()]
         let userPro = UserProfile()
@@ -69,10 +87,10 @@ class DataAccess {
         for var index = 0; index < n; index++
         {
             let userSleep = UserSleepSession()
-            userSleep.User = userPro;
-            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)));
-            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)));
-            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)));
+            userSleep.User = userPro
+            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)))
+            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)))
+            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)))
             let totalHours = userSleep.TotalLightSleepHours! + userSleep.TotalAwakeHours! + userSleep.TotalDeepSleepHours!
             userSleep.TotalHoursAsleep = Double(totalHours)
             userSleepSessions.append(userSleep)
@@ -80,9 +98,13 @@ class DataAccess {
         return userSleepSessions
     }
     
+    /**
+     Creates a request to the WebApi to save/update a User Sleep Session to the database.
+     - parameter UserSleepSession: The User Profile to update. (Update User Sleep Session)
+     :returns: Is Success
+     */
     func saveUserSleepSession(userSleepSession: UserSleepSession) ->  Bool
     {
-
         let queryString = rootUrl + userprofileController+"/SaveUserSleepSession"
         httpAction.HTTPPost(NSDictionary(), url: queryString){
             (data: NSDictionary, error: NSError?) -> Void in
@@ -97,6 +119,11 @@ class DataAccess {
         return true;
     }
 
+    /**
+     Creates a request to the WebApi to Register a new User Account.
+     - parameter UserProfile: The User Profile to register. (Create account)
+     :returns: a User Profile
+     */
     func registerUserProfile(user: UserProfile) -> UserProfile {
         let queryString = rootUrl + userprofileController+"/Register"
         httpAction.HTTPPost(NSDictionary(), url: queryString){
@@ -112,10 +139,20 @@ class DataAccess {
         return UserProfile();
     }
     
+    /**
+     Creates a request to the WebApi to retrieve a User Profile from the database.
+     - parameter UserId: The user's ID
+     :returns: a User Profile
+     */
     func getUserProfile(userId: Int) -> UserProfile {
         return UserProfile()
     }
     
+    /**
+     Creates a request to the WebApi to save/update a User Profile to the database.
+     - parameter UserProfile: The User Profile to update. (Update account)
+     :returns: The user profile that was just saved
+     */
     func saveUserProfile(userProfile: UserProfile) -> UserProfile {
         return UserProfile()
     }
