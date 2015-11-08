@@ -8,7 +8,7 @@
  
  Purpose:  The ViewController for the User Login View
  
- Known Bugs: None
+ Known Bugs: Issue - Login is currently disabled.
  
  Copyright © 2015 PillowSoft. All rights reserved.
  
@@ -16,11 +16,6 @@
 
 import UIKit
 class LoginViewController:UIViewController {
-    
-    let defaults = NSUserDefaults.standardUserDefaults()
-    var business = Business()
-    var rememberMe = false;
-
     
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var userNameField: UITextField!
@@ -38,41 +33,13 @@ class LoginViewController:UIViewController {
     }
     
     func login(){
-        let loginName = userNameField.text!
-        let password  = passwordField.text!
-        let user = business.validateLogin(loginName, password: password)
+        // TODO: Add Login Logic here
         showTabViewController()
-        
-        // Code for Login Button OnClick Event
-        ////////////////////////////////////
-        //        let userId = user.Id
-        //       let isValidated = user.IsValidated
-        //        if (isValidated && rememberMe)
-        //        {
-        //            // Save user login state and show MyProfileViewController
-        //            defaults.setBool(true,forKey: "userIsLoggedIn")
-        //            showTabViewController()
-        //        }
-        //        else if (isValidated && !rememberMe)
-        //        {
-        //            // Save user login state and show MyProfileViewController
-        //            defaults.setBool(false,forKey: "userIsLoggedIn")
-        //            showTabViewController()
-        //        }
-        //        else
-        //        {
-        //            // Login Failed: Show message for incorrect username/password
-        //            let alert = UIAlertView()
-        //            alert.title = "Error"
-        //            alert.message = "The username or password is incorrect!"
-        //            alert.addButtonWithTitle("Okay")
-        //            alert.show()
-        //        }
-        ////////////////////////////////////
-        // END CODE FOR OnClick Login
-        
     }
     
+    /**
+     Shows the Tab View Controller
+     */
     func showTabViewController(){
         let tabViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController")
         let appDelegate = UIApplication.sharedApplication().delegate!

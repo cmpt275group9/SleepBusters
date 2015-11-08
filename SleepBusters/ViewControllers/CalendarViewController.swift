@@ -1,6 +1,6 @@
 /********************************************************
  
- TabBarController.swift
+ CalendarViewController.swift
  
  Team Name: PillowSoft
  
@@ -11,6 +11,12 @@
  open source CVCalendar.
  
  Known Bugs: None
+ 
+ Issues:
+ *** Some Functions and Extensions code is sample code provided by ios-charts
+ *** TODO: Review code that we will not use in SleepBusters.
+ *** TODO: Implement Real Hardware Sensor Values
+ *** Currently this View is Simulated
  
  Copyright © 2015 PillowSoft. All rights reserved.
  
@@ -29,9 +35,7 @@ class CalendarViewController: UIViewController {
     var business = Business()
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBarHidden == true
-        //calendar
-        //barchart
+        navigationController?.navigationBarHidden = true
         var testSleepData = business.getUserSleepSessions(1, startDate: NSDate(), endDate: NSDate())
         
         days = ["1", "2", "3", "4", "5", "6", "7"]
@@ -88,7 +92,6 @@ class CalendarViewController: UIViewController {
             let dataEntry3 = BarChartDataEntry(value: values3[i], xIndex: i)
             dataEntries3.append(dataEntry3)
         }
-
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Awake Hours")
         chartDataSet.colors = [UIColor(red: 0.988, green: 0.671, blue: 0.325, alpha: 1)]
@@ -119,12 +122,7 @@ class CalendarViewController: UIViewController {
         barChartView.leftAxis.gridColor = UIColor.clearColor()
         barChartView.rightAxis.gridColor = UIColor.clearColor()
         barChartView.xAxis.gridColor = UIColor.clearColor()
-    
         barChartView.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .EaseInOutExpo)
-        //let ll = ChartLimitLine(limit: 4.0, label: "Recommended Deep Sleep")
-        //ll.valueTextColor = UIColor.whiteColor()
-        //ll.lineColor = UIColor(red:255/255, green: 20/255, blue: 60/255, alpha: 0.6)
-        //barChartView.rightAxis.addLimitLine(ll)
         
     }
 }
@@ -156,44 +154,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         print("\(dayView.date.commonDescription) is selected!")
     }
     
-/*    func presentedDateUpdated(date: CVDate) {
-        if monthLabel.text != date.globalDescription && self.animationFinished {
-            let updatedMonthLabel = UILabel()
-            updatedMonthLabel.textColor = monthLabel.textColor
-            updatedMonthLabel.font = monthLabel.font
-            updatedMonthLabel.textAlignment = .Center
-            updatedMonthLabel.text = date.globalDescription
-            updatedMonthLabel.sizeToFit()
-            updatedMonthLabel.alpha = 0
-            updatedMonthLabel.center = self.monthLabel.center
-            
-            let offset = CGFloat(48)
-            updatedMonthLabel.transform = CGAffineTransformMakeTranslation(0, offset)
-            updatedMonthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
-            
-            UIView.animateWithDuration(0.35, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
-                self.animationFinished = false
-                self.monthLabel.transform = CGAffineTransformMakeTranslation(0, -offset)
-                self.monthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
-                self.monthLabel.alpha = 0
-                
-                updatedMonthLabel.alpha = 1
-                updatedMonthLabel.transform = CGAffineTransformIdentity
-                
-                }) { _ in
-                    
-                    self.animationFinished = true
-                    self.monthLabel.frame = updatedMonthLabel.frame
-                    self.monthLabel.text = updatedMonthLabel.text
-                    self.monthLabel.transform = CGAffineTransformIdentity
-                    self.monthLabel.alpha = 1
-                    updatedMonthLabel.removeFromSuperview()
-            }
-            
-            self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
-        }
-    }*/
-    
     func topMarker(shouldDisplayOnDayView dayView: CVCalendarDayView) -> Bool {
         return true
     }
@@ -204,7 +164,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         if day == randomDay {
             return true
         }
-        
         return false
     }
     
@@ -213,7 +172,6 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         let red = CGFloat(arc4random_uniform(600) / 255)
         let green = CGFloat(arc4random_uniform(600) / 255)
         let blue = CGFloat(arc4random_uniform(600) / 255)
-        
         let color = UIColor(red: red, green: green, blue: blue, alpha: 1)
         
         let numberOfDots = Int(arc4random_uniform(3) + 1)
@@ -242,68 +200,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     
 }
 
-// MARK: - CVCalendarViewDelegate
-/*
-extension ViewController: CVCalendarViewDelegate {
-func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
-let circleView = CVAuxiliaryView(dayView: dayView, rect: dayView.bounds, shape: CVShape.Circle)
-circleView.fillColor = .colorFromCode(0xCCCCCC)
-return circleView
-}
 
-func preliminaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-if (dayView.isCurrentDay) {
-return true
-}
-return false
-}
-
-func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
-let π = M_PI
-
-let ringSpacing: CGFloat = 3.0
-let ringInsetWidth: CGFloat = 1.0
-let ringVerticalOffset: CGFloat = 1.0
-var ringLayer: CAShapeLayer!
-let ringLineWidth: CGFloat = 4.0
-let ringLineColour: UIColor = .blueColor()
-
-let newView = UIView(frame: dayView.bounds)
-
-let diameter: CGFloat = (newView.bounds.width) - ringSpacing
-let radius: CGFloat = diameter / 2.0
-
-let rect = CGRectMake(newView.frame.midX-radius, newView.frame.midY-radius-ringVerticalOffset, diameter, diameter)
-
-ringLayer = CAShapeLayer()
-newView.layer.addSublayer(ringLayer)
-
-ringLayer.fillColor = nil
-ringLayer.lineWidth = ringLineWidth
-ringLayer.strokeColor = ringLineColour.CGColor
-
-let ringLineWidthInset: CGFloat = CGFloat(ringLineWidth/2.0) + ringInsetWidth
-let ringRect: CGRect = CGRectInset(rect, ringLineWidthInset, ringLineWidthInset)
-let centrePoint: CGPoint = CGPointMake(ringRect.midX, ringRect.midY)
-let startAngle: CGFloat = CGFloat(-π/2.0)
-let endAngle: CGFloat = CGFloat(π * 2.0) + startAngle
-let ringPath: UIBezierPath = UIBezierPath(arcCenter: centrePoint, radius: ringRect.width/2.0, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-
-ringLayer.path = ringPath.CGPath
-ringLayer.frame = newView.layer.bounds
-
-return newView
-}
-
-func supplementaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-if (Int(arc4random_uniform(3)) == 1) {
-return true
-}
-
-return false
-}
-}
-*/
 
 // MARK: - CVCalendarViewAppearanceDelegate
 
@@ -320,15 +217,6 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
 // MARK: - IB Actions
 
 extension CalendarViewController {
-    /*@IBAction func switchChanged(sender: UISwitch) {
-        if sender.on {
-            calendarView.changeDaysOutShowingState(false)
-            shouldShowDaysOut = true
-        } else {
-            calendarView.changeDaysOutShowingState(true)
-            shouldShowDaysOut = false
-        }
-    }*/
     
     @IBAction func todayMonthView() {
         calendarView.toggleCurrentDayView()
