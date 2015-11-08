@@ -68,7 +68,10 @@ class StartTrackingViewController: UITableViewController {
         return UIStatusBarStyle.LightContent;
     }
     
-    // These toggle functions below will toggle the icons on the user interface.
+    /**
+     These toggle functions below will toggle the icons on/off in the user interface when
+     the icon is pressed.
+     */
     func toggleCoffee(){
         
         if(coffeeIsOn)
