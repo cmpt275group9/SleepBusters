@@ -18,7 +18,7 @@
  ********************************************************/
 
 import Foundation
-import Alamofire
+//import Alamofire
 
 private let authUserName = "sleep"
 private let authPassword = "GC979XOBc7PK#m@It3"
@@ -49,13 +49,13 @@ class DataAccess {
             "password": password
         ]
         
-        Alamofire
-            .request(.POST, queryString, parameters: parameters, encoding: .JSON)
-            .responseData { response in
-            print(response.request)
-            print(response.response)
-            print(response.result)
-        }
+//        Alamofire
+//            .request(.POST, queryString, parameters: parameters, encoding: .JSON)
+//            .responseData { response in
+//            print(response.request)
+//            print(response.response)
+//            print(response.result)
+//        }
         // HTTP body: {"foo": [1, 2, 3], "bar": {"baz": "qux"}}
         
         //httpAction.HTTPGetAsync(userName,password, callback: callback)(queryString)
