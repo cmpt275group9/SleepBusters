@@ -60,6 +60,8 @@
 		AF03F9CE1BC9EAEF002ADF4D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AF03F9CA1BC9EA04002ADF4D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AF0A76F91BF4496600F3E2E2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0A76EB1BF4490B00F3E2E2 /* Alamofire.framework */; };
 		AF0A76FA1BF4496600F3E2E2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0A76EF1BF4490B00F3E2E2 /* Alamofire.framework */; };
+		AF0A77061BF45BC900F3E2E2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0A76EB1BF4490B00F3E2E2 /* Alamofire.framework */; };
+		AF0A77071BF45BC900F3E2E2 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AF0A76EB1BF4490B00F3E2E2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AF0AA5161BBFB23000C97C87 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0AA5151BBFB23000C97C87 /* DataAccess.swift */; };
 		AF0AA5181BBFB25E00C97C87 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0AA5171BBFB25E00C97C87 /* UserProfile.swift */; };
 		AF15523B1BEC3A9300399DB8 /* _Calendar---icon-@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF1552251BEC3A9300399DB8 /* _Calendar---icon-@2x.png */; };
@@ -213,6 +215,13 @@
 			remoteGlobalIDString = E4202FE01B667AA100C997FB;
 			remoteInfo = "Alamofire watchOS";
 		};
+		AF0A77081BF45BC900F3E2E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF0A76E01BF4490B00F3E2E2 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
 		AF1834B01BBFA9E100EBDFCD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF1834911BBFA9E100EBDFCD /* Project object */;
@@ -237,6 +246,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				AF03F9AA1BC9215C002ADF4D /* JBChart.framework in Embed Frameworks */,
+				AF0A77071BF45BC900F3E2E2 /* Alamofire.framework in Embed Frameworks */,
 				AF03F9CE1BC9EAEF002ADF4D /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -393,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF0A76F91BF4496600F3E2E2 /* Alamofire.framework in Frameworks */,
+				AF0A77061BF45BC900F3E2E2 /* Alamofire.framework in Frameworks */,
 				AF0A76FA1BF4496600F3E2E2 /* Alamofire.framework in Frameworks */,
 				AF2B98FE1BF2865E0092B9A7 /* libTGAccessory.a in Frameworks */,
 				AF03F9A81BC9215C002ADF4D /* JBChart.framework in Frameworks */,
@@ -828,6 +839,7 @@
 			dependencies = (
 				AF03F9A71BC9215C002ADF4D /* PBXTargetDependency */,
 				AF03F9D01BC9EAEF002ADF4D /* PBXTargetDependency */,
+				AF0A77091BF45BC900F3E2E2 /* PBXTargetDependency */,
 			);
 			name = SleepBusters;
 			productName = SleepBusters;
@@ -1180,6 +1192,11 @@
 			isa = PBXTargetDependency;
 			name = Charts;
 			targetProxy = AF03F9CF1BC9EAEF002ADF4D /* PBXContainerItemProxy */;
+		};
+		AF0A77091BF45BC900F3E2E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = AF0A77081BF45BC900F3E2E2 /* PBXContainerItemProxy */;
 		};
 		AF1834B11BBFA9E100EBDFCD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
