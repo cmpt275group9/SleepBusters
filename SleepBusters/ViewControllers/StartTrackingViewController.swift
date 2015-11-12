@@ -23,8 +23,8 @@ class StartTrackingViewController: UITableViewController {
     var beerIsOn = false
     var exerciseIsOn = false
     var currentFaceImage = 0
-    var faceImages = ["happy.png", "bored.png","tired.png","sad.png","angry.png"]
-    var faceImagesDisplayText = ["Happy", "Bored","Tired","Sad","Angry"]
+    let faceImages = ["happy.png", "bored.png","tired.png","sad.png","angry.png"]
+    let faceImagesDisplayText = ["Happy", "Bored","Tired","Sad","Angry"]
     
     @IBOutlet weak var homeBtn: UIButton!
     @IBOutlet weak var coffeeBtn: UIButton!
@@ -33,24 +33,24 @@ class StartTrackingViewController: UITableViewController {
     @IBOutlet weak var exerciseBtn: UIButton!
     @IBOutlet weak var faceLabel: UILabel!
     
+    @IBAction func faceBtnPressed(sender: UIButton) {
+        cycleFace()
+    }
+    
     @IBAction func homeBtnPressed(sender: UIButton) {
-        toggleHome()
+        toggleIcon(homeBtn,onImage: "nothome.png",offImage: "home.png",flag: &homeIsOn)
     }
     
     @IBAction func coffeeBtnPressed(sender: UIButton) {
-        toggleCoffee()
+        toggleIcon(coffeeBtn,onImage: "coffee-off.png",offImage: "coffee-on.png",flag: &coffeeIsOn)
     }
     
     @IBAction func exerciseBtnPressed(sender: UIButton) {
-        toggleExercise()
+        toggleIcon(exerciseBtn,onImage: "gym-off.png",offImage: "gym-on.png",flag: &exerciseIsOn)
     }
     
     @IBAction func beerBtnPressed(sender: UIButton) {
-        toggleBeer()
-    }
-    
-    @IBAction func faceBtnPressde(sender: UIButton) {
-        cycleFace()
+        toggleIcon(beerBtn,onImage: "beer-off.png",offImage: "beer-on.png",flag: &beerIsOn)
     }
     
     override func viewDidLoad() {
@@ -72,56 +72,19 @@ class StartTrackingViewController: UITableViewController {
      These toggle functions below will toggle the icons on/off in the user interface when
      the icon is pressed.
      */
-    func toggleCoffee(){
-        
-        if(coffeeIsOn)
+    
+    func toggleIcon(uiButton: UIButton, onImage: String, offImage: String,inout flag: Bool ){
+        if(flag)
         {
-            coffeeBtn.setImage(UIImage(named: "coffee-off.png"), forState: UIControlState.Normal)
-            coffeeIsOn = false
+            uiButton.setImage(UIImage(named: offImage), forState: UIControlState.Normal)
+            flag = false
             
         } else {
-            coffeeBtn.setImage(UIImage(named: "coffee-on.png"), forState: UIControlState.Normal)
-            coffeeIsOn = true
+            uiButton.setImage(UIImage(named: onImage), forState: UIControlState.Normal)
+            flag = true
         }
     }
     
-    func toggleHome(){
-        
-        if(homeIsOn)
-        {
-            homeBtn.setImage(UIImage(named: "nothome.png"), forState: UIControlState.Normal)
-            homeIsOn = false
-
-        } else {
-            homeBtn.setImage(UIImage(named: "home.png"), forState: UIControlState.Normal)
-            homeIsOn = true
-        }
-    }
-    
-    func toggleBeer(){
-        
-        if(beerIsOn)
-        {
-            beerBtn.setImage(UIImage(named: "beer-off.png"), forState: UIControlState.Normal)
-            beerIsOn = false
-        } else {
-            beerBtn.setImage(UIImage(named: "beer-on.png"), forState: UIControlState.Normal)
-            beerIsOn = true
-            
-        }
-    }
-    
-    func toggleExercise(){
-        
-        if(exerciseIsOn)
-        {
-            exerciseBtn.setImage(UIImage(named: "gym-off.png"), forState: UIControlState.Normal)
-            exerciseIsOn = false
-        } else {
-           exerciseBtn.setImage(UIImage(named: "gym-on.png"), forState: UIControlState.Normal)
-            exerciseIsOn = true
-        }
-    }
     
     func cycleFace(){
 
@@ -129,10 +92,10 @@ class StartTrackingViewController: UITableViewController {
         {
             currentFaceImage = 0;
         }
+        
         faceBtn.setImage(UIImage(named: faceImages[currentFaceImage]), forState: UIControlState.Normal)
         faceLabel.text = faceImagesDisplayText[currentFaceImage]
         currentFaceImage++
-        
     }
     
 }

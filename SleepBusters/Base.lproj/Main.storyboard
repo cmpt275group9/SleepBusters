@@ -164,7 +164,7 @@
                                                                     <animations/>
                                                                     <state key="normal" image="happy.png"/>
                                                                     <connections>
-                                                                        <action selector="faceBtnPressde:" destination="hq1-h3-MLW" eventType="touchUpInside" id="HGH-zk-LWH"/>
+                                                                        <action selector="faceBtnPressed:" destination="hq1-h3-MLW" eventType="touchUpInside" id="SFh-Xk-iQb"/>
                                                                     </connections>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Happy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbd-OD-b0c">
