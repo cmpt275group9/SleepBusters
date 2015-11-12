@@ -28,6 +28,8 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     
     @IBOutlet weak var radarChartView: RadarChartView!
     @IBOutlet weak var respLineChart: JBLineChartView!
+    @IBOutlet weak var lblHumidity: UILabel!
+    @IBOutlet weak var lblTemperature: UILabel!
     @IBAction func btnStopTracking(sender: UIButton) {
         performSegueWithIdentifier("trackingSegue", sender: nil)
     }
@@ -89,7 +91,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         let header = UILabel(frame: CGRectMake(0, 0, respLineChart.frame.width, 50))
         header.textColor = UIColor.whiteColor()
         header.font = UIFont.systemFontOfSize(14)
-        header.text = "         Respiratory Signal"
+       // header.text = "         Respiratory Signal"
         header.textAlignment = NSTextAlignment.Left
         respLineChart.headerView = header
     }
@@ -127,9 +129,11 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     }
     
     func updateEEGChart(){
-        for var index = 0; index < 4; index++
+        for var index = 1; index < 4; index++
         {
-            eegValues[index] = Double(Int(arc4random_uniform(11)));
+            eegValues[index] = Double(Int(arc4random_uniform(10)));
+            let randomIndex = Int(arc4random_uniform(4))
+            eegValues[randomIndex] = 10
         }
         setChart(eegType, values: eegValues)
     }
@@ -155,22 +159,36 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
             sum += values[i]
-            let color = UIColor.redColor()
+            let color = UIColor.greenColor()
             colors.append(color)
         }
         
-        let chartDataSet = RadarChartDataSet(yVals: dataEntries, label: "EEG Live Sensor")
-        chartDataSet.colors = [UIColor(red: 230/255, green: 126/255, blue: 34/255, alpha: 1)]
+        let chartDataSet = RadarChartDataSet(yVals: dataEntries, label: "EEG Frequency")
+        
+     
+        chartDataSet.drawFilledEnabled = true;
+        chartDataSet.lineWidth = 2.0
+
+        chartDataSet.colors = [UIColor.redColor()]
         let dataSets: [RadarChartDataSet] = [ chartDataSet]
         let chartData = RadarChartData(xVals: eegType, dataSets: dataSets)
+        
+        
         radarChartView.data = chartData
         chartData.setValueTextColor(UIColor.clearColor())
         radarChartView.descriptionText = ""
         radarChartView.backgroundColor = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 0)
         radarChartView.legend.textColor = UIColor.whiteColor()
         radarChartView.xAxis.labelTextColor = UIColor.whiteColor()
+        radarChartView.xAxis.axisLineColor = UIColor.greenColor()
+        radarChartView.yAxis.axisLineWidth = 100.0
+        radarChartView.webColor = UIColor.grayColor()
+        radarChartView.innerWebColor = UIColor.grayColor()
         radarChartView.yAxis.labelTextColor = UIColor.clearColor()
-        radarChartView.animate(xAxisDuration: 3.0, yAxisDuration: 3.0, easingOption: .EaseInBounce)
+        radarChartView.yAxis.startAtZeroEnabled = true
+
+        
+        radarChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0, easingOption: .EaseInBounce)
         
     }
     
@@ -310,10 +328,12 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
                 let respiratory  = streamValues[3].stringByReplacingOccurrencesOfString("\r\n", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             
                 chartData.removeFirst()
-           
                 chartData.append(Int(respiratory)!)
                 respLineChart.reloadData()
                 respLineChart.setState(.Expanded, animated: false)
+                lblHumidity.text = "Humidity: " + humidity + " %"
+                lblTemperature.text = "Temperature: " + temp + " C"
+                
                 print("value: \(dataString)")
             }
             

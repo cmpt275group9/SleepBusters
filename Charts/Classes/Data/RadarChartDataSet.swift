@@ -29,5 +29,6 @@ public class RadarChartDataSet: LineRadarChartDataSet
         super.init(yVals: yVals, label: label)
         
         self.valueFont = UIFont.systemFontOfSize(13.0)
+
     }
 }
