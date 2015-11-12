@@ -5,12 +5,14 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "3024BF4D6BA66FB3EC1DA04DCEC37ADEAC07BE8B" : 0,
-    "38693E3B7C5CA317F538363068C9FF3A7169F2A8" : 0
+    "38693E3B7C5CA317F538363068C9FF3A7169F2A8" : 0,
+    "67620B5EFA902936DF04070AF595B76AB0333747" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3A88EF1D-8F3A-4CE8-B878-D95868D7F1C7",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "3024BF4D6BA66FB3EC1DA04DCEC37ADEAC07BE8B" : "SleepBusters\/",
-    "38693E3B7C5CA317F538363068C9FF3A7169F2A8" : "DSLCalendarView\/"
+    "38693E3B7C5CA317F538363068C9FF3A7169F2A8" : "DSLCalendarView\/",
+    "67620B5EFA902936DF04070AF595B76AB0333747" : "SleepBusters\/Alamofire\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "SleepBusters",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -25,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/PeteC\/DSLCalendarView.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "38693E3B7C5CA317F538363068C9FF3A7169F2A8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
     }
   ]
 }
