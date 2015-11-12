@@ -44,7 +44,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     // Respiratory Sensor: (Live Data)
     let isSimulate = true
     let btName = "HMSoft"
-    let btSeviceID = "FFE0"
+    let btServiceID = "FFE0"
     let btCharacteristicId = "FFE1"
     var centralManager:CBCentralManager!
     var blueToothReady = false
@@ -257,11 +257,9 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         }
     }
     
-    
-    
     func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
         peripheral.delegate = self
-        peripheral.discoverServices([CBUUID(string: btSeviceID)])
+        peripheral.discoverServices([CBUUID(string: btServiceID)])
         let state = peripheral.state == CBPeripheralState.Connected ? "yes" : "no"
         print("Connected:\(state)")
         
