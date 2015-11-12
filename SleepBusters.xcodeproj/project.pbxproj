@@ -89,7 +89,6 @@
 		AF1834BF1BBFA9E100EBDFCD /* SleepBustersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1834BE1BBFA9E100EBDFCD /* SleepBustersUITests.swift */; };
 		AF29EBEE1BC3AA4A00F32D07 /* UserSleepSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29EBED1BC3AA4A00F32D07 /* UserSleepSession.swift */; };
 		AF2B98F41BF27FF10092B9A7 /* MindwaveEEG.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2B98F31BF27FF10092B9A7 /* MindwaveEEG.m */; };
-		AF2B98F71BF281770092B9A7 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2B98F61BF281770092B9A7 /* ExternalAccessory.framework */; };
 		AF2B98FE1BF2865E0092B9A7 /* libTGAccessory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2B98FD1BF2865E0092B9A7 /* libTGAccessory.a */; };
 		AF2B99051BF289890092B9A7 /* ThinkGearTouch-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF2B99041BF289890092B9A7 /* ThinkGearTouch-Info.plist */; };
 		AF2B99071BF2898F0092B9A7 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF2B99061BF2898F0092B9A7 /* Entitlements.plist */; };
@@ -284,7 +283,6 @@
 		AF2B98F11BF27FF10092B9A7 /* SleepBusters-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SleepBusters-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF2B98F21BF27FF10092B9A7 /* MindwaveEEG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MindwaveEEG.h; path = MindwaveEEG/MindwaveEEG.h; sourceTree = "<group>"; };
 		AF2B98F31BF27FF10092B9A7 /* MindwaveEEG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MindwaveEEG.m; path = MindwaveEEG/MindwaveEEG.m; sourceTree = "<group>"; };
-		AF2B98F61BF281770092B9A7 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ExternalAccessory.framework; sourceTree = "<group>"; };
 		AF2B98FA1BF282E90092B9A7 /* TGAccessoryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGAccessoryDelegate.h; sourceTree = "<group>"; };
 		AF2B98FB1BF282E90092B9A7 /* TGAccessoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGAccessoryManager.h; sourceTree = "<group>"; };
 		AF2B98FD1BF2865E0092B9A7 /* libTGAccessory.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTGAccessory.a; sourceTree = "<group>"; };
@@ -342,7 +340,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF2B98F71BF281770092B9A7 /* ExternalAccessory.framework in Frameworks */,
 				AF2B98FE1BF2865E0092B9A7 /* libTGAccessory.a in Frameworks */,
 				AF03F9A81BC9215C002ADF4D /* JBChart.framework in Frameworks */,
 				AF03F9CD1BC9EAEF002ADF4D /* Charts.framework in Frameworks */,
@@ -625,7 +622,6 @@
 		AF2B98F51BF2816B0092B9A7 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				AF2B98F61BF281770092B9A7 /* ExternalAccessory.framework */,
 			);
 			name = Framework;
 			sourceTree = "<group>";
@@ -820,7 +816,6 @@
 					};
 					AF1834981BBFA9E100EBDFCD = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = X4QH59WD29;
 					};
 					AF1834AE1BBFA9E100EBDFCD = {
 						CreatedOnToolsVersion = 7.0;

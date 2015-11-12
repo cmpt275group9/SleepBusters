@@ -581,11 +581,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
-            timestampString = "468982173.152533"
+            timestampString = "468982649.309397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
             landmarkName = "peripheral(_:didUpdateValueForCharacteristic:error:)"
             landmarkType = "5">
          </BreakpointContent>
