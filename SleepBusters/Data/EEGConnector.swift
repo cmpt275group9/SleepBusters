@@ -23,6 +23,8 @@ class EEGConnector  {
     }
     
     func getLiveEEGSensorData() -> UserSensorStat{
+        let mindWave = MindwaveEEG()
+        
         // Bluetooth code goes here
         return UserSensorStat()
     }

@@ -19,14 +19,12 @@
 import UIKit
 import JBChart
 import Charts
+import CoreBluetooth
+import Foundation
 
 
 
-
-class TrackingLiveViewController:
-
-
-UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
+class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     @IBOutlet weak var radarChartView: RadarChartView!
     @IBOutlet weak var respLineChart: JBLineChartView!
@@ -34,13 +32,25 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         performSegueWithIdentifier("trackingSegue", sender: nil)
     }
     
-    // Create Simulated Data
+    // EEG Sensor: (Simulated Data)
     var counterPie = 0.00
     var counter = 5;
     var chartLegend = [""]
     var eegValues = [5.0, 4.0, 1.0, 2.0, 3.0]
     var chartData = [0]
     var lastYearChartData = [75, 88, 79, 95, 72, 55, 90]
+    /**************************************************/
+    
+    // Respiratory Sensor: (Live Data)
+    let isSimulate = true
+    let btName = "HMSoft"
+    let btSeviceID = "FFE0"
+    let btCharacteristicId = "FFE1"
+    var centralManager:CBCentralManager!
+    var blueToothReady = false
+    var peripheral: CBPeripheral?
+    var characteristics: CBCharacteristic!
+    var terminalChar:CBCharacteristic!
     /**************************************************/
     
     override func viewDidLoad() {
@@ -53,8 +63,8 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         respLineChart.backgroundColor = UIColor.clearColor()
         respLineChart.delegate = self
         respLineChart.dataSource = self
-        respLineChart.minimumValue = 0
-        respLineChart.maximumValue = 100
+        respLineChart.minimumValue = 100
+        respLineChart.maximumValue = 300
         respLineChart.reloadData()
         respLineChart.setState(.Collapsed, animated: false)
         
@@ -65,6 +75,12 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         
         eegType = ["Delta" , "Theta", "Alpha", "Beta", "Gamma" ]
         setChart(eegType, values: eegValues)
+        
+        if(isSimulate == false){
+            // Respiratory Sensor
+            centralManager = CBCentralManager(delegate: self, queue: nil)
+        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -84,8 +100,10 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         respLineChart.reloadData()
         
         // Create Timers that will Redraw the Chart every 50ms for respiratory and 1 second for EEG
-        let timer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("showChart"), userInfo: nil, repeats: true)
-        let eegTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateEEGChart"), userInfo: nil, repeats: true)
+        if(isSimulate){
+            NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("updateRespiratoryChart"), userInfo: nil, repeats: true)
+        }
+            NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateEEGChart"), userInfo: nil, repeats: true)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -97,13 +115,15 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
         respLineChart.setState(.Collapsed, animated: true)
     }
     
-    func showChart() {
-        chartData.removeFirst()
-        var temp = 25+abs(70*sin(counterPie))
-        chartData.append(Int(temp))
-        respLineChart.reloadData()
-        respLineChart.setState(.Expanded, animated: false)
-        counterPie = counterPie + 0.02;
+    
+    func updateRespiratoryChart()
+    {
+            chartData.removeFirst()
+            let temp = 150+abs(70*sin(counterPie))
+            chartData.append(Int(temp))
+            respLineChart.reloadData()
+            respLineChart.setState(.Expanded, animated: false)
+            counterPie = counterPie + 0.02;
     }
     
     func updateEEGChart(){
@@ -212,6 +232,123 @@ UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Respiratory Sensor
+    // Functions below are related to the Arduino Bluetooth stream
+    func startUpCentralManager() {
+        print("Init Central manager")
+        centralManager = CBCentralManager(delegate: self, queue: nil)
+        
+    }
+    
+    func discoverDevices() {
+        print("Discovering Devices...")
+        centralManager.scanForPeripheralsWithServices(nil, options: nil)
+    }
+    
+    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
+        if(peripheral.name == btName) {
+            print("Discovered \(peripheral.name)")
+            centralManager!.stopScan()
+            self.peripheral = peripheral
+            peripheral.delegate = self
+            centralManager!.connectPeripheral(peripheral, options: nil)
+        }
+    }
+    
+    
+    
+    func centralManager(central: CBCentralManager, didConnectPeripheral peripheral: CBPeripheral) {
+        peripheral.delegate = self
+        peripheral.discoverServices([CBUUID(string: btSeviceID)])
+        let state = peripheral.state == CBPeripheralState.Connected ? "yes" : "no"
+        print("Connected:\(state)")
+        
+    }
+    
+    
+    func peripheral(peripheral: CBPeripheral, didDiscoverServices error: NSError?) {
+        
+        var svc:CBService
+        for svc in peripheral.services! {
+            print(svc)
+            print("Service \(svc)\n")
+            print("Discovering Characteristics for  : \(svc)")
+            peripheral.discoverCharacteristics([CBUUID(string: btCharacteristicId)],forService: svc as CBService)
+        }
+    }
+    
+    
+    func peripheral(peripheral: CBPeripheral, didDiscoverCharacteristicsForService service: CBService, error: NSError?) {
+     
+        if (error != nil) {
+            return
+        }
+        
+        for characteristic in service.characteristics! {
+            if characteristic.UUID == CBUUID(string: btCharacteristicId) {
+                self.terminalChar = (characteristic as CBCharacteristic)
+                peripheral.setNotifyValue(true, forCharacteristic: characteristic as CBCharacteristic)
+                print(peripheral.readValueForCharacteristic(characteristic as CBCharacteristic))
+                
+            }
+        }
+    }
+    
+    func peripheral(peripheral: CBPeripheral, didUpdateValueForCharacteristic characteristic: CBCharacteristic!, error: NSError!) {
+        
+        if (characteristic.UUID.UUIDString == btCharacteristicId) {
+            
+            let stream = characteristic.value
+            let dataString = String(data: stream!, encoding: NSUTF8StringEncoding)
+            var streamValues =  dataString!.characters.split{$0 == ","}.map(String.init)
+            
+            print(streamValues.count)
+            if(streamValues.count == 4)
+            {
+                let humidity = streamValues[0]
+                let temp = streamValues[2]
+                let respiratory  = streamValues[3].stringByReplacingOccurrencesOfString("\r\n", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            
+                chartData.removeFirst()
+           
+                chartData.append(Int(respiratory)!)
+                respLineChart.reloadData()
+                respLineChart.setState(.Expanded, animated: false)
+                print("value: \(dataString)")
+            }
+            
+        }
+        
+    }
+    
+    func centralManagerDidUpdateState(central: CBCentralManager) {
+        print("State Check:")
+        switch (central.state) {
+        case .PoweredOff:
+            print("Powered off")
+            
+        case .PoweredOn:
+            print("Powered On")
+            blueToothReady = true;
+            
+        case .Resetting:
+            print("Resetting")
+            
+        case .Unauthorized:
+            print("Unauthorized")
+            
+        case .Unknown:
+            print("Unknown");
+            
+        case .Unsupported:
+            print("Unsupported");
+            
+        }
+        if blueToothReady {
+            discoverDevices()
+        }
     }
 }
 

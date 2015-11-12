@@ -25,7 +25,8 @@ class LoginViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let mindWave = MindwaveEEG()
+
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

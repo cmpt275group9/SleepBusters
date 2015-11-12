@@ -88,6 +88,11 @@
 		AF1834B41BBFA9E100EBDFCD /* SleepBustersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1834B31BBFA9E100EBDFCD /* SleepBustersTests.swift */; };
 		AF1834BF1BBFA9E100EBDFCD /* SleepBustersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1834BE1BBFA9E100EBDFCD /* SleepBustersUITests.swift */; };
 		AF29EBEE1BC3AA4A00F32D07 /* UserSleepSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29EBED1BC3AA4A00F32D07 /* UserSleepSession.swift */; };
+		AF2B98F41BF27FF10092B9A7 /* MindwaveEEG.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2B98F31BF27FF10092B9A7 /* MindwaveEEG.m */; };
+		AF2B98F71BF281770092B9A7 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2B98F61BF281770092B9A7 /* ExternalAccessory.framework */; };
+		AF2B98FE1BF2865E0092B9A7 /* libTGAccessory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2B98FD1BF2865E0092B9A7 /* libTGAccessory.a */; };
+		AF2B99051BF289890092B9A7 /* ThinkGearTouch-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF2B99041BF289890092B9A7 /* ThinkGearTouch-Info.plist */; };
+		AF2B99071BF2898F0092B9A7 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF2B99061BF2898F0092B9A7 /* Entitlements.plist */; };
 		AF2F9DDD1BCB69AF0075DBCC /* MindwaveEEGSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F9DDC1BCB69AF0075DBCC /* MindwaveEEGSensor.swift */; };
 		AF2F9DE01BCB6D390075DBCC /* SleepBustersRespiratorySensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F9DDF1BCB6D390075DBCC /* SleepBustersRespiratorySensor.swift */; };
 		AF2F9DE21BCE29F70075DBCC /* TrackingLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F9DE11BCE29F70075DBCC /* TrackingLiveViewController.swift */; };
@@ -95,7 +100,6 @@
 		AF325F641BC1C6EA00FA4523 /* HttpAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F631BC1C6EA00FA4523 /* HttpAction.swift */; };
 		AF325F661BC1C99300FA4523 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F651BC1C99300FA4523 /* Extensions.swift */; };
 		AF325F711BC1E79000FA4523 /* EEGConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F701BC1E79000FA4523 /* EEGConnector.swift */; };
-		AF325F731BC1E7A200FA4523 /* RespiratoryConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F721BC1E7A200FA4523 /* RespiratoryConnector.swift */; };
 		AF325F791BC206E200FA4523 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F781BC206E200FA4523 /* Serializable.swift */; };
 		AF63106D1BE9042E008A54BF /* UserInterfaceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63106C1BE9042E008A54BF /* UserInterfaceHelpers.swift */; };
 		AF63106F1BE9113E008A54BF /* StartTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63106E1BE9113E008A54BF /* StartTrackingViewController.swift */; };
@@ -277,6 +281,16 @@
 		AF1834BE1BBFA9E100EBDFCD /* SleepBustersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBustersUITests.swift; sourceTree = "<group>"; };
 		AF1834C01BBFA9E100EBDFCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF29EBED1BC3AA4A00F32D07 /* UserSleepSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSleepSession.swift; path = Model/UserSleepSession.swift; sourceTree = "<group>"; };
+		AF2B98F11BF27FF10092B9A7 /* SleepBusters-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SleepBusters-Bridging-Header.h"; sourceTree = "<group>"; };
+		AF2B98F21BF27FF10092B9A7 /* MindwaveEEG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MindwaveEEG.h; path = MindwaveEEG/MindwaveEEG.h; sourceTree = "<group>"; };
+		AF2B98F31BF27FF10092B9A7 /* MindwaveEEG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MindwaveEEG.m; path = MindwaveEEG/MindwaveEEG.m; sourceTree = "<group>"; };
+		AF2B98F61BF281770092B9A7 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ExternalAccessory.framework; sourceTree = "<group>"; };
+		AF2B98FA1BF282E90092B9A7 /* TGAccessoryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGAccessoryDelegate.h; sourceTree = "<group>"; };
+		AF2B98FB1BF282E90092B9A7 /* TGAccessoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGAccessoryManager.h; sourceTree = "<group>"; };
+		AF2B98FD1BF2865E0092B9A7 /* libTGAccessory.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTGAccessory.a; sourceTree = "<group>"; };
+		AF2B99001BF2895D0092B9A7 /* ThinkGearTouch_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThinkGearTouch_Prefix.pch; sourceTree = "<group>"; };
+		AF2B99041BF289890092B9A7 /* ThinkGearTouch-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ThinkGearTouch-Info.plist"; sourceTree = "<group>"; };
+		AF2B99061BF2898F0092B9A7 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		AF2F9DDC1BCB69AF0075DBCC /* MindwaveEEGSensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MindwaveEEGSensor.swift; path = Hardware/MindwaveEEGSensor.swift; sourceTree = "<group>"; };
 		AF2F9DDF1BCB6D390075DBCC /* SleepBustersRespiratorySensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SleepBustersRespiratorySensor.swift; path = Hardware/SleepBustersRespiratorySensor.swift; sourceTree = "<group>"; };
 		AF2F9DE11BCE29F70075DBCC /* TrackingLiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackingLiveViewController.swift; path = ViewControllers/TrackingLiveViewController.swift; sourceTree = "<group>"; };
@@ -284,7 +298,6 @@
 		AF325F631BC1C6EA00FA4523 /* HttpAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpAction.swift; path = Utility/HttpAction.swift; sourceTree = "<group>"; };
 		AF325F651BC1C99300FA4523 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AF325F701BC1E79000FA4523 /* EEGConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EEGConnector.swift; path = Data/EEGConnector.swift; sourceTree = "<group>"; };
-		AF325F721BC1E7A200FA4523 /* RespiratoryConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RespiratoryConnector.swift; path = Data/RespiratoryConnector.swift; sourceTree = "<group>"; };
 		AF325F781BC206E200FA4523 /* Serializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Serializable.swift; path = Utility/Serializable.swift; sourceTree = "<group>"; };
 		AF63106C1BE9042E008A54BF /* UserInterfaceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserInterfaceHelpers.swift; path = Utility/UserInterfaceHelpers.swift; sourceTree = "<group>"; };
 		AF63106E1BE9113E008A54BF /* StartTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartTrackingViewController.swift; path = ViewControllers/StartTrackingViewController.swift; sourceTree = "<group>"; };
@@ -329,6 +342,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF2B98F71BF281770092B9A7 /* ExternalAccessory.framework in Frameworks */,
+				AF2B98FE1BF2865E0092B9A7 /* libTGAccessory.a in Frameworks */,
 				AF03F9A81BC9215C002ADF4D /* JBChart.framework in Frameworks */,
 				AF03F9CD1BC9EAEF002ADF4D /* Charts.framework in Frameworks */,
 			);
@@ -440,7 +455,6 @@
 				AF2F9DDE1BCB6B420075DBCC /* Builder */,
 				AF0AA5151BBFB23000C97C87 /* DataAccess.swift */,
 				AF325F701BC1E79000FA4523 /* EEGConnector.swift */,
-				AF325F721BC1E7A200FA4523 /* RespiratoryConnector.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -532,6 +546,7 @@
 		AF1834901BBFA9E100EBDFCD = {
 			isa = PBXGroup;
 			children = (
+				AF2B98EF1BF27EC50092B9A7 /* MindwaveEEG */,
 				79D93ED81BED343C0059DC26 /* CVCalendar */,
 				AF18349B1BBFA9E100EBDFCD /* SleepBusters */,
 				AF1834B21BBFA9E100EBDFCD /* SleepBustersTests */,
@@ -591,6 +606,55 @@
 				AF1834C01BBFA9E100EBDFCD /* Info.plist */,
 			);
 			path = SleepBustersUITests;
+			sourceTree = "<group>";
+		};
+		AF2B98EF1BF27EC50092B9A7 /* MindwaveEEG */ = {
+			isa = PBXGroup;
+			children = (
+				AF2B99031BF289820092B9A7 /* Resources */,
+				AF2B98FF1BF289520092B9A7 /* Other Sources */,
+				AF2B98F81BF282D80092B9A7 /* Library */,
+				AF2B98F51BF2816B0092B9A7 /* Framework */,
+				AF2B98F21BF27FF10092B9A7 /* MindwaveEEG.h */,
+				AF2B98F31BF27FF10092B9A7 /* MindwaveEEG.m */,
+				AF2B98F11BF27FF10092B9A7 /* SleepBusters-Bridging-Header.h */,
+			);
+			name = MindwaveEEG;
+			sourceTree = "<group>";
+		};
+		AF2B98F51BF2816B0092B9A7 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				AF2B98F61BF281770092B9A7 /* ExternalAccessory.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		AF2B98F81BF282D80092B9A7 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				AF2B98FD1BF2865E0092B9A7 /* libTGAccessory.a */,
+				AF2B98FA1BF282E90092B9A7 /* TGAccessoryDelegate.h */,
+				AF2B98FB1BF282E90092B9A7 /* TGAccessoryManager.h */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		AF2B98FF1BF289520092B9A7 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AF2B99001BF2895D0092B9A7 /* ThinkGearTouch_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		AF2B99031BF289820092B9A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AF2B99061BF2898F0092B9A7 /* Entitlements.plist */,
+				AF2B99041BF289890092B9A7 /* ThinkGearTouch-Info.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		AF2F9DDB1BCB69860075DBCC /* Hardware */ = {
@@ -747,6 +811,7 @@
 		AF1834911BBFA9E100EBDFCD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = PillowSoft;
 				TargetAttributes = {
@@ -755,6 +820,7 @@
 					};
 					AF1834981BBFA9E100EBDFCD = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = X4QH59WD29;
 					};
 					AF1834AE1BBFA9E100EBDFCD = {
 						CreatedOnToolsVersion = 7.0;
@@ -870,7 +936,9 @@
 				AF1552401BEC3A9300399DB8 /* background--image@2x.png in Resources */,
 				154F8B421BED9C4200E7A11A /* lung.png in Resources */,
 				AF1552461BEC3A9300399DB8 /* Current-Progress.png in Resources */,
+				AF2B99071BF2898F0092B9A7 /* Entitlements.plist in Resources */,
 				AFA659E71BED8983005D295D /* beer-off.png in Resources */,
+				AF2B99051BF289890092B9A7 /* ThinkGearTouch-Info.plist in Resources */,
 				AF15524A1BEC3A9300399DB8 /* happy---icon@2x.png in Resources */,
 				AF03F9921BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf in Resources */,
 				AFA659EA1BED8983005D295D /* gym-off.png in Resources */,
@@ -912,6 +980,7 @@
 				AF6310711BE91861008A54BF /* CalendarViewController.swift in Sources */,
 				79D93F0E1BED34640059DC26 /* CVShape.swift in Sources */,
 				79D93EF91BED34640059DC26 /* CVCalendarManager.swift in Sources */,
+				AF2B98F41BF27FF10092B9A7 /* MindwaveEEG.m in Sources */,
 				79D93F021BED34640059DC26 /* CVCalendarViewAppearance.swift in Sources */,
 				AF63106D1BE9042E008A54BF /* UserInterfaceHelpers.swift in Sources */,
 				AF81576F1BC0D35200F5476A /* LoginViewController.swift in Sources */,
@@ -958,7 +1027,6 @@
 				79D93F031BED34640059DC26 /* CVCalendarViewAppearanceDelegate.swift in Sources */,
 				AF325F661BC1C99300FA4523 /* Extensions.swift in Sources */,
 				79D93F0B1BED34640059DC26 /* CVScrollDirection.swift in Sources */,
-				AF325F731BC1E7A200FA4523 /* RespiratoryConnector.swift in Sources */,
 				79D93EF51BED34640059DC26 /* CVAuxiliaryView.swift in Sources */,
 				79D93EFF1BED34640059DC26 /* CVCalendarView.swift in Sources */,
 			);
@@ -1153,11 +1221,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SleepBusters/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PillowSoft.SleepBusters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SleepBusters-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1165,11 +1248,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SleepBusters/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PillowSoft.SleepBusters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "SleepBusters-Bridging-Header.h";
 			};
 			name = Release;
 		};
