@@ -28,6 +28,7 @@ import JBChart
 
 class StatsViewController: UIViewController {
     
+    var currentUserSleepSession = UserSleepSession()
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var backButton: UIButton!
     @IBAction func backButtonPressed(sender: AnyObject) {
@@ -37,8 +38,22 @@ class StatsViewController: UIViewController {
     
     var sleepType: [String]!
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("here)")
+        var business = Business()
+        
+        var date =  sender as! NSDate;
+        print("\(date) is selected!")
+        
+        // business.getUserSleepSessionForDate(self.User.Id, date: date)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // This contains the clicked user sleep session
+        // self.currentUserSleepSession
+        
         
         //load piechart
         sleepType = ["light sleep" , "deep sleep", "awake"]

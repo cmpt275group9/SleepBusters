@@ -31,7 +31,7 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var barChartView: BarChartView!
-
+    var currentUserSleepSession = UserSleepSession()
     var business = Business()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,10 +148,21 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
         return true // Default value is true
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == "calendarSegue") {
+            let svc = segue!.destinationViewController as! StatsViewController;
+            svc.currentUserSleepSession = self.currentUserSleepSession
+        }
+    }
+    
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
         if calendarView.selected {performSegueWithIdentifier("calendarSegue", sender: nil)}
         calendarView.selected = false
-        print("\(dayView.date.commonDescription) is selected!")
+        
+        var business = Business()
+       // var sleepSession = business.getUserSleepSessions(dayView.date.convertedDate())
+        self.currentUserSleepSession = UserSleepSession() // TODO: get this from database
+
     }
     
     func topMarker(shouldDisplayOnDayView dayView: CVCalendarDayView) -> Bool {
