@@ -92,6 +92,20 @@ class Business {
     }
     
     /**
+     Creates a request to the WebApi to get a single User Sleep Session from the database.
+     - parameter UserId: The user's ID
+     - parameter Date: The user sleep session date
+     :returns: a UserSleepSession object
+     */
+    func getUserSleepSessionForDate(userId: Int, date: NSDate,callback: (UserSleepSession, NSError?) -> Void) -> Void {
+        data.getUserSleepSessionForDate(userId,date:date)
+            { (data: UserSleepSession, error: NSError?) -> Void in
+                callback(data,error)
+        }
+    }
+    
+    
+    /**
      Creates a request to the WebApi to get a collection of User Sleep Session from the database.
      - parameter UserId: The user's ID
      - parameter startDate: The start date of the sleep session.

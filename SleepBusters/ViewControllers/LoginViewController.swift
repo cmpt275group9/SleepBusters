@@ -37,6 +37,19 @@ class LoginViewController:UIViewController {
     }
     
     func login(){
+        let alert: UIAlertView = UIAlertView(title: "Signing in", message: "Please wait...", delegate: nil, cancelButtonTitle: nil);
+        
+        
+        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(50, 10, 37, 37)) as UIActivityIndicatorView
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        loadingIndicator.startAnimating();
+        
+        alert.setValue(loadingIndicator, forKey: "accessoryView")
+        loadingIndicator.startAnimating()
+        
+        alert.show();
+        
         let business = Business()
         let userName = userNameField.text!
         let password = passwordField.text!
@@ -44,7 +57,8 @@ class LoginViewController:UIViewController {
         business.login(userName,password: password){
             (data: UserProfile, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue()) {
-
+               
+                alert.dismissWithClickedButtonIndex(0, animated:true )
                 let user = data
 
                 let isValidated = user.isValidated!
@@ -65,11 +79,11 @@ class LoginViewController:UIViewController {
                 else
                 {
                     // Login Failed: Show message for incorrect username/password
-                    let alert = UIAlertView()
-                    alert.title = "Error"
-                    alert.message = "The username or password is incorrect!"
-                    alert.addButtonWithTitle("Okay")
-                    alert.show()
+                    let alertFail = UIAlertView()
+                    alertFail.title = "Error"
+                    alertFail.message = "The username or password is incorrect!"
+                    alertFail.addButtonWithTitle("Okay")
+                    alertFail.show()
                 }
             }
         }

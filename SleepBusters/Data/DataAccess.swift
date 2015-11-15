@@ -108,6 +108,34 @@ class DataAccess {
     }
     
     /**
+     Creates a request to the WebApi to get a single User Sleep Session from the database.
+     - parameter UserId: The user's ID
+     - parameter Date: The user sleep session date
+     :returns: a UserSleepSession object
+     */
+    func getUserSleepSessionForDate(userId: Int, date: NSDate,callback: (UserSleepSession, NSError?) -> Void) -> Void {
+        
+        let queryString = rootUrl + userprofileController
+        let fullQuery = queryString + "/getUserSleepSessionForDate?userId="+String(userId)+"&date="+String(date)
+        
+        let parameters = [
+            "userId": userId,
+            "date":  date
+        ]
+        Alamofire
+            .request(.POST, fullQuery, parameters: parameters, encoding: .JSON)
+            .responseObject { (response: Response<UserSleepSession, NSError>) in
+                callback(response.result.value!,response.result.error)
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    /**
      Creates a request to the WebApi to save/update a User Sleep Session to the database.
      - parameter UserSleepSession: The User Profile to update. (Update User Sleep Session)
      :returns: Is Success
