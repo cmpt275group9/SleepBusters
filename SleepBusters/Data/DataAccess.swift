@@ -55,16 +55,6 @@ class DataAccess {
                 //debugPrint(response)
                 callback(response.result.value!,response.result.error)
             }
-//            .responseJSON { response in
-//                print("Response JSON: \(response.result.value)")
-//                
-//                callback(UserProfile(),"test")
-//
-//            }
-        
-        
-        
-        //httpAction.HTTPGetAsync(userName,password, callback: callback)(queryString)
     }
     
     /**
@@ -82,12 +72,12 @@ class DataAccess {
         {
             let userSleep = UserSleepSession()
             
-            userSleep.User = userPro
-            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)))
-            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)))
-            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)))
-            let totalHours = userSleep.TotalLightSleepHours! + userSleep.TotalAwakeHours! + userSleep.TotalDeepSleepHours!
-            userSleep.TotalHoursAsleep = Double(totalHours)
+//            userSleep.User = userPro
+//            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)))
+//            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)))
+//            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)))
+           // let totalHours = userSleep.TotalLightSleepHours! + userSleep.TotalAwakeHours! + userSleep.TotalDeepSleepHours!
+     //       userSleep.TotalHoursAsleep = Double(totalHours)
             userSleepSessions.append(userSleep)
         }
         return userSleepSessions
@@ -99,22 +89,22 @@ class DataAccess {
      - parameter n: The user's last N user sessions from the database.
      :returns: Array of N Sleep Sessions
      */
-    func getLastNSleepSessions(userId: Int, n: Int) -> [UserSleepSession]{
-        var userSleepSessions = [UserSleepSession()]
-        let userPro = UserProfile()
-        userPro.id = userId;
-        for var index = 0; index < n; index++
-        {
-            let userSleep = UserSleepSession()
-            userSleep.User = userPro
-            userSleep.TotalLightSleepHours = Double(Int(arc4random_uniform(5)))
-            userSleep.TotalAwakeHours = Double(Int(arc4random_uniform(5)))
-            userSleep.TotalDeepSleepHours = Double(Int(arc4random_uniform(11)))
-            let totalHours = userSleep.TotalLightSleepHours! + userSleep.TotalAwakeHours! + userSleep.TotalDeepSleepHours!
-            userSleep.TotalHoursAsleep = Double(totalHours)
-            userSleepSessions.append(userSleep)
-        }
-        return userSleepSessions
+    func getLastNSleepSessions(userId: Int, n: Int,callback: ([UserSleepSession], NSError?) -> Void) -> Void {
+        
+        let queryString = rootUrl + userprofileController
+        let fullQuery = queryString + "/GetLastNUserSessions?userId="+String(userId)+"&n="+String(n)
+
+        let parameters = [
+            "userId": userId,
+            "n": n
+        ]
+        
+        Alamofire
+            .request(.POST, fullQuery, parameters: parameters, encoding: .JSON)
+            .responseCollection { (response: Response<[UserSleepSession], NSError>) in
+                callback(response.result.value!,response.result.error)
+            }
+        
     }
     
     /**

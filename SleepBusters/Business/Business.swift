@@ -47,36 +47,36 @@ class Business {
      - parameter UserProfile: The User Profile to register. (Create account)
      :returns: a User Profile
      */
-    func registerUserProfile(user: UserProfile) -> UserProfile {
-        return data.registerUserProfile(user)
-    }
+//    func registerUserProfile(user: UserProfile) -> UserProfile {
+//        return data.registerUserProfile(user)
+//    }
     
     /**
      Creates a request to the WebApi to retrieve a User Profile from the database.
      - parameter UserId: The user's ID
      :returns: a User Profile
      */
-    func getUserProfile(userId: Int) -> UserProfile {
-        return data.getUserProfile(userId)
-    }
+//    func getUserProfile(userId: Int) -> UserProfile {
+//        return data.getUserProfile(userId)
+//    }
     
     /**
      Creates a request to the WebApi to save/update a User Profile to the database.
      - parameter UserProfile: The User Profile to update. (Update account)
      :returns: The user profile that was just saved
      */
-    func saveUserProfile(userProfile: UserProfile) -> UserProfile {
-        return data.saveUserProfile(userProfile)
-    }
+//    func saveUserProfile(userProfile: UserProfile) -> UserProfile {
+//        return data.saveUserProfile(userProfile)
+//    }
     
     /**
      Creates a request to the WebApi to save/update a User Sleep Session to the database.
      - parameter UserSleepSession: The User Profile to update. (Update User Sleep Session)
      :returns: Is Success
      */
-    func saveUserSleepSession(userSleepSession: UserSleepSession) ->  Bool{
-        return data.saveUserSleepSession(userSleepSession)
-    }
+//    func saveUserSleepSession(userSleepSession: UserSleepSession) ->  Bool{
+//        return data.saveUserSleepSession(userSleepSession)
+//    }
 
     /**
      Creates a request to the WebApi to get a collection of User Sleep Session from the database.
@@ -84,8 +84,11 @@ class Business {
      - parameter n: The user's last N user sessions from the database.
      :returns: Array of N Sleep Sessions
      */
-    func getLastNSleepSessions(userId: Int, n: Int) -> [UserSleepSession]{
-        return data.getLastNSleepSessions(userId,  n: n)
+    func getLastNSleepSessions(userId: Int, n: Int,callback: ([UserSleepSession], NSError?) -> Void) -> Void {
+        data.getLastNSleepSessions(userId,n:n)
+            { (data: [UserSleepSession], error: NSError?) -> Void in
+                callback(data,error)
+        }
     }
     
     /**
@@ -101,18 +104,18 @@ class Business {
     
     // MARK: Hardware Sensors
     // TODO: NOT IMPLEMENTED
-    func getHistoricalSensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSensorStat]{
-        return data.getHistoricalSensorData(userId, startDate: startDate, endDate: endDate)
-    }
-    // TODO: NOT IMPLEMENTED
-    func saveUserSensorStats(stats: [UserSensorStat]) -> StatusResult {
-        return data.saveUserSensorStats(stats)
-    }
-    // TODO: NOT IMPLEMENTED
-    func getLiveSensorData() -> UserSensorStat{
-        return data.getLiveSensorData()
-    }
-    
+//    func getHistoricalSensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSensorStat]{
+//        return data.getHistoricalSensorData(userId, startDate: startDate, endDate: endDate)
+//    }
+//    // TODO: NOT IMPLEMENTED
+//    func saveUserSensorStats(stats: [UserSensorStat]) -> StatusResult {
+//        return data.saveUserSensorStats(stats)
+//    }
+//    // TODO: NOT IMPLEMENTED
+//    func getLiveSensorData() -> UserSensorStat{
+//        return data.getLiveSensorData()
+//    }
+//    
     
 
     

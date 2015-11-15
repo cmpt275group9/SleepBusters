@@ -33,23 +33,32 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var barChartView: BarChartView!
     var currentUserSleepSession = UserSleepSession()
     var business = Business()
+    let days = ["1", "2", "3", "4", "5", "6", "7"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBarHidden = true
-        var testSleepData = business.getUserSleepSessions(1, startDate: NSDate(), endDate: NSDate())
         
-        days = ["1", "2", "3", "4", "5", "6", "7"]
-        var lightSleepHours: [Double] = []
-        var deepSleepHours: [Double] = []
-        var awakeHours: [Double] = []
-    
-        for var i = 1; i < 8; i++ {
-            lightSleepHours.append(testSleepData[i].TotalLightSleepHours!)
-            deepSleepHours.append(testSleepData[i].TotalDeepSleepHours!)
-            awakeHours.append(testSleepData[i].TotalAwakeHours!)
+        // Get Calendar
+        // TODO: Get the real user id (hardcoded 3 for now)
+        let n = 7;
+        business.getLastNSleepSessions(3,n: n){ (data: [UserSleepSession], error: NSError?) -> Void in
+            dispatch_async(dispatch_get_main_queue()) {
+                var lightSleepHours: [Double] = []
+                var deepSleepHours: [Double] = []
+                var awakeHours: [Double] = []
+                
+                for var i = 0; i < n; i++ {
+                    lightSleepHours.append(data[i].totalLightSleepHours!)
+                    deepSleepHours.append(data[i].totalDeepSleepHours!)
+                    awakeHours.append(data[i].totalAwakeHours!)
+                }
+                
+                self.setChart(self.days, values: awakeHours, values2: lightSleepHours, values3: deepSleepHours)
+            }
         }
-        setChart(days, values: awakeHours, values2: lightSleepHours, values3: deepSleepHours)
-        // Do any additional setup after loading the view, typically from a nib.
+
+        navigationController?.navigationBarHidden = true
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,9 +83,9 @@ class CalendarViewController: UIViewController {
     
     }
     
-    var days: [String]!
+
     func setChart(dataPoints: [String], values: [Double], values2: [Double], values3: [Double]) {
-        barChartView.noDataText = "No Sleep Data Available."
+        barChartView.noDataText = "Loading Data"
         
         var dataEntries: [BarChartDataEntry] = []
         var dataEntries2: [BarChartDataEntry] = []

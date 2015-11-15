@@ -15,13 +15,45 @@
  ********************************************************/
 
 import Foundation
-class UserSleepSession : Serializable {
-    var Id: Int = 0
-    var User: UserProfile = UserProfile()
-    var StartSessionDate: NSDate? = nil
-    var EndSessionDate:NSDate? = nil
-    var TotalHoursAsleep: Double? = nil
-    var TotalDeepSleepHours: Double? = nil
-    var TotalAwakeHours: Double? = nil
-    var TotalLightSleepHours: Double? = nil
+
+final class UserSleepSession: ResponseObjectSerializable, ResponseCollectionSerializable {
+    
+    var id: Int? = nil
+    var user: UserProfile = UserProfile()
+    var startSessionDate: NSDate? = nil
+    var endSessionDate:NSDate? = nil
+    var totalHoursAsleep: Double? = nil
+    var totalDeepSleepHours: Double? = nil
+    var totalAwakeHours: Double? = nil
+    var totalLightSleepHours: Double? = nil
+    
+    
+    init(){
+        
+    }
+    
+    init?(response: NSHTTPURLResponse, representation: AnyObject) {
+        self.id = (representation.valueForKeyPath("ID") as? Int)!
+        self.startSessionDate = representation.valueForKeyPath("StartSessionDate") as? NSDate
+        self.endSessionDate = representation.valueForKeyPath("EndSessionDate") as? NSDate
+        self.totalHoursAsleep = representation.valueForKeyPath("TotalHoursAsleep") as? Double
+        self.totalDeepSleepHours = representation.valueForKeyPath("TotalDeepSleepHours") as? Double
+        self.totalAwakeHours = representation.valueForKeyPath("TotalAwakeHours") as? Double
+        self.totalLightSleepHours = representation.valueForKeyPath("TotalLightSleepHours") as? Double
+    }
+    
+    static func collection(response response: NSHTTPURLResponse, representation: AnyObject) -> [UserSleepSession] {
+        var users: [UserSleepSession] = []
+        
+        if let representation = representation as? [[String: AnyObject]] {
+            for userRepresentation in representation {
+                if let user = UserSleepSession(response: response, representation: userRepresentation) {
+                    users.append(user)
+                }
+            }
+        }
+        
+        return users
+    }
+    
 }
