@@ -35,8 +35,11 @@ class Business {
     - parameter Password: The user's password.
     :returns: a User Profile
     */
-    func validateLogin(userName: String,password: String) -> Void{
-      //  return data.validateLogin(userName,password: password)
+    func login(userName: String,password: String,callback: (UserProfile, NSError?) -> Void) {
+        data.login(userName, password: password)
+        { (data: UserProfile, error: NSError?) -> Void in
+                callback(data,error)
+        }
     }
     
     /**

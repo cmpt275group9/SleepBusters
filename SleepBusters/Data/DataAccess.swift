@@ -18,7 +18,7 @@
  ********************************************************/
 
 import Foundation
-//import Alamofire
+import Alamofire
 
 private let authUserName = "sleep"
 private let authPassword = "GC979XOBc7PK#m@It3"
@@ -42,21 +42,27 @@ class DataAccess {
     - parameter Password: The user's password.
     :returns: a User Profile
     */
-    func validateLogin(userName: String,password: String,callback: (NSData, String?) -> Void) -> Void {
+    func login(userName: String,password: String,callback: (UserProfile, NSError?) -> Void) -> Void {
         let queryString = rootUrl + userprofileController+"/Login?userName="+userName+"&password="+password
         let parameters = [
             "userName": userName,
             "password": password
         ]
         
-//        Alamofire
-//            .request(.POST, queryString, parameters: parameters, encoding: .JSON)
-//            .responseData { response in
-//            print(response.request)
-//            print(response.response)
-//            print(response.result)
-//        }
-        // HTTP body: {"foo": [1, 2, 3], "bar": {"baz": "qux"}}
+        Alamofire
+            .request(.POST, queryString, parameters: parameters, encoding: .JSON)
+            .responseObject { (response: Response<UserProfile, NSError>) in
+                //debugPrint(response)
+                callback(response.result.value!,response.result.error)
+            }
+//            .responseJSON { response in
+//                print("Response JSON: \(response.result.value)")
+//                
+//                callback(UserProfile(),"test")
+//
+//            }
+        
+        
         
         //httpAction.HTTPGetAsync(userName,password, callback: callback)(queryString)
     }
@@ -71,7 +77,7 @@ class DataAccess {
     func getUserSleepSessions(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSleepSession]{
         var userSleepSessions = [UserSleepSession()]
         let userPro = UserProfile()
-        userPro.Id = 1
+        userPro.id = 1
         for var index = 0; index < 7; index++
         {
             let userSleep = UserSleepSession()
@@ -96,7 +102,7 @@ class DataAccess {
     func getLastNSleepSessions(userId: Int, n: Int) -> [UserSleepSession]{
         var userSleepSessions = [UserSleepSession()]
         let userPro = UserProfile()
-        userPro.Id = userId;
+        userPro.id = userId;
         for var index = 0; index < n; index++
         {
             let userSleep = UserSleepSession()
@@ -149,7 +155,7 @@ class DataAccess {
             }
             
         }
-        return UserProfile();
+        return UserProfile()
     }
     
     /**
@@ -189,4 +195,81 @@ class DataAccess {
     func getLiveSensorData() -> UserSensorStat{
         return UserSensorStat()
     }
+    
+    
+    
 }
+
+
+/**
+Alamofire Request Extension Methods
+ */
+
+public protocol ResponseObjectSerializable {
+    init?(response: NSHTTPURLResponse, representation: AnyObject)
+}
+
+public protocol ResponseCollectionSerializable {
+    static func collection(response response: NSHTTPURLResponse, representation: AnyObject) -> [Self]
+}
+
+extension Alamofire.Request {
+    public func responseCollection<T: ResponseCollectionSerializable>(completionHandler: Response<[T], NSError> -> Void) -> Self {
+        let responseSerializer = ResponseSerializer<[T], NSError> { request, response, data, error in
+            guard error == nil else { return .Failure(error!) }
+            
+            let JSONSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
+            let result = JSONSerializer.serializeResponse(request, response, data, error)
+            
+            switch result {
+            case .Success(let value):
+                if let response = response {
+                    return .Success(T.collection(response: response, representation: value))
+                } else {
+                    let failureReason = "Response collection could not be serialized due to nil response"
+                    let error = Error.errorWithCode(.JSONSerializationFailed, failureReason: failureReason)
+                    return .Failure(error)
+                }
+            case .Failure(let error):
+                return .Failure(error)
+            }
+        }
+        
+        return response(responseSerializer: responseSerializer, completionHandler: completionHandler)
+    }
+}
+
+extension Request {
+    public func responseObject<T: ResponseObjectSerializable>(completionHandler: Response<T, NSError> -> Void) -> Self {
+        let responseSerializer = ResponseSerializer<T, NSError> { request, response, data, error in
+            guard error == nil else { return .Failure(error!) }
+            
+            let JSONResponseSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
+            let result = JSONResponseSerializer.serializeResponse(request, response, data, error)
+            
+            switch result {
+            case .Success(let value):
+                if let
+                    response = response,
+                    responseObject = T(response: response, representation: value)
+                {
+                    return .Success(responseObject)
+                } else {
+                    let failureReason = "JSON could not be serialized into response object: \(value)"
+                    let error = Error.errorWithCode(.JSONSerializationFailed, failureReason: failureReason)
+                    return .Failure(error)
+                }
+            case .Failure(let error):
+                return .Failure(error)
+            }
+        }
+        
+        return response(responseSerializer: responseSerializer, completionHandler: completionHandler)
+    }
+}
+
+
+
+
+
+

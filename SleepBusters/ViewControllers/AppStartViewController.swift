@@ -35,7 +35,7 @@ class AppStartViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+         self.defaults.setBool(false,forKey: "userIsLoggedIn")
         let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController")
         let tabViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TabBarController")
         let appDelegate = UIApplication.sharedApplication().delegate!
