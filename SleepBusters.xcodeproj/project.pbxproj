@@ -100,6 +100,7 @@
 		AF325F661BC1C99300FA4523 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F651BC1C99300FA4523 /* Extensions.swift */; };
 		AF325F711BC1E79000FA4523 /* EEGConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F701BC1E79000FA4523 /* EEGConnector.swift */; };
 		AF325F791BC206E200FA4523 /* Serializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF325F781BC206E200FA4523 /* Serializable.swift */; };
+		AF33DDD71BFA608B00FD1975 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AF6A21491BF6C9F7004CEE2D /* Alamofire.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AF63106D1BE9042E008A54BF /* UserInterfaceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63106C1BE9042E008A54BF /* UserInterfaceHelpers.swift */; };
 		AF63106F1BE9113E008A54BF /* StartTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF63106E1BE9113E008A54BF /* StartTrackingViewController.swift */; };
 		AF6310711BE91861008A54BF /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6310701BE91861008A54BF /* CalendarViewController.swift */; };
@@ -242,6 +243,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				AF33DDD71BFA608B00FD1975 /* Alamofire.framework in Embed Frameworks */,
 				AF03F9AA1BC9215C002ADF4D /* JBChart.framework in Embed Frameworks */,
 				AF03F9CE1BC9EAEF002ADF4D /* Charts.framework in Embed Frameworks */,
 			);

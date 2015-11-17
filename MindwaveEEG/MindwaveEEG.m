@@ -59,7 +59,7 @@ NSThread * updateThread;
         NSLog(@"ThinkGearTouch version: %d", [[TGAccessoryManager sharedTGAccessoryManager]getVersion]);
         [[TGAccessoryManager sharedTGAccessoryManager] startStream];
     }
-   
+
 }
 
 - (void)accessoryDidConnect:(EAAccessory *)accessory

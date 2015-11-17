@@ -14,17 +14,20 @@
  
  ********************************************************/
 
+
 import UIKit
 
-class MyProfileViewController: UIViewController {
+class MyProfileViewController:  UIViewController {
+    
 
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        dispatch_async(dispatch_get_main_queue(), ^(){
-//            //Add method, task you want perform on mainQueue
-//        });
+       
     }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,6 +37,9 @@ class MyProfileViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;
     }
+    
 
+
+ 
 }
 

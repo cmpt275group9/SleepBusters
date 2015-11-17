@@ -24,7 +24,7 @@ import Foundation
 
 
 
-class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource, CBCentralManagerDelegate, CBPeripheralDelegate {
+class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource, CBCentralManagerDelegate, CBPeripheralDelegate,TGAccessoryDelegate {
     
     @IBOutlet weak var radarChartView: RadarChartView!
     @IBOutlet weak var respLineChart: JBLineChartView!
@@ -86,14 +86,33 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     }
     
     override func viewWillAppear(animated: Bool) {
+        
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
+        
+        // Repiratory Init
         let header = UILabel(frame: CGRectMake(0, 0, respLineChart.frame.width, 50))
         header.textColor = UIColor.whiteColor()
         header.font = UIFont.systemFontOfSize(14)
-       // header.text = "         Respiratory Signal"
         header.textAlignment = NSTextAlignment.Left
         respLineChart.headerView = header
+        
+        // EEG Init
+        if(!isSimulate)
+        {
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let accessoryType: TGAccessoryType = UInt(defaults.integerForKey("accessory_type_preference"))
+        let manager =  TGAccessoryManager.sharedTGAccessoryManager()
+        manager.setupManagerWithInterval(0.05, forAccessoryType: accessoryType)
+        manager.delegate = self
+        manager.rawEnabled = true
+        
+        if TGAccessoryManager.sharedTGAccessoryManager().accessory != nil {
+            NSLog("ThinkGearTouch version: %d", TGAccessoryManager.sharedTGAccessoryManager().getVersion())
+            TGAccessoryManager.sharedTGAccessoryManager().startStream()
+        }
+        }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -104,8 +123,9 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         // Create Timers that will Redraw the Chart every 50ms for respiratory and 1 second for EEG
         if(isSimulate){
             NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("updateRespiratoryChart"), userInfo: nil, repeats: true)
-        }
+       
             NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateEEGChart"), userInfo: nil, repeats: true)
+        }
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -367,6 +387,60 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         if blueToothReady {
             discoverDevices()
         }
+    }
+    
+    
+    // MARK: EEG Sensor
+    // Functions below are related to the EEG Sensor
+    func accessoryDidDisconnect() -> Void {
+        
+        
+    }
+    
+    func accessoryDidConnect(accessory:EAAccessory) -> Void{
+        TGAccessoryManager.sharedTGAccessoryManager().startStream()
+    }
+    
+    func dataReceived(data: [NSObject : AnyObject]) {
+       
+        if (data["poorSignal"] != nil) {
+
+        let signal = data["poorSignal"]!.intValue
+        print("signal")
+        print(signal)
+            
+        if (signal < 200 ) {
+            
+            if (data["blinkStrength"] != nil) {
+                let blinkStrength = data["blinkStrength"]!.intValue
+                print("blink")
+                print(blinkStrength)
+            }
+            if (data["eegDelta"] != nil) {
+                let delta = data["eegDelta"]!.intValue
+                eegValues[0] = Double(delta)
+            }
+            if (data["eegTheta"] != nil) {
+                let theta = data["eegTheta"]!.intValue
+                eegValues[1] = Double(theta)
+            }
+            if (data["eegHighAlpha"] != nil) {
+                let highAlpha = data["eegHighAlpha"]!.intValue
+               eegValues[2] = Double(highAlpha)
+            }
+            if (data["eegHighBeta"] != nil) {
+                let highBeta = data["eegHighBeta"]!.intValue
+                eegValues[3] = Double(highBeta)
+            }
+            if (data["eegHighGamma"] != nil) {
+                let highGamma = data["eegHighGamma"]!.intValue
+                eegValues[4] = Double(highGamma)
+            }
+            
+            setChart(eegType, values: eegValues)
+        }
+        }
+        
     }
 }
 

@@ -19,12 +19,6 @@
 #import "TGAccessoryDelegate.h"
 #import "TGAccessoryManager.h"
 
-@interface MindwaveEEG : NSObject <TGAccessoryDelegate>
-
-- (void)start;
-- (void)accessoryDidConnect:(EAAccessory *)accessory;
-- (void)accessoryDidDisconnect;
-- (void)dataReceived:(NSDictionary *)data;
 
 // the EEG power bands
 typedef struct {
@@ -44,6 +38,34 @@ typedef struct {
     int attention;
     int meditation;
 } ESenseValues;
+
+@interface MindwaveEEG : UIViewController <TGAccessoryDelegate> {
+    short rawValue;
+    int rawCount;
+    int buffRawCount;
+    int blinkStrength;
+    int poorSignalValue;
+    int heartRate;
+    float respiration;
+    int heartRateAverage;
+    int heartRateAcceleration;
+    
+    ESenseValues eSenseValues;
+    EEGValues eegValues;
+    
+    bool logEnabled;
+    NSFileHandle * logFile;
+    NSString * output;
+    
+    UIView * loadingScreen;
+    
+    NSThread * updateThread;
+}
+
+- (void)start;
+- (void)accessoryDidConnect:(EAAccessory *)accessory;
+- (void)accessoryDidDisconnect;
+- (void)dataReceived:(NSDictionary *)data;
 
 
 @end
