@@ -128,6 +128,15 @@
 		AFA659EE1BED8983005D295D /* nothome.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA659E31BED8983005D295D /* nothome.png */; };
 		AFA659EF1BED8983005D295D /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA659E41BED8983005D295D /* sad.png */; };
 		AFA659F01BED8983005D295D /* tired.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA659E51BED8983005D295D /* tired.png */; };
+		AFBB2A381BFC65C8006015F5 /* icon---Password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBB2A2F1BFC65C8006015F5 /* icon---Password@2x.png */; };
+		AFBB2A391BFC65C8006015F5 /* icon---Username@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBB2A301BFC65C8006015F5 /* icon---Username@2x.png */; };
+		AFBB2A3A1BFC65C8006015F5 /* image---background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBB2A311BFC65C8006015F5 /* image---background@2x.png */; };
+		AFBB2A3B1BFC65C8006015F5 /* image---Layer-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBB2A321BFC65C8006015F5 /* image---Layer-2@2x.png */; };
+		AFBB2A3C1BFC65C8006015F5 /* image---Password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBB2A331BFC65C8006015F5 /* image---Password@2x.png */; };
+		AFBB2A3D1BFC65C8006015F5 /* image---Sign-In@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBB2A341BFC65C8006015F5 /* image---Sign-In@2x.png */; };
+		AFBB2A3E1BFC65C8006015F5 /* image---Username@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBB2A351BFC65C8006015F5 /* image---Username@2x.png */; };
+		AFBB2A3F1BFC65C8006015F5 /* image--Don’t-have-an-account_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBB2A361BFC65C8006015F5 /* image--Don’t-have-an-account_@2x.png */; };
+		AFBB2A401BFC65C8006015F5 /* image-SleepBusters@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBB2A371BFC65C8006015F5 /* image-SleepBusters@2x.png */; };
 		AFCDE2C01BDFDB7D00394415 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCDE2BE1BDFDB7D00394415 /* JSONHelper.swift */; };
 		AFCDE2C11BDFDB7D00394415 /* Supporting Files in Resources */ = {isa = PBXBuildFile; fileRef = AFCDE2BF1BDFDB7D00394415 /* Supporting Files */; };
 		AFD2D2E81BEEAC0C00490B48 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8157791BC13ECB00F5476A /* Business.swift */; };
@@ -383,6 +392,15 @@
 		AFA659E31BED8983005D295D /* nothome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nothome.png; path = Images/Icons/nothome.png; sourceTree = "<group>"; };
 		AFA659E41BED8983005D295D /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sad.png; path = Images/Icons/sad.png; sourceTree = "<group>"; };
 		AFA659E51BED8983005D295D /* tired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tired.png; path = Images/Icons/tired.png; sourceTree = "<group>"; };
+		AFBB2A2F1BFC65C8006015F5 /* icon---Password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon---Password@2x.png"; path = "Images/icon---Password@2x.png"; sourceTree = "<group>"; };
+		AFBB2A301BFC65C8006015F5 /* icon---Username@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon---Username@2x.png"; path = "Images/icon---Username@2x.png"; sourceTree = "<group>"; };
+		AFBB2A311BFC65C8006015F5 /* image---background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "image---background@2x.png"; path = "Images/image---background@2x.png"; sourceTree = "<group>"; };
+		AFBB2A321BFC65C8006015F5 /* image---Layer-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "image---Layer-2@2x.png"; path = "Images/image---Layer-2@2x.png"; sourceTree = "<group>"; };
+		AFBB2A331BFC65C8006015F5 /* image---Password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "image---Password@2x.png"; path = "Images/image---Password@2x.png"; sourceTree = "<group>"; };
+		AFBB2A341BFC65C8006015F5 /* image---Sign-In@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "image---Sign-In@2x.png"; path = "Images/image---Sign-In@2x.png"; sourceTree = "<group>"; };
+		AFBB2A351BFC65C8006015F5 /* image---Username@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "image---Username@2x.png"; path = "Images/image---Username@2x.png"; sourceTree = "<group>"; };
+		AFBB2A361BFC65C8006015F5 /* image--Don’t-have-an-account_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "image--Don’t-have-an-account_@2x.png"; path = "Images/image--Don’t-have-an-account_@2x.png"; sourceTree = "<group>"; };
+		AFBB2A371BFC65C8006015F5 /* image-SleepBusters@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "image-SleepBusters@2x.png"; path = "Images/image-SleepBusters@2x.png"; sourceTree = "<group>"; };
 		AFCDE2BD1BDFDB7D00394415 /* JSONHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONHelper.h; path = JSONHelper/JSONHelper.h; sourceTree = "<group>"; };
 		AFCDE2BE1BDFDB7D00394415 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONHelper.swift; path = JSONHelper/JSONHelper.swift; sourceTree = "<group>"; };
 		AFCDE2BF1BDFDB7D00394415 /* Supporting Files */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Supporting Files"; path = "JSONHelper/Supporting Files"; sourceTree = "<group>"; };
@@ -540,6 +558,15 @@
 		AF0AA5111BBFB14800C97C87 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AFBB2A2F1BFC65C8006015F5 /* icon---Password@2x.png */,
+				AFBB2A301BFC65C8006015F5 /* icon---Username@2x.png */,
+				AFBB2A311BFC65C8006015F5 /* image---background@2x.png */,
+				AFBB2A321BFC65C8006015F5 /* image---Layer-2@2x.png */,
+				AFBB2A331BFC65C8006015F5 /* image---Password@2x.png */,
+				AFBB2A341BFC65C8006015F5 /* image---Sign-In@2x.png */,
+				AFBB2A351BFC65C8006015F5 /* image---Username@2x.png */,
+				AFBB2A361BFC65C8006015F5 /* image--Don’t-have-an-account_@2x.png */,
+				AFBB2A371BFC65C8006015F5 /* image-SleepBusters@2x.png */,
 				AFA659D21BED869B005D295D /* Icons */,
 				AF1552251BEC3A9300399DB8 /* _Calendar---icon-@2x.png */,
 				AF1552271BEC3A9300399DB8 /* 1-image.png */,
@@ -1027,6 +1054,7 @@
 				AF15523B1BEC3A9300399DB8 /* _Calendar---icon-@2x.png in Resources */,
 				AF15523E1BEC3A9300399DB8 /* awake-image@2x.png in Resources */,
 				154F8B411BED9C4200E7A11A /* bed.png in Resources */,
+				AFBB2A381BFC65C8006015F5 /* icon---Password@2x.png in Resources */,
 				AF15524B1BEC3A9300399DB8 /* home--icon@2x.png in Resources */,
 				AFA659DA1BED87C1005D295D /* coffee-on.png in Resources */,
 				AFA659E91BED8983005D295D /* bored.png in Resources */,
@@ -1036,23 +1064,28 @@
 				AF1552471BEC3A9300399DB8 /* Divider-copy@2x.png in Resources */,
 				AF1552491BEC3A9300399DB8 /* gym--icon@2x.png in Resources */,
 				AF15524F1BEC3A9300399DB8 /* play--icon@2x.png in Resources */,
+				AFBB2A3F1BFC65C8006015F5 /* image--Don’t-have-an-account_@2x.png in Resources */,
 				AF15524D1BEC3A9300399DB8 /* Logo--image@2x.png in Resources */,
 				AF15524E1BEC3A9300399DB8 /* newnewnew.png in Resources */,
 				AF1552441BEC3A9300399DB8 /* coffee---icon@2x.png in Resources */,
 				AF03F9941BC8DE27002ADF4D /* OpenSans-Italic.ttf in Resources */,
 				AF03F9931BC8DE27002ADF4D /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				AF1552501BEC3A9300399DB8 /* profile---icon@2x.png in Resources */,
+				AFBB2A3C1BFC65C8006015F5 /* image---Password@2x.png in Resources */,
 				AFA659EF1BED8983005D295D /* sad.png in Resources */,
 				AF1834A61BBFA9E100EBDFCD /* Assets.xcassets in Resources */,
 				AF15523F1BEC3A9300399DB8 /* Background---image.png in Resources */,
 				AFA659D61BED86D2005D295D /* hot51-on.png in Resources */,
 				AFA659ED1BED8983005D295D /* home.png in Resources */,
+				AFBB2A391BFC65C8006015F5 /* icon---Username@2x.png in Resources */,
 				AF03F9961BC8DE27002ADF4D /* OpenSans-LightItalic.ttf in Resources */,
 				AF03F9901BC8DE27002ADF4D /* OpenSans-Bold.ttf in Resources */,
 				AF1834A41BBFA9E100EBDFCD /* Main.storyboard in Resources */,
 				AFA659D91BED87C1005D295D /* coffee-off.png in Resources */,
 				AF03F9951BC8DE27002ADF4D /* OpenSans-Light.ttf in Resources */,
+				AFBB2A3D1BFC65C8006015F5 /* image---Sign-In@2x.png in Resources */,
 				AF15524C1BEC3A9300399DB8 /* light-image@2x.png in Resources */,
+				AFBB2A3E1BFC65C8006015F5 /* image---Username@2x.png in Resources */,
 				AF1552481BEC3A9300399DB8 /* drink--icon.png in Resources */,
 				AF15523D1BEC3A9300399DB8 /* 1-image.png in Resources */,
 				AF03F9911BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf in Resources */,
@@ -1062,7 +1095,10 @@
 				154F8B421BED9C4200E7A11A /* lung.png in Resources */,
 				AF1552461BEC3A9300399DB8 /* Current-Progress.png in Resources */,
 				AF2B99071BF2898F0092B9A7 /* Entitlements.plist in Resources */,
+				AFBB2A3B1BFC65C8006015F5 /* image---Layer-2@2x.png in Resources */,
+				AFBB2A401BFC65C8006015F5 /* image-SleepBusters@2x.png in Resources */,
 				AFA659E71BED8983005D295D /* beer-off.png in Resources */,
+				AFBB2A3A1BFC65C8006015F5 /* image---background@2x.png in Resources */,
 				AF2B99051BF289890092B9A7 /* ThinkGearTouch-Info.plist in Resources */,
 				AF15524A1BEC3A9300399DB8 /* happy---icon@2x.png in Resources */,
 				AF03F9921BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf in Resources */,
