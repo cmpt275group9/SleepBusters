@@ -146,6 +146,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
             respLineChart.reloadData()
             respLineChart.setState(.Expanded, animated: false)
             counterPie = counterPie + 0.02;
+        
     }
     
     func updateEEGChart(){
@@ -189,7 +190,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         chartDataSet.drawFilledEnabled = true;
         chartDataSet.lineWidth = 2.0
 
-        chartDataSet.colors = [UIColor.redColor()]
+        chartDataSet.colors = [UIColor.whiteColor()]
         let dataSets: [RadarChartDataSet] = [ chartDataSet]
         let chartData = RadarChartData(xVals: eegType, dataSets: dataSets)
         
