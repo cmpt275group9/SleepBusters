@@ -31,7 +31,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     @IBOutlet weak var lblHumidity: UILabel!
     @IBOutlet weak var lblTemperature: UILabel!
     @IBAction func btnStopTracking(sender: UIButton) {
-        performSegueWithIdentifier("trackingSegue", sender: nil)
+        stopTracking()
     }
     
     // EEG Sensor: (Simulated Data)
@@ -441,6 +441,68 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
             setChart(eegType, values: eegValues)
         }
         }
+        
+    }
+    
+    
+    // MARK: Stop Tracking
+    func stopTracking()
+    {
+
+        let alertController = UIAlertController(title: "Save Tracking", message: "Would you like to save your sleep session?", preferredStyle: .Alert)
+
+        let saveAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default) {
+            UIAlertAction in
+            self.saveTracking()
+        }
+        let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel) {
+            UIAlertAction in
+            self.cancelTracking()
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func saveTracking()
+    {
+        let alert: UIAlertView = UIAlertView(title: "Processing", message: "", delegate: nil, cancelButtonTitle: nil);
+        
+        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(50, 10, 37, 37)) as UIActivityIndicatorView
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        loadingIndicator.startAnimating();
+        alert.setValue(loadingIndicator, forKey: "accessoryView")
+        loadingIndicator.startAnimating()
+        alert.show();
+        
+        createSleepSession()
+        
+        
+        performSegueWithIdentifier("trackingSegue", sender: nil)
+    }
+    
+    func cancelTracking()
+    {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    // Processing and Saving Sleep Session Data
+    func createSleepSession()
+    {
+        
+    
+    }
+    
+    func saveSleepSession(sleepSession: UserSleepSession) -> Void
+    {
+        
+        
+    }
+    
+    func saveUserSensorStats(stats: [UserSensorStat]) -> Void
+    {
         
     }
 }
