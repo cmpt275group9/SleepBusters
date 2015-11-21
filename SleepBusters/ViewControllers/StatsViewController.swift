@@ -30,6 +30,12 @@ class StatsViewController: UIViewController {
     
     var currentUserSleepSession = UserSleepSession()
     @IBOutlet weak var pieChartView: PieChartView!
+    /*@IBOutlet weak var FeedBackButton: UIButton!
+    @IBAction func FeedBackButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("feedbackSegue", sender: nil)
+    }
+    */
+    
     @IBOutlet weak var backButton: UIButton!
     @IBAction func backButtonPressed(sender: AnyObject) {
         navigationController?.popToRootViewControllerAnimated(true)
@@ -39,11 +45,11 @@ class StatsViewController: UIViewController {
     var sleepType: [String]!
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("here)")
-        var business = Business()
+        //print("here)")
+        //var business = Business()
         
-        var date =  sender as! NSDate;
-        print("\(date) is selected!")
+        //var date =  sender as! NSDate;
+        //print("\(date) is selected!")
         
         // business.getUserSleepSessionForDate(self.User.Id, date: date)
     }
