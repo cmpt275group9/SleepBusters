@@ -128,6 +128,7 @@
 		AFA659EE1BED8983005D295D /* nothome.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA659E31BED8983005D295D /* nothome.png */; };
 		AFA659EF1BED8983005D295D /* sad.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA659E41BED8983005D295D /* sad.png */; };
 		AFA659F01BED8983005D295D /* tired.png in Resources */ = {isa = PBXBuildFile; fileRef = AFA659E51BED8983005D295D /* tired.png */; };
+		AFB6B8A71C002747005AAAA4 /* Respiratory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB6B8A61C002747005AAAA4 /* Respiratory.swift */; };
 		AFBB2A381BFC65C8006015F5 /* icon---Password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBB2A2F1BFC65C8006015F5 /* icon---Password@2x.png */; };
 		AFBB2A391BFC65C8006015F5 /* icon---Username@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBB2A301BFC65C8006015F5 /* icon---Username@2x.png */; };
 		AFBB2A3A1BFC65C8006015F5 /* loginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBB2A311BFC65C8006015F5 /* loginBackground.png */; };
@@ -406,6 +407,7 @@
 		AFA659E31BED8983005D295D /* nothome.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nothome.png; path = Images/Icons/nothome.png; sourceTree = "<group>"; };
 		AFA659E41BED8983005D295D /* sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sad.png; path = Images/Icons/sad.png; sourceTree = "<group>"; };
 		AFA659E51BED8983005D295D /* tired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tired.png; path = Images/Icons/tired.png; sourceTree = "<group>"; };
+		AFB6B8A61C002747005AAAA4 /* Respiratory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Respiratory.swift; path = Business/Respiratory.swift; sourceTree = "<group>"; };
 		AFBB2A2F1BFC65C8006015F5 /* icon---Password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon---Password@2x.png"; path = "Images/icon---Password@2x.png"; sourceTree = "<group>"; };
 		AFBB2A301BFC65C8006015F5 /* icon---Username@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon---Username@2x.png"; path = "Images/icon---Username@2x.png"; sourceTree = "<group>"; };
 		AFBB2A311BFC65C8006015F5 /* loginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = loginBackground.png; path = Images/loginBackground.png; sourceTree = "<group>"; };
@@ -793,6 +795,7 @@
 			isa = PBXGroup;
 			children = (
 				AF8157791BC13ECB00F5476A /* Business.swift */,
+				AFB6B8A61C002747005AAAA4 /* Respiratory.swift */,
 			);
 			name = Business;
 			sourceTree = "<group>";
@@ -1259,6 +1262,7 @@
 				79D93EFC1BED34640059DC26 /* CVCalendarMonthContentViewController.swift in Sources */,
 				79D93F041BED34640059DC26 /* CVCalendarViewDelegate.swift in Sources */,
 				AF30B0831BC6FF250094B4A8 /* StatusResult.swift in Sources */,
+				AFB6B8A71C002747005AAAA4 /* Respiratory.swift in Sources */,
 				79D93EFB1BED34640059DC26 /* CVCalendarMenuViewDelegate.swift in Sources */,
 				AF8157691BC06C4900F5476A /* StatsViewController.swift in Sources */,
 				79D93F061BED34640059DC26 /* CVCalendarWeekContentViewController.swift in Sources */,
