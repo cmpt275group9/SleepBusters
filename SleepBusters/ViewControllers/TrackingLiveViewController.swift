@@ -488,11 +488,26 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         navigationController?.popViewControllerAnimated(true)
     }
     
-    // Processing and Saving Sleep Session Data
     func createSleepSession()
     {
-        
+        var data = [0]
+        let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "update", userInfo: nil, repeats: true)
+        for var index = 1; index < 2880000; index++
+        {
+            let temp = 150+abs(70*sin(counterPie))
+            data.append(Int(temp))
+            counterPie = counterPie + 0.02;
+        }
+        for var index = 1; index < 2880000; index++
+        {
+            data[index] = data[index] + 1;
+        }
+        print("here");
+        //print(countTime)
+    }
     
+    func update() {
+        //countTime++
     }
     
     func saveSleepSession(sleepSession: UserSleepSession) -> Void
