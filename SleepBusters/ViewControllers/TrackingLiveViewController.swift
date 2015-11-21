@@ -53,6 +53,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     var peripheral: CBPeripheral?
     var characteristics: CBCharacteristic!
     var terminalChar:CBCharacteristic!
+    var countIndex = 0;
     /**************************************************/
     
     override func viewDidLoad() {
@@ -137,16 +138,49 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         respLineChart.setState(.Collapsed, animated: true)
     }
     
-    
+     var dataRandom = 0
+    var isLocked = false;
     func updateRespiratoryChart()
     {
-            chartData.removeFirst()
-            let temp = 150+abs(70*sin(counterPie))
-            chartData.append(Int(temp))
-            respLineChart.reloadData()
-            respLineChart.setState(.Expanded, animated: false)
-            counterPie = counterPie + 0.02;
+        print(countIndex)
         
+        
+        if(countIndex > 75 && countIndex < 275)
+        {
+           
+            if(isLocked == false)
+            {
+                dataRandom = Int(data.last!)
+                isLocked = true
+            }
+            if(isLocked)
+            {
+                var dataTolerance = dataRandom + (Int(arc4random_uniform(10)))
+                data.append(dataTolerance)
+                chartData.removeFirst()
+                chartData.append(Int(dataTolerance))
+            }
+        }
+        else
+        {
+            let temp = 150+abs(70*sin(counterPie))
+            data.append(Int(temp))
+            counterPie = counterPie + 0.02;
+            chartData.removeFirst()
+            chartData.append(Int(temp))
+        }
+        
+        
+        respLineChart.reloadData()
+        respLineChart.setState(.Expanded, animated: false)
+        counterPie = counterPie + 0.02;
+//            chartData.removeFirst()
+//            let temp = 150+abs(70*sin(counterPie))
+//            chartData.append(Int(temp))
+//            respLineChart.reloadData()
+//            respLineChart.setState(.Expanded, animated: false)
+//            counterPie = counterPie + 0.02;
+        countIndex++;
     }
     
     func updateEEGChart(){
@@ -465,6 +499,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    var data = [0]
     func saveTracking()
     {
         let alert: UIAlertView = UIAlertView(title: "Processing", message: "", delegate: nil, cancelButtonTitle: nil);
@@ -476,6 +511,24 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         alert.setValue(loadingIndicator, forKey: "accessoryView")
         loadingIndicator.startAnimating()
         alert.show();
+        
+        
+        let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "update", userInfo: nil, repeats: true)
+        for var index = 1; index < 288000; index++
+        {
+            let temp = 150+abs(70*sin(counterPie))
+            if(index > 10000 && index < 10100)
+            {
+                var dataRandom = Int(data.last!) + (Int(arc4random_uniform(10)));
+                data.append(dataRandom)
+            }
+            else
+            {
+                data.append(Int(temp))
+                counterPie = counterPie + 0.02;
+            }
+            
+        }
         
         createSleepSession()
         
@@ -490,24 +543,21 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     
     func createSleepSession()
     {
-        var data = [0]
-        let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "update", userInfo: nil, repeats: true)
-        for var index = 1; index < 2880000; index++
-        {
-            let temp = 150+abs(70*sin(counterPie))
-            data.append(Int(temp))
-            counterPie = counterPie + 0.02;
-        }
-        for var index = 1; index < 2880000; index++
-        {
-            data[index] = data[index] + 1;
-        }
-        print("here");
-        //print(countTime)
+        
+        detectSleepApnea()
+        
     }
     
+    func detectSleepApnea() -> SleepApneaConfidence
+    {
+        
+        return SleepApneaConfidence.High
+    }
+    
+    
     func update() {
-        //countTime++
+
+
     }
     
     func saveSleepSession(sleepSession: UserSleepSession) -> Void

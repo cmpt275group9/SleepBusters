@@ -91,11 +91,11 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="636"/>
                                                     <animations/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo--image.png" translatesAutoresizingMaskIntoConstraints="NO" id="DKq-X9-rvc">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo--image.png" translatesAutoresizingMaskIntoConstraints="NO" id="DKq-X9-rvc">
                                                     <rect key="frame" x="225" y="106" width="150" height="150"/>
                                                     <animations/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwm-Zn-1rS">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wwm-Zn-1rS">
                                                     <rect key="frame" x="225" y="155" width="150" height="52"/>
                                                     <animations/>
                                                     <state key="normal" image="play--icon.png">
@@ -801,12 +801,12 @@
                                     <constraint firstAttribute="height" constant="21" id="kQE-PM-g49"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Divider-copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="KfY-6C-bJz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Divider-copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="KfY-6C-bJz">
                                 <rect key="frame" x="-8" y="292" width="608" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.1803921568627451" green="0.15294117647058825" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Divider-copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Yc-Xl-1xU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Divider-copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Yc-Xl-1xU">
                                 <rect key="frame" x="-4" y="348" width="608" height="1"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.1529411765" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -841,7 +841,7 @@
                                     <segue destination="8rJ-Kc-sve" kind="show" id="XrQ-te-kBz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohY-XR-CfW">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohY-XR-CfW">
                                 <rect key="frame" x="472" y="351" width="119" height="30"/>
                                 <animations/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
