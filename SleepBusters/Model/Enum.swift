@@ -22,3 +22,10 @@ enum EEGBandWaveType{
     case Beta
     case Gamma
 }
+
+enum SleepApneaConfidence
+{
+    case Low
+    case Medium
+    case High
+}
