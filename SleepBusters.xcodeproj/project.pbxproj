@@ -36,6 +36,8 @@
 		79D93F0D1BED34640059DC26 /* CVSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D93EF21BED34640059DC26 /* CVSet.swift */; };
 		79D93F0E1BED34640059DC26 /* CVShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D93EF31BED34640059DC26 /* CVShape.swift */; };
 		79D93F0F1BED34640059DC26 /* CVWeekdaySymbolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D93EF41BED34640059DC26 /* CVWeekdaySymbolType.swift */; };
+		79E8AADC1C000680002D98EE /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E8AAD91C00067A002D98EE /* ResearchKit.framework */; };
+		79E8AADD1C000680002D98EE /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79E8AAD91C00067A002D98EE /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AF03F9901BC8DE27002ADF4D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9861BC8DE27002ADF4D /* OpenSans-Bold.ttf */; };
 		AF03F9911BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9871BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf */; };
 		AF03F9921BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9881BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf */; };
@@ -145,6 +147,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		79E8AAD81C00067A002D98EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79E8AAD21C00067A002D98EE /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		79E8AADA1C00067A002D98EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79E8AAD21C00067A002D98EE /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
 		AF03F9A61BC9215C002ADF4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF1834911BBFA9E100EBDFCD /* Project object */;
@@ -268,6 +284,7 @@
 			files = (
 				AF33DDD71BFA608B00FD1975 /* Alamofire.framework in Embed Frameworks */,
 				AF03F9AA1BC9215C002ADF4D /* JBChart.framework in Embed Frameworks */,
+				79E8AADD1C000680002D98EE /* ResearchKit.framework in Embed Frameworks */,
 				AF03F9CE1BC9EAEF002ADF4D /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -305,6 +322,7 @@
 		79D93EF21BED34640059DC26 /* CVSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVSet.swift; path = CVCalendar/CVSet.swift; sourceTree = "<group>"; };
 		79D93EF31BED34640059DC26 /* CVShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVShape.swift; path = CVCalendar/CVShape.swift; sourceTree = "<group>"; };
 		79D93EF41BED34640059DC26 /* CVWeekdaySymbolType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVWeekdaySymbolType.swift; path = CVCalendar/CVWeekdaySymbolType.swift; sourceTree = "<group>"; };
+		79E8AAD21C00067A002D98EE /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		AF03F9861BC8DE27002ADF4D /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		AF03F9871BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AF03F9881BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -437,6 +455,7 @@
 				AF2B98FE1BF2865E0092B9A7 /* libTGAccessory.a in Frameworks */,
 				AF03F9A81BC9215C002ADF4D /* JBChart.framework in Frameworks */,
 				AF03F9CD1BC9EAEF002ADF4D /* Charts.framework in Frameworks */,
+				79E8AADC1C000680002D98EE /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +508,15 @@
 				79D93EF41BED34640059DC26 /* CVWeekdaySymbolType.swift */,
 			);
 			name = CVCalendar;
+			sourceTree = "<group>";
+		};
+		79E8AAD31C00067A002D98EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79E8AAD91C00067A002D98EE /* ResearchKit.framework */,
+				79E8AADB1C00067A002D98EE /* ResearchKitTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AF03F9851BC8DDBA002ADF4D /* Fonts */ = {
@@ -963,6 +991,55 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				ca,
+				cs,
+				da,
+				de,
+				el,
+				en_AU,
+				en_GB,
+				es,
+				es_MX,
+				fi,
+				fr,
+				fr_CA,
+				he,
+				hi,
+				hr,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				nl,
+				no,
+				pl,
+				pt,
+				pt_PT,
+				ro,
+				ru,
+				sk,
+				sv,
+				th,
+				tr,
+				uk,
+				vi,
+				zh_CN,
+				zh_HK,
+				zh_TW,
+				"en-AU",
+				"en-GB",
+				"es-MX",
+				nb,
+				"pt-BR",
+				"pt-PT",
+				"zh-Hans",
+				"zh-Hant-HK",
+				"zh-Hant",
+				"zh-HK",
+				"fr-CA",
 			);
 			mainGroup = AF1834901BBFA9E100EBDFCD;
 			productRefGroup = AF18349A1BBFA9E100EBDFCD /* Products */;
@@ -992,6 +1069,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		79E8AAD91C00067A002D98EE /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = 79E8AAD81C00067A002D98EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		79E8AADB1C00067A002D98EE /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = 79E8AADA1C00067A002D98EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AF03F9CA1BC9EA04002ADF4D /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
