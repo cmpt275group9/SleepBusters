@@ -36,6 +36,7 @@
 		79D93F0D1BED34640059DC26 /* CVSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D93EF21BED34640059DC26 /* CVSet.swift */; };
 		79D93F0E1BED34640059DC26 /* CVShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D93EF31BED34640059DC26 /* CVShape.swift */; };
 		79D93F0F1BED34640059DC26 /* CVWeekdaySymbolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D93EF41BED34640059DC26 /* CVWeekdaySymbolType.swift */; };
+		79E8AAAA1C00033A002D98EE /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E8AA9E1C00030D002D98EE /* ResearchKit.framework */; };
 		AF03F9901BC8DE27002ADF4D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9861BC8DE27002ADF4D /* OpenSans-Bold.ttf */; };
 		AF03F9911BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9871BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf */; };
 		AF03F9921BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF03F9881BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf */; };
@@ -145,6 +146,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		79E8AACE1C000478002D98EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79E8AAC81C000478002D98EE /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		79E8AAD01C000478002D98EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79E8AAC81C000478002D98EE /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
 		AF03F9A61BC9215C002ADF4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF1834911BBFA9E100EBDFCD /* Project object */;
@@ -291,6 +306,8 @@
 		79D93EF21BED34640059DC26 /* CVSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVSet.swift; path = CVCalendar/CVSet.swift; sourceTree = "<group>"; };
 		79D93EF31BED34640059DC26 /* CVShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVShape.swift; path = CVCalendar/CVShape.swift; sourceTree = "<group>"; };
 		79D93EF41BED34640059DC26 /* CVWeekdaySymbolType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVWeekdaySymbolType.swift; path = CVCalendar/CVWeekdaySymbolType.swift; sourceTree = "<group>"; };
+		79E8AA9E1C00030D002D98EE /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = "/Users/conrad/Library/Developer/Xcode/DerivedData/ResearchKit-faiinpaoilotobdfvpahntcgxlte/Build/Products/Debug-iphoneos/ResearchKit.framework"; sourceTree = "<absolute>"; };
+		79E8AAC81C000478002D98EE /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		AF03F9861BC8DE27002ADF4D /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		AF03F9871BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AF03F9881BC8DE27002ADF4D /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -420,6 +437,7 @@
 			files = (
 				AF6A21581BF6CA0D004CEE2D /* Alamofire.framework in Frameworks */,
 				AF2B98FE1BF2865E0092B9A7 /* libTGAccessory.a in Frameworks */,
+				79E8AAAA1C00033A002D98EE /* ResearchKit.framework in Frameworks */,
 				AF03F9A81BC9215C002ADF4D /* JBChart.framework in Frameworks */,
 				AF03F9CD1BC9EAEF002ADF4D /* Charts.framework in Frameworks */,
 			);
@@ -474,6 +492,15 @@
 				79D93EF41BED34640059DC26 /* CVWeekdaySymbolType.swift */,
 			);
 			name = CVCalendar;
+			sourceTree = "<group>";
+		};
+		79E8AAC91C000478002D98EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79E8AACF1C000478002D98EE /* ResearchKit.framework */,
+				79E8AAD11C000478002D98EE /* ResearchKitTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AF03F9851BC8DDBA002ADF4D /* Fonts */ = {
@@ -631,6 +658,7 @@
 		AF1834901BBFA9E100EBDFCD = {
 			isa = PBXGroup;
 			children = (
+				79E8AAC81C000478002D98EE /* ResearchKit.xcodeproj */,
 				AF6A213E1BF6C9F6004CEE2D /* Alamofire.xcodeproj */,
 				AF2B98EF1BF27EC50092B9A7 /* MindwaveEEG */,
 				79D93ED81BED343C0059DC26 /* CVCalendar */,
@@ -951,6 +979,10 @@
 					ProductGroup = AF03F9C51BC9EA04002ADF4D /* Products */;
 					ProjectRef = AF03F9C41BC9EA04002ADF4D /* Charts.xcodeproj */;
 				},
+				{
+					ProductGroup = 79E8AAC91C000478002D98EE /* Products */;
+					ProjectRef = 79E8AAC81C000478002D98EE /* ResearchKit.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -963,6 +995,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		79E8AACF1C000478002D98EE /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = 79E8AACE1C000478002D98EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		79E8AAD11C000478002D98EE /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = 79E8AAD01C000478002D98EE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AF03F9CA1BC9EA04002ADF4D /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
