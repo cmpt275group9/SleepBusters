@@ -28,8 +28,10 @@ class LoginViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
+        let userNamePlaceHolder = NSAttributedString(string: "Username", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
+        let passwordPlaceHolder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
+        passwordField.attributedPlaceholder = userNamePlaceHolder
+        userNameField.attributedPlaceholder = passwordPlaceHolder
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -51,8 +53,8 @@ class LoginViewController:UIViewController {
         alert.show();
         
         let business = Business()
-        let userName = userNameField.text!
-        let password = passwordField.text!
+        let userName = "Klein"//userNameField.text!
+        let password = "test"//passwordField.text!
         
         business.login(userName,password: password){
             (data: UserProfile, error: NSError?) -> Void in
