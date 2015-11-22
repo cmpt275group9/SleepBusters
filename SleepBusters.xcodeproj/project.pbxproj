@@ -9,8 +9,10 @@
 /* Begin PBXBuildFile section */
 		154F8B411BED9C4200E7A11A /* bed.png in Resources */ = {isa = PBXBuildFile; fileRef = 154F8B3F1BED9C4200E7A11A /* bed.png */; };
 		154F8B421BED9C4200E7A11A /* lung.png in Resources */ = {isa = PBXBuildFile; fileRef = 154F8B401BED9C4200E7A11A /* lung.png */; };
-		1552D8CE1C0013DF00119AE8 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552D8CD1C0013DF00119AE8 /* FeedBackViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		1552D8D01C00299900119AE8 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552D8CF1C00299900119AE8 /* NewAccountViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1552D8CE1C0013DF00119AE8 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552D8CD1C0013DF00119AE8 /* FeedBackViewController.swift */; };
+		1552D8D01C00299900119AE8 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552D8CF1C00299900119AE8 /* NewAccountViewController.swift */; };
+		791458F91C017FC900716626 /* ConsentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791458F71C017FC900716626 /* ConsentForm.swift */; };
+		791458FA1C017FC900716626 /* HealthSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791458F81C017FC900716626 /* HealthSurvey.swift */; };
 		79D93EF51BED34640059DC26 /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D93EDA1BED34640059DC26 /* CVAuxiliaryView.swift */; };
 		79D93EF61BED34640059DC26 /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D93EDB1BED34640059DC26 /* CVCalendarContentViewController.swift */; };
 		79D93EF71BED34640059DC26 /* CVCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D93EDC1BED34640059DC26 /* CVCalendarDayView.swift */; };
@@ -148,6 +150,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		791458E81C017EB000716626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 791458DB1C017EAF00716626 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		791458EA1C017EB000716626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 791458DB1C017EAF00716626 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
 		AF03F9A61BC9215C002ADF4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF1834911BBFA9E100EBDFCD /* Project object */;
@@ -246,20 +262,6 @@
 			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS";
 		};
-		AFCD0F491C0012B400F38508 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AFCD0F431C0012B300F38508 /* ResearchKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B183A5951A8535D100C76870;
-			remoteInfo = ResearchKit;
-		};
-		AFCD0F4B1C0012B400F38508 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AFCD0F431C0012B300F38508 /* ResearchKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
-			remoteInfo = ResearchKitTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -283,6 +285,9 @@
 		154F8B401BED9C4200E7A11A /* lung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lung.png; path = Images/lung.png; sourceTree = "<group>"; };
 		1552D8CD1C0013DF00119AE8 /* FeedBackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
 		1552D8CF1C00299900119AE8 /* NewAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
+		791458DB1C017EAF00716626 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
+		791458F71C017FC900716626 /* ConsentForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsentForm.swift; path = Utility/ConsentForm.swift; sourceTree = "<group>"; };
+		791458F81C017FC900716626 /* HealthSurvey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthSurvey.swift; path = Utility/HealthSurvey.swift; sourceTree = "<group>"; };
 		79D93EDA1BED34640059DC26 /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVAuxiliaryView.swift; path = CVCalendar/CVAuxiliaryView.swift; sourceTree = "<group>"; };
 		79D93EDB1BED34640059DC26 /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVCalendarContentViewController.swift; path = CVCalendar/CVCalendarContentViewController.swift; sourceTree = "<group>"; };
 		79D93EDC1BED34640059DC26 /* CVCalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVCalendarDayView.swift; path = CVCalendar/CVCalendarDayView.swift; sourceTree = "<group>"; };
@@ -421,7 +426,6 @@
 		AFBB2A351BFC65C8006015F5 /* image---Username@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "image---Username@2x.png"; path = "Images/image---Username@2x.png"; sourceTree = "<group>"; };
 		AFBB2A361BFC65C8006015F5 /* login-Don’t-have-an-account_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login-Don’t-have-an-account_@2x.png"; path = "Images/login-Don’t-have-an-account_@2x.png"; sourceTree = "<group>"; };
 		AFBB2A371BFC65C8006015F5 /* login-SleepBusters@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login-SleepBusters@2x.png"; path = "Images/login-SleepBusters@2x.png"; sourceTree = "<group>"; };
-		AFCD0F431C0012B300F38508 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		AFCDE2BD1BDFDB7D00394415 /* JSONHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONHelper.h; path = JSONHelper/JSONHelper.h; sourceTree = "<group>"; };
 		AFCDE2BE1BDFDB7D00394415 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONHelper.swift; path = JSONHelper/JSONHelper.swift; sourceTree = "<group>"; };
 		AFCDE2BF1BDFDB7D00394415 /* Supporting Files */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Supporting Files"; path = "JSONHelper/Supporting Files"; sourceTree = "<group>"; };
@@ -463,6 +467,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		791458DC1C017EAF00716626 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				791458E91C017EB000716626 /* ResearchKit.framework */,
+				791458EB1C017EB000716626 /* ResearchKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		79D93ED81BED343C0059DC26 /* CVCalendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +649,8 @@
 		AF0AA5131BBFB16800C97C87 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				791458F71C017FC900716626 /* ConsentForm.swift */,
+				791458F81C017FC900716626 /* HealthSurvey.swift */,
 				AF325F631BC1C6EA00FA4523 /* HttpAction.swift */,
 				AF325F651BC1C99300FA4523 /* Extensions.swift */,
 				AF325F781BC206E200FA4523 /* Serializable.swift */,
@@ -654,6 +669,7 @@
 		AF1834901BBFA9E100EBDFCD = {
 			isa = PBXGroup;
 			children = (
+				791458DB1C017EAF00716626 /* ResearchKit.xcodeproj */,
 				AF6A213E1BF6C9F6004CEE2D /* Alamofire.xcodeproj */,
 				AF2B98EF1BF27EC50092B9A7 /* MindwaveEEG */,
 				79D93ED81BED343C0059DC26 /* CVCalendar */,
@@ -825,15 +841,6 @@
 				AFA659D31BED86A4005D295D /* hot51.png */,
 			);
 			name = Icons;
-			sourceTree = "<group>";
-		};
-		AFCD0F441C0012B300F38508 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AFCD0F4A1C0012B400F38508 /* ResearchKit.framework */,
-				AFCD0F4C1C0012B400F38508 /* ResearchKitTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		AFCDE2BB1BDFDB7300394415 /* JSONHelper */ = {
@@ -1033,6 +1040,10 @@
 					ProductGroup = AF03F9C51BC9EA04002ADF4D /* Products */;
 					ProjectRef = AF03F9C41BC9EA04002ADF4D /* Charts.xcodeproj */;
 				},
+				{
+					ProductGroup = 791458DC1C017EAF00716626 /* Products */;
+					ProjectRef = 791458DB1C017EAF00716626 /* ResearchKit.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1045,6 +1056,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		791458E91C017EB000716626 /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = 791458E81C017EB000716626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		791458EB1C017EB000716626 /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = 791458EA1C017EB000716626 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		AF03F9CA1BC9EA04002ADF4D /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1106,20 +1131,6 @@
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
 			remoteRef = AF6A21541BF6C9F7004CEE2D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AFCD0F4A1C0012B400F38508 /* ResearchKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ResearchKit.framework;
-			remoteRef = AFCD0F491C0012B400F38508 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AFCD0F4C1C0012B400F38508 /* ResearchKitTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ResearchKitTests.xctest;
-			remoteRef = AFCD0F4B1C0012B400F38508 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1252,6 +1263,7 @@
 				79D93EF81BED34640059DC26 /* CVCalendarDayViewControlCoordinator.swift in Sources */,
 				AF18349D1BBFA9E100EBDFCD /* AppDelegate.swift in Sources */,
 				AF8157771BC13C7500F5476A /* UserSensorStat.swift in Sources */,
+				791458F91C017FC900716626 /* ConsentForm.swift in Sources */,
 				79D93EF61BED34640059DC26 /* CVCalendarContentViewController.swift in Sources */,
 				AF95FADA1BC7B41200FACD52 /* ModelMapper.swift in Sources */,
 				AF325F641BC1C6EA00FA4523 /* HttpAction.swift in Sources */,
@@ -1277,6 +1289,7 @@
 				AF81577A1BC13ECB00F5476A /* Business.swift in Sources */,
 				AF29EBEE1BC3AA4A00F32D07 /* UserSleepSession.swift in Sources */,
 				AFCDE2C01BDFDB7D00394415 /* JSONHelper.swift in Sources */,
+				791458FA1C017FC900716626 /* HealthSurvey.swift in Sources */,
 				79D93F071BED34640059DC26 /* CVCalendarWeekday.swift in Sources */,
 				AF63106F1BE9113E008A54BF /* StartTrackingViewController.swift in Sources */,
 				AF0AA5161BBFB23000C97C87 /* DataAccess.swift in Sources */,
