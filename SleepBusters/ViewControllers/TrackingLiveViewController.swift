@@ -156,7 +156,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
             }
             if(isLocked)
             {
-                var dataTolerance = dataRandom + (Int(arc4random_uniform(10)))
+                var dataTolerance =  dataRandom + Int((Double(arc4random_uniform(10))*1.5))
                 data.append(dataTolerance)
                 chartData.removeFirst()
                 chartData.append(Int(dataTolerance))
@@ -164,7 +164,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         }
         else
         {
-            let temp = 150+abs(70*sin(counterPie))
+            let temp = Int(200+abs(70*sin(counterPie)))
             data.append(Int(temp))
             counterPie = counterPie + 0.02;
             chartData.removeFirst()
@@ -541,11 +541,11 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     {
         navigationController?.popViewControllerAnimated(true)
     }
-    
+    var respiratory = Respiratory()
     func createSleepSession(data: [Int])
     {
         
-        //respiratory.checkPostSleepData(data)
+        respiratory.checkPostSleepData(data, startTime: NSDate())
         
     }
     
