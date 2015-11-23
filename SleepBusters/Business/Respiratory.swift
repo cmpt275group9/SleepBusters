@@ -76,8 +76,8 @@ class Respiratory
     //this function uses data from a night of sleep to determine possible points of sleep apnea
     func checkPostSleepData(sleepdata: [Int]){
         let N = sleepdata.count
-        var categories: [Int:Int]
-        var avgVals: [Int]
+        var categories = [Int:Int]()
+        var avgVals = [Int]()
         //sort all values into categories to determine average max and min and freq
         for var x = 0; x < N; x++
         {
@@ -142,7 +142,7 @@ class Respiratory
         //find average frequency of all data to find average breaths per minute
         //first 10 min of sleep is 600 seconds, therefore 60000 divisions
         //will likely have to recalibrate this function to account for error
-        var freq: Double
+        var freq: Double = 0
         
         for var x = 0; x < 60000; x++
         {
@@ -154,8 +154,8 @@ class Respiratory
         freq = 60/(freq/2) //1/f = T (seconds per breath) times by 60 to have avg breaths per minute
     
         //create basis waveform to compare actual waveform to
-        var baseWave: [Double]
-        var apneaCount: Int
+        var baseWave = [Double]()
+        var apneaCount: Int = 0
         
         for var x = 0; x < N; x++
         {
@@ -167,7 +167,7 @@ class Respiratory
     
         //check cross correlation of entire waveform to have base "error" value
         //cross correlation = covariance/ (stddev(x)* stddev(y))
-        var sleepdataDbl: [Double]
+        var sleepdataDbl = [Double]()
         for i in sleepdata {
             sleepdataDbl[i] = Double(sleepdata[i])
         }
@@ -181,8 +181,8 @@ class Respiratory
     
         while (x < N)
         {
-            var sdpt: [Double]
-            var bwpt: [Double]
+            var sdpt = [Double]()
+            var bwpt = [Double]()
             sdpt.append(sleepdataDbl[x])
             bwpt.append(baseWave[x])
             var cc = covarianceSample(x: sdpt, y: bwpt)! / (sleepdataStdDev * basisStdDev)
@@ -239,8 +239,8 @@ class Respiratory
     func standardDeviation(arr : [Double]) -> Double
     {
         let length = Double(arr.count)
-        let avg = arr.reduce(0, {$0 + $1}) / length
-        let sumOfSquaredAvgDiff = arr.map { pow($0 - avg, 2.0)}.reduce(0, {$0 + $1})
+        let avg = arr.reduce(0, combine: {$0 + $1}) / length
+        let sumOfSquaredAvgDiff = arr.map { pow($0 - avg, 2.0)}.reduce(0, combine: {$0 + $1})
         return sqrt(sumOfSquaredAvgDiff / length)
     }
 
