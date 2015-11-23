@@ -17,7 +17,10 @@
 import UIKit
 import ResearchKit
 
+var user = UserProfile()
 class MyProfileViewController: UIViewController{
+    
+    
     
     override func viewDidLoad() {
         surveyTapped(self)
@@ -58,19 +61,48 @@ extension MyProfileViewController : ORKTaskViewControllerDelegate {
                 if let questionResult = result as? ORKChoiceQuestionResult {
                     if questionResult.choiceAnswers != nil{
                         print("\(questionResult.identifier), \(questionResult.choiceAnswers!)")
+                        
+                        if(questionResult.identifier == "gender")
+                        {
+                            user.gender = (questionResult.choiceAnswers?.first! as! Int)
+                        }
+                        
+                        
+
                     }
                 }
                 else if let questionResult = result as? ORKQuestionResult {
                     if questionResult.answer != nil{
                         print("\(questionResult.identifier), \(questionResult.answer!)")
+                        
+                        if(questionResult.identifier == "fname")
+                        {
+                            user.firstName = (questionResult.answer! as! String)
+                        }
+                        if(questionResult.identifier == "lname")
+                        {
+                            user.lastName = (questionResult.answer! as! String)
+                        }
+                        if(questionResult.identifier == "height")
+                        {
+                            user.height = (questionResult.answer! as! Double)
+                        }
+                        if(questionResult.identifier == "weight")
+                        {
+                            user.weight = (questionResult.answer! as! Double)
+                        }
+                        // TODO Add occupation and Date of birth
                     }
                 }else{
                     print("No printable results.")
                 }
                 
             }
-            
         }
+        let business = Business()
+        var temp = user
+        //business.saveUserProfile(user)
+        
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
     }
     
