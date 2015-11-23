@@ -54,6 +54,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     var characteristics: CBCharacteristic!
     var terminalChar:CBCharacteristic!
     var countIndex = 0;
+    //var respiratory = Respiratory()
     /**************************************************/
     
     override func viewDidLoad() {
@@ -530,7 +531,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
             
         }
         
-        createSleepSession()
+        createSleepSession(data)
         
         
         performSegueWithIdentifier("trackingSegue", sender: nil)
@@ -541,10 +542,10 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         navigationController?.popViewControllerAnimated(true)
     }
     
-    func createSleepSession()
+    func createSleepSession(data: [Int])
     {
         
-        detectSleepApnea()
+        //respiratory.checkPostSleepData(data)
         
     }
     

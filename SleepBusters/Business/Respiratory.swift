@@ -74,10 +74,12 @@ class Respiratory
     
     
     //this function uses data from a night of sleep to determine possible points of sleep apnea
-    func checkPostSleepData(sleepdata: [Int]){
+    func checkPostSleepData(sleepdata: [Int], startTime: NSDate){
+        
         let N = sleepdata.count
         var categories = [Int:Int]()
         var avgVals = [Int]()
+        
         //sort all values into categories to determine average max and min and freq
         for var x = 0; x < N; x++
         {
@@ -135,7 +137,7 @@ class Respiratory
         //find average max and min amplitude
         avgVals.sortInPlace(<)
         let minR = avgVals[0]
-        var i = avgVals.count
+        let i = avgVals.count
         let maxR = avgVals[(i-1)]
         let threshold = Double(maxR - minR)*0.05
     
@@ -178,6 +180,9 @@ class Respiratory
         let baseError = covariancePopulation(x: sleepdataDbl, y: baseWave)! / (sleepdataStdDev * basisStdDev)
         
         var x = 0
+        var log = [Int:String]()
+        var logc = 0
+        var duration = ""
     
         while (x < N)
         {
@@ -185,20 +190,25 @@ class Respiratory
             var bwpt = [Double]()
             sdpt.append(sleepdataDbl[x])
             bwpt.append(baseWave[x])
-            var cc = covarianceSample(x: sdpt, y: bwpt)! / (sleepdataStdDev * basisStdDev)
+            let cc = covarianceSample(x: sdpt, y: bwpt)! / (sleepdataStdDev * basisStdDev)
             
              if (cc > baseError)
              {
                  //check next 10 seconds to see if original wave stays within 5% threshold
-                 var s = x
+                 var s = 0
                  while sleepdataDbl[s] <= threshold
                  {
                     s++
                  }
-                 if ((s-x)>=1000){
+                 if (s>=1000){
                     apneaCount++
+                    let start = startTime.dateByAddingTimeInterval(Double(x/100))
+                    let end = startTime.dateByAddingTimeInterval(Double((x+s)/100))
+                    duration = "start:\(start), end:\(end)"
+                    log[logc] = duration
+                    logc++
                  }
-                 x = s
+                 x += s
              }
             
              x++
@@ -219,17 +229,17 @@ class Respiratory
         var diagnosis: String
         switch apneaCount{
         case 5..<15:
-            diagnosis = "signs of Obstructive Sleep Apnea"
+            diagnosis = "signs of Mild Obstructive Sleep Apnea"
         case 15..<30:
-            diagnosis = "signs of Moderate Sleep Apnea"
+            diagnosis = "signs of Moderate Obstructive Sleep Apnea"
         case _ where apneaCount > 29:
-            diagnosis = "signs of Severe Sleep Apnea"
+            diagnosis = "signs of Severe Obstructive Sleep Apnea"
         //case >50? Because if we read that many errors then there's something wrong with our code
         default:
             diagnosis = "no signs of Sleep Apnea"
         }
     
-        //"SleepBusters has detected (diagnosis)"
+        //print to diagnosis page: "SleepBusters has detected (diagnosis)"
     
     
     }
