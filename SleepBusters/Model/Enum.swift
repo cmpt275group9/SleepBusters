@@ -29,3 +29,4 @@ enum SleepApneaConfidence
     case Medium
     case High
 }
+
