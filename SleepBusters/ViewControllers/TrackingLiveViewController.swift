@@ -515,21 +515,21 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         
         
         let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "update", userInfo: nil, repeats: true)
-        for var index = 1; index < 288000; index++
-        {
-            let temp = 150+abs(70*sin(counterPie))
-            if(index > 10000 && index < 10100)
-            {
-                var dataRandom = Int(data.last!) + (Int(arc4random_uniform(10)));
-                data.append(dataRandom)
-            }
-            else
-            {
-                data.append(Int(temp))
-                counterPie = counterPie + 0.02;
-            }
-            
-        }
+//        for var index = 1; index < 288000; index++
+//        {
+//            let temp = 150+abs(70*sin(counterPie))
+//            if(index > 10000 && index < 10100)
+//            {
+//                var dataRandom = Int(data.last!) + (Int(arc4random_uniform(10)));
+//                data.append(dataRandom)
+//            }
+//            else
+//            {
+//                data.append(Int(temp))
+//                counterPie = counterPie + 0.02;
+//            }
+//            
+//        }
         
         createSleepSession(data)
         

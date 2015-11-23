@@ -79,6 +79,15 @@ class Respiratory
         let N = sleepdata.count
         var categories = [Int:Int]()
         var avgVals = [Int]()
+        categories[0] = 0
+        for var index = 200; index <= 400; index++
+        {
+            if(index % 5 == 0)
+            {
+                categories[index] = 0
+            }
+            
+        }
         
         //sort all values into categories to determine average max and min and freq
         for var x = 0; x < N; x++
@@ -125,9 +134,12 @@ class Respiratory
             case 390..<400:
                 categories[395]!+=1
             default:
-                categories[0]!+=1
+                categories[0]! += 1
             }
         }
+        print("cat 0")
+        print(categories[0]!)
+        
         for (key, value) in categories {
             if (value > N/20){
                 avgVals.append(key)
@@ -146,7 +158,7 @@ class Respiratory
         //will likely have to recalibrate this function to account for error
         var freq: Double = 0
         
-        for var x = 0; x < 60000; x++
+        for var x = 0; x < 300; x++
         {
             if (sleepdata[x] == maxR){
                 freq += 1.0
@@ -161,7 +173,7 @@ class Respiratory
         
         for var x = 0; x < N; x++
         {
-             baseWave[x] = Double(maxR)*Double(abs(sin(2.0*Float(M_PI)*Float(freq)*Float(x)))) + Double(minR)
+             baseWave.append(Double(maxR)*Double(abs(sin(2.0*Float(M_PI)*Float(freq)*Float(x)))) + Double(minR))
     
         }
         //TODO: account for offset?
@@ -171,7 +183,7 @@ class Respiratory
         //cross correlation = covariance/ (stddev(x)* stddev(y))
         var sleepdataDbl = [Double]()
         for i in sleepdata {
-            sleepdataDbl[i] = Double(sleepdata[i])
+            sleepdataDbl.append(Double(sleepdata[i]))
         }
         
         let sleepdataStdDev = standardDeviation(sleepdataDbl)
@@ -190,7 +202,11 @@ class Respiratory
             var bwpt = [Double]()
             sdpt.append(sleepdataDbl[x])
             bwpt.append(baseWave[x])
-            let cc = covarianceSample(x: sdpt, y: bwpt)! / (sleepdataStdDev * basisStdDev)
+            sdpt.append(sleepdataDbl[x+1])
+            bwpt.append(baseWave[x+1])
+            let covariance = covarianceSample(x: sdpt, y: bwpt)!
+            let standardDiv =  (sleepdataStdDev * basisStdDev)
+            let cc =  covariance / standardDiv
             
              if (cc > baseError)
              {
