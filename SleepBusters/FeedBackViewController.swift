@@ -22,16 +22,11 @@ import UIKit
 
 class FeedBackViewController: UIViewController {
     
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-    
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,8 +35,4 @@ class FeedBackViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;
     }
-    
-    
-    
-    
 }

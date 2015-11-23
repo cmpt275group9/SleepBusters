@@ -14,43 +14,6 @@
  ********************************************************/
 
 import Foundation
-class UserProfile3 : Serializable {
-    var Id: Int = 0
-    var UserName: String = ""
-    var Password: String = ""
-    var FirstName: String = ""
-    var LastName: String = ""
-    var DateOfBirth: NSDate? = nil
-    var Height: Double? = nil
-    var Weight: Double? = nil
-    var Gender: String = ""
-    var Occupation: String = ""
-    var DoesSnore: Bool? = nil
-    var DoesDrinkCoffee: Bool? = nil
-    var DoesDrinkAlcohol: Bool? = nil
-    var IsValidated:Bool = false
-    
-    override init() {
-    
-    }
-}
-
-/********************************************************
- 
- UserProfile.swift
- 
- Team Name: PillowSoft
- 
- Author(s): Klein Gomes, Conrad Yeung
- 
- Purpose:  This model class represents a single user profile.
- It will be used to save and delete user profile information.
- 
- Copyright © 2015 PillowSoft. All rights reserved.
- 
- ********************************************************/
-
-import Foundation
 
 
 final class UserProfile: ResponseObjectSerializable, ResponseCollectionSerializable {
@@ -60,16 +23,21 @@ final class UserProfile: ResponseObjectSerializable, ResponseCollectionSerializa
     var firstName: String? = nil
     var lastName: String? = nil
     var isValidated:Bool? = nil
+    
     var dateOfBirth: NSDate? = nil
     var height: Double? = nil
     var weight: Double? = nil
-    var gender: String?  = nil
-    var occupation: String?  = nil
-    var doesSnore: Bool? = nil
-    var doesDrinkCoffee: Bool? = nil
-    var doesDrinkAlcohol: Bool? = nil
-
+    var gender: Int?  = nil
     
+    var occupation: String?  = nil
+
+    var conditions: [String]? = nil
+    
+    
+    // Survey Questions
+    var questions = [Int: [Int]]()
+    
+
     init(){
         
     }
@@ -86,11 +54,9 @@ final class UserProfile: ResponseObjectSerializable, ResponseCollectionSerializa
 
         self.height = representation.valueForKeyPath("Height") as? Double
         self.weight = representation.valueForKeyPath("Weight") as? Double
-        self.gender = representation.valueForKeyPath("Gender") as? String
+        self.gender = representation.valueForKeyPath("Gender") as? Int
         self.occupation = representation.valueForKeyPath("Occupation") as? String
-        self.doesSnore = representation.valueForKeyPath("DoesSnore") as? Bool
-        self.doesDrinkCoffee = representation.valueForKeyPath("DoesDrinkCoffee") as? Bool
-        self.doesDrinkAlcohol = representation.valueForKeyPath("DoesDrinkAlcohol") as? Bool
+
 
     }
     
@@ -108,3 +74,4 @@ final class UserProfile: ResponseObjectSerializable, ResponseCollectionSerializa
         return users
     }
 }
+

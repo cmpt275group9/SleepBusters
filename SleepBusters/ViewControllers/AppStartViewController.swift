@@ -25,6 +25,27 @@ class AppStartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //        var business = Business()
+        //
+        //        var userProfile = UserProfile()
+        //        userProfile.userName = "passwordtest"
+        //        userProfile.firstName = "new test"
+        //        userProfile.lastName = "last test"
+        //        userProfile.weight = 21
+        //        userProfile.height = 21
+        //        userProfile.gender = 0
+        //        userProfile.password = "tested"
+        //        business.registerUserProfile(userProfile)
+        //            {
+        //                (data: UserProfile, error: NSError?) -> Void in
+        //                dispatch_async(dispatch_get_main_queue()) {
+        //
+        //                    var temp = 2;
+        //                    
+        //                }
+        //                
+        //        }
+
         
         // Do any additional setup after loading the view.
     }

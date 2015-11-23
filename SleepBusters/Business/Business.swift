@@ -47,9 +47,12 @@ class Business {
      - parameter UserProfile: The User Profile to register. (Create account)
      :returns: a User Profile
      */
-//    func registerUserProfile(user: UserProfile) -> UserProfile {
-//        return data.registerUserProfile(user)
-//    }
+    func registerUserProfile(userProfile: UserProfile,callback: (UserProfile, NSError?) -> Void) {
+        data.registerUserProfile(userProfile)
+            { (data: UserProfile, error: NSError?) -> Void in
+                callback(data,error)
+        }
+    }
     
     /**
      Creates a request to the WebApi to retrieve a User Profile from the database.
@@ -65,9 +68,12 @@ class Business {
      - parameter UserProfile: The User Profile to update. (Update account)
      :returns: The user profile that was just saved
      */
-//    func saveUserProfile(userProfile: UserProfile) -> UserProfile {
-//        return data.saveUserProfile(userProfile)
-//    }
+    func saveUserProfile(userProfile: UserProfile,callback: (UserProfile, NSError?) -> Void) {
+        data.saveUserProfile(userProfile)
+            { (data: UserProfile, error: NSError?) -> Void in
+                callback(data,error)
+        }
+    }
     
     /**
      Creates a request to the WebApi to save/update a User Sleep Session to the database.
@@ -98,7 +104,7 @@ class Business {
      :returns: a UserSleepSession object
      */
     func getUserSleepSessionForDate(userId: Int, date: NSDate,callback: (UserSleepSession, NSError?) -> Void) -> Void {
-        data.getUserSleepSessionForDate(userId,date:date)
+            data.getUserSleepSessionForDate(userId,date:date)
             { (data: UserSleepSession, error: NSError?) -> Void in
                 callback(data,error)
         }
