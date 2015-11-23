@@ -15,6 +15,8 @@
  ********************************************************/
 
 import UIKit
+import ResearchKit
+
 class LoginViewController:UIViewController {
     
     var rememberMe = true
@@ -24,6 +26,12 @@ class LoginViewController:UIViewController {
     @IBOutlet weak var userNameField: UITextField!
     @IBAction func loginButtonPressed(sender: UIButton) {
         login()
+    }
+    
+    @IBAction func surveyTapped(sender : AnyObject) {
+        let taskViewController = ORKTaskViewController(task: SurveyTask, taskRunUUID: nil)
+        taskViewController.delegate = self
+        presentViewController(taskViewController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -107,5 +115,97 @@ class LoginViewController:UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+extension LoginViewController : ORKTaskViewControllerDelegate {
+    
+    func taskViewController(taskViewController: ORKTaskViewController, stepViewControllerWillAppear stepViewController: ORKStepViewController) {
+        if let stepViewController = stepViewController as? ORKWaitStepViewController {
+            let registrationStepResult = taskViewController.result.resultForIdentifier("registrationStep") as? ORKStepResult
+            let emailQuestionResult = registrationStepResult?.resultForIdentifier(ORKRegistrationFormItemIdentifierEmail) as? ORKTextQuestionResult
+            let fnameQuestionResult = registrationStepResult?.resultForIdentifier(ORKRegistrationFormItemIdentifierGivenName) as? ORKTextQuestionResult
+            let lnameQuestionResult = registrationStepResult?.resultForIdentifier(ORKRegistrationFormItemIdentifierFamilyName) as? ORKTextQuestionResult
+            let passwordQuestionResult = registrationStepResult?.resultForIdentifier(ORKRegistrationFormItemIdentifierPassword) as? ORKTextQuestionResult
+            var business = Business()
+            
+            var userProfile = UserProfile()
+            userProfile.userName = emailQuestionResult!.textAnswer
+            userProfile.firstName = fnameQuestionResult!.textAnswer
+            userProfile.lastName = lnameQuestionResult!.textAnswer
+            userProfile.weight = 21
+            userProfile.height = 21
+            userProfile.gender = 0
+            userProfile.password = passwordQuestionResult!.textAnswer
+            business.registerUserProfile(userProfile)
+                {
+                    (data: UserProfile, error: NSError?) -> Void in
+                    dispatch_async(dispatch_get_main_queue()) {
+                        let delay = 2.5 * Double(NSEC_PER_SEC)
+                        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                        dispatch_after(time, dispatch_get_main_queue()) {
+                            stepViewController.goForward()
+                        }
+                    }
+                    
+            }
+            
+        }
+        //UIView.appearanceWhenContainedInInstancesOfClasses([ORKTaskViewController.self]).backgroundColor = UIColor(red: 16.0/255.0, green: 12.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        //UIView.appearanceWhenContainedInInstancesOfClasses([ORKTaskViewController.self]).tintColor = UIColor.whiteColor()
+    }
+    
+    func taskViewController(taskViewController: ORKTaskViewController, didFinishWithReason reason: ORKTaskViewControllerFinishReason, error: NSError?) {
+        //TEST PRINTING FOR RESULTS//
+        let results = taskViewController.result.results as? [ORKStepResult]
+        for stepResult: ORKStepResult in results!{
+            for result in (stepResult.results as [ORKResult]?)!{
+                if let questionResult = result as? ORKChoiceQuestionResult {
+                    if questionResult.choiceAnswers != nil{
+                        print("\(questionResult.identifier), \(questionResult.choiceAnswers!)")
+                        
+                        if(questionResult.identifier == "gender")
+                        {
+                            user.gender = (questionResult.choiceAnswers?.first! as! Int)
+                        }
+                        
+                        
+                        
+                    }
+                }
+                else if let questionResult = result as? ORKQuestionResult {
+                    if questionResult.answer != nil{
+                        print("\(questionResult.identifier), \(questionResult.answer!)")
+                        
+                        if(questionResult.identifier == "fname")
+                        {
+                            user.firstName = (questionResult.answer! as! String)
+                        }
+                        if(questionResult.identifier == "lname")
+                        {
+                            user.lastName = (questionResult.answer! as! String)
+                        }
+                        if(questionResult.identifier == "height")
+                        {
+                            user.height = (questionResult.answer! as! Double)
+                        }
+                        if(questionResult.identifier == "weight")
+                        {
+                            user.weight = (questionResult.answer! as! Double)
+                        }
+                        // TODO Add occupation and Date of birth
+                    }
+                }else{
+                    print("No printable results.")
+                }
+                
+            }
+        }
+        let business = Business()
+        var temp = user
+        //business.saveUserProfile(user)
+        
+        taskViewController.dismissViewControllerAnimated(true, completion: nil)
+
     }
 }
