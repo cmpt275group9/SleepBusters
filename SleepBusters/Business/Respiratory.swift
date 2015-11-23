@@ -74,10 +74,21 @@ class Respiratory
     
     
     //this function uses data from a night of sleep to determine possible points of sleep apnea
-    func checkPostSleepData(sleepdata: [Int]){
+    func checkPostSleepData(sleepdata: [Int], startTime: NSDate){
+        
         let N = sleepdata.count
-        var categories: [Int:Int]
-        var avgVals: [Int]
+        var categories = [Int:Int]()
+        var avgVals = [Int]()
+        categories[0] = 0
+        for var index = 200; index <= 400; index++
+        {
+            if(index % 5 == 0)
+            {
+                categories[index] = 0
+            }
+            
+        }
+        
         //sort all values into categories to determine average max and min and freq
         for var x = 0; x < N; x++
         {
@@ -123,9 +134,12 @@ class Respiratory
             case 390..<400:
                 categories[395]!+=1
             default:
-                categories[0]!+=1
+                categories[0]! += 1
             }
         }
+        print("cat 0")
+        print(categories[0]!)
+        
         for (key, value) in categories {
             if (value > N/20){
                 avgVals.append(key)
@@ -135,16 +149,16 @@ class Respiratory
         //find average max and min amplitude
         avgVals.sortInPlace(<)
         let minR = avgVals[0]
-        var i = avgVals.count
+        let i = avgVals.count
         let maxR = avgVals[(i-1)]
         let threshold = Double(maxR - minR)*0.05
     
         //find average frequency of all data to find average breaths per minute
         //first 10 min of sleep is 600 seconds, therefore 60000 divisions
         //will likely have to recalibrate this function to account for error
-        var freq: Double
+        var freq: Double = 0
         
-        for var x = 0; x < 60000; x++
+        for var x = 0; x < 300; x++
         {
             if (sleepdata[x] == maxR){
                 freq += 1.0
@@ -154,12 +168,12 @@ class Respiratory
         freq = 60/(freq/2) //1/f = T (seconds per breath) times by 60 to have avg breaths per minute
     
         //create basis waveform to compare actual waveform to
-        var baseWave: [Double]
-        var apneaCount: Int
+        var baseWave = [Double]()
+        var apneaCount: Int = 0
         
         for var x = 0; x < N; x++
         {
-             baseWave[x] = Double(maxR)*Double(abs(sin(2.0*Float(M_PI)*Float(freq)*Float(x)))) + Double(minR)
+             baseWave.append(Double(maxR)*Double(abs(sin(2.0*Float(M_PI)*Float(freq)*Float(x)))) + Double(minR))
     
         }
         //TODO: account for offset?
@@ -167,9 +181,9 @@ class Respiratory
     
         //check cross correlation of entire waveform to have base "error" value
         //cross correlation = covariance/ (stddev(x)* stddev(y))
-        var sleepdataDbl: [Double]
+        var sleepdataDbl = [Double]()
         for i in sleepdata {
-            sleepdataDbl[i] = Double(sleepdata[i])
+            sleepdataDbl.append(Double(sleepdata[i]))
         }
         
         let sleepdataStdDev = standardDeviation(sleepdataDbl)
@@ -178,27 +192,39 @@ class Respiratory
         let baseError = covariancePopulation(x: sleepdataDbl, y: baseWave)! / (sleepdataStdDev * basisStdDev)
         
         var x = 0
+        var log = [Int:String]()
+        var logc = 0
+        var duration = ""
     
         while (x < N)
         {
-            var sdpt: [Double]
-            var bwpt: [Double]
+            var sdpt = [Double]()
+            var bwpt = [Double]()
             sdpt.append(sleepdataDbl[x])
             bwpt.append(baseWave[x])
-            var cc = covarianceSample(x: sdpt, y: bwpt)! / (sleepdataStdDev * basisStdDev)
+            sdpt.append(sleepdataDbl[x+1])
+            bwpt.append(baseWave[x+1])
+            let covariance = covarianceSample(x: sdpt, y: bwpt)!
+            let standardDiv =  (sleepdataStdDev * basisStdDev)
+            let cc =  covariance / standardDiv
             
              if (cc > baseError)
              {
                  //check next 10 seconds to see if original wave stays within 5% threshold
-                 var s = x
+                 var s = 0
                  while sleepdataDbl[s] <= threshold
                  {
                     s++
                  }
-                 if ((s-x)>=1000){
+                 if (s>=1000){
                     apneaCount++
+                    let start = startTime.dateByAddingTimeInterval(Double(x/100))
+                    let end = startTime.dateByAddingTimeInterval(Double((x+s)/100))
+                    duration = "start:\(start), end:\(end)"
+                    log[logc] = duration
+                    logc++
                  }
-                 x = s
+                 x += s
              }
             
              x++
@@ -219,17 +245,17 @@ class Respiratory
         var diagnosis: String
         switch apneaCount{
         case 5..<15:
-            diagnosis = "signs of Obstructive Sleep Apnea"
+            diagnosis = "signs of Mild Obstructive Sleep Apnea"
         case 15..<30:
-            diagnosis = "signs of Moderate Sleep Apnea"
+            diagnosis = "signs of Moderate Obstructive Sleep Apnea"
         case _ where apneaCount > 29:
-            diagnosis = "signs of Severe Sleep Apnea"
+            diagnosis = "signs of Severe Obstructive Sleep Apnea"
         //case >50? Because if we read that many errors then there's something wrong with our code
         default:
             diagnosis = "no signs of Sleep Apnea"
         }
     
-        //"SleepBusters has detected (diagnosis)"
+        //print to diagnosis page: "SleepBusters has detected (diagnosis)"
     
     
     }
@@ -239,8 +265,8 @@ class Respiratory
     func standardDeviation(arr : [Double]) -> Double
     {
         let length = Double(arr.count)
-        let avg = arr.reduce(0, {$0 + $1}) / length
-        let sumOfSquaredAvgDiff = arr.map { pow($0 - avg, 2.0)}.reduce(0, {$0 + $1})
+        let avg = arr.reduce(0, combine: {$0 + $1}) / length
+        let sumOfSquaredAvgDiff = arr.map { pow($0 - avg, 2.0)}.reduce(0, combine: {$0 + $1})
         return sqrt(sumOfSquaredAvgDiff / length)
     }
 

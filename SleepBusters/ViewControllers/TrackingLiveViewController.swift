@@ -54,6 +54,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     var characteristics: CBCharacteristic!
     var terminalChar:CBCharacteristic!
     var countIndex = 0;
+    //var respiratory = Respiratory()
     /**************************************************/
     
     override func viewDidLoad() {
@@ -155,7 +156,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
             }
             if(isLocked)
             {
-                var dataTolerance = dataRandom + (Int(arc4random_uniform(10)))
+                var dataTolerance =  dataRandom + Int((Double(arc4random_uniform(10))*1.5))
                 data.append(dataTolerance)
                 chartData.removeFirst()
                 chartData.append(Int(dataTolerance))
@@ -163,7 +164,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         }
         else
         {
-            let temp = 150+abs(70*sin(counterPie))
+            let temp = Int(200+abs(70*sin(counterPie)))
             data.append(Int(temp))
             counterPie = counterPie + 0.02;
             chartData.removeFirst()
@@ -514,23 +515,23 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         
         
         let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "update", userInfo: nil, repeats: true)
-        for var index = 1; index < 288000; index++
-        {
-            let temp = 150+abs(70*sin(counterPie))
-            if(index > 10000 && index < 10100)
-            {
-                var dataRandom = Int(data.last!) + (Int(arc4random_uniform(10)));
-                data.append(dataRandom)
-            }
-            else
-            {
-                data.append(Int(temp))
-                counterPie = counterPie + 0.02;
-            }
-            
-        }
+//        for var index = 1; index < 288000; index++
+//        {
+//            let temp = 150+abs(70*sin(counterPie))
+//            if(index > 10000 && index < 10100)
+//            {
+//                var dataRandom = Int(data.last!) + (Int(arc4random_uniform(10)));
+//                data.append(dataRandom)
+//            }
+//            else
+//            {
+//                data.append(Int(temp))
+//                counterPie = counterPie + 0.02;
+//            }
+//            
+//        }
         
-        createSleepSession()
+        createSleepSession(data)
         
         
         performSegueWithIdentifier("trackingSegue", sender: nil)
@@ -540,11 +541,11 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     {
         navigationController?.popViewControllerAnimated(true)
     }
-    
-    func createSleepSession()
+    var respiratory = Respiratory()
+    func createSleepSession(data: [Int])
     {
         
-        detectSleepApnea()
+        respiratory.checkPostSleepData(data, startTime: NSDate())
         
     }
     
