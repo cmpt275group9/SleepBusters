@@ -22,12 +22,12 @@ class Respiratory
     var apneaStatArray = [UserSensorStat]()
     
     func checkRTSleepData (resp: Int, prevResp: Int, timeElapsed: NSTimeInterval){
-    
+    /*
         var breathRate = 30
         var startingPoint = 200 //resp range is 200-400
-        var maxR =0
-        var minR =0
-        var bigMax =0
+        var maxR = 0
+        var minR = 0
+        var bigMax = 0
     
         if (timeElapsed <= 600){ //preliminary sleep information is determined in the first 10 minutes
             // determine the average breathing rate (so we know how many divisions we have per breath
@@ -44,15 +44,16 @@ class Respiratory
                 }
             }
         }
-        if (timeElapsed >= 600){
+        /*if (timeElapsed >= 600){
             //determine 5% threshold based on max and min
-            let threshold = (maxR - minR)*0.05
-            if ((resp <= threshold) && timer has not started){
+            let threshold = (Double(maxR) - Double(minR)) * 0.05
+           /* if ((resp <= threshold) && timer has not started){
                 starttimer;
             }
             else if ((resp > threshold) && timer has started){
                 stoptimer;
             }
+            */
             if (timer > 10 && resp > threshold){
                 for var x = 0; x < (2*breathRate); x++ //look for big intake in the next 2 breaths
                 {
@@ -65,6 +66,7 @@ class Respiratory
             }
         //if time exceeds 10 seconds check for big intake
         }
+*/*/
     
     
     
@@ -73,58 +75,59 @@ class Respiratory
     
     //this function uses data from a night of sleep to determine possible points of sleep apnea
     func checkPostSleepData(sleepdata: [Int]){
-        let N = sizeof(sleepdata)
+        let N = sleepdata.count
         var categories: [Int:Int]
         var avgVals: [Int]
         //sort all values into categories to determine average max and min and freq
         for var x = 0; x < N; x++
         {
-            switch sleepdata[x]
+            switch sleepdata[x]{
             case 200..<210:
-                categories[205] +=1
+                categories[205]! += 1
             case 210..<220:
-                categories[215] +=1
+                categories[215]!+=1
             case 220..<230:
-                categories[225] +=1
+                categories[225]!+=1
             case 230..<240:
-                categories[235] +=1
+                categories[235]!+=1
             case 240..<250:
-                categories[245] +=1
+                categories[245]!+=1
             case 250..<260:
-                categories[255] +=1
+                categories[255]!+=1
             case 260..<270:
-                categories[265] +=1
+                categories[265]!+=1
             case 270..<280:
-                categories[275] +=1
+                categories[275]!+=1
             case 280..<290:
-                categories[285] +=1
+                categories[285]!+=1
             case 290..<300:
-                categories[295] +=1
+                categories[295]!+=1
             case 300..<310:
-                categories[305] +=1
+                categories[305]!+=1
             case 310..<320:
-                categories[315] +=1
+                categories[315]!+=1
             case 320..<330:
-                categories[325] +=1
+                categories[325]!+=1
             case 330..<340:
-                categories[335] +=1
+                categories[335]!+=1
             case 340..<350:
-                categories[345] +=1
+                categories[345]!+=1
             case 350..<360:
-                categories[355] +=1
+                categories[355]!+=1
             case 360..<370:
-                categories[365] +=1
+                categories[365]!+=1
             case 370..<380:
-                categories[375] +=1
+                categories[375]!+=1
             case 380..<390:
-                categories[385] +=1
+                categories[385]!+=1
             case 390..<400:
-                categories[395] +=1
+                categories[395]!+=1
             default:
-                categories[0] +=1
+                categories[0]!+=1
+            }
         }
         for (key, value) in categories {
-            if (value > floor(N/20)){
+            if (value > N/20){
                 avgVals.append(key)
             }
         }
@@ -132,14 +135,15 @@ class Respiratory
         //find average max and min amplitude
         avgVals.sortInPlace(<)
         let minR = avgVals[0]
-        var i = sizeof(avgVals)
+        var i = avgVals.count
         let maxR = avgVals[(i-1)]
-        let threshold = (maxR - minR)*0.05
+        let threshold = Double(maxR - minR)*0.05
     
         //find average frequency of all data to find average breaths per minute
         //first 10 min of sleep is 600 seconds, therefore 60000 divisions
         //will likely have to recalibrate this function to account for error
-    
+        var freq: Double
+        
         for var x = 0; x < 60000; x++
         {
             if (sleepdata[x] == maxR){
@@ -147,14 +151,15 @@ class Respiratory
             }
         }
     
-        var freq = 60/(freq/2) //1/f = T (seconds per breath) times by 60 to have avg breaths per minute
+        freq = 60/(freq/2) //1/f = T (seconds per breath) times by 60 to have avg breaths per minute
     
         //create basis waveform to compare actual waveform to
-        var baseWave [Double]
-    
+        var baseWave: [Double]
+        var apneaCount: Int
+        
         for var x = 0; x < N; x++
         {
-             baseWave[x] = maxR*abs(Int(sin(2*M_PI*freq*x))) + minR
+             baseWave[x] = Double(maxR)*Double(abs(sin(2.0*Float(M_PI)*Float(freq)*Float(x)))) + Double(minR)
     
         }
         //TODO: account for offset?
@@ -162,32 +167,48 @@ class Respiratory
     
         //check cross correlation of entire waveform to have base "error" value
         //cross correlation = covariance/ (stddev(x)* stddev(y))
-        let sleepdataStdDev = standardDeviation(sleepdata)
+        var sleepdataDbl: [Double]
+        for i in sleepdata {
+            sleepdataDbl[i] = Double(sleepdata[i])
+        }
+        
+        let sleepdataStdDev = standardDeviation(sleepdataDbl)
         let basisStdDev = standardDeviation(baseWave)
     
-        let baseError = covariancePopulation(Double(sleepdata), baseWave)/ (sleepdataStdDev * basisStdDev)
+        let baseError = covariancePopulation(x: sleepdataDbl, y: baseWave)! / (sleepdataStdDev * basisStdDev)
+        
+        var x = 0
     
-    
-        for var x =0; x< N; x++
+        while (x < N)
         {
-             var cc = covarianceSample(Double(sleepdata[x]), baseWave[x])/ (sleepdataStdDev * basisStdDev)
+            var sdpt: [Double]
+            var bwpt: [Double]
+            sdpt.append(sleepdataDbl[x])
+            bwpt.append(baseWave[x])
+            var cc = covarianceSample(x: sdpt, y: bwpt)! / (sleepdataStdDev * basisStdDev)
+            
              if (cc > baseError)
              {
                  //check next 10 seconds to see if original wave stays within 5% threshold
-                 var s =x
-                 while sleepdata[s] <= threshold
+                 var s = x
+                 while sleepdataDbl[s] <= threshold
                  {
-    
+                    s++
                  }
+                 if ((s-x)>=1000){
+                    apneaCount++
+                 }
+                 x = s
              }
+            
+             x++
         }
     
     
         //check cross correlation of each point and then check the next 10s for sleep apnea
     
-        var apneaCount: Int
         let hours = Int(N/(100*60*60))
-        apneaCount = floor(apneaCount/hours)
+        apneaCount = apneaCount/hours
     
         createDiagnosisMessage(apneaCount)
     
@@ -196,16 +217,17 @@ class Respiratory
     //this function creates a diagnosis message based on the number of times sleep apnea was detected by the previous algorithm
     func createDiagnosisMessage(apneaCount: Int){
         var diagnosis: String
-        switch apneaCount
+        switch apneaCount{
         case 5..<15:
             diagnosis = "signs of Obstructive Sleep Apnea"
         case 15..<30:
             diagnosis = "signs of Moderate Sleep Apnea"
-        case >30:
+        case _ where apneaCount > 29:
             diagnosis = "signs of Severe Sleep Apnea"
         //case >50? Because if we read that many errors then there's something wrong with our code
         default:
             diagnosis = "no signs of Sleep Apnea"
+        }
     
         //"SleepBusters has detected (diagnosis)"
     
@@ -214,7 +236,7 @@ class Respiratory
 
 
     //standard deviation function from https://gist.github.com/jonelf/9ae2a2133e21e255e692
-    func standardDeviation(arr : [Int]) -> Double
+    func standardDeviation(arr : [Double]) -> Double
     {
         let length = Double(arr.count)
         let avg = arr.reduce(0, {$0 + $1}) / length
@@ -248,7 +270,7 @@ class Respiratory
     Sigma.covariancePopulation(x: x, y: y) // 4.19166666666667
     */
 
-    public static func covariancePopulation(x: [Double], y: [Double]) -> Double? {
+    func covariancePopulation(x x: [Double], y: [Double]) -> Double? {
         let xCount = Double(x.count)
         let yCount = Double(y.count)
         
@@ -291,7 +313,7 @@ class Respiratory
     Sigma.pearson(x: x, y: y) // 0.843760859352745
     */
 
-    public static func covarianceSample(x x: [Double], y: [Double]) -> Double? {
+    func covarianceSample(x x: [Double], y: [Double]) -> Double? {
         let xCount = Double(x.count)
         let yCount = Double(y.count)
         
@@ -313,6 +335,16 @@ class Respiratory
         }
         
         return nil
+    }
+    
+    func average(values: [Double]) -> Double? {
+        let count = Double(values.count)
+        if count == 0 { return nil }
+        return sum(values) / count
+    }
+    
+    func sum(values: [Double]) -> Double {
+        return values.reduce(0, combine: +)
     }
 
 }

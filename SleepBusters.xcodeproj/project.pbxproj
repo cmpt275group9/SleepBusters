@@ -11,6 +11,8 @@
 		154F8B421BED9C4200E7A11A /* lung.png in Resources */ = {isa = PBXBuildFile; fileRef = 154F8B401BED9C4200E7A11A /* lung.png */; };
 		1552D8CE1C0013DF00119AE8 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552D8CD1C0013DF00119AE8 /* FeedBackViewController.swift */; };
 		1552D8D01C00299900119AE8 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552D8CF1C00299900119AE8 /* NewAccountViewController.swift */; };
+		6E3F38741C029ACC00085E7C /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 791458E91C017EB000716626 /* ResearchKit.framework */; };
+		6E3F38751C029ACC00085E7C /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 791458E91C017EB000716626 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		791458F91C017FC900716626 /* ConsentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791458F71C017FC900716626 /* ConsentForm.swift */; };
 		791458FA1C017FC900716626 /* HealthSurvey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791458F81C017FC900716626 /* HealthSurvey.swift */; };
 		79D93EF51BED34640059DC26 /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D93EDA1BED34640059DC26 /* CVAuxiliaryView.swift */; };
@@ -150,6 +152,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6E3F38761C029ACC00085E7C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 791458DB1C017EAF00716626 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
 		791458E81C017EB000716626 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 791458DB1C017EAF00716626 /* ResearchKit.xcodeproj */;
@@ -273,6 +282,7 @@
 			files = (
 				AF33DDD71BFA608B00FD1975 /* Alamofire.framework in Embed Frameworks */,
 				AF03F9AA1BC9215C002ADF4D /* JBChart.framework in Embed Frameworks */,
+				6E3F38751C029ACC00085E7C /* ResearchKit.framework in Embed Frameworks */,
 				AF03F9CE1BC9EAEF002ADF4D /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -447,6 +457,7 @@
 				AF2B98FE1BF2865E0092B9A7 /* libTGAccessory.a in Frameworks */,
 				AF03F9A81BC9215C002ADF4D /* JBChart.framework in Frameworks */,
 				AF03F9CD1BC9EAEF002ADF4D /* Charts.framework in Frameworks */,
+				6E3F38741C029ACC00085E7C /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +914,7 @@
 				AF6A21571BF6CA08004CEE2D /* PBXTargetDependency */,
 				AF03F9A71BC9215C002ADF4D /* PBXTargetDependency */,
 				AF03F9D01BC9EAEF002ADF4D /* PBXTargetDependency */,
+				6E3F38771C029ACC00085E7C /* PBXTargetDependency */,
 			);
 			name = SleepBusters;
 			productName = SleepBusters;
@@ -1327,6 +1339,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6E3F38771C029ACC00085E7C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = 6E3F38761C029ACC00085E7C /* PBXContainerItemProxy */;
+		};
 		AF03F9A71BC9215C002ADF4D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AF03F9A01BC9215C002ADF4D /* JBChart */;
