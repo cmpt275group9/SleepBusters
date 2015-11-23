@@ -854,18 +854,6 @@
                                     <constraint firstAttribute="width" constant="207" id="qj8-Mw-EsO"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohY-XR-CfW">
-                                <rect key="frame" x="472" y="351" width="119" height="30"/>
-                                <animations/>
-                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="119" id="Qu7-ds-pEd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
-                                <state key="normal" title="Forgot Password">
-                                    <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqv-9U-f3r">
                                 <rect key="frame" x="243" y="457" width="115" height="28"/>
                                 <animations/>
@@ -948,7 +936,6 @@
                             <constraint firstItem="Z9h-nS-Mtm" firstAttribute="top" secondItem="Tdk-00-yox" secondAttribute="bottom" constant="25" id="Et2-00-eFt"/>
                             <constraint firstItem="mtw-S7-i5O" firstAttribute="leading" secondItem="sEi-6l-dkO" secondAttribute="leading" id="FB5-Ga-wns"/>
                             <constraint firstItem="Tdk-00-yox" firstAttribute="centerX" secondItem="Q2M-5r-jOR" secondAttribute="centerX" constant="-77" id="FI7-MX-FE5"/>
-                            <constraint firstItem="ohY-XR-CfW" firstAttribute="trailing" secondItem="Q2M-5r-jOR" secondAttribute="trailingMargin" constant="11" id="GF4-qL-L2Z"/>
                             <constraint firstItem="xMj-5u-P6s" firstAttribute="top" secondItem="zqv-9U-f3r" secondAttribute="bottom" constant="86" id="Ihc-rD-3el"/>
                             <constraint firstItem="Tp0-Dg-Pgd" firstAttribute="leading" secondItem="qSs-GP-Hxk" secondAttribute="leading" id="Kc4-LN-bNJ"/>
                             <constraint firstItem="zqv-9U-f3r" firstAttribute="top" secondItem="Z9h-nS-Mtm" secondAttribute="bottom" constant="109" id="L9w-RF-3YT"/>
@@ -960,9 +947,7 @@
                             <constraint firstItem="sEi-6l-dkO" firstAttribute="leading" secondItem="Q2M-5r-jOR" secondAttribute="leading" id="RF7-T5-4xS"/>
                             <constraint firstItem="xMj-5u-P6s" firstAttribute="centerX" secondItem="mtw-S7-i5O" secondAttribute="centerX" constant="-48.5" id="TSZ-bf-ddG"/>
                             <constraint firstItem="6sR-R7-Mnb" firstAttribute="leading" secondItem="Q2M-5r-jOR" secondAttribute="leading" constant="127" id="dNi-BS-1v8"/>
-                            <constraint firstItem="mtw-S7-i5O" firstAttribute="top" secondItem="ohY-XR-CfW" secondAttribute="bottom" constant="59" id="dOR-2a-qoR"/>
                             <constraint firstItem="8Yc-Xl-1xU" firstAttribute="top" secondItem="Z9h-nS-Mtm" secondAttribute="bottom" id="dV5-0H-K3s"/>
-                            <constraint firstItem="ohY-XR-CfW" firstAttribute="top" secondItem="8Yc-Xl-1xU" secondAttribute="bottom" constant="2" id="dnM-16-VH8"/>
                             <constraint firstItem="sJN-iI-fHu" firstAttribute="top" secondItem="xMj-5u-P6s" secondAttribute="bottom" constant="8" symbolic="YES" id="e6E-Ee-Gez"/>
                             <constraint firstItem="sEi-6l-dkO" firstAttribute="top" secondItem="Q2M-5r-jOR" secondAttribute="top" constant="-3" id="eMP-k4-GJh"/>
                             <constraint firstItem="sJN-iI-fHu" firstAttribute="top" secondItem="mtw-S7-i5O" secondAttribute="bottom" constant="98" id="ec6-HY-Vte"/>
