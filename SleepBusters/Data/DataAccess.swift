@@ -161,19 +161,27 @@ class DataAccess {
      - parameter UserProfile: The User Profile to register. (Create account)
      :returns: a User Profile
      */
-    func registerUserProfile(user: UserProfile) -> UserProfile {
-        let queryString = rootUrl + userprofileController+"/Register"
-        httpAction.HTTPPost(NSDictionary(), url: queryString){
-            (data: NSDictionary, error: NSError?) -> Void in
-            if error != nil {
-                print(error)
-                // error
-            } else {
-                // success
-            }
-            
+    func registerUserProfile(userProfile: UserProfile,callback: (UserProfile, NSError?) -> Void) {
+        
+        let queryString = rootUrl + userprofileController
+        let fullQuery = queryString + "/SaveUserProfile" //?userId="+String(userId)+"&n="+String(n)
+        
+        let parameters = [
+            "Id": -1,
+            "FirstName": userProfile.firstName!,
+            "LastName": userProfile.lastName!,
+            "Weight": userProfile.weight!,
+            "Height": userProfile.height!,
+            "Gender": userProfile.gender! == 0 ? "M" : "F"
+        ]
+        
+        
+        Alamofire
+            .request(.POST, fullQuery, parameters: (parameters as! [String : AnyObject]), encoding: .JSON)
+            .responseObject { (response: Response<UserProfile, NSError>) in
+                //debugPrint(response)
+                callback(response.result.value!,response.result.error)
         }
-        return UserProfile()
     }
     
     /**
@@ -190,8 +198,26 @@ class DataAccess {
      - parameter UserProfile: The User Profile to update. (Update account)
      :returns: The user profile that was just saved
      */
-    func saveUserProfile(userProfile: UserProfile) -> UserProfile {
-        return UserProfile()
+    func saveUserProfile(userProfile: UserProfile,callback: (UserProfile, NSError?) -> Void) {
+        let queryString = rootUrl + userprofileController
+        let fullQuery = queryString + "/SaveUserProfile" //?userId="+String(userId)+"&n="+String(n)
+        
+        let parameters = [
+            "Id": 3,
+            "FirstName": userProfile.firstName!,
+            "LastName": userProfile.lastName!,
+            "Weight": userProfile.weight!,
+            "Height": userProfile.height!,
+            "Gender": userProfile.gender! == 0 ? "M" : "F"
+        ]
+
+        
+        Alamofire
+            .request(.POST, fullQuery, parameters: (parameters as! [String : AnyObject]), encoding: .JSON)
+            .responseObject { (response: Response<UserProfile, NSError>) in
+                //debugPrint(response)
+                callback(response.result.value!,response.result.error)
+        }
     }
     
     // MARK: Hardware Sensors (Bluetooth)

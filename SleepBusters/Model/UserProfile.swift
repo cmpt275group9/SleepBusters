@@ -56,9 +56,7 @@ final class UserProfile: ResponseObjectSerializable, ResponseCollectionSerializa
         self.weight = representation.valueForKeyPath("Weight") as? Double
         self.gender = representation.valueForKeyPath("Gender") as? Int
         self.occupation = representation.valueForKeyPath("Occupation") as? String
-        self.doesSnore = representation.valueForKeyPath("DoesSnore") as? Bool
-        self.doesDrinkCoffee = representation.valueForKeyPath("DoesDrinkCoffee") as? Bool
-        self.doesDrinkAlcohol = representation.valueForKeyPath("DoesDrinkAlcohol") as? Bool
+
 
     }
     
