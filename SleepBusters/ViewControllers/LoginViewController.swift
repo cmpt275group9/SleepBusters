@@ -28,6 +28,10 @@ class LoginViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
         let userNamePlaceHolder = NSAttributedString(string: "Username", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
         let passwordPlaceHolder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
         passwordField.attributedPlaceholder = userNamePlaceHolder

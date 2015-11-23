@@ -48,7 +48,7 @@ class Business {
      :returns: a User Profile
      */
     func registerUserProfile(userProfile: UserProfile,callback: (UserProfile, NSError?) -> Void) {
-        data.saveUserProfile(userProfile)
+        data.registerUserProfile(userProfile)
             { (data: UserProfile, error: NSError?) -> Void in
                 callback(data,error)
         }
@@ -104,7 +104,7 @@ class Business {
      :returns: a UserSleepSession object
      */
     func getUserSleepSessionForDate(userId: Int, date: NSDate,callback: (UserSleepSession, NSError?) -> Void) -> Void {
-        data.getUserSleepSessionForDate(userId,date:date)
+            data.getUserSleepSessionForDate(userId,date:date)
             { (data: UserSleepSession, error: NSError?) -> Void in
                 callback(data,error)
         }

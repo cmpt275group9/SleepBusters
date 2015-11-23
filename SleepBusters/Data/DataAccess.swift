@@ -164,22 +164,25 @@ class DataAccess {
     func registerUserProfile(userProfile: UserProfile,callback: (UserProfile, NSError?) -> Void) {
         
         let queryString = rootUrl + userprofileController
-        let fullQuery = queryString + "/SaveUserProfile" //?userId="+String(userId)+"&n="+String(n)
-        
+        let gender  = userProfile.gender! == 0 ? "M" : "F"
+        var fullQuery = queryString + "/Register?Id=-1"
+            fullQuery += "&UserName=" + userProfile.userName!
+
         let parameters = [
             "Id": -1,
+            "UserName": userProfile.userName!,
             "FirstName": userProfile.firstName!,
-            "LastName": userProfile.lastName!,
             "Weight": userProfile.weight!,
             "Height": userProfile.height!,
-            "Gender": userProfile.gender! == 0 ? "M" : "F"
+            "Gender": userProfile.gender! == 0 ? "M" : "F",
+            "Password": userProfile.password!
         ]
         
         
         Alamofire
-            .request(.POST, fullQuery, parameters: (parameters as! [String : AnyObject]), encoding: .JSON)
+            .request(.POST, fullQuery, parameters: parameters as! [String : AnyObject] , encoding: .JSON)
             .responseObject { (response: Response<UserProfile, NSError>) in
-                //debugPrint(response)
+                debugPrint(response)
                 callback(response.result.value!,response.result.error)
         }
     }
