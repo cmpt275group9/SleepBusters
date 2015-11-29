@@ -146,7 +146,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         print(countIndex)
         
         
-        if(countIndex > 600 && countIndex < 800)
+        if(countIndex > 675 && countIndex < 875)
         {
            
             if(isLocked == false)
