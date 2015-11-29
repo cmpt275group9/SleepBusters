@@ -228,7 +228,7 @@ class Respiratory
                     {
                         s++
                     }
-                    if (s>=1000){
+                    if (s>=90){
                         apneaCount++
                         let start = startTime.dateByAddingTimeInterval(Double(x/100))
                         let end = startTime.dateByAddingTimeInterval(Double((x+s)/100))
