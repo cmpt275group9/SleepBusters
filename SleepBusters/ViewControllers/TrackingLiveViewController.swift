@@ -44,7 +44,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     /**************************************************/
     
     // Respiratory Sensor: (Live Data)
-    let isSimulate = true
+    let isSimulate = false
     let btName = "HMSoft"
     let btServiceID = "FFE0"
     let btCharacteristicId = "FFE1"
@@ -377,11 +377,11 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
             var streamValues =  dataString!.characters.split{$0 == ","}.map(String.init)
             
             print(streamValues.count)
-            if(streamValues.count == 4)
+            if(streamValues.count == 3)
             {
                 let humidity = streamValues[0]
-                let temp = streamValues[2]
-                let respiratory  = streamValues[3].stringByReplacingOccurrencesOfString("\r\n", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+                let temp = streamValues[1]
+                let respiratory  = streamValues[2].stringByReplacingOccurrencesOfString("\r\n", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             
                 chartData.removeFirst()
                 chartData.append(Int(respiratory)!)
