@@ -165,15 +165,25 @@ class Respiratory
             }
         }
     
-        freq = 60/(freq/2) //1/f = T (seconds per breath) times by 60 to have avg breaths per minute
-    
+        //freq = number of times max is hit in 300 samples
+        // 300 samples = 300 * 100ms = 30 seconds
+        //freq = number of times max is hit in 30 seconds => 2*freq = # breaths/ minute
+        
+        freq = 2*freq //breaths/min
+        let period = 60/freq //seconds/breath: 1/f min/breath * 60 sec/min * 1/10 min/100ms
+        let samples = 6/freq
+        //let period = 60/(freq/2) //1/f = T (seconds per breath) times by 60 to have avg breaths per minute
+        
         //create basis waveform to compare actual waveform to
         var baseWave = [Double]()
         var apneaCount: Int = 0
+        let w = (2.0*M_PI)/period //angular frequency = 2*pi*f or 2*pi/T
+        let c = Double((maxR-minR)/2) //zero point of waveform
         
         for var x = 0; x < N; x++
         {
-             baseWave.append(Double(maxR)*Double(abs(sin(2.0*Float(M_PI)*Float(freq)*Float(x)))) + Double(minR))
+             baseWave.append(Double(maxR)*Double(abs(sin(w*Double(x)))) + c)
+            //Asin(wt + p) + c
     
         }
         //TODO: account for offset?
@@ -198,34 +208,45 @@ class Respiratory
     
         while (x < N)
         {
+            //initialize empty arrays each time
             var sdpt = [Double]()
             var bwpt = [Double]()
-            sdpt.append(sleepdataDbl[x])
-            bwpt.append(baseWave[x])
-            sdpt.append(sleepdataDbl[x+1])
-            bwpt.append(baseWave[x+1])
-            let covariance = covarianceSample(x: sdpt, y: bwpt)!
-            let standardDiv =  (sleepdataStdDev * basisStdDev)
-            let cc =  covariance / standardDiv
+            if (sleepdataDbl[x] == Double(minR)) {
+                for var j = 0; j<Int(samples); j++
+                {
+                    sdpt.append(sleepdataDbl[x+j])
+                    bwpt.append(baseWave[j])
+                }
+                let covariance = covarianceSample(x: sdpt, y: bwpt)!
+                let standardDiv =  (sleepdataStdDev * basisStdDev)
+                let cc =  covariance / standardDiv
+                if (cc > baseError)
+                {
+                    //check next 10 seconds to see if original wave stays within 5% threshold
+                    var s = 0
+                    while sleepdataDbl[s] <= threshold
+                    {
+                        s++
+                    }
+                    if (s>=1000){
+                        apneaCount++
+                        let start = startTime.dateByAddingTimeInterval(Double(x/100))
+                        let end = startTime.dateByAddingTimeInterval(Double((x+s)/100))
+                        duration = "start:\(start), end:\(end)"
+                        log[logc] = duration
+                        logc++
+                    }
+                    x += s
+                }
+            }
+
+            //sdpt.append(sleepdataDbl[x])
+            //bwpt.append(baseWave[x])
+            //sdpt.append(sleepdataDbl[x+1])
+            //bwpt.append(baseWave[x+1])
             
-             if (cc > baseError)
-             {
-                 //check next 10 seconds to see if original wave stays within 5% threshold
-                 var s = 0
-                 while sleepdataDbl[s] <= threshold
-                 {
-                    s++
-                 }
-                 if (s>=1000){
-                    apneaCount++
-                    let start = startTime.dateByAddingTimeInterval(Double(x/100))
-                    let end = startTime.dateByAddingTimeInterval(Double((x+s)/100))
-                    duration = "start:\(start), end:\(end)"
-                    log[logc] = duration
-                    logc++
-                 }
-                 x += s
-             }
+            
+
             
              x++
         }
