@@ -122,9 +122,9 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         self.navigationController?.navigationBarHidden = true
         respLineChart.reloadData()
         
-        // Create Timers that will Redraw the Chart every 50ms for respiratory and 1 second for EEG
+        // Create Timers that will Redraw the Chart every 100ms for respiratory and 1 second for EEG
         if(isSimulate){
-            NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: Selector("updateRespiratoryChart"), userInfo: nil, repeats: true)
+            NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("updateRespiratoryChart"), userInfo: nil, repeats: true)
        
             NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateEEGChart"), userInfo: nil, repeats: true)
         }
@@ -146,7 +146,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         print(countIndex)
         
         
-        if(countIndex > 600 && countIndex < 800)
+        if(countIndex > 630 && countIndex < 800)
         {
            
             if(isLocked == false)

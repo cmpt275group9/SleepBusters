@@ -90,9 +90,9 @@ class Respiratory
         }
         
         //sort all values into categories to determine average max and min and freq
-        for var x = 0; x < N; x++
+        for var d = 0; d < N; d++
         {
-            switch sleepdata[x]{
+            switch sleepdata[d]{
             case 200..<210:
                 categories[205]! += 1
             case 210..<220:
@@ -149,45 +149,53 @@ class Respiratory
         //find average max and min amplitude
         avgVals.sortInPlace(<)
         let minR = avgVals[0]
-        let i = avgVals.count
-        let maxR = avgVals[(i-1)]
-        let threshold = Double(maxR - minR)*0.05
+        let a = avgVals.count
+        let maxR = avgVals[(a-1)]
+        let threshold = Double(maxR - minR)*0.25
+        let midpt = Int((maxR - minR)/2 + minR)
     
         //find average frequency of all data to find average breaths per minute
         //first 10 min of sleep is 600 seconds, therefore 60000 divisions
         //will likely have to recalibrate this function to account for error
         var freq: Double = 0
         
-        for var x = 0; x < 300; x++
+        for var l = 0; l < 300; l++
         {
-            if (sleepdata[x] == maxR){
+            if (sleepdata[l] == midpt){
                 freq += 1.0
             }
+            else if (sleepdata[l] == (midpt + 1)){
+                freq += 1.0
+            }
+            //else if (sleepdata[x] == (midpt + 2)){
+            //    freq += 1.0
+            //}
         }
     
         //freq = number of times max is hit in 300 samples
         // 300 samples = 300 * 100ms = 30 seconds
         //freq = number of times max is hit in 30 seconds => 2*freq = # breaths/ minute
         
-        freq = 2*freq //breaths/min
+        //freq = 2*freq //breaths/min
         let period = 60/freq //seconds/breath: 1/f min/breath * 60 sec/min * 1/10 min/100ms
-        let samples = 6/freq
+        let samples = period*10 // samples/breath: seconds/breath * samples/second
         //let period = 60/(freq/2) //1/f = T (seconds per breath) times by 60 to have avg breaths per minute
         
         //create basis waveform to compare actual waveform to
         var baseWave = [Double]()
         var apneaCount: Int = 0
-        let w = (2.0*M_PI)/period //angular frequency = 2*pi*f or 2*pi/T
-        let c = Double((maxR-minR)/2) //zero point of waveform
+        //let w = (2.0*M_PI)/period //angular frequency = 2*pi*f or 2*pi/T
+        //let c = Double(midpt) //zero point of waveform
         
-        for var x = 0; x < N; x++
+        for var k = 0; k < N; k++
         {
-             baseWave.append(Double(maxR)*Double(abs(sin(w*Double(x)))) + c)
+            let wave = sin(Double(k)/(2.2*period))
+            let abswave = abs(wave)
+            let transform = Double(maxR-minR) * abswave + Double(minR)
+            baseWave.append(transform)
             //Asin(wt + p) + c
     
         }
-        //TODO: account for offset?
-        //TODO: This formula really doesn't seem right....
     
         //check cross correlation of entire waveform to have base "error" value
         //cross correlation = covariance/ (stddev(x)* stddev(y))
@@ -211,11 +219,16 @@ class Respiratory
             //initialize empty arrays each time
             var sdpt = [Double]()
             var bwpt = [Double]()
-            if (sleepdataDbl[x] == Double(minR)) {
+            if (sleepdataDbl[x] < Double(minR)) {
                 for var j = 0; j<Int(samples); j++
                 {
-                    sdpt.append(sleepdataDbl[x+j])
-                    bwpt.append(baseWave[j])
+                    if ((x+j) < N){
+                        sdpt.append(sleepdataDbl[x+j])
+                        bwpt.append(baseWave[j])
+                    }
+                    else {
+                        break
+                    }
                 }
                 let covariance = covarianceSample(x: sdpt, y: bwpt)!
                 let standardDiv =  (sleepdataStdDev * basisStdDev)
@@ -224,7 +237,8 @@ class Respiratory
                 {
                     //check next 10 seconds to see if original wave stays within 5% threshold
                     var s = 0
-                    while sleepdataDbl[s] <= threshold
+                    let limit = (Double(minR) + threshold)
+                    while (sleepdata[x+s] <= Int(limit))
                     {
                         s++
                     }
@@ -254,9 +268,11 @@ class Respiratory
     
         //check cross correlation of each point and then check the next 10s for sleep apnea
     
-        let hours = Int(N/(100*60*60))
-        apneaCount = apneaCount/hours
-    
+        //let hours = Int(N/(100*60*60))
+        //if (apneaCount != 0){
+        //    apneaCount = apneaCount/hours
+        //}
+        
         createDiagnosisMessage(apneaCount)
     
     }
@@ -275,9 +291,9 @@ class Respiratory
         default:
             diagnosis = "no signs of Sleep Apnea"
         }
-    
+        
         //print to diagnosis page: "SleepBusters has detected (diagnosis)"
-    
+        print(diagnosis)
     
     }
 
