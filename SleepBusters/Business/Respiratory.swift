@@ -219,7 +219,8 @@ class Respiratory
             //initialize empty arrays each time
             var sdpt = [Double]()
             var bwpt = [Double]()
-            if (sleepdataDbl[x] < Double(minR)) {
+            let limit = (Double(minR) + threshold)
+            if (sleepdata[x] < Int(limit)) {
                 for var j = 0; j<Int(samples); j++
                 {
                     if ((x+j) < N){
@@ -237,7 +238,6 @@ class Respiratory
                 {
                     //check next 10 seconds to see if original wave stays within 5% threshold
                     var s = 0
-                    let limit = (Double(minR) + threshold)
                     while (sleepdata[x+s] <= Int(limit))
                     {
                         s++
@@ -282,14 +282,14 @@ class Respiratory
         var diagnosis: String
         switch apneaCount{
         case 5..<15:
-            diagnosis = "signs of Mild Obstructive Sleep Apnea"
+            diagnosis = "signs of Mild Obstructive Sleep Apnea; detected breathing gaps \(apneaCount)% times"
         case 15..<30:
-            diagnosis = "signs of Moderate Obstructive Sleep Apnea"
+            diagnosis = "signs of Moderate Obstructive Sleep Apnea; detected breathing gaps \(apneaCount)% times"
         case _ where apneaCount > 29:
-            diagnosis = "signs of Severe Obstructive Sleep Apnea"
+            diagnosis = "signs of Severe Obstructive Sleep Apnea; detected breathing gaps \(apneaCount)% times"
         //case >50? Because if we read that many errors then there's something wrong with our code
         default:
-            diagnosis = "no signs of Sleep Apnea"
+            diagnosis = "no signs of Sleep Apnea; detected breathing gaps \(apneaCount)% times"
         }
         
         //print to diagnosis page: "SleepBusters has detected (diagnosis)"

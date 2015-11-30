@@ -44,7 +44,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     /**************************************************/
     
     // Respiratory Sensor: (Live Data)
-    let isSimulate = false
+    let isSimulate = true
     let btName = "HMSoft"
     let btServiceID = "FFE0"
     let btCharacteristicId = "FFE1"
@@ -146,7 +146,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         print(countIndex)
         
         
-        if(countIndex > 630 && countIndex < 800)
+        if(countIndex > 630 && countIndex < 875)
         {
            
             if(isLocked == false)
