@@ -273,7 +273,7 @@ class Respiratory
         //if (apneaCount != 0){
         //    apneaCount = apneaCount/hours
         //}
-        print("\(freq) breaths/minute")
+        print("\(Int(freq)) breaths/minute")
         createDiagnosisMessage(apneaCount)
     
     }
