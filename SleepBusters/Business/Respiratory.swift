@@ -178,7 +178,7 @@ class Respiratory
         
         //freq = 2*freq //breaths/min
         let period = 60/freq //seconds/breath: 1/f min/breath * 60 sec/min * 1/10 min/100ms
-        let samples = period*10 // samples/breath: seconds/breath * samples/second
+        //let samples = period*10 // samples/breath: seconds/breath * samples/second
         //let period = 60/(freq/2) //1/f = T (seconds per breath) times by 60 to have avg breaths per minute
         
         //create basis waveform to compare actual waveform to
@@ -199,15 +199,15 @@ class Respiratory
     
         //check cross correlation of entire waveform to have base "error" value
         //cross correlation = covariance/ (stddev(x)* stddev(y))
-        var sleepdataDbl = [Double]()
-        for i in sleepdata {
-            sleepdataDbl.append(Double(sleepdata[i]))
-        }
+        //var sleepdataDbl = [Double]()
+        //for i in sleepdata {
+        //    sleepdataDbl.append(Double(sleepdata[i]))
+        //}
         
-        let sleepdataStdDev = standardDeviation(sleepdataDbl)
-        let basisStdDev = standardDeviation(baseWave)
+        //let sleepdataStdDev = standardDeviation(sleepdataDbl)
+        //let basisStdDev = standardDeviation(baseWave)
     
-        let baseError = covariancePopulation(x: sleepdataDbl, y: baseWave)! / (sleepdataStdDev * basisStdDev)
+        //let baseError = covariancePopulation(x: sleepdataDbl, y: baseWave)! / (sleepdataStdDev * basisStdDev)
         
         var x = 0
         var log = [Int:String]()
@@ -217,41 +217,42 @@ class Respiratory
         while (x < N)
         {
             //initialize empty arrays each time
-            var sdpt = [Double]()
-            var bwpt = [Double]()
+            //var sdpt = [Double]()
+            //var bwpt = [Double]()
             let limit = (Double(minR) + threshold)
             if (sleepdata[x] < Int(limit)) {
-                for var j = 0; j<Int(samples); j++
+                //for var j = 0; j<Int(samples); j++
+                //{
+                //    if ((x+j) < N){
+                //        sdpt.append(Double(sleepdata[x+j]))
+                //        bwpt.append(baseWave[j])
+                //    }
+                //    else {
+                //        break
+                //    }
+                //}
+                //let covariance = covarianceSample(x: sdpt, y: bwpt)!
+                //let standardDiv =  (sleepdataStdDev * basisStdDev)
+                //let cc =  covariance / standardDiv
+                //if (cc > baseError)
+                //{
+                
+                //check next 10 seconds to see if original wave stays within 5% threshold
+                var s = 0
+                while (sleepdata[x+s] <= Int(limit))
                 {
-                    if ((x+j) < N){
-                        sdpt.append(sleepdataDbl[x+j])
-                        bwpt.append(baseWave[j])
-                    }
-                    else {
-                        break
-                    }
+                    s++
                 }
-                let covariance = covarianceSample(x: sdpt, y: bwpt)!
-                let standardDiv =  (sleepdataStdDev * basisStdDev)
-                let cc =  covariance / standardDiv
-                if (cc > baseError)
-                {
-                    //check next 10 seconds to see if original wave stays within 5% threshold
-                    var s = 0
-                    while (sleepdata[x+s] <= Int(limit))
-                    {
-                        s++
-                    }
-                    if (s>=90){
-                        apneaCount++
-                        let start = startTime.dateByAddingTimeInterval(Double(x/100))
-                        let end = startTime.dateByAddingTimeInterval(Double((x+s)/100))
-                        duration = "start:\(start), end:\(end)"
-                        log[logc] = duration
-                        logc++
-                    }
-                    x += s
+                if (s>=90){
+                    apneaCount++
+                    let start = startTime.dateByAddingTimeInterval(Double(x/100))
+                    let end = startTime.dateByAddingTimeInterval(Double((x+s)/100))
+                    duration = "start:\(start), end:\(end)"
+                    log[logc] = duration
+                    logc++
                 }
+                x += s
+                //}
             }
 
             //sdpt.append(sleepdataDbl[x])
@@ -272,7 +273,7 @@ class Respiratory
         //if (apneaCount != 0){
         //    apneaCount = apneaCount/hours
         //}
-        
+        print("\(freq) breaths/minute")
         createDiagnosisMessage(apneaCount)
     
     }
@@ -282,14 +283,14 @@ class Respiratory
         var diagnosis: String
         switch apneaCount{
         case 5..<15:
-            diagnosis = "signs of Mild Obstructive Sleep Apnea; detected breathing gaps \(apneaCount)% times"
+            diagnosis = "signs of Mild Obstructive Sleep Apnea; detected breathing gaps \(apneaCount) times"
         case 15..<30:
-            diagnosis = "signs of Moderate Obstructive Sleep Apnea; detected breathing gaps \(apneaCount)% times"
+            diagnosis = "signs of Moderate Obstructive Sleep Apnea; detected breathing gaps \(apneaCount) times"
         case _ where apneaCount > 29:
-            diagnosis = "signs of Severe Obstructive Sleep Apnea; detected breathing gaps \(apneaCount)% times"
+            diagnosis = "signs of Severe Obstructive Sleep Apnea; detected breathing gaps \(apneaCount) times"
         //case >50? Because if we read that many errors then there's something wrong with our code
         default:
-            diagnosis = "no signs of Sleep Apnea; detected breathing gaps \(apneaCount)% times"
+            diagnosis = "no signs of Sleep Apnea; detected breathing gaps \(apneaCount) time(s)"
         }
         
         //print to diagnosis page: "SleepBusters has detected (diagnosis)"
