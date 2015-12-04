@@ -599,7 +599,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         sleepSession.averageHumidity = self.tempAverage
         sleepSession.startSessionDate = self.startDate
         sleepSession.endSessionDate = NSDate()
-        sleepSession.totalHoursAsleep =   Double(sleepSession.endSessionDate!.minutesFrom(self.startDate)) / 60
+        sleepSession.totalHoursAsleep =   Double(sleepSession.endSessionDate!.minutesFrom(self.startDate)) / 60.0
         
         sleepSession.totalLightSleepHours = 1 // we need this from eeg
         sleepSession.totalAwakeHours = 0 // we need this from eeg
