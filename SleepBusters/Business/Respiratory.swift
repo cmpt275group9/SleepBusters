@@ -242,6 +242,9 @@ class Respiratory
                 while (sleepdata[x+s] <= Int(limit))
                 {
                     s++
+                    if ((x+s) > N){
+                        break
+                    }
                 }
                 if (s>=90){
                     apneaCount++
