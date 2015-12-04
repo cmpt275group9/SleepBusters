@@ -224,10 +224,19 @@ class DataAccess {
         var fullQuery = queryString + "/Register?Id=-1"
             fullQuery += "&UserName=" + userProfile.userName!
 
+        let date = NSDate()
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .LongStyle
+        
+        let date1 = dateFormatter.stringFromDate(userProfile.dateOfBirth!)
+        
         let parameters = [
             "Id": -1,
             "UserName": userProfile.userName!,
             "FirstName": userProfile.firstName!,
+            "LastName": userProfile.lastName!,
+            "DateOfBirth": date1,
             "Weight": userProfile.weight!,
             "Height": userProfile.height!,
             "Gender": gender,
