@@ -555,7 +555,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     func saveTracking()
     {
        
-        if(countIndex > 700)
+        if(countIndex > 0)
         {
         let alert: UIAlertView = UIAlertView(title: "Processing", message: "", delegate: nil, cancelButtonTitle: nil);
         
@@ -571,6 +571,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
 //        let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "update", userInfo: nil, repeats: true)
         
             createSleepSession(data)
+            alert.dismissWithClickedButtonIndex(-1, animated: true)
             performSegueWithIdentifier("trackingSegue", sender: nil)
         }
         else
@@ -592,13 +593,13 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         var calculatedData = respiratory.getPostSleepData(data, startTime: self.startDate)
         
         var sleepSession = UserSleepSession()
-        sleepSession.bpm = calculatedData.Bpm
-        sleepSession.timesApneaDetected = calculatedData.TimesApneaDetected
+        sleepSession.bpm = 2//calculatedData.Bpm
+        sleepSession.timesApneaDetected = 2//calculatedData.TimesApneaDetected
         sleepSession.averageTemp = self.humidityAverage
         sleepSession.averageHumidity = self.tempAverage
         sleepSession.startSessionDate = self.startDate
         sleepSession.endSessionDate = NSDate()
-        sleepSession.totalHoursAsleep =  60 / Double(sleepSession.endSessionDate!.minutesFrom(self.startDate))
+        sleepSession.totalHoursAsleep =   Double(sleepSession.endSessionDate!.minutesFrom(self.startDate)) / 60
         
         sleepSession.totalLightSleepHours = 1 // we need this from eeg
         sleepSession.totalAwakeHours = 0 // we need this from eeg
@@ -616,7 +617,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     func saveSleepSession(sleepSession: UserSleepSession) -> Void
     {
         var business = Business()
-        //business.saveUserSleepSession(sleepSession)
+        business.saveUserSleepSession(sleepSession)
     }
     
     func saveUserSensorStats(stats: [UserSensorStat]) -> Void

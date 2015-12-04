@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/Data/DataAccess.swift"
-            timestampString = "470915936.073889"
+            timestampString = "470954498.879991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "saveUserProfile(_:callback:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
-            timestampString = "470915936.073889"
+            timestampString = "470953858.58808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "649"
-            endingLineNumber = "649">
+            startingLineNumber = "654"
+            endingLineNumber = "654">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -264,11 +264,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
-            timestampString = "470915936.073889"
+            timestampString = "470953858.58808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "651"
-            endingLineNumber = "651">
+            startingLineNumber = "656"
+            endingLineNumber = "656">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -278,11 +278,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
-            timestampString = "470908832.970012"
+            timestampString = "470917088.774254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "updateRespiratoryChart()"
             landmarkType = "5">
          </BreakpointContent>
@@ -336,11 +336,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/Data/DataAccess.swift"
-            timestampString = "470915936.073889"
+            timestampString = "470954498.879991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "registerUserProfile(_:callback:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -400,11 +400,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/Data/DataAccess.swift"
-            timestampString = "470915936.073889"
+            timestampString = "470954498.879991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "registerUserProfile(_:callback:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -416,11 +416,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/Data/DataAccess.swift"
-            timestampString = "470915936.073889"
+            timestampString = "470954498.879991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "registerUserProfile(_:callback:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -432,11 +432,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
-            timestampString = "470915698.066609"
+            timestampString = "470917088.774254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "497"
-            endingLineNumber = "497"
+            startingLineNumber = "501"
+            endingLineNumber = "501"
             landmarkName = "dataReceived(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -448,11 +448,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
-            timestampString = "470915936.073889"
+            timestampString = "470953858.58808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "629"
-            endingLineNumber = "629">
+            startingLineNumber = "634"
+            endingLineNumber = "634">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -574,11 +574,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
-            timestampString = "470915698.066609"
+            timestampString = "470917088.774254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
             landmarkName = "peripheral(_:didUpdateValueForCharacteristic:error:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -590,11 +590,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
-            timestampString = "470915698.066609"
+            timestampString = "470917088.774254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
+            startingLineNumber = "398"
+            endingLineNumber = "398"
             landmarkName = "peripheral(_:didUpdateValueForCharacteristic:error:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -606,11 +606,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
-            timestampString = "470915698.066609"
+            timestampString = "470917088.774254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "403"
-            endingLineNumber = "403"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
             landmarkName = "peripheral(_:didUpdateValueForCharacteristic:error:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -670,12 +670,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
-            timestampString = "470915936.073889"
+            timestampString = "470917088.774254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "521"
-            endingLineNumber = "521"
+            startingLineNumber = "525"
+            endingLineNumber = "525"
             landmarkName = "dataReceived(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
+            timestampString = "470953858.58808"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "606"
+            endingLineNumber = "606"
+            landmarkName = "createSleepSession(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
+            timestampString = "470953858.58808"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "620"
+            endingLineNumber = "620"
+            landmarkName = "saveSleepSession(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepBusters/Data/DataAccess.swift"
+            timestampString = "470953169.588529"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "saveUserSleepSession(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepBusters/Data/DataAccess.swift"
+            timestampString = "470953172.242405"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "saveUserSleepSession(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepBusters/Data/DataAccess.swift"
+            timestampString = "470954498.879991"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "saveUserSleepSession(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
+            timestampString = "470953851.667897"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "604"
+            endingLineNumber = "604"
+            landmarkName = "createSleepSession(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepBusters/ViewControllers/TrackingLiveViewController.swift"
+            timestampString = "470954563.801929"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "605"
+            endingLineNumber = "605"
+            landmarkName = "createSleepSession(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

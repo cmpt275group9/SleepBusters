@@ -173,11 +173,19 @@ class DataAccess {
         let queryString = rootUrl + userprofileController
         var fullQuery = queryString + "/SaveUserSleepSession?Id=-1"
         
+        let date = NSDate()
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .LongStyle
+        
+        let date1 = dateFormatter.stringFromDate(userSleepSession.startSessionDate!)
+        let date2 = dateFormatter.stringFromDate(userSleepSession.endSessionDate!)
+        
         let parameters = [
             "Id": -1,
             "UserProfileId": userSleepSession.userId!,
-            "startSessionDate": userSleepSession.startSessionDate!,
-            "endSessionDate": userSleepSession.endSessionDate!,
+            "startSessionDate": date1,
+            "endSessionDate": date2,
             "TotalHoursAsleep": userSleepSession.totalHoursAsleep!,
             "TotalDeepSleepHours": userSleepSession.totalDeepSleepHours!,
             "TotalAwakeHours": userSleepSession.totalAwakeHours!,
