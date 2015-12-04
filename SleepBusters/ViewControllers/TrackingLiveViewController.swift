@@ -149,7 +149,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     var isLocked = false;
     func updateRespiratoryChart()
     {
-        print(countIndex)
+        //print(countIndex)
         
         
         if(countIndex > 630 && countIndex < 875)
@@ -197,6 +197,10 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
             let randomIndex = Int(arc4random_uniform(4))
             eegValues[randomIndex] = 10
         }
+//        var sleepStat = UserSensorStat()
+//        sleepStat.EegLowAlpha = Int(arc4random_uniform(10))
+//        Business().saveSleepStat(sleepStat)
+//
         setChart(eegType, values: eegValues)
     }
     
@@ -496,15 +500,23 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
                 eegValues[4] = Double(highGamma)
                 sleepStat.EegHighGamma = Int(highGamma)
             }
-//            if (data["eegHighGamma"] != nil) {
-//                let highGamma = data["eegHighGamma"]!.intValue
-//                eegValues[4] = Double(highGamma)
-//                sleepStat.EegHighGamma = eegValues[4]
-//            }
-            
+            if (data["eegLowGamma"] != nil) {
+                let eegLowGamma = data["eegLowGamma"]!.intValue
+                //eegValues[4] = Double(eegLowGamma)
+                sleepStat.EegHighGamma = Int(eegLowGamma)
+            }
+            if (data["eegLowAlpha"] != nil) {
+                let eegLowAlpha = data["eegLowAlpha"]!.intValue
+                //eegValues[4] = Double(eegLowGamma)
+                sleepStat.EegLowAlpha = Int(eegLowAlpha)
+            }
+            if (data["eegLowBeta"] != nil) {
+                let eegLowBeta = data["eegLowBeta"]!.intValue
+                //eegValues[4] = Double(eegLowGamma)
+                sleepStat.EegLowBeta = Int(eegLowBeta)
+            }
             
             sleepStat.DataQuality = Int(signal)
-            sleepStat.TimeStamp = NSDate()
                 
             eegBusiness.saveSleepStat(sleepStat)
             

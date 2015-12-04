@@ -138,25 +138,24 @@ class DataAccess {
      */
     func saveSleepStat(userSensorStat: UserSensorStat){
         let queryString = rootUrl + userprofileController
-        var fullQuery = queryString + "/SaveSensorStat?Id=-1"
+        var fullQuery = queryString + "/SaveSleepStat?ID=-1"
         
         let parameters = [
-            "Id": -1,
+            "ID": -1,
             "UserProfileId": defaults.integerForKey("userId"),
-            "EegDelta": userSensorStat.EegDelta!,
-            "EegTheta": userSensorStat.EegTheta!,
-            "EegLowAlpha": userSensorStat.EegLowAlpha!,
-            "EegHighAlpha": userSensorStat.EegHighAlpha!,
-            "EegLowBeta": userSensorStat.EegLowBeta!,
-            "EegHighBeta": userSensorStat.EegHighBeta!,
-            "EegLowGamma": userSensorStat.EegLowGamma!,
-            "EegHighGamma": userSensorStat.EegHighGamma!,
-            "TimeStamp": userSensorStat.TimeStamp!
-
+            "EegDelta": userSensorStat.EegDelta == nil ? -1 : userSensorStat.EegDelta!,
+            "EegTheta": userSensorStat.EegTheta == nil ? -1 : userSensorStat.EegTheta!,
+            "EegLowAlpha": userSensorStat.EegLowAlpha == nil ? -1 : userSensorStat.EegLowAlpha!,
+            "EegHighAlpha": userSensorStat.EegHighAlpha == nil ? -1 : userSensorStat.EegHighAlpha!,
+            "EegLowBeta": userSensorStat.EegLowBeta == nil ? -1 : userSensorStat.EegLowBeta!,
+            "EegHighBeta":userSensorStat.EegHighBeta == nil ? -1 : userSensorStat.EegHighBeta!,
+            "EegLowGamma":userSensorStat.EegLowGamma == nil ? -1 : userSensorStat.EegLowGamma!,
+            "EegHighGamma":userSensorStat.EegHighGamma == nil ? -1 : userSensorStat.EegHighGamma!,
+            "DataQuality":userSensorStat.DataQuality == nil ? -1 : userSensorStat.DataQuality!
         ]
         
         Alamofire
-            .request(.POST, fullQuery, parameters: parameters as! [String : NSObject] , encoding: .JSON)
+            .request(.POST, fullQuery, parameters: parameters as! [String : Int] , encoding: .JSON)
             .responseObject { (response: Response<UserProfile, NSError>) in
                 debugPrint(response)
                 //callback(response.result.value!,response.result.error)
