@@ -286,7 +286,7 @@ class Respiratory
     }
 
     //this function creates a diagnosis message based on the number of times sleep apnea was detected by the previous algorithm
-    func getDiagnosisMessage(apneaCount: Int) -> Void {
+    func getDiagnosisMessage(apneaCount: Int) -> String {
         var diagnosis: String
         switch apneaCount{
         case 5..<15:
@@ -301,7 +301,8 @@ class Respiratory
         }
         
         //print to diagnosis page: "SleepBusters has detected (diagnosis)"
-        print(diagnosis)
+        var message = "SleepBusters has detected \(diagnosis)"
+        return message;
     
     }
 

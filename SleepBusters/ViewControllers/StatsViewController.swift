@@ -59,11 +59,9 @@ class StatsViewController: UIViewController {
         
         // This contains the clicked user sleep session
         var temp =  self.currentUserSleepSession
-        
-        
         //load piechart
         sleepType = ["light sleep" , "deep sleep", "awake"]
-        let sleepHours = [5.0, 4.0, 1.0]
+        let sleepHours = [temp.totalLightSleepHours!, temp.totalDeepSleepHours!, temp.totalAwakeHours!]
         setChart(sleepType, values: sleepHours)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -100,10 +98,11 @@ class StatsViewController: UIViewController {
 
         }
         //percentages of sleep types
-        DeepSleepPercentage = (deepSleep / sum ) * 100
-        LightSleepPercentage = (lightSleep / sum ) * 100
-        AwakePercentage = (awake / sum ) * 100
+        DeepSleepPercentage = Double(round(10*((deepSleep / sum ) * 100))/10)
+        LightSleepPercentage = Double(round(10*((lightSleep / sum ) * 100))/10)
+        AwakePercentage = Double(round(10*((awake / sum ) * 100))/10)
         
+        var apneaMessage = Respiratory().getDiagnosisMessage(currentUserSleepSession.timesApneaDetected!)
         //Sleep Percentage Label
         sleepPercentages.text = "  \(LightSleepPercentage)%          \(DeepSleepPercentage)%          \(AwakePercentage)% "
         

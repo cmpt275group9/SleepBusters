@@ -38,7 +38,6 @@ public var SurveyTask: ORKNavigableOrderedTask {
     waitStep.text = waitText
     
     steps += [waitStep]
-
     
     /*
     A verification step view controller subclass is required in order to use the verification step.

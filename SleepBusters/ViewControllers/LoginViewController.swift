@@ -145,9 +145,7 @@ extension LoginViewController : ORKTaskViewControllerDelegate {
             }
             let weightResult = registrationStepResult?.resultForIdentifier("weight") as? ORKNumericQuestionResult
             let heightResult = registrationStepResult?.resultForIdentifier("height") as? ORKNumericQuestionResult
-            
-            print(lnameQuestionResult?.textAnswer)
-            
+                        
             var business = Business()
             
             var userProfile = UserProfile()
