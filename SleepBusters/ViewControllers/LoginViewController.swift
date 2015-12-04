@@ -34,6 +34,12 @@ class LoginViewController:UIViewController {
         presentViewController(taskViewController, animated: true, completion: nil)
     }
     
+    func showSurvey(){
+        let taskViewController = ORKTaskViewController(task: SurveyTask, taskRunUUID: nil)
+        taskViewController.delegate = self
+        presentViewController(taskViewController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let userNamePlaceHolder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
@@ -128,15 +134,29 @@ extension LoginViewController : ORKTaskViewControllerDelegate {
             let fnameQuestionResult = registrationStepResult?.resultForIdentifier(ORKRegistrationFormItemIdentifierGivenName) as? ORKTextQuestionResult
             let lnameQuestionResult = registrationStepResult?.resultForIdentifier(ORKRegistrationFormItemIdentifierFamilyName) as? ORKTextQuestionResult
             let passwordQuestionResult = registrationStepResult?.resultForIdentifier(ORKRegistrationFormItemIdentifierPassword) as? ORKTextQuestionResult
+            let genderResult = registrationStepResult?.resultForIdentifier(ORKRegistrationFormItemIdentifierGender) as? ORKChoiceQuestionResult
+            var gender: Int
+            if (genderResult!.choiceAnswers!.first! as! String == "female" ){
+                gender = 1
+            }else if (genderResult!.choiceAnswers!.first! as! String == "male" ){
+                gender = 0
+            }else{
+                gender = 2
+            }
+            let weightResult = registrationStepResult?.resultForIdentifier("weight") as? ORKNumericQuestionResult
+            let heightResult = registrationStepResult?.resultForIdentifier("height") as? ORKNumericQuestionResult
+            
+            print(lnameQuestionResult?.textAnswer)
+            
             var business = Business()
             
             var userProfile = UserProfile()
             userProfile.userName = emailQuestionResult!.textAnswer
             userProfile.firstName = fnameQuestionResult!.textAnswer
             userProfile.lastName = lnameQuestionResult!.textAnswer
-            userProfile.weight = 21
-            userProfile.height = 21
-            userProfile.gender = 0
+            userProfile.weight = weightResult!.answer! as! Double
+            userProfile.height = heightResult!.answer! as! Double
+            userProfile.gender = gender
             userProfile.password = passwordQuestionResult!.textAnswer
             business.registerUserProfile(userProfile)
                 {
@@ -158,6 +178,7 @@ extension LoginViewController : ORKTaskViewControllerDelegate {
     
     func taskViewController(taskViewController: ORKTaskViewController, didFinishWithReason reason: ORKTaskViewControllerFinishReason, error: NSError?) {
         //TEST PRINTING FOR RESULTS//
+        var surveyflag = 0
         let results = taskViewController.result.results as? [ORKStepResult]
         for stepResult: ORKStepResult in results!{
             for result in (stepResult.results as [ORKResult]?)!{
@@ -196,11 +217,18 @@ extension LoginViewController : ORKTaskViewControllerDelegate {
                         }
                         // TODO Add occupation and Date of birth
                     }
+                }else if let consentResult = result as? ORKConsentSignatureResult{
+                    surveyflag = 1
                 }else{
                     print("No printable results.")
                 }
                 
+            
             }
+        }
+        if (surveyflag == 1){
+            taskViewController.dismissViewControllerAnimated(true, completion: nil)
+            showSurvey()
         }
         let business = Business()
         var temp = user

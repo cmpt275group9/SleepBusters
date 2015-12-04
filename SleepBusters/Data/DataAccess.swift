@@ -205,7 +205,14 @@ class DataAccess {
     func registerUserProfile(userProfile: UserProfile,callback: (UserProfile, NSError?) -> Void) {
         
         let queryString = rootUrl + userprofileController
-        let gender  = userProfile.gender! == 0 ? "M" : "F"
+        var gender: String
+        if (userProfile.gender! == 0){
+            gender = "M"
+        }else if (userProfile.gender! == 1){
+            gender = "F"
+        }else{
+            gender = "O"
+        }
         var fullQuery = queryString + "/Register?Id=-1"
             fullQuery += "&UserName=" + userProfile.userName!
 
@@ -215,7 +222,7 @@ class DataAccess {
             "FirstName": userProfile.firstName!,
             "Weight": userProfile.weight!,
             "Height": userProfile.height!,
-            "Gender": userProfile.gender! == 0 ? "M" : "F",
+            "Gender": gender,
             "Password": userProfile.password!
         ]
         
