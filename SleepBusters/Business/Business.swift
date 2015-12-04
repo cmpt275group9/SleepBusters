@@ -112,8 +112,8 @@ class Business {
      - parameter Date: The user sleep session date
      :returns: a UserSleepSession object
      */
-    func getUserSleepSessionForDate(userId: Int, date: NSDate,callback: (UserSleepSession, NSError?) -> Void) -> Void {
-            data.getUserSleepSessionForDate(userId,date:date)
+    func getUserSleepSessionForDate(date: String,callback: (UserSleepSession, NSError?) -> Void) -> Void {
+            data.getUserSleepSessionForDate(date)
             { (data: UserSleepSession, error: NSError?) -> Void in
                 callback(data,error)
         }

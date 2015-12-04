@@ -58,7 +58,7 @@ class StatsViewController: UIViewController {
         super.viewDidLoad()
         
         // This contains the clicked user sleep session
-        // self.currentUserSleepSession
+        var temp =  self.currentUserSleepSession
         
         
         //load piechart

@@ -555,7 +555,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     func saveTracking()
     {
        
-        if(countIndex > 0)
+        if(countIndex > 700)
         {
         let alert: UIAlertView = UIAlertView(title: "Processing", message: "", delegate: nil, cancelButtonTitle: nil);
         
@@ -570,7 +570,8 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
 //        
 //        let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "update", userInfo: nil, repeats: true)
         
-            createSleepSession(data)
+            var sleepSession = createSleepSession(data)
+            
             alert.dismissWithClickedButtonIndex(-1, animated: true)
             performSegueWithIdentifier("trackingSegue", sender: nil)
         }
@@ -587,7 +588,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         navigationController?.popViewControllerAnimated(true)
     }
     
-    func createSleepSession(data: [Int])
+    func createSleepSession(data: [Int]) -> UserSleepSession
     {
         var respiratory = Respiratory()
         var calculatedData = respiratory.getPostSleepData(data, startTime: self.startDate)
@@ -607,6 +608,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         
         sleepSession.userId = defaults.integerForKey("userId")
         saveSleepSession(sleepSession)
+        return sleepSession;
     }
 
 //    func update() {

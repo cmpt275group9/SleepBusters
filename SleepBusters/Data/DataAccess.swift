@@ -114,17 +114,17 @@ class DataAccess {
      - parameter Date: The user sleep session date
      :returns: a UserSleepSession object
      */
-    func getUserSleepSessionForDate(userId: Int, date: NSDate,callback: (UserSleepSession, NSError?) -> Void) -> Void {
+    func getUserSleepSessionForDate(date: String,callback: (UserSleepSession, NSError?) -> Void) -> Void {
         
         let queryString = rootUrl + userprofileController
-        let fullQuery = queryString + "/getUserSleepSessionForDate?userId="+String(defaults.integerForKey("userId"))+"&date="+String(date)
+        let fullQuery = queryString + "/getUserSleepSessionForDate?userId="+String(defaults.integerForKey("userId"))+"&date="+date
         
         let parameters = [
             "userId": defaults.integerForKey("userId"),
             "date":  date
         ]
         Alamofire
-            .request(.POST, fullQuery, parameters: parameters, encoding: .JSON)
+            .request(.POST, fullQuery, parameters: parameters as! [String : AnyObject], encoding: .JSON)
             .responseObject { (response: Response<UserSleepSession, NSError>) in
                 callback(response.result.value!,response.result.error)
         }
