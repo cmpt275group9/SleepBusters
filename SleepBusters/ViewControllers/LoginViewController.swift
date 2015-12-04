@@ -36,14 +36,12 @@ class LoginViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        let userNamePlaceHolder = NSAttributedString(string: "Username", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
-        let passwordPlaceHolder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
+        let userNamePlaceHolder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
+        let passwordPlaceHolder = NSAttributedString(string: "UserName", attributes: [NSForegroundColorAttributeName:UIColor.lightGrayColor()])
         passwordField.attributedPlaceholder = userNamePlaceHolder
         userNameField.attributedPlaceholder = passwordPlaceHolder
+        userNameField.text = "test@test.com";
+        passwordField.text = "test1"
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -65,8 +63,8 @@ class LoginViewController:UIViewController {
         alert.show();
         
         let business = Business()
-        let userName = "Klein"//userNameField.text!
-        let password = "test"//passwordField.text!
+        let userName = userNameField.text!
+        let password = passwordField.text!
         
         business.login(userName,password: password){
             (data: UserProfile, error: NSError?) -> Void in
@@ -82,12 +80,15 @@ class LoginViewController:UIViewController {
                     // Save user login state and show MyProfileViewController
                     // TODO: this bool needs to be set to true when we have an isremember box
                     self.defaults.setBool(false,forKey: "userIsLoggedIn")
+                    self.defaults.setInteger(user.id, forKey: <#T##String#>)(false,forKey: "userId")
+
                     self.showTabViewController()
                 }
                 else if (isValidated && self.rememberMe)
                 {
                     // Save user login state and show MyProfileViewController
                     self.defaults.setBool(false,forKey: "userIsLoggedIn")
+                    self.defaults.setInteger(user.id, forKey: <#T##String#>)(false,forKey: "userId")
                     self.showTabViewController()
                 }
                 else

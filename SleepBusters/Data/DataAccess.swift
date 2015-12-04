@@ -140,20 +140,33 @@ class DataAccess {
      - parameter UserSleepSession: The User Profile to update. (Update User Sleep Session)
      :returns: Is Success
      */
-    func saveUserSleepSession(userSleepSession: UserSleepSession) ->  Bool
+    func saveUserSleepSession(userSleepSession: UserSleepSession) ->  Void
     {
-        let queryString = rootUrl + userprofileController+"/SaveUserSleepSession"
-        httpAction.HTTPPost(NSDictionary(), url: queryString){
-            (data: NSDictionary, error: NSError?) -> Void in
-            if error != nil {
-                print(error)
-              //  return false;
-            } else {
-              //  return true;
-            }
-            
+        let queryString = rootUrl + userprofileController
+        var fullQuery = queryString + "/SaveUserSleepSession?Id=-1"
+        
+        let parameters = [
+            "Id": -1,
+            "UserId": userSleepSession.userId!,
+            "startSessionDate": userSleepSession.startSessionDate!,
+            "endSessionDate": userSleepSession.endSessionDate!,
+            "TotalHoursAsleep": userSleepSession.totalHoursAsleep!,
+            "TotalDeepSleepHours": userSleepSession.totalDeepSleepHours!,
+            "TotalAwakeHours": userSleepSession.totalAwakeHours!,
+            "TotalLightSleepHours": userSleepSession.totalLightSleepHours!,
+            "AverageTemp": userSleepSession.averageTemp!,
+            "AverageHumidity": userSleepSession.averageHumidity!,
+            "Bpm": userSleepSession.bpm!,
+            "TimesApneaDetected": userSleepSession.timesApneaDetected!,
+        ]
+
+        
+        Alamofire
+            .request(.POST, fullQuery, parameters: parameters as! [String : NSObject] , encoding: .JSON)
+            .responseObject { (response: Response<UserProfile, NSError>) in
+                debugPrint(response)
+                //callback(response.result.value!,response.result.error)
         }
-        return true;
     }
 
     /**

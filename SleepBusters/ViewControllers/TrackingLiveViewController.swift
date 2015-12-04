@@ -33,6 +33,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     @IBAction func btnStopTracking(sender: UIButton) {
         stopTracking()
     }
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     // EEG Sensor: (Simulated Data)
     var counterPie = 0.00
@@ -54,6 +55,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     var characteristics: CBCharacteristic!
     var terminalChar:CBCharacteristic!
     var countIndex = 0;
+    var startDate = NSDate()
     //var respiratory = Respiratory()
     /**************************************************/
     
@@ -503,6 +505,8 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     var data = [0]
     func saveTracking()
     {
+        if(countIndex > 2000)
+        {
         let alert: UIAlertView = UIAlertView(title: "Processing", message: "", delegate: nil, cancelButtonTitle: nil);
         
         let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRectMake(50, 10, 37, 37)) as UIActivityIndicatorView
@@ -515,26 +519,16 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         
         
         let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "update", userInfo: nil, repeats: true)
-//        for var index = 1; index < 288000; index++
-//        {
-//            let temp = 150+abs(70*sin(counterPie))
-//            if(index > 10000 && index < 10100)
-//            {
-//                var dataRandom = Int(data.last!) + (Int(arc4random_uniform(10)));
-//                data.append(dataRandom)
-//            }
-//            else
-//            {
-//                data.append(Int(temp))
-//                counterPie = counterPie + 0.02;
-//            }
-//            
-//        }
         
-        createSleepSession(data)
+            createSleepSession(data)
+            performSegueWithIdentifier("trackingSegue", sender: nil)
+        }
+        else
+        {
+            cancelTracking()
+        }
         
         
-        performSegueWithIdentifier("trackingSegue", sender: nil)
     }
     
     func cancelTracking()
@@ -547,15 +541,21 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         
         respiratory.checkPostSleepData(data, startTime: NSDate())
         
+        var sleepSession = UserSleepSession()
+        sleepSession.bpm = 1
+        sleepSession.averageTemp = 2
+        sleepSession.averageHumidity = 2
+        sleepSession.startSessionDate = self.startDate
+        sleepSession.endSessionDate = NSDate()
+        sleepSession.totalLightSleepHours = 1
+        sleepSession.totalHoursAsleep = 1
+        sleepSession.totalAwakeHours = 0
+        sleepSession.totalDeepSleepHours = 0
+        sleepSession.timesApneaDetected = 1
+        sleepSession.userId = defaults.integerForKey("userId")
+        saveSleepSession(sleepSession)
     }
-    
-    func detectSleepApnea() -> SleepApneaConfidence
-    {
-        
-        return SleepApneaConfidence.High
-    }
-    
-    
+
     func update() {
 
 
@@ -563,8 +563,8 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     
     func saveSleepSession(sleepSession: UserSleepSession) -> Void
     {
-        
-        
+        var business = Business()
+        //business.saveUserSleepSession(sleepSession)
     }
     
     func saveUserSensorStats(stats: [UserSensorStat]) -> Void

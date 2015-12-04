@@ -80,9 +80,9 @@ class Business {
      - parameter UserSleepSession: The User Profile to update. (Update User Sleep Session)
      :returns: Is Success
      */
-//    func saveUserSleepSession(userSleepSession: UserSleepSession) ->  Bool{
-//        return data.saveUserSleepSession(userSleepSession)
-//    }
+    func saveUserSleepSession(userSleepSession: UserSleepSession) ->  Void{
+        return data.saveUserSleepSession(userSleepSession)
+    }
 
     /**
      Creates a request to the WebApi to get a collection of User Sleep Session from the database.
