@@ -165,12 +165,22 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
     
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
-        if calendarView.selected {performSegueWithIdentifier("calendarSegue", sender: nil)}
+        
         calendarView.selected = false
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .ShortStyle
+        
+        let date1 = dateFormatter.stringFromDate(dayView.date.convertedDate()!)
         
         var business = Business()
-       // var sleepSession = business.getUserSleepSessions(dayView.date.convertedDate())
-        self.currentUserSleepSession = UserSleepSession() // TODO: get this from database
+        var sleepSession = business.getUserSleepSessionForDate(date1){ (data: UserSleepSession, error: NSError?) -> Void in
+            dispatch_async(dispatch_get_main_queue()) {
+                self.currentUserSleepSession = data
+                if self.calendarView.selected {self.performSegueWithIdentifier("calendarSegue", sender: nil)}
+            }
+        }
+
+        
 
     }
     

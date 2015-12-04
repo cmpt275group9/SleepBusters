@@ -570,7 +570,9 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
 //        
 //        let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "update", userInfo: nil, repeats: true)
         
-            createSleepSession(data)
+            var sleepSession = createSleepSession(data)
+            
+            alert.dismissWithClickedButtonIndex(-1, animated: true)
             performSegueWithIdentifier("trackingSegue", sender: nil)
         }
         else
@@ -586,7 +588,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         navigationController?.popViewControllerAnimated(true)
     }
     
-    func createSleepSession(data: [Int])
+    func createSleepSession(data: [Int]) -> UserSleepSession
     {
         var respiratory = Respiratory()
         var calculatedData = respiratory.getPostSleepData(data, startTime: self.startDate)
@@ -598,7 +600,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         sleepSession.averageHumidity = self.tempAverage
         sleepSession.startSessionDate = self.startDate
         sleepSession.endSessionDate = NSDate()
-        sleepSession.totalHoursAsleep =  60 / Double(sleepSession.endSessionDate!.minutesFrom(self.startDate))
+        sleepSession.totalHoursAsleep =   Double(sleepSession.endSessionDate!.minutesFrom(self.startDate)) / 60.0
         
         sleepSession.totalLightSleepHours = 1 // we need this from eeg
         sleepSession.totalAwakeHours = 0 // we need this from eeg
@@ -606,6 +608,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         
         sleepSession.userId = defaults.integerForKey("userId")
         saveSleepSession(sleepSession)
+        return sleepSession;
     }
 
 //    func update() {
@@ -616,7 +619,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     func saveSleepSession(sleepSession: UserSleepSession) -> Void
     {
         var business = Business()
-        //business.saveUserSleepSession(sleepSession)
+        business.saveUserSleepSession(sleepSession)
     }
     
     func saveUserSensorStats(stats: [UserSensorStat]) -> Void
