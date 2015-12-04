@@ -453,6 +453,8 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         TGAccessoryManager.sharedTGAccessoryManager().startStream()
     }
     
+    
+    var eegBusiness = Business()
     func dataReceived(data: [NSObject : AnyObject]) {
        
         if (data["poorSignal"] != nil) {
@@ -462,6 +464,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         print(signal)
             
         if (signal < 200 ) {
+            var sleepStat = UserSensorStat()
             
             if (data["blinkStrength"] != nil) {
                 let blinkStrength = data["blinkStrength"]!.intValue
@@ -471,23 +474,39 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
             if (data["eegDelta"] != nil) {
                 let delta = data["eegDelta"]!.intValue
                 eegValues[0] = Double(delta)
+                sleepStat.EegDelta = Int(delta)
             }
             if (data["eegTheta"] != nil) {
                 let theta = data["eegTheta"]!.intValue
                 eegValues[1] = Double(theta)
+                sleepStat.EegTheta = Int(theta)
             }
             if (data["eegHighAlpha"] != nil) {
                 let highAlpha = data["eegHighAlpha"]!.intValue
-               eegValues[2] = Double(highAlpha)
+                eegValues[2] = Double(highAlpha)
+                sleepStat.EegHighAlpha = Int(highAlpha)
             }
             if (data["eegHighBeta"] != nil) {
                 let highBeta = data["eegHighBeta"]!.intValue
                 eegValues[3] = Double(highBeta)
+                sleepStat.EegHighBeta = Int(highBeta)
             }
             if (data["eegHighGamma"] != nil) {
                 let highGamma = data["eegHighGamma"]!.intValue
                 eegValues[4] = Double(highGamma)
+                sleepStat.EegHighGamma = Int(highGamma)
             }
+//            if (data["eegHighGamma"] != nil) {
+//                let highGamma = data["eegHighGamma"]!.intValue
+//                eegValues[4] = Double(highGamma)
+//                sleepStat.EegHighGamma = eegValues[4]
+//            }
+            
+            
+            sleepStat.DataQuality = Int(signal)
+            sleepStat.TimeStamp = NSDate()
+                
+           // eegBusiness.saveSleepStat(sleepStat)
             
             setChart(eegType, values: eegValues)
         }
@@ -563,7 +582,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         sleepSession.averageHumidity = self.tempAverage
         sleepSession.startSessionDate = self.startDate
         sleepSession.endSessionDate = NSDate()
-        sleepSession.totalHoursAsleep =  sleepSession.endSessionDate.hoursFrom(self.startDate)
+        sleepSession.totalHoursAsleep =  60 / Double(sleepSession.endSessionDate!.minutesFrom(self.startDate))
         
         sleepSession.totalLightSleepHours = 1 // we need this from eeg
         sleepSession.totalAwakeHours = 0 // we need this from eeg

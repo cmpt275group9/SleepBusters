@@ -280,13 +280,13 @@ class Respiratory
         getDiagnosisMessage(apneaCount)
     
         var calculatedData = RespiratoryCalculatedData()
-        calculatedData.Bpm = freq
+        calculatedData.Bpm = Int(freq)
         calculatedData.TimesApneaDetected = apneaCount
         return calculatedData
     }
 
     //this function creates a diagnosis message based on the number of times sleep apnea was detected by the previous algorithm
-    func getDiagnosisMessage(apneaCount: Int) -> String {
+    func getDiagnosisMessage(apneaCount: Int) -> Void {
         var diagnosis: String
         switch apneaCount{
         case 5..<15:

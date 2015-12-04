@@ -78,10 +78,19 @@ class Business {
     /**
      Creates a request to the WebApi to save/update a User Sleep Session to the database.
      - parameter UserSleepSession: The User Profile to update. (Update User Sleep Session)
-     :returns: Is Success
+     :returns: Void
      */
     func saveUserSleepSession(userSleepSession: UserSleepSession) ->  Void{
         return data.saveUserSleepSession(userSleepSession)
+    }
+    
+    /**
+     Creates a request to the WebApi to save/update a User Sleep Stats to the database.
+     - parameter UserSleepStat: The User Profile to update. (Update User Sleep stat)
+     :returns:  Void
+     */
+    func saveSleepStat(userSensorStat: UserSensorStat){
+        return data.saveSleepStat(userSensorStat)
     }
 
     /**
@@ -122,20 +131,7 @@ class Business {
         return data.getUserSleepSessions(userId, startDate: startDate, endDate: endDate)
     }
     
-    // MARK: Hardware Sensors
-    // TODO: NOT IMPLEMENTED
-//    func getHistoricalSensorData(userId: Int, startDate: NSDate, endDate: NSDate) -> [UserSensorStat]{
-//        return data.getHistoricalSensorData(userId, startDate: startDate, endDate: endDate)
-//    }
-//    // TODO: NOT IMPLEMENTED
-//    func saveUserSensorStats(stats: [UserSensorStat]) -> StatusResult {
-//        return data.saveUserSensorStats(stats)
-//    }
-//    // TODO: NOT IMPLEMENTED
-//    func getLiveSensorData() -> UserSensorStat{
-//        return data.getLiveSensorData()
-//    }
-//    
+
     
 
     

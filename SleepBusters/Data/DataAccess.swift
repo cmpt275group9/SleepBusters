@@ -131,6 +131,38 @@ class DataAccess {
         
     }
     
+    /**
+     Creates a request to the WebApi to save/update a User Sleep Stats to the database.
+     - parameter UserSleepStat: The User Profile to update. (Update User Sleep stat)
+     :returns:  Void
+     */
+    func saveSleepStat(userSensorStat: UserSensorStat){
+        let queryString = rootUrl + userprofileController
+        var fullQuery = queryString + "/SaveSensorStat?Id=-1"
+        
+        let parameters = [
+            "Id": -1,
+            "UserProfileId": defaults.integerForKey("userId"),
+            "EegDelta": userSensorStat.EegDelta!,
+            "EegTheta": userSensorStat.EegTheta!,
+            "EegLowAlpha": userSensorStat.EegLowAlpha!,
+            "EegHighAlpha": userSensorStat.EegHighAlpha!,
+            "EegLowBeta": userSensorStat.EegLowBeta!,
+            "EegHighBeta": userSensorStat.EegHighBeta!,
+            "EegLowGamma": userSensorStat.EegLowGamma!,
+            "EegHighGamma": userSensorStat.EegHighGamma!,
+            "TimeStamp": userSensorStat.TimeStamp!
+
+        ]
+        
+        Alamofire
+            .request(.POST, fullQuery, parameters: parameters as! [String : NSObject] , encoding: .JSON)
+            .responseObject { (response: Response<UserProfile, NSError>) in
+                debugPrint(response)
+                //callback(response.result.value!,response.result.error)
+        }
+    }
+    
     
     /**
      Creates a request to the WebApi to save/update a User Sleep Session to the database.
@@ -144,7 +176,7 @@ class DataAccess {
         
         let parameters = [
             "Id": -1,
-            "UserId": userSleepSession.userId!,
+            "UserProfileId": userSleepSession.userId!,
             "startSessionDate": userSleepSession.startSessionDate!,
             "endSessionDate": userSleepSession.endSessionDate!,
             "TotalHoursAsleep": userSleepSession.totalHoursAsleep!,
