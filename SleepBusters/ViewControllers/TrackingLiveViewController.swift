@@ -45,7 +45,9 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     /**************************************************/
     
     // Respiratory Sensor: (Live Data)
-    let isSimulate = true
+    let isEEGSimulate = true
+    let isRespiratorySimulate = true
+    
     let btName = "HMSoft"
     let btServiceID = "FFE0"
     let btCharacteristicId = "FFE1"
@@ -86,7 +88,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         eegType = ["Delta" , "Theta", "Alpha", "Beta", "Gamma" ]
         setChart(eegType, values: eegValues)
         
-        if(isSimulate == false){
+        if(isRespiratorySimulate == false){
             // Respiratory Sensor
             centralManager = CBCentralManager(delegate: self, queue: nil)
         }
@@ -106,7 +108,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         respLineChart.headerView = header
         
         // EEG Init
-        if(!isSimulate)
+        if(!isEEGSimulate)
         {
         let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
         let accessoryType: TGAccessoryType = UInt(defaults.integerForKey("accessory_type_preference"))
@@ -129,9 +131,11 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         respLineChart.reloadData()
         
         // Create Timers that will Redraw the Chart every 100ms for respiratory and 1 second for EEG
-        if(isSimulate){
+        if(isRespiratorySimulate){
             NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("updateRespiratoryChart"), userInfo: nil, repeats: true)
-       
+        }
+        if(isEEGSimulate)
+        {
             NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateEEGChart"), userInfo: nil, repeats: true)
         }
     }
@@ -503,7 +507,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
             if (data["eegLowGamma"] != nil) {
                 let eegLowGamma = data["eegLowGamma"]!.intValue
                 //eegValues[4] = Double(eegLowGamma)
-                sleepStat.EegHighGamma = Int(eegLowGamma)
+                sleepStat.EegLowGamma = Int(eegLowGamma)
             }
             if (data["eegLowAlpha"] != nil) {
                 let eegLowAlpha = data["eegLowAlpha"]!.intValue
