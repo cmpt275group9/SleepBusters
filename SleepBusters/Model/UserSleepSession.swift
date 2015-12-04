@@ -38,7 +38,7 @@ final class UserSleepSession: ResponseObjectSerializable, ResponseCollectionSeri
     
     init?(response: NSHTTPURLResponse, representation: AnyObject) {
         self.id = (representation.valueForKeyPath("ID") as? Int)!
-        self.userId = (representation.valueForKeyPath("UserId") as? Int)!
+        self.userId = (representation.valueForKeyPath("UserProfileId") as? Int)!
         self.startSessionDate = representation.valueForKeyPath("StartSessionDate") as? NSDate
         self.endSessionDate = representation.valueForKeyPath("EndSessionDate") as? NSDate
         self.totalHoursAsleep = representation.valueForKeyPath("TotalHoursAsleep") as? Double

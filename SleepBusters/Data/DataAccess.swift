@@ -26,6 +26,7 @@ private let userprofileController = "UserProfile"
 private let statsController = "Stats"
 private var rootUrl = "https://sleepbustersapi.azurewebsites.net/"
 private let httpAction = HttpAction()
+let defaults = NSUserDefaults.standardUserDefaults()
 
 class DataAccess {
     
@@ -92,10 +93,10 @@ class DataAccess {
     func getLastNSleepSessions(userId: Int, n: Int,callback: ([UserSleepSession], NSError?) -> Void) -> Void {
         
         let queryString = rootUrl + userprofileController
-        let fullQuery = queryString + "/GetLastNUserSessions?userId="+String(userId)+"&n="+String(n)
+        let fullQuery = queryString + "/GetLastNUserSessions?userId="+String(defaults.integerForKey("userId"))+"&n="+String(n)
 
         let parameters = [
-            "userId": userId,
+            "userId": defaults.integerForKey("userId"),
             "n": n
         ]
         
@@ -116,10 +117,10 @@ class DataAccess {
     func getUserSleepSessionForDate(userId: Int, date: NSDate,callback: (UserSleepSession, NSError?) -> Void) -> Void {
         
         let queryString = rootUrl + userprofileController
-        let fullQuery = queryString + "/getUserSleepSessionForDate?userId="+String(userId)+"&date="+String(date)
+        let fullQuery = queryString + "/getUserSleepSessionForDate?userId="+String(defaults.integerForKey("userId"))+"&date="+String(date)
         
         let parameters = [
-            "userId": userId,
+            "userId": defaults.integerForKey("userId"),
             "date":  date
         ]
         Alamofire
@@ -129,10 +130,6 @@ class DataAccess {
         }
         
     }
-    
-    
-    
-    
     
     
     /**
