@@ -532,8 +532,8 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         loadingIndicator.startAnimating()
         alert.show();
         
-        
-        let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "update", userInfo: nil, repeats: true)
+//        
+//        let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "update", userInfo: nil, repeats: true)
         
             createSleepSession(data)
             performSegueWithIdentifier("trackingSegue", sender: nil)
@@ -550,11 +550,11 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     {
         navigationController?.popViewControllerAnimated(true)
     }
-    var respiratory = Respiratory()
+    
     func createSleepSession(data: [Int])
     {
-        
-        var calculatedData = respiratory.getPostSleepData(data, startTime: NSDate())
+        var respiratory = Respiratory()
+        var calculatedData = respiratory.getPostSleepData(data, startTime: self.startDate)
         
         var sleepSession = UserSleepSession()
         sleepSession.bpm = calculatedData.Bpm
@@ -573,10 +573,10 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         saveSleepSession(sleepSession)
     }
 
-    func update() {
-
-
-    }
+//    func update() {
+//
+//
+//    }
     
     func saveSleepSession(sleepSession: UserSleepSession) -> Void
     {
