@@ -236,6 +236,7 @@ class DataAccess {
             "UserName": userProfile.userName!,
             "FirstName": userProfile.firstName!,
             "LastName": userProfile.lastName!,
+            "Occupation": userProfile.occupation!,
             "DateOfBirth": date1,
             "Weight": userProfile.weight!,
             "Height": userProfile.height!,
