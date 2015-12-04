@@ -145,6 +145,7 @@ extension LoginViewController : ORKTaskViewControllerDelegate {
             }
             let weightResult = registrationStepResult?.resultForIdentifier("weight") as? ORKNumericQuestionResult
             let heightResult = registrationStepResult?.resultForIdentifier("height") as? ORKNumericQuestionResult
+            let dobResult = registrationStepResult?.resultForIdentifier(ORKRegistrationFormItemIdentifierDOB) as? ORKDateQuestionResult
                         
             var business = Business()
             
@@ -156,6 +157,7 @@ extension LoginViewController : ORKTaskViewControllerDelegate {
             userProfile.height = heightResult!.answer! as! Double
             userProfile.gender = gender
             userProfile.password = passwordQuestionResult!.textAnswer
+            userProfile.dateOfBirth = dobResult?.dateAnswer
             business.registerUserProfile(userProfile)
                 {
                     (data: UserProfile, error: NSError?) -> Void in
