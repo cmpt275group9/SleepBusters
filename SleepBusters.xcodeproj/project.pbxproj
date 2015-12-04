@@ -11,6 +11,9 @@
 		154F8B421BED9C4200E7A11A /* lung.png in Resources */ = {isa = PBXBuildFile; fileRef = 154F8B401BED9C4200E7A11A /* lung.png */; };
 		1552D8CE1C0013DF00119AE8 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552D8CD1C0013DF00119AE8 /* FeedBackViewController.swift */; };
 		1552D8D01C00299900119AE8 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552D8CF1C00299900119AE8 /* NewAccountViewController.swift */; };
+		157731BB1C11C2680008271F /* DOB-ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 157731BA1C11C2680008271F /* DOB-ICON.png */; settings = {ASSET_TAGS = (); }; };
+		157731BD1C11C3A90008271F /* icon - Birthday - Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 157731BC1C11C3A90008271F /* icon - Birthday - Full.png */; settings = {ASSET_TAGS = (); }; };
+		157731BF1C11CBCA0008271F /* icon - Email - Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 157731BE1C11CBCA0008271F /* icon - Email - Full.png */; settings = {ASSET_TAGS = (); }; };
 		6E3F38741C029ACC00085E7C /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 791458E91C017EB000716626 /* ResearchKit.framework */; };
 		6E3F38751C029ACC00085E7C /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 791458E91C017EB000716626 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		791458F91C017FC900716626 /* ConsentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791458F71C017FC900716626 /* ConsentForm.swift */; };
@@ -295,6 +298,9 @@
 		154F8B401BED9C4200E7A11A /* lung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lung.png; path = Images/lung.png; sourceTree = "<group>"; };
 		1552D8CD1C0013DF00119AE8 /* FeedBackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
 		1552D8CF1C00299900119AE8 /* NewAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
+		157731BA1C11C2680008271F /* DOB-ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DOB-ICON.png"; sourceTree = "<group>"; };
+		157731BC1C11C3A90008271F /* icon - Birthday - Full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon - Birthday - Full.png"; sourceTree = "<group>"; };
+		157731BE1C11CBCA0008271F /* icon - Email - Full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon - Email - Full.png"; sourceTree = "<group>"; };
 		791458DB1C017EAF00716626 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		791458F71C017FC900716626 /* ConsentForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsentForm.swift; path = Utility/ConsentForm.swift; sourceTree = "<group>"; };
 		791458F81C017FC900716626 /* HealthSurvey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthSurvey.swift; path = Utility/HealthSurvey.swift; sourceTree = "<group>"; };
@@ -604,7 +610,9 @@
 			isa = PBXGroup;
 			children = (
 				AFBB2A2F1BFC65C8006015F5 /* icon---Password@2x.png */,
+				157731BC1C11C3A90008271F /* icon - Birthday - Full.png */,
 				AFBB2A301BFC65C8006015F5 /* icon---Username@2x.png */,
+				157731BA1C11C2680008271F /* DOB-ICON.png */,
 				AFBB2A311BFC65C8006015F5 /* loginBackground.png */,
 				AFBB2A321BFC65C8006015F5 /* LoginLogo.png */,
 				AFBB2A331BFC65C8006015F5 /* image---Password@2x.png */,
@@ -628,6 +636,7 @@
 				AF1552301BEC3A9300399DB8 /* Current-Progress.png */,
 				AF1552311BEC3A9300399DB8 /* Divider-copy@2x.png */,
 				AF1552321BEC3A9300399DB8 /* drink--icon.png */,
+				157731BE1C11CBCA0008271F /* icon - Email - Full.png */,
 				AF1552331BEC3A9300399DB8 /* gym--icon@2x.png */,
 				AF1552341BEC3A9300399DB8 /* happy---icon@2x.png */,
 				AF1552351BEC3A9300399DB8 /* home--icon@2x.png */,
@@ -972,6 +981,7 @@
 					};
 					AF1834981BBFA9E100EBDFCD = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = B33Z3CT9PD;
 					};
 					AF1834AE1BBFA9E100EBDFCD = {
 						CreatedOnToolsVersion = 7.0;
@@ -1201,12 +1211,15 @@
 				AF03F9901BC8DE27002ADF4D /* OpenSans-Bold.ttf in Resources */,
 				AF1834A41BBFA9E100EBDFCD /* Main.storyboard in Resources */,
 				AFA659D91BED87C1005D295D /* coffee-off.png in Resources */,
+				157731BB1C11C2680008271F /* DOB-ICON.png in Resources */,
 				AF03F9951BC8DE27002ADF4D /* OpenSans-Light.ttf in Resources */,
 				AFBB2A3D1BFC65C8006015F5 /* login-Sign-In@2x.png in Resources */,
 				AF15524C1BEC3A9300399DB8 /* light-image@2x.png in Resources */,
 				AFBB2A3E1BFC65C8006015F5 /* image---Username@2x.png in Resources */,
 				AF1552481BEC3A9300399DB8 /* drink--icon.png in Resources */,
 				AF15523D1BEC3A9300399DB8 /* 1-image.png in Resources */,
+				157731BD1C11C3A90008271F /* icon - Birthday - Full.png in Resources */,
+				157731BF1C11CBCA0008271F /* icon - Email - Full.png in Resources */,
 				AF03F9911BC8DE27002ADF4D /* OpenSans-BoldItalic.ttf in Resources */,
 				AF1552411BEC3A9300399DB8 /* BackgroundButton.png in Resources */,
 				AFA659E81BED8983005D295D /* beer-on.png in Resources */,
@@ -1531,7 +1544,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PillowSoft.SleepBusters;
+				PRODUCT_BUNDLE_IDENTIFIER = imawesome123123123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SleepBusters-Bridging-Header.h";
@@ -1558,7 +1571,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PillowSoft.SleepBusters;
+				PRODUCT_BUNDLE_IDENTIFIER = imawesome123123123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SleepBusters-Bridging-Header.h";
