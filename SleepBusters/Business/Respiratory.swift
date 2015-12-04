@@ -74,7 +74,7 @@ class Respiratory
     
     
     //this function uses data from a night of sleep to determine possible points of sleep apnea
-    func checkPostSleepData(sleepdata: [Int], startTime: NSDate){
+    func getPostSleepData(sleepdata: [Int], startTime: NSDate) -> RespiratoryCalculatedData {
         
         let N = sleepdata.count
         var categories = [Int:Int]()
@@ -137,8 +137,8 @@ class Respiratory
                 categories[0]! += 1
             }
         }
-        print("cat 0")
-        print(categories[0]!)
+       // print("cat 0")
+       // print(categories[0]!)
         
         for (key, value) in categories {
             if (value > N/20){
@@ -277,12 +277,16 @@ class Respiratory
         //    apneaCount = apneaCount/hours
         //}
         print("\(Int(freq)) breaths/minute")
-        createDiagnosisMessage(apneaCount)
+        getDiagnosisMessage(apneaCount)
     
+        var calculatedData = RespiratoryCalculatedData()
+        calculatedData.Bpm = freq
+        calculatedData.TimesApneaDetected = apneaCount
+        return calculatedData
     }
 
     //this function creates a diagnosis message based on the number of times sleep apnea was detected by the previous algorithm
-    func createDiagnosisMessage(apneaCount: Int){
+    func getDiagnosisMessage(apneaCount: Int) -> String {
         var diagnosis: String
         switch apneaCount{
         case 5..<15:
@@ -414,4 +418,10 @@ class Respiratory
         return values.reduce(0, combine: +)
     }
 
+}
+
+class RespiratoryCalculatedData
+{
+    var Bpm: Int? = nil
+    var TimesApneaDetected: Int? = nil
 }

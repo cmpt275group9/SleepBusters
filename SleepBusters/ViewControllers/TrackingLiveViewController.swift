@@ -554,19 +554,21 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     func createSleepSession(data: [Int])
     {
         
-        respiratory.checkPostSleepData(data, startTime: NSDate())
+        var calculatedData = respiratory.getPostSleepData(data, startTime: NSDate())
         
         var sleepSession = UserSleepSession()
-        sleepSession.bpm = 1 // get from respiratory class
+        sleepSession.bpm = calculatedData.Bpm
+        sleepSession.timesApneaDetected = calculatedData.TimesApneaDetected
         sleepSession.averageTemp = self.humidityAverage
         sleepSession.averageHumidity = self.tempAverage
         sleepSession.startSessionDate = self.startDate
         sleepSession.endSessionDate = NSDate()
-        sleepSession.totalLightSleepHours = 1
-        sleepSession.totalHoursAsleep = 1
-        sleepSession.totalAwakeHours = 0
-        sleepSession.totalDeepSleepHours = 0
-        sleepSession.timesApneaDetected = 1 // get from respiratory class
+        sleepSession.totalHoursAsleep =  sleepSession.endSessionDate.hoursFrom(self.startDate)
+        
+        sleepSession.totalLightSleepHours = 1 // we need this from eeg
+        sleepSession.totalAwakeHours = 0 // we need this from eeg
+        sleepSession.totalDeepSleepHours = 0 // we need this from eeg
+        
         sleepSession.userId = defaults.integerForKey("userId")
         saveSleepSession(sleepSession)
     }
