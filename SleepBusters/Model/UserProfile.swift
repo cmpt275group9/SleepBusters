@@ -43,7 +43,7 @@ final class UserProfile: ResponseObjectSerializable, ResponseCollectionSerializa
     }
     
     init?(response: NSHTTPURLResponse, representation: AnyObject) {
-        self.id = representation.valueForKeyPath("id") as? Int
+        self.id = representation.valueForKeyPath("Id") as? Int
         self.userName =  representation.valueForKeyPath("UserName") as? String
         self.password = nil
         self.firstName = representation.valueForKeyPath("FirstName") as? String

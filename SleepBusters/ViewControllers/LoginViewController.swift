@@ -80,7 +80,7 @@ class LoginViewController:UIViewController {
                     // Save user login state and show MyProfileViewController
                     // TODO: this bool needs to be set to true when we have an isremember box
                     self.defaults.setBool(false,forKey: "userIsLoggedIn")
-                    self.defaults.setInteger(user.id, forKey: <#T##String#>)(false,forKey: "userId")
+                    self.defaults.setInteger(user.id!,forKey: "userId")
 
                     self.showTabViewController()
                 }
@@ -88,7 +88,7 @@ class LoginViewController:UIViewController {
                 {
                     // Save user login state and show MyProfileViewController
                     self.defaults.setBool(false,forKey: "userIsLoggedIn")
-                    self.defaults.setInteger(user.id, forKey: <#T##String#>)(false,forKey: "userId")
+                    self.defaults.setInteger(user.id!,forKey: "userId")
                     self.showTabViewController()
                 }
                 else

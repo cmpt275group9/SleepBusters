@@ -56,6 +56,11 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     var terminalChar:CBCharacteristic!
     var countIndex = 0;
     var startDate = NSDate()
+    var data = [0]
+    var tempData = [0]
+    var humidityData = [0]
+    var tempAverage = 0.0
+    var humidityAverage = 0.0
     //var respiratory = Respiratory()
     /**************************************************/
     
@@ -64,7 +69,6 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         super.viewDidLoad()
         navigationController?.navigationBarHidden = true
         view.backgroundColor = UIColor.clearColor()
-        
         // Make the chart background colour the same as the view
         respLineChart.backgroundColor = UIColor.clearColor()
         respLineChart.delegate = self
@@ -392,6 +396,16 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
                 lblHumidity.text = "Humidity: " + humidity + " %"
                 lblTemperature.text = "Temperature: " + temp + " C"
                 
+                if(humidityAverage == 0 || tempAverage == 0)
+                {
+                    humidityAverage = Double(humidity)!
+                    tempAverage =  Double(temp)!
+                }
+                else
+                {
+                    humidityAverage = (humidityAverage + Double(humidity)!)/2
+                    tempAverage = (tempAverage + Double(temp)!)/2
+                }
                 print("value: \(dataString)")
             }
             
@@ -502,10 +516,11 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    var data = [0]
+    
     func saveTracking()
     {
-        if(countIndex > 2000)
+       
+        if(countIndex > 700)
         {
         let alert: UIAlertView = UIAlertView(title: "Processing", message: "", delegate: nil, cancelButtonTitle: nil);
         
@@ -542,16 +557,16 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         respiratory.checkPostSleepData(data, startTime: NSDate())
         
         var sleepSession = UserSleepSession()
-        sleepSession.bpm = 1
-        sleepSession.averageTemp = 2
-        sleepSession.averageHumidity = 2
+        sleepSession.bpm = 1 // get from respiratory class
+        sleepSession.averageTemp = self.humidityAverage
+        sleepSession.averageHumidity = self.tempAverage
         sleepSession.startSessionDate = self.startDate
         sleepSession.endSessionDate = NSDate()
         sleepSession.totalLightSleepHours = 1
         sleepSession.totalHoursAsleep = 1
         sleepSession.totalAwakeHours = 0
         sleepSession.totalDeepSleepHours = 0
-        sleepSession.timesApneaDetected = 1
+        sleepSession.timesApneaDetected = 1 // get from respiratory class
         sleepSession.userId = defaults.integerForKey("userId")
         saveSleepSession(sleepSession)
     }
