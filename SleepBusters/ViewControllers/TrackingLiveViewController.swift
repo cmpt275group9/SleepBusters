@@ -506,7 +506,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
             sleepStat.DataQuality = Int(signal)
             sleepStat.TimeStamp = NSDate()
                 
-           // eegBusiness.saveSleepStat(sleepStat)
+            eegBusiness.saveSleepStat(sleepStat)
             
             setChart(eegType, values: eegValues)
         }
