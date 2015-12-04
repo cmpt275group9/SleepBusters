@@ -593,8 +593,8 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         var calculatedData = respiratory.getPostSleepData(data, startTime: self.startDate)
         
         var sleepSession = UserSleepSession()
-        sleepSession.bpm = 2//calculatedData.Bpm
-        sleepSession.timesApneaDetected = 2//calculatedData.TimesApneaDetected
+        sleepSession.bpm = calculatedData.Bpm
+        sleepSession.timesApneaDetected = calculatedData.TimesApneaDetected
         sleepSession.averageTemp = self.humidityAverage
         sleepSession.averageHumidity = self.tempAverage
         sleepSession.startSessionDate = self.startDate
