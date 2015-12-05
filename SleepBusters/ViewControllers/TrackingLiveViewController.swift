@@ -34,7 +34,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         stopTracking()
     }
     let defaults = NSUserDefaults.standardUserDefaults()
-    
+    var respiratoryCounter = 0
     // EEG Sensor: (Simulated Data)
     var counterPie = 0.00
     var counter = 5;
@@ -399,6 +399,11 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
             
                 chartData.removeFirst()
                 chartData.append(Int(respiratory)!)
+                respiratoryCounter++
+                if(respiratoryCounter == 10){
+                    data.append(Int(respiratory)!)
+                    respiratoryCounter = 0
+                }
                 respLineChart.reloadData()
                 respLineChart.setState(.Expanded, animated: false)
                 lblHumidity.text = "Humidity: " + humidity + " %"

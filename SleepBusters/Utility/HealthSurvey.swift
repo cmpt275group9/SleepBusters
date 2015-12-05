@@ -18,7 +18,7 @@ public var SurveyTask: ORKNavigableOrderedTask {
     let nameAnswerFormat = ORKTextAnswerFormat(maximumLength: 20)
     nameAnswerFormat.multipleLines = false
     //first name
-    registrationStep.formItems?.append(ORKFormItem(identifier: "Occupuation", text: "Occupation", answerFormat: nameAnswerFormat, optional: true))
+    registrationStep.formItems?.append(ORKFormItem(identifier: "occupation", text: "Occupation", answerFormat: nameAnswerFormat, optional: true))
     //physical
     //registrationStep.formItems?.append(ORKFormItem(sectionTitle: "Physical Attributes"))
     let heightFormat = ORKNumericAnswerFormat.integerAnswerFormatWithUnit("cm")
