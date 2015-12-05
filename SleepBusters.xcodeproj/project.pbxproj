@@ -16,9 +16,9 @@
 		154F8B421BED9C4200E7A11A /* lung.png in Resources */ = {isa = PBXBuildFile; fileRef = 154F8B401BED9C4200E7A11A /* lung.png */; };
 		1552D8CE1C0013DF00119AE8 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552D8CD1C0013DF00119AE8 /* FeedBackViewController.swift */; };
 		1552D8D01C00299900119AE8 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552D8CF1C00299900119AE8 /* NewAccountViewController.swift */; };
-		157731BB1C11C2680008271F /* DOB-ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 157731BA1C11C2680008271F /* DOB-ICON.png */; settings = {ASSET_TAGS = (); }; };
-		157731BD1C11C3A90008271F /* icon - Birthday - Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 157731BC1C11C3A90008271F /* icon - Birthday - Full.png */; settings = {ASSET_TAGS = (); }; };
-		157731BF1C11CBCA0008271F /* icon - Email - Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 157731BE1C11CBCA0008271F /* icon - Email - Full.png */; settings = {ASSET_TAGS = (); }; };
+		157731BB1C11C2680008271F /* DOB-ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 157731BA1C11C2680008271F /* DOB-ICON.png */; };
+		157731BD1C11C3A90008271F /* icon - Birthday - Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 157731BC1C11C3A90008271F /* icon - Birthday - Full.png */; };
+		157731BF1C11CBCA0008271F /* icon - Email - Full.png in Resources */ = {isa = PBXBuildFile; fileRef = 157731BE1C11CBCA0008271F /* icon - Email - Full.png */; };
 		6E3F38741C029ACC00085E7C /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 791458E91C017EB000716626 /* ResearchKit.framework */; };
 		6E3F38751C029ACC00085E7C /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 791458E91C017EB000716626 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		791458F91C017FC900716626 /* ConsentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791458F71C017FC900716626 /* ConsentForm.swift */; };
@@ -1564,7 +1564,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = imawesome123123123;
+				PRODUCT_BUNDLE_IDENTIFIER = imawesome123123123123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SleepBusters-Bridging-Header.h";
@@ -1591,7 +1591,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = imawesome123123123;
+				PRODUCT_BUNDLE_IDENTIFIER = imawesome123123123123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SleepBusters-Bridging-Header.h";

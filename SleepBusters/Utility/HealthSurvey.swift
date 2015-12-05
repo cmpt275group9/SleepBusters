@@ -15,6 +15,16 @@ public var SurveyTask: ORKNavigableOrderedTask {
     let registrationTitle = NSLocalizedString("Registration", comment: "")
     let registrationOptions: ORKRegistrationStepOption = [.IncludeGivenName, .IncludeFamilyName, .IncludeGender, .IncludeDOB];
     let registrationStep = ORKRegistrationStep(identifier: "registrationStep", title: registrationTitle, text: "Register your account", options: registrationOptions)
+    let nameAnswerFormat = ORKTextAnswerFormat(maximumLength: 20)
+    nameAnswerFormat.multipleLines = false
+    //first name
+    registrationStep.formItems?.append(ORKFormItem(identifier: "occupation", text: "Occupation", answerFormat: nameAnswerFormat, optional: true))
+    //physical
+    //registrationStep.formItems?.append(ORKFormItem(sectionTitle: "Physical Attributes"))
+    let heightFormat = ORKNumericAnswerFormat.integerAnswerFormatWithUnit("cm")
+    let weightFormat = ORKNumericAnswerFormat.integerAnswerFormatWithUnit("lbs")
+    registrationStep.formItems?.append(ORKFormItem(identifier: "height", text: "Height", answerFormat: heightFormat, optional: false))
+    registrationStep.formItems?.append(ORKFormItem(identifier: "weight", text: "Weight", answerFormat: weightFormat, optional: false))
     registrationStep.passcodeValidationRegex = "^(?=.*\\d).{4,8}$"
     registrationStep.passcodeInvalidMessage = NSLocalizedString("A valid password must be 4 and 8 digits long and include at least one numeric character.", comment: "")
     steps += [registrationStep]
@@ -28,7 +38,6 @@ public var SurveyTask: ORKNavigableOrderedTask {
     waitStep.text = waitText
     
     steps += [waitStep]
-
     
     /*
     A verification step view controller subclass is required in order to use the verification step.
@@ -71,35 +80,6 @@ public var SurveyTask: ORKNavigableOrderedTask {
     instructionStep.title = "Some Information Required."
     instructionStep.text = "We need some basic information about you to properly analyse your sleep."
     steps += [instructionStep]
-    
-    //FormStep
-    let formQuestionStepTitle = "Please fill out this form."
-    let formQuestionStep = ORKFormStep(identifier: "FormStep", title: formQuestionStepTitle, text: nil)
-    formQuestionStep.formItems = [ORKFormItem]()
-    //basic info
-    formQuestionStep.formItems?.append(ORKFormItem(sectionTitle: "Basic Information"))
-    let nameAnswerFormat = ORKTextAnswerFormat(maximumLength: 20)
-    nameAnswerFormat.multipleLines = false
-    //first name
-    formQuestionStep.formItems?.append(ORKFormItem(identifier: "Occupuation", text: "Occupation", answerFormat: nameAnswerFormat, optional: true))
-    /*//last name
-    formQuestionStep.formItems?.append(ORKFormItem(identifier: "lname", text: "Last Name", answerFormat: nameAnswerFormat, optional: false))
-    //gender
-    let genderChoices = [
-        ORKTextChoice(text: "Male", value: 0),
-        ORKTextChoice(text: "Female", value: 1),
-    ]
-    let genderAnswerFormat: ORKTextChoiceAnswerFormat = ORKAnswerFormat.choiceAnswerFormatWithStyle(.SingleChoice, textChoices: genderChoices)
-    formQuestionStep.formItems?.append(ORKFormItem(identifier: "gender", text: "Gender", answerFormat: genderAnswerFormat))
-    */
-    //physical
-    formQuestionStep.formItems?.append(ORKFormItem(sectionTitle: "Physical Attributes"))
-    let heightFormat = ORKNumericAnswerFormat.integerAnswerFormatWithUnit("cm")
-    let weightFormat = ORKNumericAnswerFormat.integerAnswerFormatWithUnit("lbs")
-    formQuestionStep.formItems?.append(ORKFormItem(identifier: "height", text: "Height", answerFormat: heightFormat))
-    formQuestionStep.formItems?.append(ORKFormItem(identifier: "weight", text: "Weight", answerFormat: weightFormat))
-    
-    steps += [formQuestionStep]
     
 //BerlinQuestions 1-9
     var textChoices: [ORKTextChoice] = [

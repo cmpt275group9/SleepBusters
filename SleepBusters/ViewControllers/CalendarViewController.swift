@@ -165,7 +165,7 @@ extension CalendarViewController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     }
     
     func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
-        
+        print("test")
         calendarView.selected = false
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .ShortStyle
