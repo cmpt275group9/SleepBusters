@@ -258,8 +258,20 @@ class DataAccess {
      - parameter UserId: The user's ID
      :returns: a User Profile
      */
-    func getUserProfile(userId: Int) -> UserProfile {
-        return UserProfile()
+    func getUserProfile(callback: (UserProfile, NSError?) -> Void) {
+        let queryString = rootUrl + userprofileController
+        let fullQuery = queryString + "/GetUserProfile?userId="+String(defaults.integerForKey("userId"))
+        
+        let parameters = [
+            "userId": defaults.integerForKey("userId")
+        ]
+
+        Alamofire
+            .request(.POST, fullQuery, parameters: parameters, encoding: .JSON)
+            .responseObject { (response: Response<UserProfile, NSError>) in
+                debugPrint(response)
+                callback(response.result.value!,response.result.error)
+        }
     }
     
     /**

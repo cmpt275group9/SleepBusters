@@ -59,9 +59,12 @@ class Business {
      - parameter UserId: The user's ID
      :returns: a User Profile
      */
-//    func getUserProfile(userId: Int) -> UserProfile {
-//        return data.getUserProfile(userId)
-//    }
+    func getUserProfile(callback: (UserProfile, NSError?) -> Void) {
+        data.getUserProfile()
+            { (data: UserProfile, error: NSError?) -> Void in
+                callback(data,error)
+        }
+    }
     
     /**
      Creates a request to the WebApi to save/update a User Profile to the database.
