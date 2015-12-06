@@ -29,9 +29,7 @@ class MyProfileViewController: UIViewController{
     @IBOutlet weak var heightLabel: UILabel!
     
     override func viewDidLoad() {
-        print(userID)
-        var userInfo = business.getUserProfile(userID)
-        print(userInfo.weight)
+
         // Do any additional setup after loading the view, typically from a nib.
         firstNameLabel.text = userInfo.firstName
         lastNameLabel.text = userInfo.lastName
