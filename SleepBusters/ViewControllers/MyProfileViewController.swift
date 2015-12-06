@@ -23,6 +23,17 @@ class MyProfileViewController: UIViewController{
     
     
     override func viewDidLoad() {
+        var business = Business()
+        
+        business.getUserProfile(){
+            (data: UserProfile, error: NSError?) -> Void in
+            dispatch_async(dispatch_get_main_queue()) {
+                
+                var userProfile = data
+                // UPDATE LABELS HERE
+            }
+        }
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
