@@ -17,13 +17,28 @@
 import UIKit
 import ResearchKit
 
-var user = UserProfile()
 class MyProfileViewController: UIViewController{
-    
-    
+    var business = Business()
+    var userID = defaults.valueForKey("userId") as! Int
+
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var dobLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var heightLabel: UILabel!
     
     override func viewDidLoad() {
+        print(userID)
+        var userInfo = business.getUserProfile(userID)
+        print(userInfo.weight)
         // Do any additional setup after loading the view, typically from a nib.
+        firstNameLabel.text = userInfo.firstName
+        lastNameLabel.text = userInfo.lastName
+        dobLabel.text = String(userInfo.dateOfBirth)
+        emailLabel.text = userInfo.userName
+        weightLabel.text = String(userInfo.weight)
+        heightLabel.text = String(userInfo.height)
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,6 +49,7 @@ class MyProfileViewController: UIViewController{
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;
     }
+    
     
 }
 
