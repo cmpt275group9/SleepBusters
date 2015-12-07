@@ -59,11 +59,19 @@ class StatsViewController: UIViewController {
         
         // This contains the clicked user sleep session
         var temp =  self.currentUserSleepSession
-        //load piechart
-        sleepType = ["light sleep" , "deep sleep", "awake"]
-        let sleepHours = [temp.totalLightSleepHours!, temp.totalDeepSleepHours!, temp.totalAwakeHours!]
-        setChart(sleepType, values: sleepHours)
-        // Do any additional setup after loading the view, typically from a nib.
+        if(temp.id != nil)
+        {
+            //load piechart
+            sleepType = ["light sleep" , "deep sleep", "awake"]
+            let sleepHours = [temp.totalLightSleepHours!, temp.totalDeepSleepHours!, temp.totalAwakeHours!]
+            setChart(sleepType, values: sleepHours)
+            // Do any additional setup after loading the view, typically from a nib.
+            
+        } else {
+            var t = 2
+            // return back show alert
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -116,7 +124,7 @@ class StatsViewController: UIViewController {
         
         //pie chart appearance settings
         pieChartView.holeRadiusPercent = 0.93
-        pieChartView.holeColor = UIColor(red:0.067, green:0.055, blue:0.137, alpha: 1)
+        pieChartView.holeColor = UIColor(red:0.067, green:0.055, blue:0.137, alpha: 0)
         pieChartView.descriptionText = ""
         pieChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
         pieChartView.legend.textColor = UIColor.whiteColor()
