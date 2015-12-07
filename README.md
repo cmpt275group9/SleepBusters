@@ -40,7 +40,9 @@ isEEGSimulate and isRespiratorySimulate to false.
 Steps to Connect Bluetooth hardware to SleepBusters:
 
 1) Push the pair button on the Mindwave EEG Device
+
 2) Connect to "Mindwave Mobile" on your iOS device
+
 3) Plug the battery into the USB port on the front of the belt
 
 Now open the SleepBusters application, proceed to "Start Tracking" 
