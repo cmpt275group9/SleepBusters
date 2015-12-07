@@ -560,7 +560,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     func saveTracking()
     {
        
-        if(countIndex > 0)
+        if(countIndex > 325)
         {
         let alert: UIAlertView = UIAlertView(title: "Processing", message: "", delegate: nil, cancelButtonTitle: nil);
         
