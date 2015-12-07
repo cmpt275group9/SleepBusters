@@ -34,7 +34,8 @@ class StartTrackingViewController: UITableViewController {
     @IBOutlet weak var exerciseBtn: UIButton!
     @IBOutlet weak var faceLabel: UILabel!
     
-    override func viewWillUnload() {
+    
+    override func viewWillDisappear(animated: Bool) {
         self.defaults.setBool(coffeeIsOn,forKey: "coffeeIsOn")
         
         self.defaults.setBool(homeIsOn,forKey: "homeIsOn")
