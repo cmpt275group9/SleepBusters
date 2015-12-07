@@ -18,9 +18,6 @@ import UIKit
 import ResearchKit
 
 class MyProfileViewController: UIViewController{
-    var business = Business()
-    var userID = defaults.valueForKey("userId") as! Int
-
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var dobLabel: UILabel!
@@ -29,14 +26,25 @@ class MyProfileViewController: UIViewController{
     @IBOutlet weak var heightLabel: UILabel!
     
     override func viewDidLoad() {
+        var business = Business()
+        
+        business.getUserProfile(){
+            (data: UserProfile, error: NSError?) -> Void in
+            dispatch_async(dispatch_get_main_queue()) {
+                
+                var userProfile = data
+                
+                self.firstNameLabel.text = userProfile.firstName
+                self.lastNameLabel.text = userProfile.lastName
+                self.dobLabel.text = "November 20, 1993"
+                self.emailLabel.text = userProfile.userName
+                var labelFormat = ".0"
+                self.weightLabel.text = String.localizedStringWithFormat("%.0f lbs", userProfile.weight!)
+                self.heightLabel.text = String.localizedStringWithFormat("%.0f cm", userProfile.height!)
+            }
+        }
 
         // Do any additional setup after loading the view, typically from a nib.
-        firstNameLabel.text = userInfo.firstName
-        lastNameLabel.text = userInfo.lastName
-        dobLabel.text = String(userInfo.dateOfBirth)
-        emailLabel.text = userInfo.userName
-        weightLabel.text = String(userInfo.weight)
-        heightLabel.text = String(userInfo.height)
     }
     
     override func didReceiveMemoryWarning() {
