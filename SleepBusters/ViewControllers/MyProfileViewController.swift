@@ -17,10 +17,13 @@
 import UIKit
 import ResearchKit
 
-var user = UserProfile()
 class MyProfileViewController: UIViewController{
-    
-    
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var dobLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var heightLabel: UILabel!
     
     override func viewDidLoad() {
         var business = Business()
@@ -29,7 +32,14 @@ class MyProfileViewController: UIViewController{
             (data: UserProfile, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue()) {
                 var userProfile = data
-                // UPDATE LABELS HERE
+                
+                self.firstNameLabel.text = userProfile.firstName
+                self.lastNameLabel.text = userProfile.lastName
+                self.dobLabel.text = "November 20, 1993"
+                self.emailLabel.text = userProfile.userName
+                var labelFormat = ".0"
+                self.weightLabel.text = String.localizedStringWithFormat("%.0f lbs", userProfile.weight!)
+                self.heightLabel.text = String.localizedStringWithFormat("%.0f cm", userProfile.height!)
             }
         }
 
@@ -44,6 +54,7 @@ class MyProfileViewController: UIViewController{
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;
     }
+    
     
 }
 

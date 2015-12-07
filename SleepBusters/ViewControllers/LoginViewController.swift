@@ -190,7 +190,7 @@ extension LoginViewController : ORKTaskViewControllerDelegate {
                         
                         if(questionResult.identifier == "gender")
                         {
-                            user.gender = (questionResult.choiceAnswers?.first! as! Int)
+                            //user.gender = (questionResult.choiceAnswers?.first! as! Int)
                         }
                         
                         
@@ -203,19 +203,19 @@ extension LoginViewController : ORKTaskViewControllerDelegate {
                         
                         if(questionResult.identifier == "fname")
                         {
-                            user.firstName = (questionResult.answer! as! String)
+                            //user.firstName = (questionResult.answer! as! String)
                         }
                         if(questionResult.identifier == "lname")
                         {
-                            user.lastName = (questionResult.answer! as! String)
+                            //user.lastName = (questionResult.answer! as! String)
                         }
                         if(questionResult.identifier == "height")
                         {
-                            user.height = (questionResult.answer! as! Double)
+                            //user.height = (questionResult.answer! as! Double)
                         }
                         if(questionResult.identifier == "weight")
                         {
-                            user.weight = (questionResult.answer! as! Double)
+                            //user.weight = (questionResult.answer! as! Double)
                         }
                         // TODO Add occupation and Date of birth
                     }
@@ -233,7 +233,7 @@ extension LoginViewController : ORKTaskViewControllerDelegate {
             showSurvey()
         }
         let business = Business()
-        var temp = user
+        //var temp = user
         //business.saveUserProfile(user)
         
         taskViewController.dismissViewControllerAnimated(true, completion: nil)
