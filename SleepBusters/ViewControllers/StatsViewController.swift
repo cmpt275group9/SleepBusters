@@ -28,6 +28,7 @@ import JBChart
 
 class StatsViewController: UIViewController {
     
+    @IBOutlet weak var SleepApneaDetection: UILabel!
     var currentUserSleepSession = UserSleepSession()
     @IBOutlet weak var pieChartView: PieChartView!
     /*@IBOutlet weak var FeedBackButton: UIButton!
@@ -67,10 +68,13 @@ class StatsViewController: UIViewController {
             setChart(sleepType, values: sleepHours)
             // Do any additional setup after loading the view, typically from a nib.
             
+            SleepApneaDetection.text = Respiratory().getDiagnosisMessage(self.currentUserSleepSession.timesApneaDetected!)
+
         } else {
             var t = 2
             // return back show alert
         }
+        
 
     }
     
