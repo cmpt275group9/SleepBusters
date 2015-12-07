@@ -25,7 +25,7 @@ import Foundation
 
 
 class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLineChartViewDataSource, CBCentralManagerDelegate, CBPeripheralDelegate,TGAccessoryDelegate {
-    
+    let defaults = NSUserDefaults.standardUserDefaults()
     @IBOutlet weak var radarChartView: RadarChartView!
     @IBOutlet weak var respLineChart: JBLineChartView!
     @IBOutlet weak var lblHumidity: UILabel!
@@ -33,7 +33,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     @IBAction func btnStopTracking(sender: UIButton) {
         stopTracking()
     }
-    let defaults = NSUserDefaults.standardUserDefaults()
+
     var respiratoryCounter = 0
     // EEG Sensor: (Simulated Data)
     var counterPie = 0.00
@@ -46,7 +46,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     
     // Respiratory Sensor: (Live Data)
     let isEEGSimulate = false
-    let isRespiratorySimulate = true
+    let isRespiratorySimulate = false
     
     let btName = "HMSoft"
     let btServiceID = "FFE0"
@@ -560,7 +560,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     func saveTracking()
     {
        
-        if(countIndex > 700)
+        if(countIndex > 0)
         {
         let alert: UIAlertView = UIAlertView(title: "Processing", message: "", delegate: nil, cancelButtonTitle: nil);
         
@@ -596,11 +596,11 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     func createSleepSession(data: [Int]) -> UserSleepSession
     {
         var respiratory = Respiratory()
-        var calculatedData = respiratory.getPostSleepData(data, startTime: self.startDate)
+       // var calculatedData = respiratory.getPostSleepData(data, startTime: self.startDate)
         
         var sleepSession = UserSleepSession()
-        sleepSession.bpm = calculatedData.Bpm
-        sleepSession.timesApneaDetected = calculatedData.TimesApneaDetected
+      //  sleepSession.bpm = calculatedData.Bpm
+      //  sleepSession.timesApneaDetected = calculatedData.TimesApneaDetected
         sleepSession.averageTemp = self.humidityAverage
         sleepSession.averageHumidity = self.tempAverage
         sleepSession.startSessionDate = self.startDate
@@ -610,6 +610,13 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
         sleepSession.totalLightSleepHours = 1 // we need this from eeg
         sleepSession.totalAwakeHours = 0 // we need this from eeg
         sleepSession.totalDeepSleepHours = 0 // we need this from eeg
+        
+        sleepSession.faceNumber = defaults.integerForKey("faceNumber")
+        sleepSession.beerIsOn = defaults.boolForKey("beerIsOn")
+        sleepSession.coffeeIsOn = defaults.boolForKey("coffeeIsOn")
+        sleepSession.exerciseIsOn = defaults.boolForKey("exerciseIsOn")
+        sleepSession.homeIsOn = defaults.boolForKey("homeIsOn")
+       
         
         sleepSession.userId = defaults.integerForKey("userId")
         saveSleepSession(sleepSession)

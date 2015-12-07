@@ -126,6 +126,7 @@ class DataAccess {
         Alamofire
             .request(.POST, fullQuery, parameters: parameters as! [String : AnyObject], encoding: .JSON)
             .responseObject { (response: Response<UserSleepSession, NSError>) in
+                debugPrint(response)
                 callback(response.result.value!,response.result.error)
         }
         
@@ -194,6 +195,11 @@ class DataAccess {
             "AverageHumidity": userSleepSession.averageHumidity!,
             "Bpm": userSleepSession.bpm!,
             "TimesApneaDetected": userSleepSession.timesApneaDetected!,
+            "CoffeeIsOn" : userSleepSession.coffeeIsOn!,
+            "HomeIsOn" : userSleepSession.homeIsOn!,
+            "BeerIsOn" : userSleepSession.beerIsOn!,
+            "ExerciseIsOn": userSleepSession.exerciseIsOn!,
+            "FaceNumber": userSleepSession.faceNumber!
         ]
 
         
@@ -258,8 +264,20 @@ class DataAccess {
      - parameter UserId: The user's ID
      :returns: a User Profile
      */
-    func getUserProfile(userId: Int) -> UserProfile {
-        return UserProfile()
+    func getUserProfile(callback: (UserProfile, NSError?) -> Void) {
+        let queryString = rootUrl + userprofileController
+        let fullQuery = queryString + "/GetUserProfile?userId="+String(defaults.integerForKey("userId"))
+        
+        let parameters = [
+            "userId": defaults.integerForKey("userId")
+        ]
+
+        Alamofire
+            .request(.POST, fullQuery, parameters: parameters, encoding: .JSON)
+            .responseObject { (response: Response<UserProfile, NSError>) in
+                debugPrint(response)
+                callback(response.result.value!,response.result.error)
+        }
     }
     
     /**

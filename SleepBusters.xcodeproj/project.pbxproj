@@ -1008,7 +1008,6 @@
 					};
 					AF1834981BBFA9E100EBDFCD = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = B33Z3CT9PD;
 					};
 					AF1834AE1BBFA9E100EBDFCD = {
 						CreatedOnToolsVersion = 7.0;
