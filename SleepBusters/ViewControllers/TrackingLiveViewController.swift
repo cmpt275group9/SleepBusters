@@ -596,28 +596,22 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     func createSleepSession(data: [Int]) -> UserSleepSession
     {
         var respiratory = Respiratory()
-       // var calculatedData = respiratory.getPostSleepData(data, startTime: self.startDate)
+        var calculatedData = respiratory.getPostSleepData(data, startTime: self.startDate)
         
         var sleepSession = UserSleepSession()
-      //  sleepSession.bpm = calculatedData.Bpm
-      //  sleepSession.timesApneaDetected = calculatedData.TimesApneaDetected
+        sleepSession.bpm = calculatedData.Bpm
+        sleepSession.timesApneaDetected = calculatedData.TimesApneaDetected
         sleepSession.averageTemp = self.humidityAverage
         sleepSession.averageHumidity = self.tempAverage
         sleepSession.startSessionDate = self.startDate
         sleepSession.endSessionDate = NSDate()
         sleepSession.totalHoursAsleep =   Double(sleepSession.endSessionDate!.minutesFrom(self.startDate)) / 60.0
-        
-        sleepSession.totalLightSleepHours = 1 // we need this from eeg
-        sleepSession.totalAwakeHours = 0 // we need this from eeg
-        sleepSession.totalDeepSleepHours = 0 // we need this from eeg
-        
         sleepSession.faceNumber = defaults.integerForKey("faceNumber")
         sleepSession.beerIsOn = defaults.boolForKey("beerIsOn")
         sleepSession.coffeeIsOn = defaults.boolForKey("coffeeIsOn")
         sleepSession.exerciseIsOn = defaults.boolForKey("exerciseIsOn")
         sleepSession.homeIsOn = defaults.boolForKey("homeIsOn")
        
-        
         sleepSession.userId = defaults.integerForKey("userId")
         saveSleepSession(sleepSession)
         return sleepSession;
