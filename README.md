@@ -17,8 +17,8 @@ SleepBusters Respiratory Belt.
 
  REQUIREMENTS
 ---------------------
-Hardware Requirements: 
-- iPhone 6s or later 
+Hardware Requirements:
+- iPhone 6s or later
 - Mindwave Mobile EEG Sensor
 - SleepBusters Respiratory Belt
 
@@ -36,7 +36,6 @@ and change isEEGSimulate and isRespiratorySimulate to true.
 Configuring Real Hardware: To enable real hardware navigate 
 to line 48/49 in LiveTrackingViewController and change 
 isEEGSimulate and isRespiratorySimulate to false.
-
 
 Steps to Connect Bluetooth hardware to SleepBusters:
 
