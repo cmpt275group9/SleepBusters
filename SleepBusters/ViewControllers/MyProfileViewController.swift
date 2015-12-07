@@ -28,7 +28,6 @@ class MyProfileViewController: UIViewController{
         business.getUserProfile(){
             (data: UserProfile, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue()) {
-                
                 var userProfile = data
                 // UPDATE LABELS HERE
             }

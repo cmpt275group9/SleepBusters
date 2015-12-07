@@ -194,6 +194,11 @@ class DataAccess {
             "AverageHumidity": userSleepSession.averageHumidity!,
             "Bpm": userSleepSession.bpm!,
             "TimesApneaDetected": userSleepSession.timesApneaDetected!,
+            "CoffeeIsOn" : userSleepSession.coffeeIsOn!,
+            "HomeIsOn" : userSleepSession.homeIsOn!,
+            "BeerIsOn" : userSleepSession.beerIsOn!,
+            "ExerciseIsOn": userSleepSession.exerciseIsOn!,
+            "FaceNumber": userSleepSession.faceNumber!
         ]
 
         

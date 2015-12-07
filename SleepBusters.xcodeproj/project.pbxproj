@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1500D9981C12BDA800AAED0E /* DOB.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9971C12BDA800AAED0E /* DOB.png */; settings = {ASSET_TAGS = (); }; };
-		1500D9A31C12BE9E00AAED0E /* EMAIL.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9A21C12BE9E00AAED0E /* EMAIL.png */; settings = {ASSET_TAGS = (); }; };
-		1500D9A51C12C65B00AAED0E /* weight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9A41C12C65B00AAED0E /* weight.png */; settings = {ASSET_TAGS = (); }; };
-		1500D9A71C12C6E500AAED0E /* weight1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9A61C12C6E500AAED0E /* weight1.png */; settings = {ASSET_TAGS = (); }; };
-		1500D9A91C12C7C100AAED0E /* height .png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9A81C12C7C100AAED0E /* height .png */; settings = {ASSET_TAGS = (); }; };
+		1500D9981C12BDA800AAED0E /* DOB.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9971C12BDA800AAED0E /* DOB.png */; };
+		1500D9A31C12BE9E00AAED0E /* EMAIL.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9A21C12BE9E00AAED0E /* EMAIL.png */; };
+		1500D9A51C12C65B00AAED0E /* weight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9A41C12C65B00AAED0E /* weight.png */; };
+		1500D9A71C12C6E500AAED0E /* weight1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9A61C12C6E500AAED0E /* weight1.png */; };
+		1500D9A91C12C7C100AAED0E /* height .png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9A81C12C7C100AAED0E /* height .png */; };
 		154F8B411BED9C4200E7A11A /* bed.png in Resources */ = {isa = PBXBuildFile; fileRef = 154F8B3F1BED9C4200E7A11A /* bed.png */; };
 		154F8B421BED9C4200E7A11A /* lung.png in Resources */ = {isa = PBXBuildFile; fileRef = 154F8B401BED9C4200E7A11A /* lung.png */; };
 		1552D8CE1C0013DF00119AE8 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552D8CD1C0013DF00119AE8 /* FeedBackViewController.swift */; };
@@ -996,7 +996,7 @@
 					};
 					AF1834981BBFA9E100EBDFCD = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = B33Z3CT9PD;
+						DevelopmentTeam = X4QH59WD29;
 					};
 					AF1834AE1BBFA9E100EBDFCD = {
 						CreatedOnToolsVersion = 7.0;

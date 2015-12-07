@@ -17,6 +17,7 @@ import Foundation
 import UIKit
 
 class StartTrackingViewController: UITableViewController {
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     var coffeeIsOn = false
     var homeIsOn = false
@@ -32,6 +33,30 @@ class StartTrackingViewController: UITableViewController {
     @IBOutlet weak var beerBtn: UIButton!
     @IBOutlet weak var exerciseBtn: UIButton!
     @IBOutlet weak var faceLabel: UILabel!
+    
+    override func viewDidUnload() {
+        self.defaults.setBool(coffeeIsOn,forKey: "coffeeIsOn")
+        
+        self.defaults.setBool(homeIsOn,forKey: "homeIsOn")
+        
+        self.defaults.setBool(beerIsOn,forKey: "beerIsOn")
+        
+        self.defaults.setBool(exerciseIsOn,forKey: "exerciseIsOn")
+        
+        self.defaults.setInteger(currentFaceImage,forKey: "currentFaceImage")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        self.defaults.setBool(coffeeIsOn,forKey: "coffeeIsOn")
+        
+        self.defaults.setBool(homeIsOn,forKey: "homeIsOn")
+        
+        self.defaults.setBool(beerIsOn,forKey: "beerIsOn")
+        
+        self.defaults.setBool(exerciseIsOn,forKey: "exerciseIsOn")
+        
+        self.defaults.setInteger(currentFaceImage,forKey: "currentFaceImage")
+    }
     
     @IBAction func faceBtnPressed(sender: UIButton) {
         cycleFace()
@@ -52,7 +77,7 @@ class StartTrackingViewController: UITableViewController {
     @IBAction func beerBtnPressed(sender: UIButton) {
         toggleIcon(beerBtn,onImage: "beer-off.png",offImage: "beer-on.png",flag: &beerIsOn)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNeedsStatusBarAppearanceUpdate()

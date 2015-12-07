@@ -27,6 +27,12 @@ final class UserSleepSession: ResponseObjectSerializable, ResponseCollectionSeri
     var totalAwakeHours: Double? = nil
     var totalLightSleepHours: Double? = nil
     
+    var coffeeIsOn: Bool? = nil
+    var homeIsOn:Bool? = nil
+    var beerIsOn:Bool? = nil
+    var exerciseIsOn:Bool? = nil
+    var faceNumber: Int? = nil
+    
     var timesApneaDetected: Int? = nil
     var bpm: Int? = nil
     var averageTemp: Double? = nil
@@ -50,6 +56,13 @@ final class UserSleepSession: ResponseObjectSerializable, ResponseCollectionSeri
         self.timesApneaDetected = representation.valueForKeyPath("TimesApneaDetected") as? Int
         self.averageTemp = representation.valueForKeyPath("AverageTemp") as? Double
         self.averageHumidity = representation.valueForKeyPath("AverageHumidity") as? Double
+        
+        self.coffeeIsOn = representation.valueForKeyPath("CoffeeIsOn") as? Bool
+        self.homeIsOn = representation.valueForKeyPath("HomeIsOn") as? Bool
+        self.beerIsOn = representation.valueForKeyPath("BeerIsOn") as? Bool
+        self.exerciseIsOn = representation.valueForKeyPath("ExerciseIsOn") as? Bool
+        self.faceNumber = representation.valueForKeyPath("FaceNumber") as? Int
+        
     }
     
     static func collection(response response: NSHTTPURLResponse, representation: AnyObject) -> [UserSleepSession] {
