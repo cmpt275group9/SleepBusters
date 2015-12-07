@@ -115,7 +115,13 @@ class StatsViewController: UIViewController {
 
         } else {
             var t = 2
-            // return back show alert
+            var refreshAlert = UIAlertController(title: "No Data", message: "No recorded sleep session found", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Go Back", style: .Default, handler: { (action: UIAlertAction!) in
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }))
+            
+            presentViewController(refreshAlert, animated: true, completion: nil)
         }
         
 

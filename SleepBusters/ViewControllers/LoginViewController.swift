@@ -29,7 +29,7 @@ class LoginViewController:UIViewController {
     }
     
     @IBAction func surveyTapped(sender : AnyObject) {
-        let taskViewController = ORKTaskViewController(task: SurveyTask, taskRunUUID: nil)
+        let taskViewController = ORKTaskViewController(task: ConsentTask, taskRunUUID: nil)
         taskViewController.delegate = self
         presentViewController(taskViewController, animated: true, completion: nil)
     }
