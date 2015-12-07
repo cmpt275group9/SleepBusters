@@ -12,6 +12,10 @@
 		1500D9A51C12C65B00AAED0E /* weight.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9A41C12C65B00AAED0E /* weight.png */; settings = {ASSET_TAGS = (); }; };
 		1500D9A71C12C6E500AAED0E /* weight1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9A61C12C6E500AAED0E /* weight1.png */; settings = {ASSET_TAGS = (); }; };
 		1500D9A91C12C7C100AAED0E /* height .png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9A81C12C7C100AAED0E /* height .png */; settings = {ASSET_TAGS = (); }; };
+		1500D9B81C150E5F00AAED0E /* humi.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9B61C150E5E00AAED0E /* humi.png */; settings = {ASSET_TAGS = (); }; };
+		1500D9B91C150E5F00AAED0E /* temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9B71C150E5E00AAED0E /* temp.png */; settings = {ASSET_TAGS = (); }; };
+		1500D9C41C15105F00AAED0E /* drop.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9C31C15105E00AAED0E /* drop.png */; settings = {ASSET_TAGS = (); }; };
+		1500D9C61C15119100AAED0E /* temptemp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1500D9C51C15119100AAED0E /* temptemp.png */; settings = {ASSET_TAGS = (); }; };
 		154F8B411BED9C4200E7A11A /* bed.png in Resources */ = {isa = PBXBuildFile; fileRef = 154F8B3F1BED9C4200E7A11A /* bed.png */; };
 		154F8B421BED9C4200E7A11A /* lung.png in Resources */ = {isa = PBXBuildFile; fileRef = 154F8B401BED9C4200E7A11A /* lung.png */; };
 		1552D8CE1C0013DF00119AE8 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1552D8CD1C0013DF00119AE8 /* FeedBackViewController.swift */; };
@@ -304,6 +308,10 @@
 		1500D9A41C12C65B00AAED0E /* weight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weight.png; sourceTree = "<group>"; };
 		1500D9A61C12C6E500AAED0E /* weight1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weight1.png; sourceTree = "<group>"; };
 		1500D9A81C12C7C100AAED0E /* height .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "height .png"; sourceTree = "<group>"; };
+		1500D9B61C150E5E00AAED0E /* humi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = humi.png; sourceTree = "<group>"; };
+		1500D9B71C150E5E00AAED0E /* temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp.png; sourceTree = "<group>"; };
+		1500D9C31C15105E00AAED0E /* drop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop.png; sourceTree = "<group>"; };
+		1500D9C51C15119100AAED0E /* temptemp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temptemp.png; sourceTree = "<group>"; };
 		154F8B3F1BED9C4200E7A11A /* bed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bed.png; path = Images/bed.png; sourceTree = "<group>"; };
 		154F8B401BED9C4200E7A11A /* lung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lung.png; path = Images/lung.png; sourceTree = "<group>"; };
 		1552D8CD1C0013DF00119AE8 /* FeedBackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
@@ -623,6 +631,8 @@
 				157731BC1C11C3A90008271F /* icon - Birthday - Full.png */,
 				AFBB2A301BFC65C8006015F5 /* icon---Username@2x.png */,
 				157731BA1C11C2680008271F /* DOB-ICON.png */,
+				1500D9B61C150E5E00AAED0E /* humi.png */,
+				1500D9B71C150E5E00AAED0E /* temp.png */,
 				AFBB2A311BFC65C8006015F5 /* loginBackground.png */,
 				1500D9A61C12C6E500AAED0E /* weight1.png */,
 				1500D9A81C12C7C100AAED0E /* height .png */,
@@ -637,6 +647,7 @@
 				AF1552251BEC3A9300399DB8 /* _Calendar---icon-@2x.png */,
 				AF1552271BEC3A9300399DB8 /* 1-image.png */,
 				154F8B3F1BED9C4200E7A11A /* bed.png */,
+				1500D9C51C15119100AAED0E /* temptemp.png */,
 				154F8B401BED9C4200E7A11A /* lung.png */,
 				AF1552281BEC3A9300399DB8 /* awake-image@2x.png */,
 				AF1552291BEC3A9300399DB8 /* Background---image.png */,
@@ -648,6 +659,7 @@
 				AF15522D1BEC3A9300399DB8 /* cloud--icon.png */,
 				AF15522E1BEC3A9300399DB8 /* coffee---icon@2x.png */,
 				AF15522F1BEC3A9300399DB8 /* Completed-image@2x.png */,
+				1500D9C31C15105E00AAED0E /* drop.png */,
 				AF1552301BEC3A9300399DB8 /* Current-Progress.png */,
 				AF1552311BEC3A9300399DB8 /* Divider-copy@2x.png */,
 				AF1552321BEC3A9300399DB8 /* drink--icon.png */,
@@ -1188,6 +1200,7 @@
 				AFA659D41BED86A4005D295D /* hot51.png in Resources */,
 				AF03F9981BC8DE27002ADF4D /* OpenSans-Semibold.ttf in Resources */,
 				AF1552421BEC3A9300399DB8 /* backgroundNew.png in Resources */,
+				1500D9B91C150E5F00AAED0E /* temp.png in Resources */,
 				AF03F9991BC8DE27002ADF4D /* OpenSans-SemiboldItalic.ttf in Resources */,
 				AFA659E61BED8983005D295D /* angry.png in Resources */,
 				AFA659F01BED8983005D295D /* tired.png in Resources */,
@@ -1222,10 +1235,13 @@
 				AFBB2A3C1BFC65C8006015F5 /* image---Password@2x.png in Resources */,
 				AFA659EF1BED8983005D295D /* sad.png in Resources */,
 				AF1834A61BBFA9E100EBDFCD /* Assets.xcassets in Resources */,
+				1500D9B81C150E5F00AAED0E /* humi.png in Resources */,
 				AF15523F1BEC3A9300399DB8 /* Background---image.png in Resources */,
 				AFA659D61BED86D2005D295D /* hot51-on.png in Resources */,
+				1500D9C61C15119100AAED0E /* temptemp.png in Resources */,
 				AFA659ED1BED8983005D295D /* home.png in Resources */,
 				AFBB2A391BFC65C8006015F5 /* icon---Username@2x.png in Resources */,
+				1500D9C41C15105F00AAED0E /* drop.png in Resources */,
 				AF03F9961BC8DE27002ADF4D /* OpenSans-LightItalic.ttf in Resources */,
 				1500D9A31C12BE9E00AAED0E /* EMAIL.png in Resources */,
 				AF03F9901BC8DE27002ADF4D /* OpenSans-Bold.ttf in Resources */,

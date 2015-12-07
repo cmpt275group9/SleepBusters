@@ -116,7 +116,7 @@ class StatsViewController: UIViewController {
         
         //pie chart appearance settings
         pieChartView.holeRadiusPercent = 0.93
-        pieChartView.holeColor = UIColor(red:0.067, green:0.055, blue:0.137, alpha: 1)
+        pieChartView.holeColor = UIColor(red:0.067, green:0.055, blue:0.137, alpha: 0)
         pieChartView.descriptionText = ""
         pieChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
         pieChartView.legend.textColor = UIColor.whiteColor()
