@@ -46,7 +46,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     
     // Respiratory Sensor: (Live Data)
     let isEEGSimulate = false
-    let isRespiratorySimulate = true
+    let isRespiratorySimulate = false
     
     let btName = "HMSoft"
     let btServiceID = "FFE0"

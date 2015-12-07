@@ -126,6 +126,7 @@ class DataAccess {
         Alamofire
             .request(.POST, fullQuery, parameters: parameters as! [String : AnyObject], encoding: .JSON)
             .responseObject { (response: Response<UserSleepSession, NSError>) in
+                debugPrint(response)
                 callback(response.result.value!,response.result.error)
         }
         

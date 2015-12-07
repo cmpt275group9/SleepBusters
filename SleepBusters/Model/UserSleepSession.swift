@@ -43,6 +43,8 @@ final class UserSleepSession: ResponseObjectSerializable, ResponseCollectionSeri
     }
     
     init?(response: NSHTTPURLResponse, representation: AnyObject) {
+        if(representation["ID"] != nil)
+        {
         self.id = (representation.valueForKeyPath("ID") as? Int)!
         self.userId = (representation.valueForKeyPath("UserProfileId") as? Int)!
         self.startSessionDate = representation.valueForKeyPath("StartSessionDate") as? NSDate
@@ -62,6 +64,7 @@ final class UserSleepSession: ResponseObjectSerializable, ResponseCollectionSeri
         self.beerIsOn = representation.valueForKeyPath("BeerIsOn") as? Bool
         self.exerciseIsOn = representation.valueForKeyPath("ExerciseIsOn") as? Bool
         self.faceNumber = representation.valueForKeyPath("FaceNumber") as? Int
+        }
         
     }
     
