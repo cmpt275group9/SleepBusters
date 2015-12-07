@@ -48,6 +48,7 @@ class TrackingLiveViewController:UIViewController,JBLineChartViewDelegate, JBLin
     let isEEGSimulate = false
     let isRespiratorySimulate = false
     
+    
     let btName = "HMSoft"
     let btServiceID = "FFE0"
     let btCharacteristicId = "FFE1"

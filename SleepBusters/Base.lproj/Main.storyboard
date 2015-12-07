@@ -6,8 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </mutableArray>
         <mutableArray key="OpenSans-Regular.ttf">
-            <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
             <string>OpenSans</string>
@@ -437,7 +439,7 @@
                                             <action selector="btnStopTracking:" destination="jjp-LH-6Mg" eventType="touchUpInside" id="NVl-Mb-pPS"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Divider-copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sgk-dV-Il2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Divider-copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sgk-dV-Il2">
                                         <rect key="frame" x="-4" y="-228" width="608" height="1"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.18039215689999999" green="0.1529411765" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
@@ -447,15 +449,15 @@
                                 <color key="backgroundColor" red="0.1960784314" green="0.1333333333" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="GLX-LQ-pgq" firstAttribute="centerX" secondItem="IGO-SG-qJT" secondAttribute="centerX" id="2WQ-QH-JJI"/>
-                                    <constraint firstItem="Sgk-dV-Il2" firstAttribute="centerX" secondItem="GLX-LQ-pgq" secondAttribute="centerX" id="Xkg-pp-9dL"/>
+                                    <constraint firstItem="Sgk-dV-Il2" firstAttribute="centerX" secondItem="GLX-LQ-pgq" secondAttribute="centerX" id="BrO-CE-UYv"/>
+                                    <constraint firstItem="Sgk-dV-Il2" firstAttribute="leading" secondItem="IGO-SG-qJT" secondAttribute="leading" constant="-4" id="NIz-pA-i1b"/>
+                                    <constraint firstItem="Sgk-dV-Il2" firstAttribute="top" secondItem="IGO-SG-qJT" secondAttribute="top" constant="-228" id="SHO-sY-mUr"/>
                                     <constraint firstItem="GLX-LQ-pgq" firstAttribute="centerY" secondItem="IGO-SG-qJT" secondAttribute="centerY" id="aIR-u0-GPU"/>
                                     <constraint firstAttribute="width" constant="600" id="fvW-Z1-3k4"/>
-                                    <constraint firstItem="Sgk-dV-Il2" firstAttribute="leading" secondItem="IGO-SG-qJT" secondAttribute="leading" constant="-4" id="hYA-rp-WvB"/>
-                                    <constraint firstItem="GLX-LQ-pgq" firstAttribute="top" secondItem="Sgk-dV-Il2" secondAttribute="bottom" constant="244" id="pFb-1k-i3G"/>
                                     <constraint firstAttribute="height" constant="60" id="r38-Zm-OFZ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6iH-Iu-Vgo" customClass="RadarChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iH-Iu-Vgo" customClass="RadarChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="EEG Sensor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJ2-mQ-fAW">
@@ -470,55 +472,74 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pgf-Eb-nPG" customClass="JBLineChartView">
-                                <rect key="frame" x="-6" y="258" width="600" height="230"/>
+                                <rect key="frame" x="-6" y="265" width="600" height="222"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Respiratory Sensor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJe-QJ-ZRI">
-                                        <rect key="frame" x="27" y="7" width="173" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy9-ze-Huf">
+                                        <rect key="frame" x="27" y="8" width="173" height="21"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
-                                        <color key="textColor" red="0.92882612180000002" green="0.92882612180000002" blue="0.92882612180000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Humidity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy9-ze-Huf">
-                                        <rect key="frame" x="27" y="36" width="173" height="21"/>
-                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="173" id="PkT-Hq-bQi"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                         <color key="textColor" red="0.92882612180000002" green="0.92882612180000002" blue="0.92882612180000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Temperature:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g56-el-d4v">
-                                        <rect key="frame" x="27" y="65" width="166" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g56-el-d4v">
+                                        <rect key="frame" x="248" y="8" width="166" height="21"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="166" id="gqu-rD-EM1"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="13"/>
                                         <color key="textColor" red="0.92882612179487178" green="0.92882612179487178" blue="0.92882612179487178" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Respiratory Sensor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJe-QJ-ZRI">
+                                        <rect key="frame" x="16" y="37" width="173" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="173" id="oxb-6d-ZRl"/>
+                                            <constraint firstAttribute="height" constant="21" id="xBG-ez-NXV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="14"/>
+                                        <color key="textColor" red="0.92882612180000002" green="0.92882612180000002" blue="0.92882612180000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="376" id="9js-Ml-WuH"/>
-                                    <constraint firstAttribute="height" constant="250" id="X07-0M-YHX"/>
+                                    <constraint firstItem="g56-el-d4v" firstAttribute="leading" secondItem="uy9-ze-Huf" secondAttribute="trailing" constant="48" id="Lih-28-nkM"/>
+                                    <constraint firstItem="uy9-ze-Huf" firstAttribute="top" secondItem="Pgf-Eb-nPG" secondAttribute="topMargin" id="Reu-T6-yhL"/>
+                                    <constraint firstItem="g56-el-d4v" firstAttribute="baseline" secondItem="uy9-ze-Huf" secondAttribute="baseline" id="Va8-b6-jDP"/>
+                                    <constraint firstItem="uy9-ze-Huf" firstAttribute="leading" secondItem="Pgf-Eb-nPG" secondAttribute="leading" constant="27" id="frp-N1-uIb"/>
+                                    <constraint firstItem="FJe-QJ-ZRI" firstAttribute="top" secondItem="uy9-ze-Huf" secondAttribute="bottom" constant="8" symbolic="YES" id="hKe-Bi-qLz"/>
+                                    <constraint firstItem="g56-el-d4v" firstAttribute="firstBaseline" secondItem="uy9-ze-Huf" secondAttribute="firstBaseline" id="lgZ-SI-QaI"/>
+                                    <constraint firstItem="FJe-QJ-ZRI" firstAttribute="top" secondItem="Pgf-Eb-nPG" secondAttribute="top" constant="37" id="omD-AA-l70"/>
+                                    <constraint firstItem="FJe-QJ-ZRI" firstAttribute="leading" secondItem="Pgf-Eb-nPG" secondAttribute="leading" constant="16" id="vXS-C5-1iD"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Pgf-Eb-nPG" firstAttribute="top" secondItem="6iH-Iu-Vgo" secondAttribute="bottom" constant="-1" id="8dR-67-ep4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IGO-SG-qJT" secondAttribute="trailing" constant="-20" id="Am1-u3-Xgb"/>
+                            <constraint firstItem="Pgf-Eb-nPG" firstAttribute="leading" secondItem="Iws-JD-Nnt" secondAttribute="leadingMargin" constant="-26" id="C1g-GV-tqk"/>
                             <constraint firstItem="3Hh-Tg-Nt7" firstAttribute="leading" secondItem="IGO-SG-qJT" secondAttribute="leading" id="C1i-uq-Sub"/>
                             <constraint firstAttribute="trailing" secondItem="6iH-Iu-Vgo" secondAttribute="trailing" id="DRP-gk-g6a"/>
                             <constraint firstItem="6iH-Iu-Vgo" firstAttribute="leading" secondItem="Iws-JD-Nnt" secondAttribute="leading" id="E1c-pM-8UO"/>
+                            <constraint firstItem="Pgf-Eb-nPG" firstAttribute="top" secondItem="6iH-Iu-Vgo" secondAttribute="bottom" constant="15" id="GBG-hL-lea"/>
                             <constraint firstAttribute="bottom" secondItem="3Hh-Tg-Nt7" secondAttribute="bottom" id="PU1-j6-dTc"/>
                             <constraint firstItem="yec-09-9R0" firstAttribute="top" secondItem="IGO-SG-qJT" secondAttribute="bottom" constant="15" id="Qoj-Fw-0RU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pgf-Eb-nPG" secondAttribute="trailing" constant="-14" id="TUz-PE-t1q"/>
+                            <constraint firstAttribute="bottom" secondItem="Pgf-Eb-nPG" secondAttribute="bottom" constant="113" id="Wp8-1X-9cK"/>
                             <constraint firstItem="3Hh-Tg-Nt7" firstAttribute="trailing" secondItem="IGO-SG-qJT" secondAttribute="trailing" id="f2W-Vp-yyc"/>
                             <constraint firstItem="3Hh-Tg-Nt7" firstAttribute="top" secondItem="6iH-Iu-Vgo" secondAttribute="top" id="fJ6-ty-zYQ"/>
-                            <constraint firstItem="Pgf-Eb-nPG" firstAttribute="leading" secondItem="IGO-SG-qJT" secondAttribute="leading" id="hMb-yk-fCm"/>
                             <constraint firstItem="6iH-Iu-Vgo" firstAttribute="top" secondItem="SiF-nV-WRZ" secondAttribute="bottom" id="is8-px-9sq"/>
                             <constraint firstItem="3Hh-Tg-Nt7" firstAttribute="top" secondItem="SiF-nV-WRZ" secondAttribute="bottom" id="jpr-UL-A53"/>
                             <constraint firstItem="IGO-SG-qJT" firstAttribute="leading" secondItem="Iws-JD-Nnt" secondAttribute="leadingMargin" constant="-20" id="pOZ-H0-BaK"/>
-                            <constraint firstItem="IGO-SG-qJT" firstAttribute="top" secondItem="Pgf-Eb-nPG" secondAttribute="bottom" id="rkQ-aw-C4P"/>
+                            <constraint firstItem="Pgf-Eb-nPG" firstAttribute="top" secondItem="Iws-JD-Nnt" secondAttribute="top" constant="265" id="r9p-9G-oFd"/>
+                            <constraint firstItem="IGO-SG-qJT" firstAttribute="top" secondItem="Pgf-Eb-nPG" secondAttribute="bottom" constant="1" id="zA3-7K-cPK"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -568,7 +589,7 @@
                                 <rect key="frame" x="0.0" y="396" width="608" height="1"/>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.1529411765" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8NN-uA-WOc" customClass="PieChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8NN-uA-WOc" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="49" width="600" height="195"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -669,7 +690,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFf-e3-CzI">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFf-e3-CzI">
                                 <rect key="frame" x="26" y="20" width="34" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Back">
@@ -1142,6 +1163,6 @@
         <image name="weight1.png" width="745" height="745"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sVe-by-WZZ"/>
+        <segue reference="I2r-o7-qyW"/>
     </inferredMetricsTieBreakers>
 </document>
