@@ -2,10 +2,10 @@
 
  README
 ---------------------
-   
- * Introduction
- * Requirements
- * Configuration
+SECTIONS:
+ - Introduction
+ - Requirements
+ - Configuration
 
 
  INTRODUCTION
