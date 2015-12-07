@@ -28,8 +28,20 @@ import JBChart
 
 class StatsViewController: UIViewController {
     
-    @IBOutlet weak var SleepApneaDetection: UILabel!
     var currentUserSleepSession = UserSleepSession()
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var breathLabel: UILabel!
+    @IBOutlet weak var SleepApneaDetection: UILabel!
+    
+    @IBOutlet weak var alcoholImage: UIImageView!
+    @IBOutlet weak var homeImage: UIImageView!
+    @IBOutlet weak var coffeeImage: UIImageView!
+    @IBOutlet weak var exerciseImage: UIImageView!
+    @IBOutlet weak var moodImage: UIImageView!
+    
     @IBOutlet weak var pieChartView: PieChartView!
     /*@IBOutlet weak var FeedBackButton: UIButton!
     @IBAction func FeedBackButtonPressed(sender: AnyObject) {
@@ -69,6 +81,37 @@ class StatsViewController: UIViewController {
             // Do any additional setup after loading the view, typically from a nib.
             
             SleepApneaDetection.text = Respiratory().getDiagnosisMessage(self.currentUserSleepSession.timesApneaDetected!)
+            humidityLabel.text = "\(String(temp.averageHumidity!))%"
+            tempLabel.text = "\(String(temp.averageTemp!))\u{00B0}C"
+            breathLabel.text = "\(String(temp.bpm!)) b/min"
+            timeLabel.text = "\(temp.startDate!) - \(temp.endDate!)"
+            
+            var alcoholimage = UIImage(named: "beer-off.png")!
+            if(temp.beerIsOn!){
+                alcoholimage = UIImage(named: "beer-on.png")!
+            }
+            var homeimage = UIImage(named: "nothome.png")!
+            if(temp.homeIsOn!){
+                homeimage = UIImage(named: "home.png")!
+            }
+            var coffeeimage = UIImage(named: "coffee-off.png")!
+            if (temp.coffeeIsOn!){
+                coffeeimage = UIImage(named: "coffee-on.png")!
+            }
+            var exerciseimage = UIImage(named: "gym-off.png")!
+            if (temp.exerciseIsOn!){
+                exerciseimage = UIImage(named: "gym-on.png")!
+            }
+            let faceImages = ["happy.png", "bored.png","tired.png","sad.png","angry.png"]
+            
+            var moodimage = UIImage(named: faceImages[temp.faceNumber!])!
+            
+            alcoholImage.image = alcoholimage
+            homeImage.image = homeimage
+            coffeeImage.image = coffeeimage
+            exerciseImage.image = exerciseimage
+            moodImage.image = moodimage
+            
 
         } else {
             var t = 2

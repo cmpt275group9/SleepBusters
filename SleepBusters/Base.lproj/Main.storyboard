@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="t5h-7x-mMY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="t5h-7x-mMY">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -156,6 +156,7 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="weight1.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Bm-kL-O0e">
                                 <rect key="frame" x="-183" y="254" width="425" height="379"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -195,7 +196,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="644"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrG-f7-ipY" id="WNu-v9-jMi">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="643"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="643.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newnewnew.png" translatesAutoresizingMaskIntoConstraints="NO" id="wH5-OV-5Mx">
@@ -553,6 +554,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SleepApnea detection" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmd-qv-Nkg">
                                 <rect key="frame" x="20" y="483" width="552" height="57"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="LVg-AP-NMa"/>
                                 </constraints>
@@ -562,10 +564,12 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Divider-copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="CwN-pa-gIG">
                                 <rect key="frame" x="0.0" y="470" width="608" height="1"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.1529411765" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Divider-copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Bgb-4F-kFC">
                                 <rect key="frame" x="0.0" y="396" width="608" height="1"/>
+                                <animations/>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.1529411765" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8NN-uA-WOc" customClass="PieChartView" customModule="Charts">
@@ -594,6 +598,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop.png" translatesAutoresizingMaskIntoConstraints="NO" id="QNd-Wz-JPn">
                                 <rect key="frame" x="20" y="346" width="17" height="21"/>
+                                <animations/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Jsq-ft-wBC"/>
@@ -601,12 +606,14 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Aq-yI-Zxx">
                                 <rect key="frame" x="50" y="346" width="161" height="21"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RD-k5-cga">
                                 <rect key="frame" x="262" y="346" width="161" height="21"/>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="161" id="lzF-l5-zdK"/>
                                 </constraints>
@@ -616,6 +623,7 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="temptemp.png" translatesAutoresizingMaskIntoConstraints="NO" id="BxC-yN-gqf">
                                 <rect key="frame" x="232" y="346" width="17" height="21"/>
+                                <animations/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lung.png" translatesAutoresizingMaskIntoConstraints="NO" id="8hg-AQ-gcO">
@@ -626,15 +634,9 @@
                                     <constraint firstAttribute="width" constant="17" id="cU2-v7-b0g"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beer-off.png" translatesAutoresizingMaskIntoConstraints="NO" id="5YP-IH-l2y">
-                                <rect key="frame" x="20" y="425" width="17" height="21"/>
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="cvB-f1-259"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nothome.png" translatesAutoresizingMaskIntoConstraints="NO" id="vK9-gS-jYb">
                                 <rect key="frame" x="100" y="425" width="17" height="21"/>
+                                <animations/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="17" id="Tgu-sA-fzb"/>
@@ -642,6 +644,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gym-off.png" translatesAutoresizingMaskIntoConstraints="NO" id="4BK-d0-Sme">
                                 <rect key="frame" x="260" y="425" width="17" height="21"/>
+                                <animations/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="17" id="OvV-yu-SUY"/>
@@ -649,6 +652,7 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee-off.png" translatesAutoresizingMaskIntoConstraints="NO" id="pid-od-LCT">
                                 <rect key="frame" x="180" y="425" width="17" height="21"/>
+                                <animations/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="17" id="Xae-Cw-bB4"/>
@@ -692,9 +696,18 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="UtI-wi-Cg9">
                                 <rect key="frame" x="340" y="425" width="17" height="21"/>
+                                <animations/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="17" id="uLE-09-2ea"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beer-off.png" translatesAutoresizingMaskIntoConstraints="NO" id="5YP-IH-l2y">
+                                <rect key="frame" x="20" y="425" width="17" height="21"/>
+                                <animations/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cvB-f1-259"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -766,9 +779,18 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="SleepApneaDetection" destination="Cmd-qv-Nkg" id="CLS-Fj-JML"/>
+                        <outlet property="alcoholImage" destination="5YP-IH-l2y" id="y2q-nB-8CO"/>
                         <outlet property="backButton" destination="KFf-e3-CzI" id="xVs-GH-9rx"/>
+                        <outlet property="breathLabel" destination="n8l-4L-NE8" id="o8J-vm-JOC"/>
+                        <outlet property="coffeeImage" destination="pid-od-LCT" id="Mlj-ut-WZC"/>
+                        <outlet property="exerciseImage" destination="4BK-d0-Sme" id="X9c-Bf-uPY"/>
+                        <outlet property="homeImage" destination="vK9-gS-jYb" id="mbS-3w-Gnz"/>
+                        <outlet property="humidityLabel" destination="9Aq-yI-Zxx" id="x8c-3R-iu9"/>
+                        <outlet property="moodImage" destination="UtI-wi-Cg9" id="JJH-HU-iA1"/>
                         <outlet property="pieChartView" destination="8NN-uA-WOc" id="enf-Ll-B9i"/>
                         <outlet property="sleepPercentages" destination="Ci1-LU-SyT" id="Pdm-Gf-F4h"/>
+                        <outlet property="tempLabel" destination="8RD-k5-cga" id="8iz-vj-ErJ"/>
+                        <outlet property="timeLabel" destination="gOo-82-Te5" id="tNp-NW-tkd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TB0-30-rTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
