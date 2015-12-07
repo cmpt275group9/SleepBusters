@@ -1,21 +1,21 @@
 # SleepBusters
 
- README
+README
 ---------------------
 SECTIONS:
- - Introduction
- - Requirements
- - Configuration
+- Introduction
+- Requirements
+- Configuration
 
 
- INTRODUCTION
+INTRODUCTION
 ---------------------
 This README file is intended to assist the developer in 
 the proper use of the Mindwave EEG and PillowSoft 
 SleepBusters Respiratory Belt.
 
 
- REQUIREMENTS
+REQUIREMENTS
 ---------------------
 Hardware Requirements:
 - iPhone 6s or later
@@ -27,7 +27,7 @@ Software Requirements:
 - Windows 7 or Mac OSX or later operating system
 
 
- CONFIGURATION
+CONFIGURATION
 ---------------------
 Configuring Simulation: To enable a simulated hardware
 device, navigate to line 48/49 in LiveTrackingViewController
@@ -45,7 +45,3 @@ Steps to Connect Bluetooth hardware to SleepBusters:
 
 Now open the SleepBusters application, proceed to "Start Tracking" 
 and ensure that you can see live data.
-
-
-
-
