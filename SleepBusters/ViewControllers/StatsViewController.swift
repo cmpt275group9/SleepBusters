@@ -60,7 +60,7 @@ class StatsViewController: UIViewController {
         
         // This contains the clicked user sleep session
         var temp =  self.currentUserSleepSession
-        if(temp.id != nil)
+        if(temp.id != -1 && temp.id != nil)
         {
             //load piechart
             sleepType = ["light sleep" , "deep sleep", "awake"]

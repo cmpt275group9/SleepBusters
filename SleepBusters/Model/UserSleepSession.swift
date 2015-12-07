@@ -33,6 +33,8 @@ final class UserSleepSession: ResponseObjectSerializable, ResponseCollectionSeri
     var exerciseIsOn:Bool? = nil
     var faceNumber: Int? = nil
     
+    var startDate: String? = nil
+    var endDate: String? = nil
     var timesApneaDetected: Int? = nil
     var bpm: Int? = nil
     var averageTemp: Double? = nil
@@ -64,6 +66,8 @@ final class UserSleepSession: ResponseObjectSerializable, ResponseCollectionSeri
         self.beerIsOn = representation.valueForKeyPath("BeerIsOn") as? Bool
         self.exerciseIsOn = representation.valueForKeyPath("ExerciseIsOn") as? Bool
         self.faceNumber = representation.valueForKeyPath("FaceNumber") as? Int
+            self.startDate = representation.valueForKeyPath("StartDate") as? String
+            self.endDate = representation.valueForKeyPath("EndDate") as? String
         }
         
     }
